@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<title>site</title>
+	<link href="css.css" rel="stylesheet">
+</head>
+<body>
+	<div id="mySidenav" class="sidenav" onmouseover="openNav()">
+	  <a href="#">About</a>
+	  <a href="#">Services</a>
+	  <a href="#">Clients</a>
+	  <a href="#">Contact</a>
+		<div id="mouse" class="mouseout" onmouseout="closeNav()">
+	</div>
+	<script>
+		function openNav() {
+		  document.getElementById("mySidenav").style.width = "20%";
+			document.getElementById("mouse").style.left = "20%";
+		}
+
+		function closeNav() {
+		  document.getElementById("mySidenav").style.width = "0%";
+			document.getElementById("mouse").style.left = "0%";
+		}
+	</script>
+</body>
+</html>

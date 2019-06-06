@@ -1,0 +1,51 @@
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url(nuke.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.mouseout{
+  height: 100%;
+  width: 5%;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0%;
+  background-color: #d3d3d3;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+  box-shadow: 8px 0px 12px 1px rgba(0,0,0,0.4);
+}
+
+.sidenav a {
+  padding: 1% 5% 1% 30%; /*adjust*/
+  text-decoration: none;
+  font-size: 30px;
+  color: #d3d3d3;
+  display: block;
+  transition: 0.3s;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+}
+
+.sidenav a:hover {
+  color: #000000;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
