@@ -60,10 +60,11 @@ p{
   border-radius: 25px;
   background: rgba(255,255,255,0.6);
   padding: 5%;
-  width: 60%;
+  width: 75%;
   height: 30%;
-  margin: 5% 15% 5% 15%;
+  margin: 5% 10% 5% 10%;
   transition: 0.5s;
+  transform: perspective(600px) rotateY(0deg);
 }
 h2{
   color: #000000;

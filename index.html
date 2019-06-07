@@ -32,13 +32,15 @@
 		function openNav() {
 		  document.getElementById("mySidenav").style.width = "20%";
 			document.getElementById("mouse").style.left = "20%";
-			document.getElementById("body").style.margin = "5% 15% 5% 35%";
+			document.getElementById("body").style.margin = "5% 10% 5% 35%";
+			document.getElementById("body").style.transform = "perspective(600px) rotateY(-10deg)";
 		}
 
 		function closeNav() {
 		  document.getElementById("mySidenav").style.width = "0%";
 			document.getElementById("mouse").style.left = "0%";
-			document.getElementById("body").style.margin = "5% 15% 5% 15%";
+			document.getElementById("body").style.margin = "5% 10% 5% 10%";
+			document.getElementById("body").style.transform = "perspective(600px) rotateY(0deg)";
 		}
 	</script>
 </body>
