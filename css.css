@@ -60,7 +60,7 @@ p{
   height: 30%;
   margin: 5% 10% 5% 10%;
   transition: 0.5s;
-  transform: perspective(600px) rotateY(0deg);
+  transform: perspective(600px) rotateY(0deg) scale(1);
 }
 h2{
   color: #000000;
