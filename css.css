@@ -16,7 +16,7 @@ body {
   background-color: transparent;
   overflow-x: hidden;
   transition: 0.5s;
-  padding-top: 60px;
+  padding-top: 5%;
 }
 .mouseout{
   height: 100%;
@@ -33,9 +33,9 @@ body {
 }
 
 .sidenav a {
-  padding: 1% 8% 8% 25%; /*adjust*/
+  padding: 1% 8% 8% 25%;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 2vw;
   color: #d3d3d3;
   display: block;
   transition: 0.5s;
@@ -46,12 +46,8 @@ body {
   color: #000000;
 }
 
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
 p{
-  font-size: 20px;
+  font-size: 1.4vw;
   padding: 1% 1% 1% 12%;/*top right bottom left*/
   color: #d3d3d3;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
@@ -69,5 +65,5 @@ p{
 h2{
   color: #000000;
   /*padding: 1%;*/
-  font-size: 20px;
+  font-size: 1.2vw;
 }
