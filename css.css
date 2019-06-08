@@ -34,11 +34,11 @@ body {
   z-index: 2;
   top: 0;
   left: 0%;
-  background-color: rgba(255, 255, 255, 0.2); /*menu tab colour*/
+  background-color: rgba(255, 255, 255, 0.3); /*menu tab colour*/
   overflow-x: hidden;
   padding-top: 1%;
   transition: 0.4s;
-  box-shadow: 10px 0px 15px 1px rgba(0,0,0,0.5);
+  /*box-shadow: 10px 0px 15px 1px rgba(0,0,0,0.5); might remove*/
 }
 
 .sidenav a {
@@ -47,7 +47,7 @@ body {
   font-size: 2vw;
   color: #d3d3d3;
   display: block;
-  transition: 0.3s;
+  transition: 0.4s;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
@@ -63,9 +63,20 @@ p{
 }
 
 .bodyText{
-  border-radius: 25px;
-  background: rgba(255,255,255,0.6);
-  padding: 5%;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.4);
+  padding: 2% 5% 5% 5%;
+  width: 75%;
+  height: 30%;
+  margin: 5% 10% 5% 10%;
+  transition: 0.4s;
+  transform: perspective(600px) rotateY(0deg) scale(1);
+}
+
+.bodyText2{
+  border-radius: 20px;
+  background: rgba(255,255,255,0.4);
+  padding: 2% 5% 5% 5%;
   width: 75%;
   height: 30%;
   margin: 5% 10% 5% 10%;
@@ -74,7 +85,7 @@ p{
 }
 
 h2{
-  color: #000000;
-  /*padding: 1%;*/
+  color: #1d1d1d;
+  padding-bottom: 2%;
   font-size: 1.2vw;
 }
