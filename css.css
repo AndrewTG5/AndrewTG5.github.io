@@ -1,6 +1,6 @@
 body {
-  font-family: "Lato", sans-serif;
-  background-image: url(nuke.jpg);
+  font-family: 'Noto Sans', sans-serif;
+  /*background-image: url(nuke.jpg);*/
   background-repeat: no-repeat;
   background-size: cover;
   background-color: #7EC0EE;
@@ -15,7 +15,7 @@ body {
   left: 0;
   background-color: transparent;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.4s;
   padding-top: 5%;
 }
 .mouseout{
@@ -28,7 +28,7 @@ body {
   background-color: rgba(255, 255, 255, 0.2); /*menu tab colour*/
   overflow-x: hidden;
   padding-top: 1%;
-  transition: 0.5s;
+  transition: 0.4s;
   box-shadow: 10px 0px 15px 1px rgba(0,0,0,0.5);
 }
 
@@ -38,7 +38,7 @@ body {
   font-size: 2vw;
   color: #d3d3d3;
   display: block;
-  transition: 0.5s;
+  transition: 0.3s;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
@@ -59,7 +59,7 @@ p{
   width: 75%;
   height: 30%;
   margin: 5% 10% 5% 10%;
-  transition: 0.5s;
+  transition: 0.4s;
   transform: perspective(600px) rotateY(0deg) scale(1);
 }
 h2{
