@@ -65,23 +65,23 @@ p{
 .bodyText{
   border-radius: 20px;
   background: rgba(255,255,255,0.4);
-  padding: 2% 5% 5% 5%;
+  padding: 2% 5% 7% 5%;
   width: 75%;
   height: 30%;
   margin: 5% 10% 5% 10%;
   transition: 0.4s;
-  transform: perspective(600px) rotateY(0deg) scale(1);
+  transform: scale(1);
 }
 
 .bodyText2{
   border-radius: 20px;
   background: rgba(255,255,255,0.4);
-  padding: 2% 5% 5% 5%;
+  padding: 2% 5% 0% 5%;
   width: 75%;
-  height: 30%;
+  height: 25%;
   margin: 5% 10% 5% 10%;
   transition: 0.4s;
-  transform: perspective(600px) rotateY(0deg) scale(1);
+  transform: scale(1);
 }
 
 h2{
