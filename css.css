@@ -73,20 +73,18 @@ p{
 .bodyText{
   border-radius: 20px;
   background: rgba(255,255,255,0.4);
-  padding: 2% 5% 7% 5%;
+  padding: 2% 5% 2% 5%;
   width: 75%;
-  height: 30%;
   margin: 2% 5% 3% 10%;
   transition: 0.4s;
   transform: scale(1);
-}/*need to fix padding*/
+}
 
 .bodyText2{
   border-radius: 20px;
   background: rgba(255,255,255,0.4);
-  padding: 2% 5% 0% 5%;
+  padding: 2% 5% 2% 5%;
   width: 75%;
-  height: 25%;
   margin: 1% 5% 1% 10%;
   transition: 0.4s;
   transform: scale(1);
