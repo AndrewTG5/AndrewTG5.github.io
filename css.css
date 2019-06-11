@@ -59,7 +59,7 @@ p{
   font-size: 1.4vw;
   padding: 1% 1% 1% 12%;/*top right bottom left*/
   color: #d3d3d3;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
 }
 
 .title{
@@ -68,7 +68,6 @@ p{
   color: rgba(255, 255, 255, 0.7);
   margin: 2% 5% 0% 11%;
   transition: 0.4s;
-  transform: scale(1);
 }
 
 .bodyText{
@@ -94,7 +93,7 @@ p{
 }
 
 h2{
-  color: rgb(28, 28, 28);
+  color: rgb(29, 29, 29);
   padding-bottom: 2%;
   font-size: 1.2vw;
 }
