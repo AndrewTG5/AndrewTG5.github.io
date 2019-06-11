@@ -43,7 +43,7 @@ body {
 
 .sidenav a {
   z-index: 2;
-  padding: 1% 0% 8% 25%; /*fix*/
+  padding: 0.7vw 0vw 1vw 25%;
   text-decoration: none;
   font-size: 2.4vw;
   color: #d3d3d3;
