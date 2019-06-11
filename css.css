@@ -79,7 +79,7 @@ p{
   margin: 2% 5% 3% 10%;
   transition: 0.4s;
   transform: scale(1);
-}
+}/*need to fix padding*/
 
 .bodyText2{
   border-radius: 20px;
