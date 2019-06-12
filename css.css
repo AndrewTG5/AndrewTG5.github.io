@@ -39,6 +39,7 @@ body {
   overflow-x: hidden;
   padding-top: 1%;
   transition: 0.4s;
+  box-shadow: 0px 0px 14px 2px rgba(0,0,0,0.25);/*keep?*/
 }
 
 .sidenav a {
@@ -50,11 +51,12 @@ body {
   display: block;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
-
+.sidenav a.active{
+  color: #000000;
+}
 .sidenav a:hover {
   color: #000000;
 }
-
 p{
   font-size: 1.4vw;
   padding: 1% 1% 1% 12%;/*top right bottom left*/
