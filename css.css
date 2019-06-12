@@ -57,22 +57,25 @@ body {
 .sidenav a:hover {
   color: #000000;
 }
-p{
+.flyoutTab{
   font-size: 1.4vw;
-  padding: 1% 1% 1% 12%;/*top right bottom left*/
+  padding: 5% 1% 1% 12%;/*top right bottom left*/
   color: #d3d3d3;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
 }
 
 .title{
+  will-change: transform;
   font-size: 3vw;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   color: rgba(255, 255, 255, 0.7);
   margin: 2% 5% 0% 11%;
   transition: 0.4s;
+  transform: scale(1);
 }
 
 .bodyText{
+  will-change: transform;
   border-radius: 20px;
   background: rgba(255,255,255,0.4);
   padding: 2% 5% 2% 5%;
