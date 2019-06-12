@@ -80,16 +80,6 @@ p{
   transform: scale(1);
 }
 
-.bodyText2{
-  border-radius: 20px;
-  background: rgba(255,255,255,0.4);
-  padding: 2% 5% 2% 5%;
-  width: 75%;
-  margin: 1% 5% 1% 10%;
-  transition: 0.4s;
-  transform: scale(1);
-}
-
 h2{
   color: rgb(29, 29, 29);
   font-size: 1.3vw;
