@@ -1,4 +1,4 @@
-body {
+body{
   font-family: 'Noto Sans', sans-serif;
   width: 100wh;
   height: 90vh;
@@ -8,13 +8,13 @@ body {
   animation: Gradient 15s ease infinite;
 }
 
-@keyframes Gradient {
+@keyframes Gradient{
 	0%   {background-position: 0% 50%}
 	50%  {background-position: 100% 50%}
 	100% {background-position: 0% 50%}
 }
 
-.sidenav {
+.sidenav{
   height: 100%;
   width: 0%;
   position: fixed;
@@ -42,7 +42,7 @@ body {
   box-shadow: 0px 0px 14px 2px rgba(0,0,0,0.25);/*keep?*/
 }
 
-.sidenav a {
+.sidenav a{
   z-index: 2;
   padding: 0.7vw 0vw 1vw 25%;
   text-decoration: none;
@@ -51,12 +51,14 @@ body {
   display: block;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
+
 .sidenav a.active{
   color: #000000;
 }
-.sidenav a:hover {
+.sidenav a:hover{
   color: #000000;
 }
+
 .flyoutTab{
   font-size: 1.4vw;
   padding: 5% 1% 1% 12%;/*top right bottom left*/
@@ -66,7 +68,7 @@ body {
 
 .title{
   will-change: transform;
-  font-size: 3vw;
+  font-size: 300%;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   color: rgba(255, 255, 255, 0.7);
   margin: 2% 5% 0% 11%;
@@ -87,5 +89,5 @@ body {
 
 h2{
   color: rgb(29, 29, 29);
-  font-size: 1.3vw;
+  font-size: 100%;
 }
