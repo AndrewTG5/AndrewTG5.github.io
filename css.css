@@ -46,7 +46,7 @@ body{
   z-index: 2;
   padding: 0.7vw 0vw 1vw 25%;
   text-decoration: none;
-  font-size: 2.4vw;
+  font-size: 2.6vw;
   color: #d3d3d3;
   display: block;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
@@ -60,8 +60,10 @@ body{
 }
 
 .flyoutTab{
-  font-size: 1.4vw;
-  padding: 5% 1% 1% 12%;/*top right bottom left*/
+  transform: rotate(-90deg);
+  font-size: 200%;
+  /*padding: 5% 25% 5% 0%;/*top right bottom left*/
+  margin: 80% 5% 10% 5%;
   color: #d3d3d3;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
 }
