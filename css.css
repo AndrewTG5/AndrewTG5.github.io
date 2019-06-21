@@ -60,12 +60,11 @@ body{
 }
 
 .flyoutTab{
-  transform: rotate(-90deg);
-  font-size: 200%;
-  /*padding: 5% 25% 5% 0%;/*top right bottom left*/
-  margin: 80% 5% 10% 5%;
+  font-size: 4vw;
+  padding: 5% 5% 0% 5%;/*top right bottom left*/
   color: #d3d3d3;
   text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+  text-align: center;
 }
 
 .title{
