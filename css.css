@@ -2,7 +2,7 @@ body{
   font-family: 'Noto Sans', sans-serif;
   width: 100vw;
   height: 100vh;
-  color: #fff;
+  /*color: #fff; dont need?*/
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
   background-size: 400% 400%;
   animation: Gradient 15s ease infinite;
@@ -43,9 +43,9 @@ body{
 
 .sidenav a{
   z-index: 2;
-  padding: 0.8vw 0vw 1vw 25%;
+  padding: 0.8vw 0vw 1.2vw 25%;
   text-decoration: none;
-  font-size: 2.6vw;
+  font-size: 2.8vw;
   color: #d3d3d3;
   display: block;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
@@ -68,11 +68,11 @@ body{
   text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
-.title{
+.title{/*need fix*/
   font-size: 300%;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   color: rgba(255, 255, 255, 0.7);
-  margin: 2% 5% 0% 11%;
+  margin: 1% 0% 1.5% 11%;
   font-weight: 400;
 }
 
@@ -81,7 +81,7 @@ body{
   background: rgba(255,255,255,0.4);
   padding: 2% 5% 2% 5%;
   width: 75%;
-  margin: 2% 5% 3% 10%;
+  margin: 0 0 2% 10%;
 }
 
 h2{
