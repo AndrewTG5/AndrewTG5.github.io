@@ -38,7 +38,7 @@ body{
   backdrop-filter: blur(10px);
 }
 
-.sidenav a{
+.sidenav a{ /*can have gaps in text with alt 0160*/
   z-index: 2;
   padding: 0.8vw 0vw 1.2vw 25%;
   text-decoration: none;
