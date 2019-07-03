@@ -38,7 +38,7 @@ body{
   backdrop-filter: blur(10px);
 }
 
-.sidenav a{ /*can have gaps in text with alt 0160*/
+.sidenav a{ /*menu pane links. can have gaps in text with alt 0160*/
   z-index: 2;
   padding: 0.8vw 0vw 1.2vw 25%;
   text-decoration: none;
@@ -55,7 +55,7 @@ body{
   color: #000000;
 }
 
-.flyoutTab{
+.flyoutTab{ /*mouseout label*/
   z-index: 4;
   font-size: 1.5vw;
   padding: 15% 5% 0% 5%;/*top right bottom left*/
@@ -65,7 +65,7 @@ body{
   text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
 }
 
-.title{
+.title{ /*body title*/
   font-size: 300%;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   color: rgba(255, 255, 255, 0.7);
@@ -73,7 +73,7 @@ body{
   font-weight: 400;
 }
 
-.bodyText{
+.bodyText{ /*body text boxes*/
   border-radius: 20px;
   background: rgba(255,255,255,0.4);
   padding: 2% 5% 2% 5%;
@@ -81,12 +81,12 @@ body{
   margin: 0% 0% 2% 10%;
 }
 
-h2{
+h2{ /*body text*/
   color: rgb(29, 29, 29);
   font-size: 100%;
 }
 
-img{
+img{ /*images*/
   float: left;
-  padding: 0 5% 5% 0;
+  padding: 0% 4% 4% 0%;
 }
