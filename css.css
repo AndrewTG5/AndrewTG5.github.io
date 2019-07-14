@@ -84,6 +84,7 @@ h2{ /*body text*/
 }
 
 img{ /*images*/
+  width: 40vh; /*image size*/
   float: left; /*image will be next to text*/
-  padding: 0% 5% 5% 0%;
+  margin: 0% 5% 5% 0%;
 }
