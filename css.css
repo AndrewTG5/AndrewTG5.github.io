@@ -12,47 +12,44 @@ body{
 }
 
 .sidenav{ /*menu pane*/
-  height: 100%;
-  width: 0%;
+  height: 100%; /*pane fills site verticly*/
+  width: 0%; /*pane takes up 0% of page width, changed with js to open pane*/
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.1); /*pane bg colour*/
   overflow-x: hidden; /*menu wont make a scrollbar*/
-  transition: 0.3s;
-  padding-top: 4%;
-  backdrop-filter: blur(5px);/*one at a time?*/
+  transition: 0.3s; /*animate js change*/
+  padding-top: 4%; /*moves links down*/
+  backdrop-filter: blur(5px); /*blurs behind pane*/
 }
 
 .mouseout{ /*menu bar*/
-  height: 100%;
-  width: 5%;
+  height: 100%; /*bar fills site verticly*/
+  width: 5%; /*bar takes up 5% of page horizontally*/
   position: fixed;
   z-index: 3;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.3);
-  overflow-x: hidden;
-  transition: 0.3s;
-  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3); /*bar bg colour*/
+  overflow-x: hidden; /*bar wont make a scrollbar*/
+  transition: 0.3s;/*animate js change*/
+  backdrop-filter: blur(10px); /*blurs behind bar*/
 }
 
 .sidenav a{ /*menu pane links. can have gaps in text with alt 0160*/
   z-index: 2;
-  padding: 0.8vw 0vw 1.2vw 25%;
+  padding: 0.8vw 0vw 1.2vw 25%; /*padding for links in menu, vw for fixed, % will animate as menu opens*/
   text-decoration: none; /*removes link styling*/
-  font-size: 2.8vw;
-  color: rgb(210, 210, 210);
+  font-size: 2.8vw; /*font size of links*/
+  color: rgb(210, 210, 210); /*link colour*/
   display: block;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
-.sidenav a.active{
-  color: #000000;
-}
-.sidenav a:hover{
-  color: #000000;
+.sidenav a.active, .sidenav a:hover{
+  color: #000000; /*link colour when active or hovered*/
 }
 
 .flyoutTab{ /*mouseout label*/
@@ -70,14 +67,14 @@ body{
 .title{ /*body title*/
   font-size: 300%;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7); /*text colour*/
   margin: 1% 0% 1.5% 11%;
-  font-weight: 400;
+  font-weight: 400; /*not bold*/
 }
 
 .bodyText{ /*body text boxes*/
   border-radius: 20px; /*rounded corners*/
-  background: rgba(255,255,255,0.4);
+  background: rgba(255,255,255,0.4); /*box colour, behind the text*/
   padding: 2% 5% 2% 5%;
   width: 75%; /*box will fill up % of site width*/
   margin: 0% 0% 4vh 10%;
@@ -90,6 +87,6 @@ h2{ /*body text*/
 
 .bodyImg{ /*body images*/
   float: left; /*image will be next to text*/
-  padding: 0% 5% 5% 0%;
+  margin: 0% 5% 5% 0%;
 }
 /*top right bottom left*/
