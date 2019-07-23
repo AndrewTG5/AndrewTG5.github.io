@@ -57,12 +57,14 @@ body{
 
 .flyoutTab{ /*mouseout label*/
   z-index: 4;
-  font-size: 1.5vw;
-  padding: 15% 5% 0% 5%;/*top right bottom left*/
+  width: 4vw;
+  padding: 15% 0 0 10%;
+  /*font-size: 1.5vw;
+  padding: 15% 5% 0% 5%;
   color: #d3d3d3;
   text-align: center;
   font-weight: 700;
-  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.6);*/
 }
 
 .title{ /*body title*/
@@ -86,7 +88,8 @@ h2{ /*body text*/
   font-size: 100%;
 }
 
-img{ /*images*/
+.bodyImg{ /*body images*/
   float: left; /*image will be next to text*/
   padding: 0% 5% 5% 0%;
 }
+/*top right bottom left*/
