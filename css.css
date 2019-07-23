@@ -75,7 +75,8 @@ h2{ /*body text*/
 
 .bodyImg{ /*body images*/
   float: left; /*image will be next to text*/
-  margin: 0% 5% 5% 0%;
+  margin: -2% 2% 2% -5%;
+  width: 30vh;
 }
 /*top right bottom left*/
 
