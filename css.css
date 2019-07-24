@@ -1,5 +1,5 @@
 body{
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Noto Sans', sans-serif; /*font*/
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB); /*background gradient*/
   background-size: 400% 400%; /*makes background large enough to be animatable*/
   animation: Gradient 15s ease infinite; /*gradient animation*/
@@ -33,7 +33,7 @@ body{
   left: 0;
   overflow-x: hidden; /*wont make a scrollbar*/
   transition: 0.3s;/*animate js change*/
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(10px);
 }
 
 .mouseout{ /*menu bar*/
@@ -57,7 +57,7 @@ body{
   left: 22%;
   overflow-x: hidden; /*wont make a scrollbar*/
   transition: 0.3s;/*animate js change*/
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(15px);
 }
 
 .sidenav a{ /*menu pane links. can have gaps in text with alt 0160*/
@@ -87,7 +87,7 @@ body{
   background: rgba(255,255,255,0.4); /*box colour, behind the text*/
   padding: 2% 5% 2% 5%;
   width: 75%; /*box will fill up % of site width*/
-  margin: 0% 0% 2% 10%;
+  margin: 0% 0% 2.5% 10%;
 }
 
 h2{ /*body text*/
@@ -107,7 +107,7 @@ h2{ /*body text*/
 .bodyImg{ /*body images*/
   border-radius: 20px; /*rounded corners*/
   background: rgba(255,255,255,0.4); /*box colour, behind the text*/
-  padding: 3% 5% 3% 5%;
+  padding: 3.5% 5% 3.5% 5%;
   width: 20%; /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
 }
@@ -151,10 +151,10 @@ h2{ /*body text*/
 }
 
   .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{ /*bar style*/
-    width: 3vw;
-    height: 0.3vw;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-radius: 4px;
+    width: 3vw; /*bar width*/
+    height: 0.3vw; /*bar height*/
+    background-color: rgba(255, 255, 255, 0.7); /*bar colour*/
+    border-radius: 4px; /*round corners*/
     position: absolute;
     transition-property: transform;
     transition-duration: 0.15s;
