@@ -22,17 +22,6 @@ body{
   overflow-x: hidden; /*menu wont make a scrollbar*/
   transition: 0.3s; /*animate js change*/
   padding-top: 4%; /*moves links down*/
-}
-
-.sideNavblur{ /*layer to blur behind the menu*/
-  height: 100%; /*pane fills site verticly*/
-  width: 22%; /*pane takes up 0% of page width, changed with js to open pane*/
-  position: fixed; /*wont be effected by other elements*/
-  z-index: 0;
-  top: 0;
-  left: 0;
-  overflow-x: hidden; /*wont make a scrollbar*/
-  transition: 0.3s;/*animate js change*/
   backdrop-filter: blur(10px);
 }
 
