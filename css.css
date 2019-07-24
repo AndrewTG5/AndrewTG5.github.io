@@ -14,7 +14,7 @@ body{
 .sidenav{ /*menu pane*/
   height: 100%; /*pane fills site verticly*/
   width: 0%; /*pane takes up 0% of page width, changed with js to open pane*/
-  position: fixed;
+  position: fixed; /*wont be effected by other elements*/
   z-index: 1;
   top: 0;
   left: 0;
@@ -24,14 +24,14 @@ body{
   padding-top: 4%; /*moves links down*/
 }
 
-.sideNavblur{
-  height: 100%;
-  width: 0%;
-  position: fixed;
+.sideNavblur{ /*layer to blur behind the menu*/
+  height: 100%; /*pane fills site verticly*/
+  width: 0%; /*pane takes up 0% of page width, changed with js to open pane*/
+  position: fixed; /*wont be effected by other elements*/
   z-index: 0;
   top: 0;
   left: 0;
-  overflow-x: hidden;
+  overflow-x: hidden; /*wont make a scrollbar*/
   transition: 0.3s;/*animate js change*/
   backdrop-filter: blur(5px);
 }
@@ -39,23 +39,23 @@ body{
 .mouseout{ /*menu bar*/
   height: 100%; /*bar fills site verticly*/
   width: 5%; /*bar takes up 5% of page horizontally*/
-  position: fixed;
+  position: fixed; /*wont be effected by other elements*/
   z-index: 3;
   top: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.3); /*bar bg colour*/
-  overflow-x: hidden; /*bar wont make a scrollbar*/
+  overflow-x: hidden; /*wont make a scrollbar*/
   transition: 0.3s;/*animate js change*/
 }
 
-.mouseoutBlur{
-  height: 100%;
-  width: 5%;
-  position: fixed;
+.mouseoutBlur{ /*layer to blur behind menu tab*/
+  height: 100%; /*bar fills site verticly*/
+  width: 5%; /*bar takes up 5% of page horizontally*/
+  position: fixed; /*wont be effected by other elements*/
   z-index: 0;
   top: 0;
   left: 0;
-  overflow-x: hidden;
+  overflow-x: hidden; /*wont make a scrollbar*/
   transition: 0.3s;/*animate js change*/
   backdrop-filter: blur(10px);
 }
@@ -87,7 +87,7 @@ body{
   background: rgba(255,255,255,0.4); /*box colour, behind the text*/
   padding: 2% 5% 2% 5%;
   width: 75%; /*box will fill up % of site width*/
-  margin: 0% 0% 4vh 10%;
+  margin: 0% 0% 2% 10%;
 }
 
 h2{ /*body text*/
@@ -95,42 +95,62 @@ h2{ /*body text*/
   font-size: 100%;
 }
 
-.bodyImg{ /*body images*/
-  float: left; /*image will be next to text*/
-  margin: -2% 2% 2% -5%;
-  width: 30vh;
+.bodyTextIMG{ /*body text boxes*/
+  border-radius: 20px; /*rounded corners*/
+  background: rgba(255,255,255,0.4); /*box colour, behind the text*/
+  padding: 2% 5% 2% 5%;
+  width: 43%; /*box will fill up % of site width*/
+  margin: 0% 5% 2% 0%;
+  float: right; /*moves to the right of the page*/
 }
+
+.bodyImg{ /*body images*/
+  border-radius: 20px; /*rounded corners*/
+  background: rgba(255,255,255,0.4); /*box colour, behind the text*/
+  padding: 3% 5% 3% 5%;
+  width: 20%; /*box will fill up % of site width*/
+  margin: 0% 0% 2% 10%;
+}
+
+@media (orientation:portrait){ /*when viewport is portrait, make these changes to css*/
+  .bodyTextIMG{
+    width: 75%; /*box will fill up % of site width*/
+    float: none;
+    margin: 0% 0% 2% 10%;
+  }
+  .bodyImg{
+    width: 75%; /*box will fill up % of site width*/
+  }
+}
+
 /*top right bottom left*/
 
-.hamburger{
+.hamburger{ /*container*/
   padding: 15% 0 0 20%;
   display: inline-block;
   transition-property: opacity, filter;
   transition-duration: 0.15s;
   transition-timing-function: linear;
-  font: inherit;
-  color: inherit;
-  text-transform: none;
   background-color: transparent;
   border: 0;
   margin: 0;
   overflow: visible;
 }
 
-.hamburger-box{
+.hamburger-box{ /*container*/
   width: 3vw;
   height: 3vw;
   display: inline-block;
   position: relative;
 }
 
-.hamburger-inner{
+.hamburger-inner{ /*center bar*/
   display: block;
   top: 50%;
   margin-top: -2px;
 }
 
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{ /*bar style*/
     width: 3vw;
     height: 0.3vw;
     background-color: rgba(255, 255, 255, 0.7);
@@ -141,34 +161,33 @@ h2{ /*body text*/
     transition-timing-function: ease;
 }
 
-  .hamburger-inner::before, .hamburger-inner::after{
+  .hamburger-inner::before{ /*extra bar*/
+    top: -1vw; /*bar padding*/
     content: "";
     display: block;
 }
 
-  .hamburger-inner::before{
-    top: -1vw; /*bar padding*/
-}
-
-  .hamburger-inner::after{
+  .hamburger-inner::after{ /*extra bar*/
     bottom: -1vw; /*bar padding*/
+    content: "";
+    display: block;
 }
 
-.hamburger--arrowalt .hamburger-inner::before{
+.hamburger--arrowalt .hamburger-inner::before{ /*transition closed*/
   transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.hamburger--arrowalt .hamburger-inner::after{
+.hamburger--arrowalt .hamburger-inner::after{ /*transition closed*/
   transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.hamburger--arrowalt.is-active .hamburger-inner::before{
+.hamburger--arrowalt.is-active .hamburger-inner::before{ /*transition open*/
   top: 0;
   transform: translate3d(-30%, -195%, 0) rotate(-45deg) scale(0.7, 1);
   transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
-.hamburger--arrowalt.is-active .hamburger-inner::after{
+.hamburger--arrowalt.is-active .hamburger-inner::after{ /*transition open*/
   bottom: 0;
   transform: translate3d(-30%, 195%, 0) rotate(45deg) scale(0.7, 1);
   transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
