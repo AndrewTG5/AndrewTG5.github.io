@@ -13,7 +13,7 @@ body{
 
 .sidenav{ /*menu pane*/
   height: 100%; /*pane fills site verticly*/
-  width: 0%; /*pane takes up 0% of page width, changed with js to open pane*/
+  width: 22%; /*pane takes up 0% of page width, changed with js to open pane*/
   position: fixed; /*wont be effected by other elements*/
   z-index: 1;
   top: 0;
@@ -26,7 +26,7 @@ body{
 
 .sideNavblur{ /*layer to blur behind the menu*/
   height: 100%; /*pane fills site verticly*/
-  width: 0%; /*pane takes up 0% of page width, changed with js to open pane*/
+  width: 22%; /*pane takes up 0% of page width, changed with js to open pane*/
   position: fixed; /*wont be effected by other elements*/
   z-index: 0;
   top: 0;
@@ -42,7 +42,7 @@ body{
   position: fixed; /*wont be effected by other elements*/
   z-index: 3;
   top: 0;
-  left: 0;
+  left: 22%;
   background-color: rgba(255, 255, 255, 0.3); /*bar bg colour*/
   overflow-x: hidden; /*wont make a scrollbar*/
   transition: 0.3s;/*animate js change*/
@@ -54,7 +54,7 @@ body{
   position: fixed; /*wont be effected by other elements*/
   z-index: 0;
   top: 0;
-  left: 0;
+  left: 22%;
   overflow-x: hidden; /*wont make a scrollbar*/
   transition: 0.3s;/*animate js change*/
   backdrop-filter: blur(10px);
