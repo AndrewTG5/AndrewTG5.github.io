@@ -120,8 +120,6 @@ h2{ /*body text*/
   transition-property: opacity, filter;
   transition-duration: 0.15s;
   transition-timing-function: linear;
-  background-color: transparent;
-  border: 0;
   margin: 0;
   overflow: visible;
 }
@@ -136,10 +134,10 @@ h2{ /*body text*/
 .hamburger-inner{ /*center bar*/
   display: block;
   top: 50%;
-  margin-top: -2px;
+  margin-top: -0.1vw;
 }
 
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{ /*bar style*/
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{ /*bar style*/
     width: 3vw; /*bar width*/
     height: 0.3vw; /*bar height*/
     background-color: rgba(255, 255, 255, 0.7); /*bar colour*/
@@ -150,13 +148,13 @@ h2{ /*body text*/
     transition-timing-function: ease;
 }
 
-  .hamburger-inner::before{ /*extra bar*/
+.hamburger-inner::before{ /*extra bar*/
     top: -1vw; /*bar padding*/
     content: "";
     display: block;
 }
 
-  .hamburger-inner::after{ /*extra bar*/
+.hamburger-inner::after{ /*extra bar*/
     bottom: -1vw; /*bar padding*/
     content: "";
     display: block;
