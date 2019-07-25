@@ -105,7 +105,7 @@ h2{ /*body text*/
   .bodyTextIMG{
     width: 75%; /*box will fill up % of site width*/
     float: none;
-    margin: 0% 0% 2% 10%;
+    margin: -0.5% 0% 2% 10%;
   }
   .bodyImg{
     width: 75%; /*box will fill up % of site width*/
