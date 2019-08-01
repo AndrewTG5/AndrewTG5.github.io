@@ -20,9 +20,9 @@ body{
   left: 0;
   background-color: rgba(255, 255, 255, 0.1); /*pane bg colour*/
   overflow-x: hidden; /*menu wont make a scrollbar*/
-  transition: width 0.3s ease; /*animate js change*/
+  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1); /*animate js change*/
   padding-top: 4%; /*moves links down*/
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px); /*blurs behind*/
 }
 
 .mouseout{ /*menu bar*/
@@ -34,7 +34,7 @@ body{
   left: 22%;
   background-color: rgba(255, 255, 255, 0.3); /*bar bg colour*/
   overflow-x: hidden; /*wont make a scrollbar*/
-  transition: left 0.3s ease;/*animate js change*/
+  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
 }
 
 .mouseoutBlur{ /*layer to blur behind menu tab*/
@@ -45,8 +45,8 @@ body{
   top: 0;
   left: 22%;
   overflow-x: hidden; /*wont make a scrollbar*/
-  transition: left 0.3s ease;/*animate js change*/
-  backdrop-filter: blur(15px);
+  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
+  backdrop-filter: blur(15px); /*blurs behind*/
 }
 
 .sidenav a{ /*menu pane links. can have gaps in text with alt 0160*/
