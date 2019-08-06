@@ -167,11 +167,11 @@ h2{ /*body text*/
 .hamburger--arrowalt.is-active .hamburger-inner::before{ /*transition open*/
   top: 0;
   transform: translate3d(-30%, -195%, 0) rotate(-45deg) scale(0.7, 1);
-  transition: top 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: top 0.15s ease, transform 0.05s 0.05s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .hamburger--arrowalt.is-active .hamburger-inner::after{ /*transition open*/
   bottom: 0;
   transform: translate3d(-30%, 195%, 0) rotate(45deg) scale(0.7, 1);
-  transition: bottom 0.1s ease, transform 0.1s 0.1s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: bottom 0.15s ease, transform 0.05s 0.05s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
