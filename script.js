@@ -13,5 +13,5 @@ function closeNav() {
   document.getElementById("mySidenav").style.width = "0%"; //size of the menu when closed
   document.getElementById("mouse").style.left = "0%"; //moves the menu bar over with the menu
   document.getElementById("mouseBlur").style.left = "0%"; //moves the menu bar over with the menu
-  document.getElementById("mouse").style.boxShadow = "-4px 1px 15px -5px rgba(0,0,0,0.5)";
+  document.getElementById("mouse").style.boxShadow = "-4px 1px 15px -4px rgba(0,0,0,0.5)";
 }

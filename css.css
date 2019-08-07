@@ -35,7 +35,7 @@ body{
   background-color: rgba(255, 255, 255, 0.3); /*bar bg colour*/
   overflow-x: hidden; /*wont make a scrollbar*/
   transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
-  box-shadow: -4px 1px 15px -5px rgba(0,0,0,0.5);
+  box-shadow: -4px 1px 15px -4px rgba(0,0,0,0.5);
 }
 
 .mouseoutBlur{ /*layer to blur behind menu tab*/
@@ -61,7 +61,7 @@ body{
 }
 
 .sidenav a.active, .sidenav a:hover{
-  color: #000000; /*link colour when active or hovered*/
+  color: rgb(0, 0, 0); /*link colour when active or hovered*/
 }
 
 .title{ /*body title*/
@@ -73,33 +73,36 @@ body{
 }
 
 .bodyText{ /*body text boxes*/
-  border-radius: 20px; /*rounded corners*/
+  border-radius: 18px; /*rounded corners*/
   background: rgba(255,255,255,0.4); /*box colour, behind the text*/
   padding: 2% 5% 2% 5%;
   width: 75%; /*box will fill up % of site width*/
   margin: 0% 0% 2.5% 10%;
+  box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
 }
 
 h2{ /*body text*/
-  color: rgb(29, 29, 29);
+  color: rgb(15, 15, 15);
   font-size: 100%;
 }
 
 .bodyTextIMG{ /*body text boxes*/
-  border-radius: 20px; /*rounded corners*/
+  border-radius: 18px; /*rounded corners*/
   background: rgba(255,255,255,0.4); /*box colour, behind the text*/
   padding: 2% 5% 2% 5%;
   width: 43%; /*box will fill up % of site width*/
   margin: 0% 5% 2% 0%;
   float: right; /*moves to the right of the page*/
+  box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
 }
 
 .bodyImg{ /*body images*/
-  border-radius: 20px; /*rounded corners*/
+  border-radius: 18px; /*rounded corners*/
   background: rgba(255,255,255,0.4); /*box colour, behind the text*/
   padding: 3.5% 5% 3.5% 5%;
   width: 20%; /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
+  box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
 }
 
 @media (orientation:portrait){ /*when viewport is portrait, make these changes to css*/
@@ -142,7 +145,8 @@ h2{ /*body text*/
     background-color: rgba(255, 255, 255, 0.7); /*bar colour*/
     border-radius: 4px; /*round corners*/
     position: absolute;
-    transition: transform 0.15 ease;
+    transition: transform 0.15s ease;
+    box-shadow: 3px 3px 15px -1px rgba(0,0,0,0.5);
 }
 
 .hamburger-inner::before{ /*extra bar*/
