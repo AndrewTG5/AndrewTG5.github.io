@@ -38,15 +38,12 @@ body{
   box-shadow: -4px 1px 15px -4px rgba(0,0,0,0.5);
 }
 
-.mouseoutBlur{ /*layer to blur behind menu tab*/
-  height: 100%; /*bar fills site verticly*/
-  width: 5%; /*bar takes up 5% of page horizontally*/
-  position: fixed; /*wont be effected by other elements*/
+.Blur{ /*layer to blur behind menu tab*/
   z-index: 0;
-  top: 0;
   left: 22%;
-  overflow-x: hidden; /*wont make a scrollbar*/
+  background-color: rgba(255, 255, 255, 0); /*bar bg colour*/
   transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
+  box-shadow: none;
   backdrop-filter: blur(15px); /*blurs behind*/
 }
 
@@ -86,14 +83,10 @@ h2{ /*body text*/
   font-size: 100%;
 }
 
-.bodyTextIMG{ /*body text boxes*/
-  border-radius: 18px; /*rounded corners*/
-  background: rgba(255,255,255,0.4); /*box colour, behind the text*/
-  padding: 2% 5% 2% 5%;
+.TextImg{ /*body text boxes*/
   width: 43%; /*box will fill up % of site width*/
   margin: 0% 5% 2% 0%;
   float: right; /*moves to the right of the page*/
-  box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
 }
 
 .bodyImg{ /*body images*/
@@ -106,7 +99,7 @@ h2{ /*body text*/
 }
 
 @media (orientation:portrait){ /*when viewport is portrait, make these changes to css*/
-  .bodyTextIMG{
+  .TextImg{
     width: 75%; /*box will fill up % of site width*/
     float: none;
     margin: -0.5% 0% 2% 10%;
