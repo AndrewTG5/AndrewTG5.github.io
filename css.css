@@ -54,7 +54,7 @@ body{
   font-size: 2.8vw; /*font size of links*/
   color: rgb(210, 210, 210); /*link colour*/
   display: block;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
 }
 
 .sidenav a.active, .sidenav a:hover{
@@ -81,6 +81,7 @@ body{
 h2{ /*body text*/
   color: rgb(15, 15, 15);
   font-size: 100%;
+  text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.5);
 }
 
 .TextImg{ /*body text boxes*/
@@ -166,12 +167,17 @@ h2{ /*body text*/
 
 .hamburger--arrowalt.is-active .hamburger-inner::before{ /*transition open*/
   top: 0;
-  transform: translate3d(-30%, -195%, 0) rotate(-45deg) scale(0.7, 1);
-  transition: top 0.15s ease, transform 0.05s 0.05s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transform: translate3d(-38%, -200%, 0) rotate(-45deg) scale(0.7, 1);
+  transition: top 0.15s ease, transform 0.07s 0.07s ease-in-out;
 }
 
 .hamburger--arrowalt.is-active .hamburger-inner::after{ /*transition open*/
   bottom: 0;
-  transform: translate3d(-30%, 195%, 0) rotate(45deg) scale(0.7, 1);
-  transition: bottom 0.15s ease, transform 0.05s 0.05s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transform: translate3d(-38%, 200%, 0) rotate(45deg) scale(0.7, 1);
+  transition: bottom 0.15s ease, transform 0.07s 0.07s ease-in-out;
+}
+
+.hamburger.is-active{
+  padding-left: 25%;
+  transition: padding-left 0.15s ease;
 }
