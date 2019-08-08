@@ -54,7 +54,7 @@ body{
   font-size: 2.8vw; /*font size of links*/
   color: rgb(210, 210, 210); /*link colour*/
   display: block;
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
 }
 
 .sidenav a.active, .sidenav a:hover{
@@ -64,7 +64,7 @@ body{
 .title{ /*body title*/
   font-size: 300%;
   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
-  color: rgba(255, 255, 255, 0.7); /*text colour*/
+  color: rgba(255, 255, 255, 0.8); /*text colour*/
   margin: 1% 0% 1.5% 11%;
   font-weight: 400; /*not bold*/
 }
@@ -74,7 +74,7 @@ body{
   background: rgba(255,255,255,0.4); /*box colour, behind the text*/
   padding: 2% 5% 2% 5%;
   width: 75%; /*box will fill up % of site width*/
-  margin: 0% 0% 2.5% 10%;
+  margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
 }
 
@@ -107,7 +107,7 @@ h2{ /*body text*/
 
   .bodyImg{
     width: 75%; /*box will fill up % of site width*/
-    margin: 1% 0% 3% 10%;
+    margin: 1.5% 0% 3% 10%;
   }
 }
 
