@@ -117,31 +117,30 @@ p{ /*body text*/
   }
 
   .mouseout{
-    background-color: rgba(0, 0, 0, 0.3); /*bar bg colour*/
+    background-color: rgba(0, 0, 0, 0.4); /*bar bg colour*/
   }
 
   .sidenav a{
-    color: rgba(0, 0, 0, 0.75); /*link colour*/
+    color: rgb(0, 0, 0); /*link colour*/
   }
 
   .sidenav a.active, .sidenav a:hover{
-    color: rgb(255, 255, 255); /*link colour when active or hovered*/
+    color: rgba(255, 255, 255, 0.75); /*link colour when active or hovered*/
   }
 
   .bodyText{
-    background: rgba(0, 0, 0, 0.4); /*box colour, behind the text*/
+    background: rgba(0, 0, 0, 0.6); /*box colour, behind the text*/
   }
 
   p{
-    color: rgb(255, 255, 255);
+    color: rgb(235, 235, 235);
   }
 
   .bodyImg{
-    background: rgba(0, 0, 0, 0.4); /*box colour, behind the text*/
+    background: rgba(0, 0, 0, 0.6); /*box colour, behind the text*/
   }
-
-  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{
-    background-color: rgba(0, 0, 0, 0.7); /*bar colour*/
+  .title{ /*body title*/
+    color: rgba(255, 255, 255, 0.9); /*text colour*/
   }
 }
 
