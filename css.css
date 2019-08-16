@@ -111,7 +111,7 @@ p{ /*body text*/
   }
 }
 
-@media (prefers-color-scheme: dark){ /*system dark theme checker*/
+@media (prefers-color-scheme: light){ /*system dark theme checker*/
   .sidenav{
     background-color: rgba(0, 0, 0, 0.1); /*pane bg colour*/
   }
@@ -122,10 +122,12 @@ p{ /*body text*/
 
   .sidenav a{
     color: rgb(0, 0, 0); /*link colour*/
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.75);
   }
 
   .sidenav a.active, .sidenav a:hover{
-    color: rgba(255, 255, 255, 0.75); /*link colour when active or hovered*/
+    color: rgba(255, 255, 255, 0.8); /*link colour when active or hovered*/
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.75);
   }
 
   .bodyText{
