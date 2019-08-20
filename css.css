@@ -98,58 +98,8 @@ p{ /*body text*/
   box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
 }
 
-@media (orientation:portrait){ /*when viewport is portrait, make these changes to css*/
-  .TextImg{
-    width: 75%; /*box will fill up % of site width*/
-    float: none;
-    margin: 0% 0% 4% 10%;
-  }
-
-  .bodyImg{
-    width: 75%; /*box will fill up % of site width*/
-    margin: 1.5% 0% 3% 10%;
-  }
-}
-
-@media (prefers-color-scheme: dark){ /*system dark theme checker*/
-  .sidenav{
-    background-color: rgba(0, 0, 0, 0.1); /*pane bg colour*/
-  }
-
-  .mouseout{
-    background-color: rgba(0, 0, 0, 0.4); /*bar bg colour*/
-  }
-
-  .sidenav a{
-    color: rgb(0, 0, 0); /*link colour*/
-    text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.75); /*change*/
-  }
-
-  .sidenav a.active, .sidenav a:hover{
-    color: rgba(255, 255, 255, 0.8); /*link colour when active or hovered*/
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.75);
-  }
-
-  .bodyText{
-    background: rgba(0, 0, 0, 0.6); /*box colour, behind the text*/
-  }
-
-  p{
-    color: rgb(235, 235, 235);
-  }
-
-  .bodyImg{
-    background: rgba(0, 0, 0, 0.6); /*box colour, behind the text*/
-  }
-  .title{ /*body title*/
-    color: rgba(255, 255, 255, 0.9); /*text colour*/
-  }
-}
-
-/*top right bottom left*/
-
 .hamburger{ /*container*/
-  padding: 15% 0 0 20%;
+  padding: 14% 0 0 19%;
   display: inline-block;
   margin: 0;
   overflow: visible;
@@ -165,7 +115,6 @@ p{ /*body text*/
 .hamburger-inner{ /*center bar*/
   display: block;
   top: 50%;
-  margin-top: -0.1vw;
 }
 
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{ /*bar style*/
@@ -213,4 +162,43 @@ p{ /*body text*/
 .hamburger.is-active{
   padding-left: 25%;
   transition: padding-left 0.15s ease;
+}
+
+
+@media (orientation:portrait){ /*when viewport is portrait, make these changes to css*/
+  .TextImg{
+    width: 75%; /*box will fill up % of site width*/
+    float: none;
+    margin: 0% 0% 4% 10%;
+  }
+
+  .bodyImg{
+    width: 75%; /*box will fill up % of site width*/
+    margin: 1.5% 0% 3% 10%;
+  }
+}
+
+@media (prefers-color-scheme: dark){ /*system dark theme checker*/
+  .sidenav{
+    background-color: rgba(0, 0, 0, 0.1); /*pane bg colour*/
+  }
+
+  .mouseout{
+    background-color: rgba(0, 0, 0, 0.4); /*bar bg colour*/
+  }
+
+  .bodyText{
+    background: rgba(0, 0, 0, 0.6); /*box colour, behind the text*/
+  }
+
+  p{
+    color: rgb(235, 235, 235);
+  }
+
+  .bodyImg{
+    background: rgba(0, 0, 0, 0.6); /*box colour, behind the text*/
+  }
+  .title{ /*body title*/
+    color: rgba(255, 255, 255, 0.9); /*text colour*/
+  }
 }
