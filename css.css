@@ -168,15 +168,16 @@ p{ /*body text*/
 }
 
 .lbl{
-  position: relative;
+  position: absolute;
   display: block;
   height: 20px;
   width: 44px;
-  background: #898989;
+  background: rgb(51, 51, 51);
   border-radius: 100px;
   cursor: pointer;
   transition: all 0.15s ease;
-  left: 25%
+  left: 25%;
+  box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
 .lbl:after{
@@ -187,28 +188,19 @@ p{ /*body text*/
   width: 26px;
   height: 26px;
   border-radius: 100px;
-  background: #fff;
-  box-shadow: 0px 3px 3px rgba(0,0,0,0.05);
+  background: #238ad5;
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
   content: '';
   transition: all 0.15s ease;
 }
 
 .cbx:checked ~ label{
-  background: #6fbeb5;
+  background: #ffffff;
 }
 
 .cbx:checked ~ label:after{
   left: 20px;
-  background: #179588;
-}
-
-.cbx:disabled ~ label{
-  background: #d5d5d5;
-  pointer-events: none;
-}
-
-.cbx:disabled ~ label:after{
-  background: #bcbdbc;
+  background: #238ad5;
 }
 
 .hidden{
