@@ -17,7 +17,6 @@ function closeNav() {
 }
 
 function dark() {
-var sidenav = document.querySelectorAll(".sidenav");
 var bodytext = document.querySelectorAll(".bodyText");
 var bodyimg  = document.querySelectorAll(".bodyImg");
 var p = document.querySelectorAll("p");
@@ -25,10 +24,8 @@ var i;
 themePref = 1;
 
 document.getElementById("mouse").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+document.getElementById("mySidenav").style.backgroundColor = "rgba(0, 0, 0, 0.1)";
 
-  for (i = 0; i < sidenav.length; i++) {
-    sidenav[i].style.backgroundColor = "rgba(0, 0, 0, 0.1)";
-  }
   for (i = 0; i < bodytext.length; i++) {
     bodytext[i].style.background = "rgba(0, 0, 0, 0.6)";
   }
@@ -42,7 +39,6 @@ document.getElementById("mouse").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
 }
 
 function light() {
-var sidenav = document.querySelectorAll(".sidenav");
 var bodytext = document.querySelectorAll(".bodyText");
 var bodyimg  = document.querySelectorAll(".bodyImg");
 var p = document.querySelectorAll("p");
@@ -50,10 +46,9 @@ var i;
 themePref = 0;
 
 document.getElementById("mouse").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
 
-  for (i = 0; i < sidenav.length; i++) {
-    sidenav[i].style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-  }
+
   for (i = 0; i < bodytext.length; i++) {
     bodytext[i].style.background = "rgba(255,255,255,0.4)";
   }
