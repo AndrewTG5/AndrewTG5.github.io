@@ -20,10 +20,9 @@ body{
   left: 0;
   background-color: rgba(255, 255, 255, 0.1); /*pane bg colour*/
   overflow-x: hidden; /*menu wont make a scrollbar*/
-  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1); /*animate js change*/
+  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), background-color 0.15s ease; /*animate js change*/
   padding-top: 4%; /*moves links down*/
   backdrop-filter: blur(10px); /*blurs behind*/
-  transition: background-color 0.5 ease;
 }
 
 .mouseout{ /*menu bar*/
@@ -35,9 +34,8 @@ body{
   left: 22%;
   background-color: rgba(255, 255, 255, 0.3); /*bar bg colour*/
   overflow-x: hidden; /*wont make a scrollbar*/
-  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
+  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), background-color 0.15s ease;/*animate js change*/
   box-shadow: -4px 1px 15px -3px rgba(0,0,0,0.5);
-  transition: background-color 0.5 ease;
 }
 
 .Blur{ /*layer to blur behind menu tab*/
@@ -65,11 +63,10 @@ body{
 
 .title{ /*body title*/
   font-size: 300%;
-  color: rgba(255, 255, 255, 0.8); /*text colour*/
+  color: rgba(255, 255, 255, 0.9); /*text colour*/
   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   margin: 1% 0% 1.5% 11%;
   font-weight: 400; /*not bold*/
-  transition: color 0.5 ease;
 }
 
 .bodyText{ /*body text boxes*/
@@ -79,13 +76,13 @@ body{
   width: 75%; /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
-  transition: background 0.5 ease;
+  transition: background 0.15s ease;
 }
 
 p{ /*body text*/
   color: rgb(0, 0, 0);
   font-size: 125%;
-  transition: color 0.5 ease;
+  transition: color 0.15s ease;
 }
 
 .TextImg{ /*body text boxes*/
@@ -101,7 +98,7 @@ p{ /*body text*/
   width: 20%; /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
-  transition: background 0.5 ease;
+  transition: background 0.15s ease;
 }
 
 .hamburger{ /*container*/
@@ -126,7 +123,7 @@ p{ /*body text*/
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{ /*bar style*/
     width: 3vw; /*bar width*/
     height: 0.3vw; /*bar height*/
-    background-color: rgba(255, 255, 255, 0.7); /*bar colour*/
+    background-color: rgba(255, 255, 255, 0.8); /*bar colour*/
     border-radius: 4px; /*round corners*/
     position: absolute;
     transition: transform 0.15s ease;
@@ -201,13 +198,10 @@ p{ /*body text*/
   }
 
   p{
-    color: rgb(235, 235, 235);
+    color: rgba(235, 235, 235, 0.8);
   }
 
   .bodyImg{
     background: rgba(0, 0, 0, 0.6); /*box colour, behind the text*/
-  }
-  .title{ /*body title*/
-    color: rgba(255, 255, 255, 0.9); /*text colour*/
   }
 }
