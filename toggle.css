@@ -23,7 +23,6 @@ body{
   transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1); /*animate js change*/
   padding-top: 4%; /*moves links down*/
   backdrop-filter: blur(10px); /*blurs behind*/
-  transition: background-color 0.5 ease;
 }
 
 .mouseout{ /*menu bar*/
@@ -37,7 +36,6 @@ body{
   overflow-x: hidden; /*wont make a scrollbar*/
   transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
   box-shadow: -4px 1px 15px -3px rgba(0,0,0,0.5);
-  transition: background-color 0.5 ease;
 }
 
 .Blur{ /*layer to blur behind menu tab*/
@@ -69,7 +67,6 @@ body{
   text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
   margin: 1% 0% 1.5% 11%;
   font-weight: 400; /*not bold*/
-  transition: color 0.5 ease;
 }
 
 .bodyText{ /*body text boxes*/
@@ -79,13 +76,11 @@ body{
   width: 75%; /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
-  transition: background 0.5 ease;
 }
 
 p{ /*body text*/
   color: rgb(0, 0, 0);
   font-size: 125%;
-  transition: color 0.5 ease;
 }
 
 .TextImg{ /*body text boxes*/
@@ -101,7 +96,6 @@ p{ /*body text*/
   width: 20%; /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
-  transition: background 0.5 ease;
 }
 
 .hamburger{ /*container*/
@@ -187,7 +181,7 @@ p{ /*body text*/
   }
 }
 
-@media (prefers-color-scheme: dark){ /*system dark theme checker*/
+@media (prefers-color-scheme: light){ /*system dark theme checker*/
   .sidenav{
     background-color: rgba(0, 0, 0, 0.1); /*pane bg colour*/
   }
