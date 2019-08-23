@@ -222,25 +222,3 @@ p{ /*body text*/
     margin: 0% 0% 4% 10%;
   }
 }
-
-@media (prefers-color-scheme: dark){ /*system dark theme checker*/
-  .sidenav{
-    background-color: rgba(0, 0, 0, 0.1); /*pane bg colour*/
-  }
-
-  .mouseout{
-    background-color: rgba(0, 0, 0, 0.4); /*bar bg colour*/
-  }
-
-  .bodyText{
-    background: rgba(0, 0, 0, 0.6); /*box colour, behind the text*/
-  }
-
-  p{
-    color: rgba(235, 235, 235, 0.8);
-  }
-
-  .bodyImg{
-    background: rgba(0, 0, 0, 0.6); /*box colour, behind the text*/
-  }
-}

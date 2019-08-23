@@ -17,68 +17,72 @@ function closeNav() {
 }
 
 function dark() {
-var bodytext = document.querySelectorAll(".bodyText");
-var bodyimg  = document.querySelectorAll(".bodyImg");
-var p = document.querySelectorAll("p");
-var i;
-themePref = 1;
+  var bodytext = document.querySelectorAll(".bodyText");
+  var bodyimg  = document.querySelectorAll(".bodyImg");
+  var p = document.querySelectorAll("p");
+  var i;
 
-document.getElementById("mouse").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-document.getElementById("mySidenav").style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+  document.getElementById("mouse").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+  document.getElementById("mySidenav").style.backgroundColor = "rgba(0, 0, 0, 0.1)";
 
-  for (i = 0; i < bodytext.length; i++) {
-    bodytext[i].style.background = "rgba(0, 0, 0, 0.6)";
-  }
-  for (i = 0; i < bodyimg.length; i++) {
-    bodyimg[i].style.background = "rgba(0, 0, 0, 0.6)";
-  }
-  for (i = 0; i < p.length; i++) {
-    p[i].style.color = "rgba(235, 235, 235, 0.8)";
-  }
-
+    for (i = 0; i < bodytext.length; i++) {
+      bodytext[i].style.background = "rgba(0, 0, 0, 0.6)";
+    }
+    for (i = 0; i < bodyimg.length; i++) {
+      bodyimg[i].style.background = "rgba(0, 0, 0, 0.6)";
+    }
+    for (i = 0; i < p.length; i++) {
+      p[i].style.color = "rgba(235, 235, 235, 0.8)";
+    }
 }
 
 function light() {
-var bodytext = document.querySelectorAll(".bodyText");
-var bodyimg  = document.querySelectorAll(".bodyImg");
-var p = document.querySelectorAll("p");
-var i;
-themePref = 0;
+  var bodytext = document.querySelectorAll(".bodyText");
+  var bodyimg  = document.querySelectorAll(".bodyImg");
+  var p = document.querySelectorAll("p");
+  var i;
 
-document.getElementById("mouse").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+  document.getElementById("mouse").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+  document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
 
 
-  for (i = 0; i < bodytext.length; i++) {
-    bodytext[i].style.background = "rgba(255,255,255,0.4)";
-  }
-  for (i = 0; i < bodyimg.length; i++) {
-    bodyimg[i].style.background = "rgba(255,255,255,0.4)";
-  }
-  for (i = 0; i < p.length; i++) {
-    p[i].style.color = "rgb(0, 0, 0)";
-  }
-}
-
-function checkMedia() {
-  if (pref.matches) {
-    themePref = 1
-  }
-    else {
-      themePref = 0
+    for (i = 0; i < bodytext.length; i++) {
+      bodytext[i].style.background = "rgba(255,255,255,0.4)";
     }
-  }
+    for (i = 0; i < bodyimg.length; i++) {
+      bodyimg[i].style.background = "rgba(255,255,255,0.4)";
+    }
+    for (i = 0; i < p.length; i++) {
+      p[i].style.color = "rgb(0, 0, 0)";
+    }
+}
 
 function theme() {
-  if (themePref == 1) {
-    light()
+  var userPref = localStorage.getItem("userPref");
+  console.log("theme()");
+  if (userPref == "dark") {
+    light();
+    localStorage.setItem("userPref", "light");
+    console.log("theme(), userPref = dark, now = light");
   }
     else {
-      dark()
+      dark();
+      localStorage.setItem("userPref", "dark");
+      console.log("theme(), userPref = light, now = dark");
   }
 }
 
-var themePref = 0
-var pref = window.matchMedia("(prefers-color-scheme: dark)")
-checkMedia(pref)
-pref.addListener(checkMedia)
+function start() {
+  console.log("start()")
+  if (userPref == "dark") {
+    dark();
+    console.log("start(), userPref = dark");
+  }
+  else {
+    light()
+    console.log("start(), userPref = light");
+  }
+}
+
+var userPref = localStorage.getItem("userPref");
+console.log("init");
