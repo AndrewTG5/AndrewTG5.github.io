@@ -45,7 +45,6 @@ function light() {
   document.getElementById("mouse").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
   document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
 
-
     for (i = 0; i < bodytext.length; i++) {
       bodytext[i].style.background = "rgba(255,255,255,0.4)";
     }
@@ -73,14 +72,16 @@ function theme() {
 }
 
 function start() {
+  closeNav();
+  var userPref = localStorage.getItem("userPref");
   console.log("start()")
   if (userPref == "dark") {
     dark();
     console.log("start(), userPref = dark");
   }
-  else {
-    light()
-    console.log("start(), userPref = light");
+    else {
+      light()
+      console.log("start(), userPref = light");
   }
 }
 
