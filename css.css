@@ -1,8 +1,11 @@
-body{
+html{
   font-family: 'Noto Sans', sans-serif; /*font*/
   background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB); /*background gradient*/
   background-size: 400% 400%; /*makes background large enough to be animatable*/
   animation: Gradient 15s ease infinite; /*gradient animation*/
+  margin: 0;
+	width: 100%;
+	height: 100vh;
 }
 
 @keyframes Gradient{ /*gradient animation*/
