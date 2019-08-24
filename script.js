@@ -24,7 +24,7 @@ function closeNav() {
   }
 }
 
-function playHover{
+function playHover() {
   if (soundPref == "on") {
     hover.play();
     console.log("hover.play");
