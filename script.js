@@ -5,6 +5,10 @@ function openNav() {
   document.getElementById("mouse").style.left = "22%"; //moves the menu bar over with the menu
   document.getElementById("mouseBlur").style.left = "22%"; //moves the menu bar over with the menu
   document.getElementById("mouse").style.boxShadow = "4px 1px 15px -5px rgba(0,0,0,0.5)";
+  if (soundPref == "on") {
+    open.play();
+    console.log("open.play");
+  }
 }
 
 function closeNav() {
@@ -14,6 +18,17 @@ function closeNav() {
   document.getElementById("mouse").style.left = "0"; //moves the menu bar over with the menu
   document.getElementById("mouseBlur").style.left = "0"; //moves the menu bar over with the menu
   document.getElementById("mouse").style.boxShadow = "-4px 1px 15px -3px rgba(0,0,0,0.5)";
+  if (soundPref == "on") {
+    close.play();
+    console.log("close.play");
+  }
+}
+
+function playHover{
+  if (soundPref == "on") {
+    hover.play();
+    console.log("hover.play");
+  }
 }
 
 function dark() {
@@ -56,34 +71,31 @@ function light() {
     }
 }
 
-function theme() {
-  var userPref = localStorage.getItem("userPref");
-  console.log("theme()");
+function start() {
+  closeNav();
   if (userPref == "dark") {
-    light();
-    localStorage.setItem("userPref", "light");
-    console.log("theme(), userPref = dark, now = light");
+    dark();
   }
     else {
-      dark();
-      localStorage.setItem("userPref", "dark");
-      console.log("theme(), userPref = light, now = dark");
+      light();
   }
 }
 
-function start() {
-  closeNav();
-  var userPref = localStorage.getItem("userPref");
-  console.log("start()")
-  if (userPref == "dark") {
-    dark();
-    console.log("start(), userPref = dark");
+function toggleSound() {
+  var soundPref = localStorage.getItem("soundPref");
+  if (soundPref == "on") {
+    localStorage.setItem("soundPref", "off");
+    console.log("togglesound(); soundpref =  on; now off");
   }
     else {
-      light()
-      console.log("start(), userPref = light");
+      localStorage.setItem("soundPref", "on");
+      console.log("togglesound(); soundpref =  off; now on");
   }
 }
 
 var userPref = localStorage.getItem("userPref");
-console.log("init");
+var soundPref = localStorage.getItem("soundPref");
+
+var close = new Audio('sounds/close.mp3');
+var hover = new Audio('sounds/hover.mp3');
+var open = new Audio('sounds/open.mp3');
