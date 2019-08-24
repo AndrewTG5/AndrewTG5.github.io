@@ -23,7 +23,7 @@ html{
   left: 0;
   background-color: rgba(255, 255, 255, 0.1); /*pane bg colour*/
   overflow-x: hidden; /*menu wont make a scrollbar*/
-  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), background-color 0.15s ease; /*animate js change*/
+  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1); /*animate js change*/
   padding-top: 4%; /*moves links down*/
   backdrop-filter: blur(10px); /*blurs behind*/
 }
@@ -37,7 +37,7 @@ html{
   left: 22%;
   background-color: rgba(255, 255, 255, 0.3); /*bar bg colour*/
   overflow-x: hidden; /*wont make a scrollbar*/
-  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), background-color 0.15s ease;/*animate js change*/
+  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
   box-shadow: -4px 1px 15px -3px rgba(0,0,0,0.5);
 }
 
@@ -79,7 +79,6 @@ html{
   width: 75%; /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
-  transition: background 0.15s ease;
 }
 
 p{ /*body text*/
@@ -101,7 +100,6 @@ p{ /*body text*/
   width: 20%; /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
-  transition: background 0.15s ease;
 }
 
 .hamburger{ /*container*/
@@ -168,46 +166,6 @@ p{ /*body text*/
 .hamburger.is-active{
   padding-left: 25%;
   transition: padding-left 0.15s ease;
-}
-
-.lbl{
-  position: relative;
-  display: block;
-  height: 20px;
-  width: 44px;
-  background: rgb(51, 51, 51);
-  border-radius: 100px;
-  cursor: pointer;
-  transition: all 0.15s ease;
-  left: 25%;
-  box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-}
-
-.lbl:after{
-  position: absolute;
-  left: -2px;
-  top: -3px;
-  display: block;
-  width: 26px;
-  height: 26px;
-  border-radius: 100px;
-  background: #238ad5;
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.6);
-  content: '';
-  transition: all 0.15s ease;
-}
-
-.cbx:checked ~ label{
-  background: #ffffff;
-}
-
-.cbx:checked ~ label:after{
-  left: 20px;
-  background: #238ad5;
-}
-
-.hidden{
-  display: none;
 }
 
 .lower{
