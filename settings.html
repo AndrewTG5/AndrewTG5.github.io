@@ -21,7 +21,9 @@
 
 			.bodyText{
 				transition: background 0.15s ease;
+				font-size: 125%;
 			}
+
 			.lbl{
 				position: relative;
 				display: block;
@@ -31,8 +33,11 @@
 				border-radius: 100px;
 				cursor: pointer;
 				transition: all 0.15s ease;
-				left: 25%;
+				left: -75%;
 				box-shadow: 1px 1px 4px rgba(0,0,0,0.3);
+				float: right;
+				margin-top: -3%;
+				margin-bottom: 3%;
 			}
 
 			.lbl:after{
@@ -103,10 +108,12 @@
 			<h1 class="title">Settings</h1> <!--large title-->
 		</div>
 		<div class="bodyText"> <!--body text-->
-			<p>allow sounds (buggy)</p>
+			<p>Allow sounds</p>
 			<input type="checkbox" id="unchecked" class="cbx hidden"/>
 			<label for="unchecked" class="lbl" onclick="toggleSound()"></label>
-			<p>toggle theme</p>
+		</div>
+		<div class="bodyText">
+			<p>Toggle theme</p>
 			<input type="checkbox" id="unchecked" class="cbx hidden"/>
 			<label for="unchecked" class="lbl" onclick="theme()"></label>
 		</div>
