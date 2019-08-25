@@ -39,6 +39,8 @@ function dark() {
 
   document.getElementById("mouse").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
   document.getElementById("mySidenav").style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+  document.querySelector("html").style.background = "linear-gradient(-45deg, #D55E39, #CE2365, #0A8DBC, #0ABC92)";
+  document.querySelector("html").style.backgroundSize = "400% 400%";
 
   for (i = 0; i < bodytext.length; i++) {
     bodytext[i].style.background = "rgba(0, 0, 0, 0.6)";
@@ -59,6 +61,8 @@ function light() {
 
   document.getElementById("mouse").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
   document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+  document.querySelector("html").style.background = "linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB)";
+  document.querySelector("html").style.backgroundSize = "400% 400%";
 
   for (i = 0; i < bodytext.length; i++) {
     bodytext[i].style.background = "rgba(255,255,255,0.4)";
