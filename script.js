@@ -33,51 +33,50 @@ function playHover() {
 
 function dark() {
   var bodytext = document.querySelectorAll(".bodyText");
-  var bodyimg  = document.querySelectorAll(".bodyImg");
+  var bodyimg = document.querySelectorAll(".bodyImg");
   var p = document.querySelectorAll("p");
   var i;
 
   document.getElementById("mouse").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
   document.getElementById("mySidenav").style.backgroundColor = "rgba(0, 0, 0, 0.1)";
 
-    for (i = 0; i < bodytext.length; i++) {
-      bodytext[i].style.background = "rgba(0, 0, 0, 0.6)";
-    }
-    for (i = 0; i < bodyimg.length; i++) {
-      bodyimg[i].style.background = "rgba(0, 0, 0, 0.6)";
-    }
-    for (i = 0; i < p.length; i++) {
-      p[i].style.color = "rgba(235, 235, 235, 0.8)";
-    }
+  for (i = 0; i < bodytext.length; i++) {
+    bodytext[i].style.background = "rgba(0, 0, 0, 0.6)";
+  }
+  for (i = 0; i < bodyimg.length; i++) {
+    bodyimg[i].style.background = "rgba(0, 0, 0, 0.6)";
+  }
+  for (i = 0; i < p.length; i++) {
+    p[i].style.color = "rgba(235, 235, 235, 0.8)";
+  }
 }
 
 function light() {
   var bodytext = document.querySelectorAll(".bodyText");
-  var bodyimg  = document.querySelectorAll(".bodyImg");
+  var bodyimg = document.querySelectorAll(".bodyImg");
   var p = document.querySelectorAll("p");
   var i;
 
   document.getElementById("mouse").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
   document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
 
-    for (i = 0; i < bodytext.length; i++) {
-      bodytext[i].style.background = "rgba(255,255,255,0.4)";
-    }
-    for (i = 0; i < bodyimg.length; i++) {
-      bodyimg[i].style.background = "rgba(255,255,255,0.4)";
-    }
-    for (i = 0; i < p.length; i++) {
-      p[i].style.color = "rgb(0, 0, 0)";
-    }
+  for (i = 0; i < bodytext.length; i++) {
+    bodytext[i].style.background = "rgba(255,255,255,0.4)";
+  }
+  for (i = 0; i < bodyimg.length; i++) {
+    bodyimg[i].style.background = "rgba(255,255,255,0.4)";
+  }
+  for (i = 0; i < p.length; i++) {
+    p[i].style.color = "rgb(0, 0, 0)";
+  }
 }
 
 function start() {
   closeNav();
   if (userPref == "dark") {
     dark();
-  }
-    else {
-      light();
+  } else {
+    light();
   }
 }
 
@@ -86,10 +85,9 @@ function toggleSound() {
   if (soundPref == "on") {
     localStorage.setItem("soundPref", "off");
     console.log("togglesound(); soundpref =  on; now off");
-  }
-    else {
-      localStorage.setItem("soundPref", "on");
-      console.log("togglesound(); soundpref =  off; now on");
+  } else {
+    localStorage.setItem("soundPref", "on");
+    console.log("togglesound(); soundpref =  off; now on");
   }
 }
 
