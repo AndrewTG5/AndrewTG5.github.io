@@ -1,4 +1,5 @@
 function openNav() {
+  var soundPref = localStorage.getItem("soundPref");
   var hamburger = document.querySelector(".hamburger");
   hamburger.classList.add("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "22%"; //size of the menu when open
@@ -12,6 +13,7 @@ function openNav() {
 }
 
 function closeNav() {
+  var soundPref = localStorage.getItem("soundPref");
   var hamburger = document.querySelector(".hamburger");
   hamburger.classList.remove("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "0%"; //size of the menu when closed
@@ -25,6 +27,7 @@ function closeNav() {
 }
 
 function playHover() {
+  var soundPref = localStorage.getItem("soundPref");
   if (soundPref == "on") {
     hover.play();
     console.log("hover.play");
