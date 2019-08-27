@@ -90,7 +90,6 @@
 	<script>
 		function theme() {
 			var userPref = localStorage.getItem("userPref");
-			console.log("theme()");
 			if (userPref == "dark") {
 				light();
 				localStorage.setItem("userPref", "light");
@@ -111,7 +110,24 @@
 		    console.log("togglesound(); soundpref =  off; now on");
 		  }
 		}
-		window.onload = start;
+		function startSettings() {
+			var userPref = localStorage.getItem("userPref");
+			var soundPref = localStorage.getItem("soundPref");
+			closeNav();
+			if (userPref == "dark") {
+				dark();
+				document.getElementById("themeSwitch").checked = true;
+			} else {
+				light();
+				document.getElementById("themeSwitch").checked = false;
+			}
+			if (soundPref == "on") {
+				document.getElementById("audioSwitch").checked = true;
+			} else {
+				document.getElementById("audioSwitch").checked = false;
+			}
+		}
+		window.onload = startSettings;
 	</script>
 	<!--closes nav on page load-->
 	<link rel="prefetch" href="img/evolocity.png">
@@ -150,14 +166,14 @@
 		<!--body text-->
 		<p>Allow sounds</p>
 		<label class="input-toggle">
-  		<input type="checkbox" checked>
+  		<input type="checkbox" id="audioSwitch" unchecked>
   		<span onclick="toggleSound()"></span>
 		</label>
 	</div>
 	<div class="bodyText">
-		<p>Toggle theme</p>
+		<p>Dark theme</p>
 		<label class="input-toggle">
-  		<input type="checkbox" checked>
+  		<input type="checkbox" id="themeSwitch" unchecked>
   		<span onclick="theme()"></span>
 		</label>
 	</div>
