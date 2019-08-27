@@ -87,17 +87,6 @@ function start() {
   }
 }
 
-function toggleSound() {
-  var soundPref = localStorage.getItem("soundPref");
-  if (soundPref == "on") {
-    localStorage.setItem("soundPref", "off");
-    console.log("togglesound(); soundpref =  on; now off");
-  } else {
-    localStorage.setItem("soundPref", "on");
-    console.log("togglesound(); soundpref =  off; now on");
-  }
-}
-
 var userPref = localStorage.getItem("userPref");
 var soundPref = localStorage.getItem("soundPref");
 
