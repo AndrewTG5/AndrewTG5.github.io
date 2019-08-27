@@ -93,21 +93,17 @@
 			if (userPref == "dark") {
 				light();
 				localStorage.setItem("userPref", "light");
-				console.log("theme(), userPref = dark, now = light");
 			} else {
 				dark();
 				localStorage.setItem("userPref", "dark");
-				console.log("theme(), userPref = light, now = dark");
 			}
 		}
 		function toggleSound() {
 		  var soundPref = localStorage.getItem("soundPref");
 		  if (soundPref == "on") {
 		    localStorage.setItem("soundPref", "off");
-		    console.log("togglesound(); soundpref =  on; now off");
 		  } else {
 		    localStorage.setItem("soundPref", "on");
-		    console.log("togglesound(); soundpref =  off; now on");
 		  }
 		}
 		function startSettings() {
@@ -129,7 +125,6 @@
 		}
 		window.onload = startSettings;
 	</script>
-	<!--closes nav on page load-->
 	<link rel="prefetch" href="img/evolocity.png">
 	<!--prefetch images to speed up page load-->
 	<link rel="prefetch" href="img/robot.webp">
@@ -163,7 +158,6 @@
 		<!--large title-->
 	</div>
 	<div class="bodyText">
-		<!--body text-->
 		<p>Allow sounds</p>
 		<label class="input-toggle">
   		<input type="checkbox" id="audioSwitch" unchecked>
