@@ -1,15 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
 	<meta name="author" content="Andrew Blake">
 	<meta name="Description" content="Site settings">
 	<title>Settings</title>
-	<link rel="icon" href="img/favicon.png">
 	<script src="script.js"></script>
 	<link href="css.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700&display=swap" rel="stylesheet">
+	<link rel="prefetch" href="img/evolocity.png">
+	<link rel="prefetch" href="img/robot.webp">
+	<!--icon stuff-->
+	<meta name="theme-color" content="rgb(56, 191, 240)">
+	<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="shortcut icon" href="/img/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="KKC clubs">
+	<meta name="application-name" content="KKC clubs">
+	<meta name="msapplication-TileColor" content="#0094ff">
+	<meta name="msapplication-config" content="browserconfig.xml">
+
 	<style>
 		.sidenav {
 			transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), background-color 0.15s ease;
@@ -37,7 +51,7 @@
 			transform: translateY(48%);
 		}
 
-		label.input-toggle > span {
+		label.input-toggle>span {
 			display: inline-block;
 			position: relative;
 			background-image: linear-gradient(to right, rgb(51, 51, 51) 0%, rgb(51, 51, 51) 50%, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 100%);
@@ -50,11 +64,11 @@
 			transition: background-position 0.2s ease;
 		}
 
-		label.input-toggle > input:checked + span {
+		label.input-toggle>input:checked+span {
 			background-position: -100%;
 		}
 
-		label.input-toggle > span:after {
+		label.input-toggle>span:after {
 			content: "";
 			display: block;
 			position: absolute;
@@ -70,16 +84,16 @@
 			transition: left 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
 		}
 
-		label.input-toggle > input:checked + span:after {
+		label.input-toggle>input:checked+span:after {
 			left: calc(100% - 18px);
 			background-color: rgb(35, 138, 213);
 		}
 
-		label.input-toggle > span:active:after {
+		label.input-toggle>span:active:after {
 			transform: translateY(-50%);
 		}
 
-		label.input-toggle > input {
+		label.input-toggle>input {
 			display: block;
 			position: absolute;
 			opacity: 0;
@@ -98,14 +112,16 @@
 				localStorage.setItem("userPref", "dark");
 			}
 		}
+
 		function toggleSound() {
-		  var soundPref = localStorage.getItem("soundPref");
-		  if (soundPref == "on") {
-		    localStorage.setItem("soundPref", "off");
-		  } else {
-		    localStorage.setItem("soundPref", "on");
-		  }
+			var soundPref = localStorage.getItem("soundPref");
+			if (soundPref == "on") {
+				localStorage.setItem("soundPref", "off");
+			} else {
+				localStorage.setItem("soundPref", "on");
+			}
 		}
+
 		function startSettings() {
 			var userPref = localStorage.getItem("userPref");
 			var soundPref = localStorage.getItem("soundPref");
@@ -125,12 +141,7 @@
 		}
 		window.onload = startSettings;
 	</script>
-	<link rel="prefetch" href="img/evolocity.png">
-	<!--prefetch images to speed up page load-->
-	<link rel="prefetch" href="img/robot.webp">
-	<!--prefetch images to speed up page load-->
-	<meta name="theme-color" content="rgb(56, 191, 240)">
-	<!--style nav bar on mobile-->
+
 </head>
 
 <body>
@@ -160,15 +171,15 @@
 	<div class="bodyText">
 		<p>Allow sounds</p>
 		<label class="input-toggle">
-  		<input type="checkbox" id="audioSwitch" unchecked>
-  		<span onclick="toggleSound()"></span>
+			<input type="checkbox" id="audioSwitch" unchecked>
+			<span onclick="toggleSound()"></span>
 		</label>
 	</div>
 	<div class="bodyText">
 		<p>Dark theme</p>
 		<label class="input-toggle">
-  		<input type="checkbox" id="themeSwitch" unchecked>
-  		<span onclick="theme()"></span>
+			<input type="checkbox" id="themeSwitch" unchecked>
+			<span onclick="theme()"></span>
 		</label>
 	</div>
 </body>
