@@ -103,7 +103,7 @@
 		}
 	</style>
 	<script>
-		function theme() {
+		function toggleTheme() {
 			var userPref = localStorage.getItem("userPref");
 			if (userPref == "dark") {
 				light();
@@ -146,9 +146,7 @@
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker
 				.register('sw.js')
-				.then(function() {
-					console.log("Service Worker Registered");
-				});
+				.then(function() {});
 		}
 	</script>
 </head>
@@ -188,7 +186,7 @@
 		<p>Dark theme</p>
 		<label class="input-toggle">
 			<input type="checkbox" id="themeSwitch" unchecked>
-			<span onclick="theme()"></span>
+			<span onclick="toggleTheme()"></span>
 		</label>
 	</div>
 </body>
