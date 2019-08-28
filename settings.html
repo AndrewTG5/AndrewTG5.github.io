@@ -141,7 +141,21 @@
 		}
 		window.onload = startSettings;
 	</script>
-
+	<script src="/upup.min.js"></script>
+	<script>
+		UpUp.start({
+			'content-url': 'settings.html', // show this when the user is offline
+			'assets': [ // define additional assets needed while offline:
+				'img/favicon.png',
+				'css.css',
+				'script.js',
+				'index.html',
+				'Evolocity.html',
+				'Robotics.html',
+				'settings.html'
+			]
+		});
+	</script>
 </head>
 
 <body>
