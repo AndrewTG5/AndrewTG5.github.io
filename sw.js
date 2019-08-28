@@ -5,7 +5,7 @@ self.addEventListener('install', function(e) {
         './',
         'index.html',
         'Evolocity.html',
-        'Robotics.html'
+        'Robotics.html',
         'css.css',
         'script.js'
       ]);
