@@ -4,8 +4,8 @@ self.addEventListener('install', function(e) {
       return cache.addAll([
         './',
         'index.html',
-        'Evolocity.html',
-        'Robotics.html',
+        'evolocity.html',
+        'robotics.html',
         'css.css',
         'script.js',
         'settings.html',
