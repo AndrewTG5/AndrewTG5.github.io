@@ -80,14 +80,14 @@ function light() {
 
 function start() {
   closeNav();
-  if (userPref == "dark") {
+  if (themePref == "dark") {
     dark();
   } else {
     light();
   }
 }
 
-var userPref = localStorage.getItem("userPref");
+var themePref = localStorage.getItem("themePref");
 var soundPref = localStorage.getItem("soundPref");
 
 var close = new Audio('sounds/close.mp3');

@@ -108,13 +108,13 @@
 	</style>
 	<script>
 		function toggleTheme() {
-			var userPref = localStorage.getItem("userPref");
-			if (userPref == "dark") {
+			var themePref = localStorage.getItem("themePref");
+			if (themePref == "dark") {
 				light();
-				localStorage.setItem("userPref", "light");
+				localStorage.setItem("themePref", "light");
 			} else {
 				dark();
-				localStorage.setItem("userPref", "dark");
+				localStorage.setItem("themePref", "dark");
 			}
 		}
 
@@ -128,10 +128,10 @@
 		}
 
 		function startSettings() {
-			var userPref = localStorage.getItem("userPref");
+			var userPref = localStorage.getItem("themePref");
 			var soundPref = localStorage.getItem("soundPref");
 			closeNav();
-			if (userPref == "dark") {
+			if (themePref == "dark") {
 				dark();
 				document.getElementById("themeSwitch").checked = true;
 			} else {
@@ -144,14 +144,14 @@
 				document.getElementById("audioSwitch").checked = false;
 			}
 		}
-		window.onload = startSettings;
-	</script>
-	<script>
+
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker
 				.register('sw.js')
 				.then(function() {});
 		}
+
+		window.onload = startSettings;
 	</script>
 </head>
 
@@ -194,7 +194,7 @@
 		</label>
 	</div>
 	<div class="foot">
-		<p>app ver 1.0c</p>
+		<p>app ver 1.0d</p>
 	</div>
 </body>
 
