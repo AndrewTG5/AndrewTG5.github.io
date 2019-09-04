@@ -1,190 +1,266 @@
-html{
-  font-family: 'Noto Sans', sans-serif; /*font*/
-  background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171)); /*background gradient*/
-  background-size: 400% 400%; /*makes background large enough to be animatable*/
-  animation: Gradient 15s ease infinite; /*gradient animation*/
+html {
+  font-family: 'Noto Sans', sans-serif;
+  /*font*/
+  background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
+  /*background gradient*/
+  background-size: 400% 400%;
+  /*makes background large enough to be animatable*/
+  animation: Gradient 15s ease infinite;
+  /*gradient animation*/
   margin: 0;
-	width: 100%;
-	height: 100vh;
+  width: 100%;
+  height: 100vh;
 }
 
-@keyframes Gradient{ /*gradient animation*/
-	0%   {background-position: 0% 50%}
-	50%  {background-position: 100% 50%}
-	100% {background-position: 0% 50%}
+@keyframes Gradient {
+
+  /*gradient animation*/
+  0% {
+    background-position: 0% 50%
+  }
+
+  50% {
+    background-position: 100% 50%
+  }
+
+  100% {
+    background-position: 0% 50%
+  }
 }
 
-.sidenav{ /*menu pane*/
-  height: 100%; /*pane fills site verticly*/
-  width: 22%; /*pane takes up 0% of page width, changed with js to open pane*/
-  position: fixed; /*wont be effected by other elements*/
+.sidenav {
+  /*menu pane*/
+  height: 100%;
+  /*pane fills site verticly*/
+  width: 22%;
+  /*pane takes up 0% of page width, changed with js to open pane*/
+  position: fixed;
+  /*wont be effected by other elements*/
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, 0.1); /*pane bg colour*/
-  overflow-x: hidden; /*menu wont make a scrollbar*/
-  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1); /*animate js change*/
-  padding-top: 4%; /*moves links down*/
-  backdrop-filter: blur(10px); /*blurs behind*/
+  background-color: rgba(255, 255, 255, 0.1);
+  /*pane bg colour*/
+  overflow-x: hidden;
+  /*menu wont make a scrollbar*/
+  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  /*animate js change*/
+  padding-top: 4%;
+  /*moves links down*/
+  backdrop-filter: blur(10px);
+  /*blurs behind*/
 }
 
-.mouseout{ /*menu bar*/
-  height: 100%; /*bar fills site verticly*/
-  width: 5%; /*bar takes up 5% of page horizontally*/
-  position: fixed; /*wont be effected by other elements*/
+.mouseout {
+  /*menu bar*/
+  height: 100%;
+  /*bar fills site verticly*/
+  width: 5%;
+  /*bar takes up 5% of page horizontally*/
+  position: fixed;
+  /*wont be effected by other elements*/
   z-index: 3;
   top: 0;
   left: 22%;
-  background-color: rgba(255, 255, 255, 0.3); /*bar bg colour*/
-  overflow-x: hidden; /*wont make a scrollbar*/
-  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
-  box-shadow: 100vw 0px 15px 100vw rgba(0,0,0,0.5);
+  background-color: rgba(255, 255, 255, 0.3);
+  /*bar bg colour*/
+  overflow-x: hidden;
+  /*wont make a scrollbar*/
+  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  /*animate js change*/
+  box-shadow: 38vw 0px 10px 38vw rgba(0,0,0,0.4);
 }
 
-.Blur{ /*layer to blur behind menu tab*/
+.Blur {
+  /*layer to blur behind menu tab*/
   z-index: 0;
   left: 22%;
-  background-color: transparent; /*bar bg colour*/
-  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
+  background-color: transparent;
+  /*bar bg colour*/
+  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  /*animate js change*/
   box-shadow: none;
-  backdrop-filter: blur(15px); /*blurs behind*/
+  backdrop-filter: blur(15px);
+  /*blurs behind*/
 }
 
-.sidenav a{ /*menu pane links. can have gaps in text with alt 0160*/
+.sidenav a {
+  /*menu pane links. can have gaps in text with alt 0160*/
   z-index: 2;
-  padding: 0.8vw 0vw 1.2vw 25%; /*padding for links in menu, vw for fixed, % will animate as menu opens*/
-  text-decoration: none; /*removes link styling*/
-  font-size: 2.8vw; /*font size of links*/
-  color: rgba(255, 255, 255, 0.75); /*link colour*/
+  padding: 0.8vw 0vw 1.2vw 25%;
+  /*padding for links in menu, vw for fixed, % will animate as menu opens*/
+  text-decoration: none;
+  /*removes link styling*/
+  font-size: 2.8vw;
+  /*font size of links*/
+  color: rgba(255, 255, 255, 0.75);
+  /*link colour*/
   display: block;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.75);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
 }
 
-.sidenav a.active, .sidenav a:hover{
-  color: rgb(0, 0, 0); /*link colour when active or hovered*/
+.sidenav a.active, .sidenav a:hover {
+  color: rgb(0, 0, 0);
+  /*link colour when active or hovered*/
 }
 
-.title{ /*body title*/
+.title {
+  /*body title*/
   font-size: 300%;
-  color: rgba(255, 255, 255, 0.9); /*text colour*/
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+  color: rgba(255, 255, 255, 0.9);
+  /*text colour*/
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin: 1% 0% 1.5% 11%;
-  font-weight: 400; /*not bold*/
+  font-weight: 400;
+  /*not bold*/
 }
 
-.bodyText{ /*body text boxes*/
-  border-radius: 18px; /*rounded corners*/
-  background: rgba(255,255,255,0.4); /*box colour, behind the text*/
+.bodyText {
+  /*body text boxes*/
+  border-radius: 18px;
+  /*rounded corners*/
+  background: rgba(255, 255, 255, 0.4);
+  /*box colour, behind the text*/
   padding: 2% 5% 2% 5%;
-  width: 75%; /*box will fill up % of site width*/
+  width: 75%;
+  /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
-  box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
+  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
 }
 
-p{ /*body text*/
+p {
+  /*body text*/
   color: rgb(0, 0, 0);
   font-size: 125%;
   transition: color 0.15s ease;
 }
 
-.TextImg{ /*body text boxes*/
-  width: 43%; /*box will fill up % of site width*/
+.TextImg {
+  /*body text boxes*/
+  width: 43%;
+  /*box will fill up % of site width*/
   margin: 0% 5% 2% 0%;
-  float: right; /*moves to the right of the page*/
+  float: right;
+  /*moves to the right of the page*/
 }
 
-.bodyImg{ /*body images*/
-  border-radius: 18px; /*rounded corners*/
-  background: rgba(255,255,255,0.4); /*box colour, behind the text*/
+.bodyImg {
+  /*body images*/
+  border-radius: 18px;
+  /*rounded corners*/
+  background: rgba(255, 255, 255, 0.4);
+  /*box colour, behind the text*/
   padding: 3.5% 5% 3.5% 5%;
-  width: 20%; /*box will fill up % of site width*/
+  width: 20%;
+  /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
-  box-shadow: 3px 3px 15px -4px rgba(0,0,0,0.5);
+  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
 }
 
-.hamburger{ /*container*/
+.hamburger {
+  /*container*/
   padding: 14% 0 0 19%;
   display: inline-block;
   margin: 0;
   overflow: visible;
 }
 
-.hamburger-box{ /*container*/
+.hamburger-box {
+  /*container*/
   width: 3vw;
   height: 3vw;
   display: inline-block;
   position: relative;
 }
 
-.hamburger-inner{ /*center bar*/
+.hamburger-inner {
+  /*center bar*/
   display: block;
   top: 50%;
 }
 
-.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after{ /*bar style*/
-    width: 3vw; /*bar width*/
-    height: 0.3vw; /*bar height*/
-    background-color: rgba(255, 255, 255, 0.8); /*bar colour*/
-    border-radius: 4px; /*round corners*/
-    position: absolute;
-    transition: transform 0.15s ease;
-    box-shadow: 3px 3px 15px -1px rgba(0,0,0,0.5);
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  /*bar style*/
+  width: 3vw;
+  /*bar width*/
+  height: 0.3vw;
+  /*bar height*/
+  background-color: rgba(255, 255, 255, 0.8);
+  /*bar colour*/
+  border-radius: 4px;
+  /*round corners*/
+  position: absolute;
+  transition: transform 0.15s ease;
+  box-shadow: 3px 3px 15px -1px rgba(0, 0, 0, 0.5);
 }
 
-.hamburger-inner::before{ /*extra bar*/
-    top: -1vw; /*bar padding*/
-    content: "";
-    display: block;
+.hamburger-inner::before {
+  /*extra bar*/
+  top: -1vw;
+  /*bar padding*/
+  content: "";
+  display: block;
 }
 
-.hamburger-inner::after{ /*extra bar*/
-    bottom: -1vw; /*bar padding*/
-    content: "";
-    display: block;
+.hamburger-inner::after {
+  /*extra bar*/
+  bottom: -1vw;
+  /*bar padding*/
+  content: "";
+  display: block;
 }
 
-.hamburger--arrowalt .hamburger-inner::before{ /*transition closed*/
+.hamburger--arrowalt .hamburger-inner::before {
+  /*transition closed*/
   transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.hamburger--arrowalt .hamburger-inner::after{ /*transition closed*/
+.hamburger--arrowalt .hamburger-inner::after {
+  /*transition closed*/
   transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-.hamburger--arrowalt.is-active .hamburger-inner::before{ /*transition open*/
+.hamburger--arrowalt.is-active .hamburger-inner::before {
+  /*transition open*/
   top: 0;
   transform: translate3d(-38%, -200%, 0) rotate(-45deg) scale(0.7, 1);
   transition: top 0.15s ease, transform 0.07s 0.07s ease-in-out;
 }
 
-.hamburger--arrowalt.is-active .hamburger-inner::after{ /*transition open*/
+.hamburger--arrowalt.is-active .hamburger-inner::after {
+  /*transition open*/
   bottom: 0;
   transform: translate3d(-38%, 200%, 0) rotate(45deg) scale(0.7, 1);
   transition: bottom 0.15s ease, transform 0.07s 0.07s ease-in-out;
 }
 
-.hamburger.is-active{
+.hamburger.is-active {
   padding-left: 25%;
   transition: padding-left 0.15s ease;
 }
 
-.lower{
+.lower {
   position: absolute;
   bottom: 6vw;
 }
 
-@media (orientation:portrait){ /*when viewport is portrait, make these changes to css*/
-  .TextImg{
-    width: 75%; /*box will fill up % of site width*/
+@media (orientation:portrait) {
+
+  /*when viewport is portrait, make these changes to css*/
+  .TextImg {
+    width: 75%;
+    /*box will fill up % of site width*/
     float: none;
     margin: 0% 0% 4% 10%;
   }
 
-  .bodyImg{
-    width: 75%; /*box will fill up % of site width*/
+  .bodyImg {
+    width: 75%;
+    /*box will fill up % of site width*/
     margin: 0% 0% 3% 10%;
   }
-  .bodyText{
+
+  .bodyText {
     margin: 0% 0% 4% 10%;
   }
 }
