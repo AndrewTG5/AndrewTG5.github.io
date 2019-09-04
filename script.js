@@ -5,7 +5,7 @@ function openNav() {
   document.getElementById("mySidenav").style.width = "22%"; //size of the menu when open
   document.getElementById("mouse").style.left = "22%"; //moves the menu bar over with the menu
   document.getElementById("mouseBlur").style.left = "22%"; //moves the menu bar over with the menu
-  document.getElementById("mouse").style.boxShadow = "4px 1px 15px -5px rgba(0,0,0,0.5)";
+  document.getElementById("mouse").style.boxShadow = "100vw 0px 15px 100vw rgba(0,0,0,0.5)";
   if (soundPref == "on") {
     open.play();
     console.log("open.play");

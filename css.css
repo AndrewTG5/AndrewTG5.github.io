@@ -37,8 +37,8 @@ html{
   left: 22%;
   background-color: rgba(255, 255, 255, 0.3); /*bar bg colour*/
   overflow-x: hidden; /*wont make a scrollbar*/
-  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
-  box-shadow: -4px 1px 15px -3px rgba(0,0,0,0.5);
+  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);/*animate js change*/
+  box-shadow: 100vw 0px 15px 100vw rgba(0,0,0,0.5);
 }
 
 .Blur{ /*layer to blur behind menu tab*/
