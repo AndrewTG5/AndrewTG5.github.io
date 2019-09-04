@@ -68,7 +68,7 @@ html {
   /*wont make a scrollbar*/
   transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   /*animate js change*/
-  box-shadow: 38vw 0px 10px 38vw rgba(0,0,0,0.4);
+  box-shadow: 38vw 0px 10px 38vw rgba(0,0,0,0.3);
 }
 
 .Blur {
@@ -96,7 +96,7 @@ html {
   color: rgba(255, 255, 255, 0.75);
   /*link colour*/
   display: block;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.75);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
 }
 
 .sidenav a.active, .sidenav a:hover {
