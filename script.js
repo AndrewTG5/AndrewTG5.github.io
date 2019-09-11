@@ -1,4 +1,5 @@
 function openNav() {
+  //function to open the navbar
   var soundPref = localStorage.getItem("soundPref");
   var hamburger = document.querySelector(".hamburger");
   hamburger.classList.add("is-active"); //triggers hamburger menu animation
@@ -13,6 +14,7 @@ function openNav() {
 }
 
 function closeNav() {
+  //function to close the navbar
   var soundPref = localStorage.getItem("soundPref");
   var hamburger = document.querySelector(".hamburger");
   hamburger.classList.remove("is-active"); //triggers hamburger menu animation
@@ -27,6 +29,7 @@ function closeNav() {
 }
 
 function playHover() {
+  //function to play a sound when menu item hovered
   var soundPref = localStorage.getItem("soundPref");
   if (soundPref == "on") {
     hover.play();
@@ -35,6 +38,7 @@ function playHover() {
 }
 
 function dark() {
+  //function to set dark theme
   var bodytext = document.querySelectorAll(".bodyText");
   var bodyimg = document.querySelectorAll(".bodyImg");
   var p = document.querySelectorAll("p");
@@ -57,6 +61,7 @@ function dark() {
 }
 
 function light() {
+  //function to set light theme
   var bodytext = document.querySelectorAll(".bodyText");
   var bodyimg = document.querySelectorAll(".bodyImg");
   var p = document.querySelectorAll("p");
@@ -79,6 +84,7 @@ function light() {
 }
 
 function start() {
+  //closes nav and sets theme
   closeNav();
   if (themePref == "dark") {
     dark();

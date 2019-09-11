@@ -13,8 +13,7 @@ html {
 }
 
 @keyframes Gradient {
-
-  /*gradient animation*/
+  /*gradient background animation*/
   0% {
     background-position: 0% 50%
   }
