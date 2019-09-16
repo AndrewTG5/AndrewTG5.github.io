@@ -51,7 +51,7 @@ function dark() {
   //function to set dark theme
   var bodytext = document.querySelectorAll(".bodyText");
   var bodyimg = document.querySelectorAll(".bodyImg");
-  var p = document.querySelectorAll("p");
+  var root = document.documentElement;
   var i;
 
   document.getElementById("mouse").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
@@ -65,16 +65,14 @@ function dark() {
   for (i = 0; i < bodyimg.length; i++) {
     bodyimg[i].style.background = "rgba(0, 0, 0, 0.6)";
   }
-  for (i = 0; i < p.length; i++) {
-    p[i].style.color = "rgba(235, 235, 235, 0.8)";
-  }
+  root.style.setProperty('--mainText', "rgb(255, 255, 255)");
 }
 
 function light() {
   //function to set light theme
   var bodytext = document.querySelectorAll(".bodyText");
   var bodyimg = document.querySelectorAll(".bodyImg");
-  var p = document.querySelectorAll("p");
+  var root = document.documentElement;
   var i;
 
   document.getElementById("mouse").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
@@ -88,9 +86,7 @@ function light() {
   for (i = 0; i < bodyimg.length; i++) {
     bodyimg[i].style.background = "rgba(255,255,255,0.4)";
   }
-  for (i = 0; i < p.length; i++) {
-    p[i].style.color = "rgb(0, 0, 0)";
-  }
+  root.style.setProperty('--mainText', "rgb(0, 0, 0)");
 }
 
 function start() {
