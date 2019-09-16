@@ -56,6 +56,7 @@ function dark() {
 
   root.style.setProperty('--mainText', "rgb(255, 255, 255)");
   root.style.setProperty('--mainIMG', "rgba(0, 0, 0, 0.6)");
+  root.style.setProperty('--textInvert', "rgb(0, 0, 0)");
 }
 
 function light() {
@@ -69,6 +70,8 @@ function light() {
 
   root.style.setProperty('--mainText', "rgb(0, 0, 0)");
   root.style.setProperty('--mainIMG', "rgba(255, 255, 255, 0.4)");
+  root.style.setProperty('--textInvert', "rgb(255, 255, 255)");
+
 }
 
 function start() {
