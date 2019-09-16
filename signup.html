@@ -24,50 +24,55 @@
 	<meta name="msapplication-TileColor" content="#0094ff">
 	<meta name="msapplication-config" content="browserconfig.xml">
 
-  <style>
-    .bodyText{
-      padding: 3% 5% 3% 5%;
-    }
+	<style>
+		.bodyText {
+			padding: 3% 5% 3% 5%;
+		}
 
-    input[type=text], select {
-      color: var(--mainText);
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      display: inline-block;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      box-sizing: border-box;
-      outline: none;
-      border-bottom: none;
-      transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-      box-shadow: 3px 3px 12px -4px rgba(0, 0, 0, 0.4);
-    }
+		label{
+			color: var(--mainText);
+		}
 
-    input[type=text]:focus {
-      border-bottom: 2px solid red;
-    }
+		input[type=text],
+		select {
+			color: var(--mainText);
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 8px;
+			box-sizing: border-box;
+			outline: none;
+			border-bottom: none;
+			transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+			box-shadow: 3px 3px 12px -4px rgba(0, 0, 0, 0.4);
+		}
 
-    input[type=submit] {
-      width: 100%;
-      background-color: rgb(56, 191, 240);
-      color: white;
-      padding: 14px 20px;
-      margin: 3% 0 0 0;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 3px 3px 12px -4px rgba(0, 0, 0, 0.4);
-    }
+		input[type=text]:focus {
+			border-bottom: 2px solid red;
+		}
 
-    select {
-      background-color: white;
-    }
+		input[type=submit] {
+			width: 100%;
+			background-color: rgb(56, 191, 240);
+			color: white;
+			padding: 14px 20px;
+			margin: 3% 0 0 0;
+			border: none;
+			border-radius: 8px;
+			cursor: pointer;
+			box-shadow: 3px 3px 12px -4px rgba(0, 0, 0, 0.4);
+		}
 
-    input[type=submit]:hover {
-      background-color: rgb(44, 164, 208);
-    }
-  </style>
+		select {
+			background-color: white;
+		}
+
+		input[type=submit]:hover {
+			background-color: rgb(44, 164, 208);
+		}
+	</style>
 	<script>
 		window.onload = start;
 		if ('serviceWorker' in navigator) {
@@ -103,23 +108,23 @@
 		<!--large title-->
 	</div>
 	<div class="bodyText">
-    <form>
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+		<form>
+			<label for="fname">First Name</label>
+			<input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+			<label for="lname">Last Name</label>
+			<input type="text" id="lname" name="lastname" placeholder="Your last name..">
 
-      <label for="country">Country</label>
-      <select id="country" name="country">
-        <option value="australia">Australia</option>
-        <option value="canada">Canada</option>
-        <option value="usa">USA</option>
-      </select>
+			<label for="country">Country</label>
+			<select id="country" name="country">
+				<option value="australia">Australia</option>
+				<option value="canada">Canada</option>
+				<option value="usa">USA</option>
+			</select>
 
-      <input type="submit" value="Submit">
-    </form>
-  </div>
+			<input type="submit" value="Submit">
+		</form>
+	</div>
 </body>
 
 </html>

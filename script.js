@@ -47,44 +47,28 @@ function playHover() {
 
 function dark() {
   //function to set dark theme
-  var bodytext = document.querySelectorAll(".bodyText");
-  var bodyimg = document.querySelectorAll(".bodyImg");
   var root = document.documentElement;
-  var i;
 
   document.getElementById("mouse").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
   document.getElementById("mySidenav").style.backgroundColor = "rgba(0, 0, 0, 0.1)";
   document.querySelector("html").style.background = "linear-gradient(-45deg, rgb(213, 94, 57), rgb(207, 35, 101), rgb(10, 141, 187), rgb(10, 187, 146))";
   document.querySelector("html").style.backgroundSize = "400% 400%";
 
-  for (i = 0; i < bodytext.length; i++) {
-    bodytext[i].style.background = "rgba(0, 0, 0, 0.6)";
-  }
-  for (i = 0; i < bodyimg.length; i++) {
-    bodyimg[i].style.background = "rgba(0, 0, 0, 0.6)";
-  }
   root.style.setProperty('--mainText', "rgb(255, 255, 255)");
+  root.style.setProperty('--mainIMG', "rgba(0, 0, 0, 0.6)");
 }
 
 function light() {
   //function to set light theme
-  var bodytext = document.querySelectorAll(".bodyText");
-  var bodyimg = document.querySelectorAll(".bodyImg");
   var root = document.documentElement;
-  var i;
 
   document.getElementById("mouse").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
   document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
   document.querySelector("html").style.background = "linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171))";
   document.querySelector("html").style.backgroundSize = "400% 400%";
 
-  for (i = 0; i < bodytext.length; i++) {
-    bodytext[i].style.background = "rgba(255,255,255,0.4)";
-  }
-  for (i = 0; i < bodyimg.length; i++) {
-    bodyimg[i].style.background = "rgba(255,255,255,0.4)";
-  }
   root.style.setProperty('--mainText', "rgb(0, 0, 0)");
+  root.style.setProperty('--mainIMG', "rgba(255, 255, 255, 0.4)");
 }
 
 function start() {

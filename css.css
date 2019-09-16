@@ -1,6 +1,7 @@
 :root{
   /*varibles*/
   --mainText: rgb(0, 0, 0);
+  --mainIMG: rgba(255,255,255,0.4)
 }
 
 html {
@@ -123,7 +124,7 @@ html {
   /*body text boxes*/
   border-radius: 18px;
   /*rounded corners*/
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--mainIMG);
   /*box colour, behind the text*/
   padding: 2% 5% 2% 5%;
   width: 75%;
@@ -152,7 +153,7 @@ p {
   /*body images*/
   border-radius: 18px;
   /*rounded corners*/
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--mainIMG);
   /*box colour, behind the text*/
   padding: 3.5% 5% 3.5% 5%;
   width: 20%;
