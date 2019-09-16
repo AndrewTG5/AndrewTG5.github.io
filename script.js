@@ -9,7 +9,6 @@ function openNav() {
   document.getElementById("mouseBlur").style.left = "22%"; //moves the menu bar over with the menu
   document.getElementById("mouse").style.boxShadow = "4px 1px 15px -5px rgba(0,0,0,0.5), 50vw 0px 0px 50vw rgba(0,0,0,0.3)";
   if (navOpen == "0") {
-    console.log("navOpen = 0, now 1");
     localStorage.setItem("navOpen", "1");
     if (soundPref == "on") {
       open.play();
@@ -29,7 +28,6 @@ function closeNav() {
   document.getElementById("mouseBlur").style.left = "0"; //moves the menu bar over with the menu
   document.getElementById("mouse").style.boxShadow = "-4px 1px 15px -3px rgba(0,0,0,0.5), 50vw 0px 0px 50vw rgba(0,0,0,0)";
   if (navOpen == "1") {
-    console.log("navOpen = 1, now 0");
     localStorage.setItem("navOpen", "0");
     if (soundPref == "on") {
       close.play();
