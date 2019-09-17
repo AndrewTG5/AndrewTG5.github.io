@@ -97,11 +97,13 @@
 
 		    // Assumes your app has some sort of prompt UI element
 		    // that a user can either accept or reject.
+				console.log("createUIPrompt");
 		    const prompt = createUIPrompt({
 		      onAccept: async () => {
 		        // Assuming the user accepted the update, set up a listener
 		        // that will reload the page as soon as the previously waiting
 		        // service worker has taken control.
+						console.log("accept UIpromt");
 		        wb.addEventListener('controlling', (event) => {
 		          window.location.reload();
 		        });
