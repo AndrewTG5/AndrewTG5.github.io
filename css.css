@@ -251,6 +251,33 @@ p {
   bottom: 6vw;
 }
 
+/* The alert message box */
+.banner {
+  top: -100%;
+  left: 0;
+  position: fixed;
+  padding: 20px 20px 20px 7.5vw;
+  background-color: #0094ff;
+  color: var(--textInvert);
+  width: 100%;
+  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
+  transition: top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+}
+
+/* The close button */
+.closebtn {
+  margin-right: 10%;
+  margin-left: -7.5%;
+  color: var(--textInvert);
+  font-weight: bold;
+  float: right;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: var(--mainText);
+}
+
 @media (orientation:portrait) {
 
   /*when viewport is portrait, make these changes to css*/

@@ -84,6 +84,11 @@ function start() {
   }
 }
 
+function createUIPrompt() {
+  var banner = document.getElementById("banner");
+  banner.style.top = "0"
+}
+
 var themePref = localStorage.getItem("themePref");
 var soundPref = localStorage.getItem("soundPref");
 var navOpen = localStorage.setItem("navOpen", "1");

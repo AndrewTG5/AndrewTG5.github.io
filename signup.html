@@ -82,33 +82,31 @@
 	<script type="module">
 		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.1.0/workbox-window.prod.mjs';
 
-		if ('serviceWorker' in navigator) {
-		  const wb = new Workbox('/service-worker.js');
-		  wb.addEventListener('waiting', (event) => {
-		    // Assumes your app has some sort of prompt UI element
-		    // that a user can either accept or reject.
-				console.log("createUIPrompt");
-		    const prompt = createUIPrompt({
-		      onAccept: async () => {
-						console.log("accept UIpromt");
-		        wb.addEventListener('controlling', (event) => {
-		          window.location.reload();
-		        });
-		        wb.messageSW({type: 'SKIP_WAITING'});
-		      },
-
-		      onReject: () => {
-		        prompt.dismiss();
-		      }
-		    })
-		  });
-
-		  wb.register();
+		window.swSkipwait=function() {
+			console.log("swSkipwait")
+			wb.addEventListener('controlling', (event) => {
+				window.location.reload();
+			});
+			wb.messageSW({type: 'SKIP_WAITING'});
 		}
-</script>
+
+		if ('serviceWorker' in navigator) {
+			const wb = new Workbox('/service-worker.js');
+			wb.addEventListener('waiting', (event) => {
+				console.log("createUIPrompt");
+				createUIPrompt();
+			});
+		wb.register();
+		}
+	</script>
 </head>
 
 <body>
+	<div class="banner" id="banner">
+		<span class="closebtn" onclick="window.swSkipwait()">Refresh</span>
+		<span class="closebtn" onclick="this.parentElement.style.top='-100%';">Dismiss</span>
+		Site update available, refresh to see changes
+	</div>
 	<div id="mouseBlur" class="mouseout Blur"></div>
 	<!--blurs behind mouseout-->
 	<div id="mySidenav" class="sidenav" onmouseover="openNav()">
