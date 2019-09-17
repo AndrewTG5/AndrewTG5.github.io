@@ -157,7 +157,7 @@
 	<script type="module">
 		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.1.0/workbox-window.prod.mjs';
 
-		window.swSkipwait=function() {
+		window.swSkipwait=async function() {
 			wb.addEventListener('controlling', (event) => {
 				window.location.reload();
 			});
@@ -232,7 +232,7 @@
 	<div class="foot">
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 1.4</p>
+		<p>Version 1.4a</p>
 	</div>
 </body>
 
