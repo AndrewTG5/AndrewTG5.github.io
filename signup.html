@@ -83,7 +83,6 @@
 		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.1.0/workbox-window.prod.mjs';
 
 		window.swSkipwait=function() {
-			console.log("swSkipwait")
 			wb.addEventListener('controlling', (event) => {
 				window.location.reload();
 			});

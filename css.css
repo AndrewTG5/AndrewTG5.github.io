@@ -266,8 +266,7 @@ p {
 
 /* The close button */
 .closebtn {
-  margin-right: 10%;
-  margin-left: -7.5%;
+  margin: 0 10% 0 -7.5%;
   color: var(--textInvert);
   font-weight: bold;
   float: right;
@@ -300,5 +299,9 @@ p {
 
   .bodyText {
     margin: 0% 0% 4% 10%;
+  }
+
+  .closebtn {
+    margin: 6% 10% 0 -7.5%;
   }
 }
