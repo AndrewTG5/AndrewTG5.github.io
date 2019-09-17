@@ -23,12 +23,10 @@
 	<meta name="msapplication-config" content="browserconfig.xml">
 	<script>
 		window.onload = start;
-		// Check that service workers are supported
 		if ('serviceWorker' in navigator) {
-		  // Use the window load event to keep the page load performant
-		  window.addEventListener('load', () => {
-		    navigator.serviceWorker.register('/service-worker.js');
-		  });
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
 		}
 	</script>
 	<script type="module">
@@ -37,8 +35,6 @@
 		if ('serviceWorker' in navigator) {
 			const wb = new Workbox('/service-worker.js');
 			wb.addEventListener('waiting', (event) => {
-				// You may want to customize the UI prompt accordingly.
-
 				// Assumes your app has some sort of prompt UI element
 				// that a user can either accept or reject.
 				console.log("createUIPrompt");
