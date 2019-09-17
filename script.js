@@ -86,7 +86,14 @@ function start() {
 
 function createUIPrompt() {
   var banner = document.getElementById("banner");
-  banner.style.top = "0"
+  banner.style.padding = "20px 20px 20px 7.5vw";
+  banner.style.height = "auto"
+}
+
+function dismissUIPrompt() {
+  var banner = document.getElementById("banner");
+  banner.style.padding = "0 20px 0 7.5vw";
+  banner.style.height = "0"
 }
 
 var themePref = localStorage.getItem("themePref");

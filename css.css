@@ -253,15 +253,17 @@ p {
 
 /* The alert message box */
 .banner {
-  top: -100%;
+  top: 0;
   left: 0;
   position: fixed;
-  padding: 20px 20px 20px 7.5vw;
+  padding: 0 20px 0 7.5vw;
   background-color: #0094ff;
   color: var(--textInvert);
   width: 100%;
+  height: 0;
   box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
-  transition: top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), color 0.15s ease;
+  overflow: hidden;
 }
 
 /* The close button */
@@ -271,6 +273,7 @@ p {
   font-weight: bold;
   float: right;
   cursor: pointer;
+  transition: color 0.15s ease;
 }
 
 .closebtn:hover {
