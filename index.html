@@ -40,8 +40,9 @@
 			wb.messageSW({type: 'SKIP_WAITING'});
 		}
 
+		const wb = new Workbox('/service-worker.js');
+
 		if ('serviceWorker' in navigator) {
-			const wb = new Workbox('/service-worker.js');
 			wb.addEventListener('waiting', (event) => {
 				console.log("createUIPrompt");
 				createUIPrompt();

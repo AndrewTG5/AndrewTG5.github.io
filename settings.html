@@ -165,8 +165,9 @@
 			wb.messageSW({type: 'SKIP_WAITING'});
 		}
 
+		const wb = new Workbox('/service-worker.js');
+
 		if ('serviceWorker' in navigator) {
-			const wb = new Workbox('/service-worker.js');
 			wb.addEventListener('waiting', (event) => {
 				console.log("createUIPrompt");
 				createUIPrompt();
@@ -224,10 +225,15 @@
 			Link to example signup form
 		</a>
 	</div>
+	<div class="bodyText">
+		<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="createUIPrompt()">
+			Service worker update prompt
+		</a>
+	</div>
 	<div class="foot">
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 1.4 beta 6</p>
+		<p>Version 1.4 beta 7</p>
 	</div>
 </body>
 
