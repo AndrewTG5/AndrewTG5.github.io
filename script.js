@@ -120,6 +120,16 @@ function dismissUIPrompt() {
   }, 300);
 }
 
+function openDrawer() {
+  var drawer = document.getElementById("Drawer");
+  drawer.style.maxHeight = "500px";
+}
+
+function closeDrawer() {
+  var drawer = document.getElementById("Drawer");
+  drawer.style.maxHeight = "0px";
+}
+
 var themePref = localStorage.getItem("themePref");
 var soundPref = localStorage.getItem("soundPref");
 var navOpen = localStorage.setItem("navOpen", "1");
