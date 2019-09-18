@@ -86,7 +86,7 @@ function start() {
 
 function createUIPrompt() {
   var div = document.createElement("DIV");
-  div.innerHTML = "This can say anything";
+  div.innerHTML = bannerText;
   div.setAttribute("id", "banner");
   div.className = ("banner");
   document.body.appendChild(div);
@@ -117,6 +117,8 @@ function dismissUIPrompt() {
 var themePref = localStorage.getItem("themePref");
 var soundPref = localStorage.getItem("soundPref");
 var navOpen = localStorage.setItem("navOpen", "1");
+
+var bannerText = "This can be anything";
 
 var close = new Audio('sounds/close.mp3');
 var hover = new Audio('sounds/hover.mp3');
