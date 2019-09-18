@@ -85,7 +85,7 @@ function start() {
 }
 
 function bannerOffline() {
-  bannerText = "You are offline, site may not function correctly";
+  bannerText = "🔥 You are offline, site may be outdated";
   createUIPrompt();
 }
 
@@ -116,7 +116,7 @@ function dismissUIPrompt() {
   banner.style.height = "0"
   setTimeout(function() {
     banner.remove();
-    bannerText = "This can be anything";
+    bannerText = "This can say anything";
   }, 300);
 }
 
@@ -134,7 +134,7 @@ var themePref = localStorage.getItem("themePref");
 var soundPref = localStorage.getItem("soundPref");
 var navOpen = localStorage.setItem("navOpen", "1");
 
-var bannerText = "This can be anything";
+var bannerText = "This can say anything";
 
 var close = new Audio('sounds/close.mp3');
 var hover = new Audio('sounds/hover.mp3');
