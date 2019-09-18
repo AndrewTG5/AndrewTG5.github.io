@@ -115,6 +115,7 @@
 		}
 
 		.dropdown-content {
+			border-top: 2px solid rgb(56, 191, 240);
 			overflow: hidden;
 			width: 100%;
 			max-height: 0px;
@@ -203,11 +204,6 @@
 </head>
 
 <body>
-	<div class="banner" id="banner">
-		<span class="closebtn" onclick="window.swSkipwait()">Refresh</span>
-		<span class="closebtn" onclick="dismissUIPrompt()">Dismiss</span>
-		Site update available, refresh to see changes
-	</div>
 	<div id="mouseBlur" class="mouseout Blur"></div>
 	<!--blurs behind mouseout-->
 	<div id="mySidenav" class="sidenav" onmouseover="openNav()">
@@ -251,7 +247,7 @@
 				Link to example signup form
 			</a>
 			<a style="padding-top: 2.5%; color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="createUIPrompt()">
-				Service worker update prompt
+				Example notification banner
 			</a>
 			<br>
 		</div>
@@ -259,7 +255,7 @@
 	<div class="foot">
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 1.4c</p>
+		<p>Version 1.4d</p>
 	</div>
 </body>
 

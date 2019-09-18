@@ -85,15 +85,33 @@ function start() {
 }
 
 function createUIPrompt() {
+  var div = document.createElement("DIV");
+  div.innerHTML = "This can say anything";
+  div.setAttribute("id", "banner");
+  div.className = ("banner");
+  document.body.appendChild(div);
+
+  var btn = document.createElement("SPAN");
+  btn.innerHTML = "Dismiss";
+  btn.className = ("closebtn");
+  document.getElementById("banner").appendChild(btn);
+  btn.onclick = dismissUIPrompt;
+
   var banner = document.getElementById("banner");
-  banner.style.padding = "20px 20px 20px 7.5vw";
-  banner.style.height = "auto"
+
+  setTimeout(function() {
+    banner.style.padding = "20px 20px 20px 7.5vw";
+    banner.style.height = "auto";
+  }, 300);
 }
 
 function dismissUIPrompt() {
   var banner = document.getElementById("banner");
   banner.style.padding = "0 20px 0 7.5vw";
   banner.style.height = "0"
+  setTimeout(function() {
+    banner.remove();
+  }, 300);
 }
 
 var themePref = localStorage.getItem("themePref");
