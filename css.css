@@ -80,7 +80,7 @@ html {
 
 .Blur {
   /*layer to blur behind menu tab*/
-  z-index: 0;
+  z-index: 1;
   left: 22%;
   background-color: transparent;
   /*bar bg colour*/
