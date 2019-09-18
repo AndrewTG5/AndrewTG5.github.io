@@ -81,20 +81,13 @@
 	</script>
 	<script type="module">
 		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.1.0/workbox-window.prod.mjs';
-
-		window.swSkipwait=async function() {
-			wb.addEventListener('controlling', (event) => {
-				window.location.reload();
-			});
-			wb.messageSW({type: 'SKIP_WAITING'});
-		}
-
-		const wb = new Workbox('/service-worker.js');
-
 		if ('serviceWorker' in navigator) {
+			const wb = new Workbox('/service-worker.js');
 			wb.addEventListener('waiting', (event) => {
-				console.log("createUIPrompt");
-				createUIPrompt();
+				wb.addEventListener('controlling', (event) => {
+					window.location.reload();
+				});
+				wb.messageSW({type: 'SKIP_WAITING'});
 			});
 		wb.register();
 		}
