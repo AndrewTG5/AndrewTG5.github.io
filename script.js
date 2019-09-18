@@ -84,6 +84,11 @@ function start() {
   }
 }
 
+function bannerOffline() {
+  bannerText = "You are offline, site may not function correctly";
+  createUIPrompt();
+}
+
 function createUIPrompt() {
   var div = document.createElement("DIV");
   div.innerHTML = bannerText;
@@ -111,6 +116,7 @@ function dismissUIPrompt() {
   banner.style.height = "0"
   setTimeout(function() {
     banner.remove();
+    bannerText = "This can be anything";
   }, 300);
 }
 
@@ -123,3 +129,5 @@ var bannerText = "This can be anything";
 var close = new Audio('sounds/close.mp3');
 var hover = new Audio('sounds/hover.mp3');
 var open = new Audio('sounds/open.mp3');
+
+window.addEventListener('offline', bannerOffline);
