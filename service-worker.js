@@ -17,9 +17,6 @@ addEventListener('message', (event) => {
   }
 });
 
-self.addEventListener('install', (event) => {
-  console.log("warm");
-  const urls = [index.html, evolocity.html, robotics.html, settings.html, script.js, css.css];
-  const cacheName = main-cache;
-  event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(urls)));
-});
+const urls = [index.html, evolocity.html, robotics.html, settings.html, script.js, css.css];
+const cacheName = 'main-cache';
+event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(urls)));
