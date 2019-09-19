@@ -17,6 +17,6 @@ addEventListener('message', (event) => {
   }
 });
 
-const urls = [index.html, evolocity.html, robotics.html, settings.html, script.js, css.css];
+const urls = ['index.html, evolocity.html, robotics.html, settings.html, script.js, css.css'];
 const cacheName = 'main-cache';
 event.waitUntil(caches.open(cacheName).then((cache) => cache.addAll(urls)));
