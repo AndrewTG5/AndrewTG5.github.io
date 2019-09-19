@@ -1,0 +1,117 @@
+---
+permalink: /404.html
+---
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="author" content="Andrew Blake">
+	<meta name="Description" content="Not found">
+	<title>Not found</title>
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap" rel="stylesheet">
+	<!--icon stuff-->
+	<meta name="theme-color" content="#0094ff">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<meta name="apple-mobile-web-app-title" content="KKC clubs">
+	<meta name="application-name" content="KKC clubs">
+	<meta name="msapplication-TileColor" content="#0094ff">
+	<meta name="msapplication-config" content="browserconfig.xml">
+
+  <style>
+    body {
+      background: rgb(255, 255, 255);
+      text-align: center;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    p {
+      font-size: 125%;
+    }
+
+    .title {
+      font-weight: 300;
+      font-size: 25vw;
+      margin: 0;
+      background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
+      /*background gradient*/
+      background-size: 300% auto;
+      /*makes background large enough to be animatable*/
+      animation: Gradient 12s ease infinite;
+      /*gradient animation*/
+      color: #000;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .homeBtn{
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 200%;
+      padding: 1% 2%;
+      color: #0094ff;
+      border: 5px solid #0094ff;
+      border-radius: 18px;
+    }
+
+    .homeGnt:hover {
+      color: #0073c6;
+      border: 5px solid #0073c6;
+    }
+
+    @keyframes Gradient {
+
+      /*gradient background animation*/
+      0% {
+        background-position: 0% 50%
+      }
+
+      50% {
+        background-position: 100% 50%
+      }
+
+      100% {
+        background-position: 0% 50%
+      }
+    }
+  </style>
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', () => {
+				navigator.serviceWorker.register('/service-worker.js');
+			});
+		}
+	</script>
+	<script type="module">
+		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.1.0/workbox-window.prod.mjs';
+		if ('serviceWorker' in navigator) {
+			const wb = new Workbox('/service-worker.js');
+			wb.addEventListener('waiting', (event) => {
+				wb.addEventListener('controlling', (event) => {
+					window.location.reload();
+				});
+				wb.messageSW({type: 'SKIP_WAITING'});
+			});
+		wb.register();
+		}
+	</script>
+</head>
+
+<body>
+
+	<div>
+		<h1 class="title">404</h1>
+	</div>
+  <p>Not found</p>
+  <br>
+  <a href="index.html" class="homeBtn">Go home</a>
+</body>
+
+</html>
