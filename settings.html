@@ -49,7 +49,10 @@
 		}
 	</style>
 	<script>
-		window.onload = startSettings;
+		document.addEventListener('DOMContentLoaded', (event) => {
+    	startSettings();
+		});
+
 		function toggleTheme() {
 			//sets site theme
 			var themePref = localStorage.getItem("themePref");
@@ -76,12 +79,9 @@
 			//sets toggle button state
 			var userPref = localStorage.getItem("themePref");
 			var soundPref = localStorage.getItem("soundPref");
-			closeNav();
 			if (themePref == "dark") {
-				dark();
 				document.getElementById("themeSwitch").checked = true;
 			} else {
-				light();
 				document.getElementById("themeSwitch").checked = false;
 			}
 			if (soundPref == "on") {
@@ -164,7 +164,7 @@
 	<div class="foot">
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 1.5 beta 1</p>
+		<p>Version 1.5 beta 2</p>
 	</div>
 </body>
 

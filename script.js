@@ -84,11 +84,6 @@ function start() {
   }
 }
 
-function bannerOffline() {
-  bannerText = "🔥 You are offline, site may be outdated";
-  createUIPrompt();
-}
-
 function createUIPrompt() {
   var div = document.createElement("DIV");
   div.innerHTML = bannerText;
@@ -140,4 +135,6 @@ var close = new Audio('sounds/close.mp3');
 var hover = new Audio('sounds/hover.mp3');
 var open = new Audio('sounds/open.mp3');
 
-window.addEventListener('offline', bannerOffline);
+document.addEventListener('DOMContentLoaded', (event) => {
+  start();
+});
