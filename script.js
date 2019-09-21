@@ -85,6 +85,7 @@ function start() {
 }
 
 function createUIPrompt() {
+  //creates banner prompt
   var div = document.createElement("DIV");
   div.innerHTML = bannerText;
   div.setAttribute("id", "banner");
@@ -102,25 +103,28 @@ function createUIPrompt() {
   setTimeout(function() {
     banner.style.padding = "20px 20px 20px 7.5vw";
     banner.style.height = "auto";
-  }, 300);
+  }, 260);
 }
 
 function dismissUIPrompt() {
+  //delete banner prompt
   var banner = document.getElementById("banner");
   banner.style.padding = "0 20px 0 7.5vw";
   banner.style.height = "0"
   setTimeout(function() {
     banner.remove();
     bannerText = "This can say anything";
-  }, 300);
+  }, 260);
 }
 
 function openDrawer() {
+  //opens dropdown
   var drawer = document.getElementById("Drawer");
   drawer.style.maxHeight = "500px";
 }
 
 function closeDrawer() {
+  //closes dropdown
   var drawer = document.getElementById("Drawer");
   drawer.style.maxHeight = "0px";
 }
