@@ -40,11 +40,11 @@ html {
   /*menu pane*/
   height: 100%;
   /*pane fills site verticly*/
-  width: 22%;
+  width: 22vw;
   /*pane takes up 0% of page width, changed with js to open pane*/
   position: fixed;
   /*wont be effected by other elements*/
-  z-index: 1;
+  z-index: 2;
   top: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.1);
@@ -63,13 +63,13 @@ html {
   /*menu bar*/
   height: 100%;
   /*bar fills site verticly*/
-  width: 5%;
+  width: 5vw;
   /*bar takes up 5% of page horizontally*/
   position: fixed;
   /*wont be effected by other elements*/
   z-index: 3;
   top: 0;
-  left: 22%;
+  left: 22vw;
   background-color: rgba(255, 255, 255, 0.3);
   /*bar bg colour*/
   overflow-x: hidden;
@@ -82,7 +82,7 @@ html {
 .Blur {
   /*layer to blur behind menu tab*/
   z-index: 1;
-  left: 22%;
+  left: 22vw;
   background-color: transparent;
   /*bar bg colour*/
   transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
