@@ -7,8 +7,8 @@
 }
 
 html {
+  /*background and font*/
   font-family: 'Noto Sans', sans-serif;
-  /*font*/
   background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
   /*background gradient*/
   background-size: 400% 400%;
@@ -104,7 +104,7 @@ html {
   color: rgba(255, 255, 255, 0.75);
   /*link colour*/
   display: block;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
 }
 
 .sidenav a.active, .sidenav a:hover {
@@ -162,11 +162,10 @@ p {
   /*body text*/
   color: var(--mainText);
   font-size: 125%;
-  transition: color 0.15s ease;
 }
 
 .hamburger {
-  /*container*/
+  /*hamburger menu*/
   padding: 14% 0 0 19%;
   display: inline-block;
   margin: 0;
@@ -248,12 +247,13 @@ p {
 }
 
 .lower {
+  /*link at bottom of nav menu*/
   position: absolute;
   bottom: 6vw;
 }
 
-/* The alert message box */
 .banner {
+  /*banner prompt*/
   top: 0;
   left: 0;
   position: fixed;
@@ -263,12 +263,12 @@ p {
   width: 100%;
   height: 0;
   box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
-  transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), color 0.15s ease;
+  transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   overflow: hidden;
 }
 
-/* The close button */
 .closebtn {
+  /*banner prompt close button*/
   margin: 0 10% 0 -7.5%;
   color: var(--textInvert);
   font-weight: bold;
@@ -282,11 +282,13 @@ p {
 }
 
 label {
+  /*input label*/
   color: var(--mainText);
 }
 
 input[type=text],
 select {
+  /*input*/
   color: var(--mainText);
   width: 100%;
   padding: 12px 20px;
@@ -305,11 +307,13 @@ select {
 
 input[type=text]:focus,
 select:focus {
+  /*input border when focused*/
   border-bottom: 2px solid rgb(56, 191, 240);
   border-top: 2px solid rgb(56, 191, 240);
 }
 
 input[type=submit] {
+  /*submit button*/
   width: 100%;
   background-color: rgb(56, 191, 240);
   color: var(--textInvert);
@@ -326,6 +330,7 @@ input[type=submit]:hover {
 }
 
 label.input-toggle {
+  /*toggle button container*/
   display: block;
   float: right;
   top: 50%;
@@ -333,6 +338,7 @@ label.input-toggle {
 }
 
 label.input-toggle>span {
+  /*toggle button*/
   display: inline-block;
   position: relative;
   background-image: linear-gradient(to right, rgb(51, 51, 51) 0%, rgb(51, 51, 51) 50%, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 100%);
@@ -387,8 +393,8 @@ label.input-toggle>input {
   padding-left: 15%;
 }
 
-/* Dropdown Button */
 .dropbtn {
+  /*dropdown Button*/
   border-radius: var(--mainRadius);
   background: var(--mainIMG);
   padding: 2% 5% 2% 5%;
