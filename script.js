@@ -12,7 +12,6 @@ function openNav() {
     sessionStorage.setItem("navOpen", "1");
     if (soundPref == "on") {
       open.play();
-      console.log("open.play");
     }
   }
 }
@@ -31,7 +30,6 @@ function closeNav() {
     sessionStorage.setItem("navOpen", "0");
     if (soundPref == "on") {
       close.play();
-      console.log("close.play");
     }
   }
 }
@@ -41,7 +39,6 @@ function playHover() {
   var soundPref = localStorage.getItem("soundPref");
   if (soundPref == "on") {
     hover.play();
-    console.log("hover.play");
   }
 }
 

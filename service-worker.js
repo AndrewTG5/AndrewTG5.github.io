@@ -1,12 +1,17 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
 
-workbox.precaching.precacheAndRoute([{
+workbox.precaching.precacheAndRoute([
+  {
     "url": "404.html",
-    "revision": "ea142011b64d76a648d95eba63189fac"
+    "revision": "a8192d935848ebc213a8f3268a86f524"
+  },
+  {
+    "url": "browserconfig.xml",
+    "revision": "50a9ff381a1e81db6661287e7c50e78d"
   },
   {
     "url": "css.css",
-    "revision": "aa8717a4b67190b1ab874ce87d30e0ce"
+    "revision": "c9208a74d0992f3b3498752da1735bc2"
   },
   {
     "url": "evolocity.html",
@@ -58,11 +63,15 @@ workbox.precaching.precacheAndRoute([{
   },
   {
     "url": "script.js",
-    "revision": "5fe87e4386dba780afb184c22d91ee9b"
+    "revision": "b7676b8854618ba31db9f98d16d202d0"
+  },
+  {
+    "url": "service-worker.js",
+    "revision": "b5de4e7985c9eda6066a673f67a44730"
   },
   {
     "url": "settings.html",
-    "revision": "62907b0ce6695e5804e7a5dcf52593ca"
+    "revision": "cc68ec8ec7ae81d4e9e4fed6191dcda9"
   },
   {
     "url": "signup.html",
@@ -71,8 +80,20 @@ workbox.precaching.precacheAndRoute([{
   {
     "url": "site.webmanifest",
     "revision": "49ded6e6d329dd25eea73db6a9204ba2"
+  },
+  {
+    "url": "sounds/close.mp3",
+    "revision": "33616695a0de16662e4fb6194cc985e2"
+  },
+  {
+    "url": "sounds/hover.mp3",
+    "revision": "a7e508fdf6acc76cfbcc345039ede9b5"
+  },
+  {
+    "url": "sounds/open.mp3",
+    "revision": "b1e7c97d7bc89ba3f0619891feb563c0"
   }
-]);
+])
 
 workbox.routing.registerRoute(
   // Cache files.
@@ -87,6 +108,5 @@ workbox.routing.registerRoute(
 addEventListener('message', (event) => {
   if (event.data && event.data.type === 'SKIP_WAITING') {
     skipWaiting();
-    console.log("skipWaiting")
   }
 });
