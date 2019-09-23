@@ -101,10 +101,10 @@ html {
   /*removes link styling*/
   font-size: 2.8vw;
   /*font size of links*/
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.9);
   /*link colour*/
   display: block;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
 .sidenav a.active, .sidenav a:hover {
@@ -259,7 +259,7 @@ p {
   position: fixed;
   padding: 0 20px 0 7.5vw;
   background-color: #0094ff;
-  color: var(--textInvert);
+  color: rgb(255, 255, 255);
   width: 100%;
   height: 0;
   box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
@@ -270,7 +270,7 @@ p {
 .closebtn {
   /*banner prompt close button*/
   margin: 0 10% 0 -7.5%;
-  color: var(--textInvert);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   float: right;
   cursor: pointer;
