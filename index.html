@@ -44,39 +44,34 @@
 </head>
 
 <body>
-	<div id="mouseBlur" class="mouseout Blur"></div>
-	<!--blurs behind mouseout-->
-	<div id="mySidenav" class="sidenav" onmouseover="openNav()">
-		<!--slide out menu-->
+	<div id="mySidenav" class="sidenav">
 		<a class="active" href="#">Home</a>
 		<a onmouseover="playHover()" href="robotics.html">Robotics</a>
 		<a onmouseover="playHover()" href="evolocity.html">Evolocity</a>
 		<a onmouseover="playHover()" href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank" rel="noopener">GitHub</a>
 		<a onmouseover="playHover()" href="settings.html" class="lower">Settings</a>
-		<div id="mouse" class="mouseout" onmouseout="closeNav()">
-			<!--closed menu bar-->
-			<div class="hamburger hamburger--arrowalt">
-				<div class="hamburger-box">
-					<div class="hamburger-inner"></div>
-					<!--menu label-->
-				</div>
+	</div>
+	<div id="mouse" class="mouseout" onmouseover="openNav()">
+		<div class="hamburger hamburger--arrowalt">
+			<div class="hamburger-box">
+				<div class="hamburger-inner"></div>
 			</div>
 		</div>
 	</div>
-	<div>
-		<h1 class="title">School clubs</h1>
-		<!--large title-->
-	</div>
-	<div class="bodyText">
-		<!--body text-->
-		<p>There are many clubs in this school, none of them well documented or easy to find in any of the school websites.</p>
-		<p>This website will showcase some school clubs with as much infomation as I can find.</p>
-	</div>
-	<div class="bodyText">
-		<!--body text 2-->
-		<p>The clubs showcased in this site are:</p>
-		<p>Robotics</p>
-		<p>Evolocity</p>
+	<div onmouseover="closeNav()">
+		<div style="z-index: -99; width: 100%; height: 100vh; overflow: hidden; position: fixed;"></div>
+		<div>
+			<h1 class="title">School clubs</h1>
+		</div>
+		<div class="bodyText">
+			<p>There are many clubs in this school, none of them well documented or easy to find in any of the school websites.</p>
+			<p>This website will showcase some school clubs with as much infomation as I can find.</p>
+		</div>
+		<div class="bodyText">
+			<p>The clubs showcased in this site are:</p>
+			<p>Robotics</p>
+			<p>Evolocity</p>
+		</div>
 	</div>
 </body>
 
