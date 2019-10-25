@@ -1,12 +1,10 @@
 function openNav() {
-  //function to open the navbar
   var navOpen = sessionStorage.getItem("navOpen");
   var soundPref = localStorage.getItem("soundPref");
   var hamburger = document.querySelector(".hamburger");
   hamburger.classList.add("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "22vw"; //size of the menu when open
   document.getElementById("mouse").style.left = "22vw"; //moves the menu bar over with the menu
-  document.getElementById("mouseBlur").style.left = "22vw"; //moves the menu bar over with the menu
   document.getElementById("mouse").style.boxShadow = "4px 1px 15px -5px rgba(0,0,0,0.5), 50vw 0px 0px 50vw rgba(0,0,0,0.3)";
   if (navOpen == "0") {
     sessionStorage.setItem("navOpen", "1");
@@ -17,14 +15,12 @@ function openNav() {
 }
 
 function closeNav() {
-  //function to close the navbar
   var navOpen = sessionStorage.getItem("navOpen");
   var soundPref = localStorage.getItem("soundPref");
   var hamburger = document.querySelector(".hamburger");
   hamburger.classList.remove("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "0"; //size of the menu when closed
   document.getElementById("mouse").style.left = "0"; //moves the menu bar over with the menu
-  document.getElementById("mouseBlur").style.left = "0"; //moves the menu bar over with the menu
   document.getElementById("mouse").style.boxShadow = "-4px 1px 15px -3px rgba(0,0,0,0.5), 50vw 0px 0px 50vw rgba(0,0,0,0)";
   if (navOpen == "1") {
     sessionStorage.setItem("navOpen", "0");
@@ -35,9 +31,10 @@ function closeNav() {
 }
 
 function playHover() {
-  //function to play a sound when menu item hovered
   var soundPref = localStorage.getItem("soundPref");
   if (soundPref == "on") {
+    hover.pause();
+    hover.currentTime = 0;
     hover.play();
   }
 }
