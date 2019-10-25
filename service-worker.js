@@ -1,21 +1,19 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
-
 workbox.precaching.precacheAndRoute([
   {
     "url": "404.html",
-    "revision": "a8192d935848ebc213a8f3268a86f524"
+    "revision": "4bdddcec97b9dd6097cae403d71f7a55"
   },
   {
     "url": "browserconfig.xml",
-    "revision": "50a9ff381a1e81db6661287e7c50e78d"
+    "revision": "f6cb7eceb4b088672ff80964d878ccad"
   },
   {
     "url": "css.css",
-    "revision": "c9208a74d0992f3b3498752da1735bc2"
+    "revision": "15d16b5f77a0a4b781210d66c5e41431"
   },
   {
     "url": "evolocity.html",
-    "revision": "d4bfcc941cd661c5eb551361b207aa48"
+    "revision": "12f7360404ad25fdf54cdc6142d6e6e8"
   },
   {
     "url": "img/android-chrome-192x192.png",
@@ -55,31 +53,31 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "919b63cea3519927622e6b5c3e5dca3d"
+    "revision": "2584e1e64bc44a57b935de20493a371d"
+  },
+  {
+    "url": "README.md",
+    "revision": "755c973a45c4542764e6910851265f8b"
   },
   {
     "url": "robotics.html",
-    "revision": "63adb7ea293933f69ddb5c02eeb931d2"
+    "revision": "c2aca893de044095577222141d25c285"
   },
   {
     "url": "script.js",
-    "revision": "b7676b8854618ba31db9f98d16d202d0"
-  },
-  {
-    "url": "service-worker.js",
-    "revision": "b5de4e7985c9eda6066a673f67a44730"
+    "revision": "8086c0103d9ba99032d7bf304c1553ac"
   },
   {
     "url": "settings.html",
-    "revision": "cc68ec8ec7ae81d4e9e4fed6191dcda9"
+    "revision": "ca28f5b11c76221f093da8726f61c260"
   },
   {
     "url": "signup.html",
-    "revision": "4684a42498c887e4d1632c9b004c294f"
+    "revision": "ba2dabfbe26e71ce87a4d21a45589606"
   },
   {
     "url": "site.webmanifest",
-    "revision": "49ded6e6d329dd25eea73db6a9204ba2"
+    "revision": "c0a9a26f804a9e442d8f28b3858565d0"
   },
   {
     "url": "sounds/close.mp3",
@@ -93,20 +91,4 @@ workbox.precaching.precacheAndRoute([
     "url": "sounds/open.mp3",
     "revision": "b1e7c97d7bc89ba3f0619891feb563c0"
   }
-])
-
-workbox.routing.registerRoute(
-  // Cache files.
-  /\.(?:js|css|png|webp|html)$/,
-  // Use cache but update in the background.
-  new workbox.strategies.StaleWhileRevalidate({
-    // Use a custom cache name.
-    cacheName: 'main-cache',
-  })
-);
-
-addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    skipWaiting();
-  }
-});
+]);
