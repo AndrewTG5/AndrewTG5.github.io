@@ -1,3 +1,5 @@
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
+
 workbox.precaching.precacheAndRoute([
   {
     "url": "404.html",
@@ -92,3 +94,9 @@ workbox.precaching.precacheAndRoute([
     "revision": "b1e7c97d7bc89ba3f0619891feb563c0"
   }
 ]);
+
+addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    skipWaiting();
+  }
+});
