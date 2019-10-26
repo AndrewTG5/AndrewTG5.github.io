@@ -94,3 +94,9 @@ workbox.precaching.precacheAndRoute([
     "revision": "b1e7c97d7bc89ba3f0619891feb563c0"
   }
 ]);
+
+addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    skipWaiting();
+  }
+});
