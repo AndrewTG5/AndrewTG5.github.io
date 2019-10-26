@@ -1,9 +1,7 @@
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
-
 workbox.precaching.precacheAndRoute([
   {
     "url": "404.html",
-    "revision": "4bdddcec97b9dd6097cae403d71f7a55"
+    "revision": "db22260a0a02144b7f4fe08d1b478cb8"
   },
   {
     "url": "browserconfig.xml",
@@ -11,11 +9,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css.css",
-    "revision": "15d16b5f77a0a4b781210d66c5e41431"
+    "revision": "86bd48743c06980d9afcf7ba89515494"
   },
   {
     "url": "evolocity.html",
-    "revision": "12f7360404ad25fdf54cdc6142d6e6e8"
+    "revision": "381c8260ad8fa879089badb3a1249041"
   },
   {
     "url": "img/android-chrome-192x192.png",
@@ -55,7 +53,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "2584e1e64bc44a57b935de20493a371d"
+    "revision": "a68d7ae85c229489fe456542093e8ddf"
   },
   {
     "url": "README.md",
@@ -63,19 +61,19 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "robotics.html",
-    "revision": "c2aca893de044095577222141d25c285"
+    "revision": "e87245f1c1c7a16b2f1cd34738a5d048"
   },
   {
     "url": "script.js",
-    "revision": "8086c0103d9ba99032d7bf304c1553ac"
+    "revision": "9d8771a074edc2e97b2d0e2ac2633136"
   },
   {
     "url": "settings.html",
-    "revision": "ca28f5b11c76221f093da8726f61c260"
+    "revision": "0d4124603d5c21b33e180ba742fc728e"
   },
   {
     "url": "signup.html",
-    "revision": "ba2dabfbe26e71ce87a4d21a45589606"
+    "revision": "d7a4979e2594712b8ef81fd9286a8b60"
   },
   {
     "url": "site.webmanifest",
@@ -94,9 +92,3 @@ workbox.precaching.precacheAndRoute([
     "revision": "b1e7c97d7bc89ba3f0619891feb563c0"
   }
 ]);
-
-addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    skipWaiting();
-  }
-});

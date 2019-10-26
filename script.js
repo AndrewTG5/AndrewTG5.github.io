@@ -1,8 +1,7 @@
 function openNav() {
   var navOpen = sessionStorage.getItem("navOpen");
   var soundPref = localStorage.getItem("soundPref");
-  var hamburger = document.querySelector(".hamburger");
-  hamburger.classList.add("is-active"); //triggers hamburger menu animation
+  document.querySelector(".hamburger").classList.add("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "22vw"; //size of the menu when open
   document.getElementById("mouse").style.left = "22vw"; //moves the menu bar over with the menu
   document.getElementById("mouse").style.boxShadow = "4px 1px 15px -5px rgba(0,0,0,0.5), 50vw 0px 0px 50vw rgba(0,0,0,0.3)";
@@ -17,8 +16,7 @@ function openNav() {
 function closeNav() {
   var navOpen = sessionStorage.getItem("navOpen");
   var soundPref = localStorage.getItem("soundPref");
-  var hamburger = document.querySelector(".hamburger");
-  hamburger.classList.remove("is-active"); //triggers hamburger menu animation
+  document.querySelector(".hamburger").classList.remove("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "0"; //size of the menu when closed
   document.getElementById("mouse").style.left = "0"; //moves the menu bar over with the menu
   document.getElementById("mouse").style.boxShadow = "-4px 1px 15px -3px rgba(0,0,0,0.5), 50vw 0px 0px 50vw rgba(0,0,0,0)";
@@ -79,7 +77,6 @@ function start() {
 }
 
 function createUIPrompt() {
-  //creates banner prompt
   var div = document.createElement("DIV");
   div.innerHTML = bannerText;
   div.setAttribute("id", "banner");
@@ -101,7 +98,6 @@ function createUIPrompt() {
 }
 
 function dismissUIPrompt() {
-  //delete banner prompt
   var banner = document.getElementById("banner");
   banner.style.padding = "0 20px 0 7.5vw";
   banner.style.height = "0"
@@ -112,13 +108,11 @@ function dismissUIPrompt() {
 }
 
 function openDrawer() {
-  //opens dropdown
   var drawer = document.getElementById("Drawer");
   drawer.style.maxHeight = "500px";
 }
 
 function closeDrawer() {
-  //closes dropdown
   var drawer = document.getElementById("Drawer");
   drawer.style.maxHeight = "0px";
 }

@@ -1,5 +1,4 @@
 :root {
-  /*varibles*/
   --mainText: rgb(0, 0, 0);
   --mainIMG: rgba(255, 255, 255, 0.4);
   --mainRadius: 18px;
@@ -7,22 +6,16 @@
 }
 
 html {
-  /*background and font*/
   font-family: 'Noto Sans', sans-serif;
   background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
-  /*background gradient*/
   background-size: 400% 400%;
-  /*makes background large enough to be animatable*/
   animation: Gradient 15s ease infinite;
-  /*gradient animation*/
   margin: 0;
   width: 100%;
   height: 100vh;
 }
 
 @keyframes Gradient {
-
-  /*gradient background animation*/
   0% {
     background-position: 0% 50%
   }
@@ -37,117 +30,81 @@ html {
 }
 
 .sidenav {
-  /*menu pane*/
   height: 100%;
-  /*pane fills site verticly*/
   width: 22vw;
-  /*pane takes up 0% of page width, changed with js to open pane*/
   position: fixed;
-  /*wont be effected by other elements*/
   z-index: 2;
   top: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.1);
-  /*pane bg colour*/
   overflow-x: hidden;
-  /*menu wont make a scrollbar*/
   transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  /*animate js change*/
   padding-top: 4%;
-  /*moves links down*/
   backdrop-filter: blur(10px);
-  /*blurs behind*/
 }
 
 .mouseout {
-  /*menu bar*/
   height: 100%;
-  /*bar fills site verticly*/
   width: 5vw;
-  /*bar takes up 5% of page horizontally*/
   position: fixed;
-  /*wont be effected by other elements*/
   z-index: 3;
   top: 0;
   left: 22vw;
   background-color: rgba(255, 255, 255, 0.3);
-  /*bar bg colour*/
   overflow-x: hidden;
-  /*wont make a scrollbar*/
   transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  /*animate js change*/
   box-shadow: 4px 1px 15px -5px rgba(0, 0, 0, 0.5), 50vw 0px 0px 50vw rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(15px);
 }
 
 .sidenav a {
-  /*menu pane links. can have gaps in text with alt 0160*/
+  /*menu pane links, can have gaps in text with alt 0160*/
   z-index: 2;
   padding: 0.8vw 0vw 1.2vw 25%;
-  /*padding for links in menu, vw for fixed, % will animate as menu opens*/
   text-decoration: none;
-  /*removes link styling*/
   font-size: 2.8vw;
-  /*font size of links*/
   color: rgba(255, 255, 255, 0.9);
-  /*link colour*/
   display: block;
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
 
 .sidenav a.active, .sidenav a:hover {
   color: rgb(0, 0, 0);
-  /*link colour when active or hovered*/
 }
 
 .title {
-  /*body title*/
   font-size: 300%;
   color: rgba(255, 255, 255, 0.9);
-  /*text colour*/
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   margin: 1% 0% 1.5% 11%;
   font-weight: 400;
-  /*not bold*/
 }
 
 .bodyText {
-  /*body text boxes*/
   border-radius: var(--mainRadius);
-  /*rounded corners*/
   background: var(--mainIMG);
-  /*box colour, behind the text*/
   padding: 2% 5% 2% 5%;
   width: 75%;
-  /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
 }
 
 .TextImg {
-  /*body text boxes*/
   width: 43%;
-  /*box will fill up % of site width*/
   margin: 0% 5% 2% 0%;
   float: right;
-  /*moves to the right of the page*/
 }
 
 .bodyImg {
-  /*body images*/
   border-radius: var(--mainRadius);
-  /*rounded corners*/
   background: var(--mainIMG);
-  /*box colour, behind the text*/
   padding: 3.5% 5% 3.5% 5%;
   width: 20%;
-  /*box will fill up % of site width*/
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
 }
 
 p {
-  /*body text*/
   color: var(--mainText);
   font-size: 125%;
 }
@@ -177,13 +134,9 @@ p {
 .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
   /*bar style*/
   width: 3vw;
-  /*bar width*/
   height: 0.3vw;
-  /*bar height*/
   background-color: rgba(255, 255, 255, 0.8);
-  /*bar colour*/
   border-radius: 4px;
-  /*round corners*/
   position: absolute;
   transition: transform 0.15s ease;
   box-shadow: 3px 3px 15px -1px rgba(0, 0, 0, 0.5);
@@ -192,7 +145,6 @@ p {
 .hamburger-inner::before {
   /*extra bar*/
   top: -1vw;
-  /*bar padding*/
   content: "";
   display: block;
 }
@@ -200,7 +152,6 @@ p {
 .hamburger-inner::after {
   /*extra bar*/
   bottom: -1vw;
-  /*bar padding*/
   content: "";
   display: block;
 }
@@ -382,7 +333,7 @@ label.input-toggle>input {
 }
 
 .dropbtn {
-  /*dropdown Button*/
+  /*dropdown hover*/
   border-radius: var(--mainRadius);
   background: var(--mainIMG);
   padding: 2% 5% 2% 5%;
@@ -405,22 +356,18 @@ label.input-toggle>input {
 }
 
 @media (orientation:portrait) {
-
-  /*when viewport is portrait, make these changes to css*/
   :root {
     --mainRadius: 12px;
   }
 
   .TextImg {
     width: 75%;
-    /*box will fill up % of site width*/
     float: none;
     margin: 0% 0% 4% 10%;
   }
 
   .bodyImg {
     width: 75%;
-    /*box will fill up % of site width*/
     margin: 0% 0% 3% 10%;
   }
 

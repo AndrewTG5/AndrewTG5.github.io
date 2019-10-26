@@ -29,7 +29,7 @@
 		}
 	</script>
 	<script type="module">
-		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-window.prod.mjs';
+		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.1.0/workbox-window.prod.mjs';
 		if ('serviceWorker' in navigator) {
 			const wb = new Workbox('/service-worker.js');
 			wb.addEventListener('waiting', (event) => {
@@ -64,7 +64,8 @@
 			<h1 class="title">Evolocity</h1>
 		</div>
 		<div class="bodyText">
-			<p>School teams build a vehicle (either a bike or with 3+ wheels) powered by a standard 350W electric motor, controller and two 12V gel cells. Innovation is encouraged as students strive to make their vehicle the fastest with the least drag, and
+			<p>School teams build a vehicle (either a bike or with 3+ wheels) powered by a standard 350W electric motor, controller and two 12V gel cells. Innovation is encouraged as students strive to make their vehicle the fastest with the least drag,
+				and
 				able to cope with the demands of a tight street circuit. The Innovation categories encourage teams to build in object detection and mitigation features along with the measurement and display of key performance metrics.</p>
 		</div>
 		<img src="img/evolocity.png" alt="evelocity logo" class="bodyImg">
