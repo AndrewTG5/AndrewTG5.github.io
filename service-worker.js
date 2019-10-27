@@ -15,7 +15,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "evolocity.html",
-    "revision": "6c6500b99af22a1ffcf7595e75dadcbf"
+    "revision": "73779ee1540523f60623493b9623deed"
   },
   {
     "url": "img/android-chrome-192x192.png",
@@ -30,10 +30,6 @@ workbox.precaching.precacheAndRoute([
     "revision": "ffb54c178723fe071726e5a884b3bcef"
   },
   {
-    "url": "img/evolocity.png",
-    "revision": "1e18af1f408805497ef45533689f25d6"
-  },
-  {
     "url": "img/favicon-16x16.png",
     "revision": "8e7f45a80eeb52e847fd71205e92e360"
   },
@@ -46,16 +42,20 @@ workbox.precaching.precacheAndRoute([
     "revision": "0cff3693d19344342062a4162c276467"
   },
   {
+    "url": "img/logo.png",
+    "revision": "9b611ddf812a2d610c2085fa084d552a"
+  },
+  {
     "url": "img/mstile-150x150.png",
     "revision": "85562b286fb13d2b618160925032bdbe"
   },
   {
-    "url": "img/robot.webp",
-    "revision": "690813fe3639ce1a009298748e9c6f7b"
+    "url": "img/vid.png",
+    "revision": "7fd1810d471caa55b5e27810f6837866"
   },
   {
     "url": "index.html",
-    "revision": "4e9cdcd7b2ae25a80d143cf787de48d1"
+    "revision": "ffdcd83bd2e6e89b2c26b50a9cd1806c"
   },
   {
     "url": "README.md",
@@ -63,7 +63,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "robotics.html",
-    "revision": "bdca09b8ceeedd157ce124ccb30d4a9f"
+    "revision": "b97278ea16ebdb3a4f1b649356b851be"
   },
   {
     "url": "script.js",
@@ -71,11 +71,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "settings.html",
-    "revision": "019f9c767e71eb8d1df993d92480dac0"
+    "revision": "b37e91f26deedfada65363dc94367f21"
   },
   {
     "url": "signup.html",
-    "revision": "0318cb15102ae9946539c4f2e6014ea7"
+    "revision": "2fb5fe768cd9e5c98f50e6e9860f5120"
   },
   {
     "url": "site.webmanifest",
