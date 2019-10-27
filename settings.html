@@ -87,12 +87,6 @@
 				document.getElementById("audioSwitch").checked = false;
 			}
 		}
-
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', () => {
-				navigator.serviceWorker.register('/service-worker.js');
-			});
-		}
 	</script>
 	<script type="module">
 		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-window.prod.mjs';
@@ -157,7 +151,7 @@
 		<div class="foot">
 			<p>Author: Andrew Blake</p>
 			<br>
-			<p>Version 2.0.0-rc4</p>
+			<p>Version 2.0.0-rc5</p>
 		</div>
 	</div>
 </body>

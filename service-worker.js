@@ -3,7 +3,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 workbox.precaching.precacheAndRoute([
   {
     "url": "404.html",
-    "revision": "db22260a0a02144b7f4fe08d1b478cb8"
+    "revision": "71da6effd54e4ca78fb57c29dde2944d"
   },
   {
     "url": "browserconfig.xml",
@@ -11,11 +11,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css.css",
-    "revision": "86bd48743c06980d9afcf7ba89515494"
+    "revision": "645aa603148a9cee4f12c8281d42517d"
   },
   {
     "url": "evolocity.html",
-    "revision": "381c8260ad8fa879089badb3a1249041"
+    "revision": "6c6500b99af22a1ffcf7595e75dadcbf"
   },
   {
     "url": "img/android-chrome-192x192.png",
@@ -55,7 +55,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "a68d7ae85c229489fe456542093e8ddf"
+    "revision": "4e9cdcd7b2ae25a80d143cf787de48d1"
   },
   {
     "url": "README.md",
@@ -63,19 +63,19 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "robotics.html",
-    "revision": "e87245f1c1c7a16b2f1cd34738a5d048"
+    "revision": "bdca09b8ceeedd157ce124ccb30d4a9f"
   },
   {
     "url": "script.js",
-    "revision": "9d8771a074edc2e97b2d0e2ac2633136"
+    "revision": "43ed7b060c9134ec8c122173adb87af9"
   },
   {
     "url": "settings.html",
-    "revision": "0d4124603d5c21b33e180ba742fc728e"
+    "revision": "019f9c767e71eb8d1df993d92480dac0"
   },
   {
     "url": "signup.html",
-    "revision": "d7a4979e2594712b8ef81fd9286a8b60"
+    "revision": "0318cb15102ae9946539c4f2e6014ea7"
   },
   {
     "url": "site.webmanifest",

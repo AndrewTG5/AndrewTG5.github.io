@@ -3,6 +3,7 @@
   --mainIMG: rgba(255, 255, 255, 0.4);
   --mainRadius: 18px;
   --textInvert: rgb(255, 255, 255);
+  --accentBlue: rgb(0, 148, 255);
 }
 
 html {
@@ -197,7 +198,7 @@ p {
   left: 0;
   position: fixed;
   padding: 0 20px 0 7.5vw;
-  background-color: #0094ff;
+  background-color: var(--accentBlue);
   color: rgb(255, 255, 255);
   width: 100%;
   height: 0;
@@ -237,8 +238,8 @@ select {
   border-radius: 8px;
   box-sizing: border-box;
   outline: none;
-  border-bottom: 0px solid rgb(56, 191, 240);
-  border-top: 0px solid rgb(56, 191, 240);
+  border-bottom: 0px solid var(--accentBlue);
+  border-top: 0px solid var(--accentBlue);
   transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), border-top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   box-shadow: 3px 3px 12px -4px rgba(0, 0, 0, 0.4);
   background-color: var(--textInvert);
@@ -247,14 +248,14 @@ select {
 input[type=text]:focus,
 select:focus {
   /*input border when focused*/
-  border-bottom: 2px solid rgb(56, 191, 240);
-  border-top: 2px solid rgb(56, 191, 240);
+  border-bottom: 2px solid var(--accentBlue);
+  border-top: 2px solid var(--accentBlue);
 }
 
 input[type=submit] {
   /*submit button*/
   width: 100%;
-  background-color: rgb(56, 191, 240);
+  background-color: var(--accentBlue);
   color: var(--textInvert);
   padding: 14px 20px;
   margin: 3% 0 0 0;
@@ -265,7 +266,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: rgb(44, 164, 208);
+  background-color: rgb(65, 175, 255);
 }
 
 label.input-toggle {
@@ -300,7 +301,7 @@ label.input-toggle>span:after {
   position: absolute;
   width: 18px;
   height: 18px;
-  background: #0094ff;
+  background: var(--accentBlue);
   align-self: center;
   top: 50%;
   left: 0;
@@ -312,7 +313,7 @@ label.input-toggle>span:after {
 
 label.input-toggle>input:checked+span:after {
   left: calc(100% - 18px);
-  background-color: #0094ff;
+  background-color: var(--accentBlue);
 }
 
 label.input-toggle>span:active:after {
@@ -343,7 +344,7 @@ label.input-toggle>input {
 }
 
 .dropdown-content {
-  border-top: 2px solid rgb(56, 191, 240);
+  border-top: 2px solid var(--accentBlue);
   overflow: hidden;
   width: 100%;
   max-height: 0px;

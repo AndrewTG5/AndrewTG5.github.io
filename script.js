@@ -117,16 +117,22 @@ function closeDrawer() {
   drawer.style.maxHeight = "0px";
 }
 
+document.addEventListener('DOMContentLoaded', (event) => {
+  start();
+});
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/service-worker.js');
+  });
+}
+
 var themePref = localStorage.getItem("themePref");
 var soundPref = localStorage.getItem("soundPref");
 var navOpen = sessionStorage.setItem("navOpen", "1");
-
-var bannerText = "This can say anything";
 
 var close = new Audio('sounds/close.mp3');
 var hover = new Audio('sounds/hover.mp3');
 var open = new Audio('sounds/open.mp3');
 
-document.addEventListener('DOMContentLoaded', (event) => {
-  start();
-});
+var bannerText = "This can say anything";

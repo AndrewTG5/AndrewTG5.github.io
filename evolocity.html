@@ -21,13 +21,7 @@
 	<meta name="application-name" content="KKC clubs">
 	<meta name="msapplication-TileColor" content="#0094ff">
 	<meta name="msapplication-config" content="browserconfig.xml">
-	<script>
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', () => {
-				navigator.serviceWorker.register('/service-worker.js');
-			});
-		}
-	</script>
+	
 	<script type="module">
 		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.1.0/workbox-window.prod.mjs';
 		if ('serviceWorker' in navigator) {
