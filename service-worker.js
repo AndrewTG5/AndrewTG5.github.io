@@ -3,7 +3,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 workbox.precaching.precacheAndRoute([
   {
     "url": "404.html",
-    "revision": "71da6effd54e4ca78fb57c29dde2944d"
+    "revision": "a9c26a616fe1ed3c77bba4d53a040719"
   },
   {
     "url": "browserconfig.xml",
@@ -15,7 +15,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "evolocity.html",
-    "revision": "73779ee1540523f60623493b9623deed"
+    "revision": "e3a5faf3b76e3242c4973c228b1a2944"
   },
   {
     "url": "img/android-chrome-192x192.png",
@@ -63,7 +63,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "robotics.html",
-    "revision": "b97278ea16ebdb3a4f1b649356b851be"
+    "revision": "43c0e5027da64ac0997cc795089faa31"
   },
   {
     "url": "script.js",
@@ -71,7 +71,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "settings.html",
-    "revision": "b37e91f26deedfada65363dc94367f21"
+    "revision": "9aa2f7d6675943eef1875b8d6e5307d3"
   },
   {
     "url": "signup.html",
