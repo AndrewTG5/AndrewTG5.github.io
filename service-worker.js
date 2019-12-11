@@ -11,11 +11,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css.css",
-    "revision": "35b7a9078b5513a31855542ceec06d8c"
+    "revision": "c506d704fe830b403a580a06565fe072"
   },
   {
     "url": "evolocity.html",
-    "revision": "e2c3ef1a098bcf3b2097243ff60e699f"
+    "revision": "3d7d67e716221e3d1204c6aa606e18c7"
   },
   {
     "url": "fonts/product_sans_bold_italic-webfont.woff",
@@ -99,7 +99,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "f12e35fe615236e2a13f21cabf1db056"
+    "revision": "3f783b72a6d3857e1afee5cffcc1730e"
   },
   {
     "url": "js/bg.js",
@@ -115,15 +115,15 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "robotics.html",
-    "revision": "cbb6392be174356c59b37effa6d72e8b"
+    "revision": "42695dd6990de522fe25f927207d35bc"
   },
   {
     "url": "settings.html",
-    "revision": "2c7cf4a055d4d4d00333f86665dee486"
+    "revision": "0c95153caa0c0eb4ce5c2f255a513acf"
   },
   {
     "url": "signup.html",
-    "revision": "4e4b1b1e0c59eb264767b2cbe3d96c07"
+    "revision": "23b7ccd7ad80203bc152f88f9be0e9bf"
   },
   {
     "url": "site.webmanifest",
