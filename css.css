@@ -1,19 +1,29 @@
 :root {
   --mainText: rgb(0, 0, 0);
   --mainIMG: rgba(255, 255, 255, 0.4);
-  --mainRadius: 18px;
+  --mainRadius: 12px;
   --textInvert: rgb(255, 255, 255);
   --accentBlue: rgb(0, 148, 255);
+  --mainBlur: blur(15px);
 }
 
-html {
-  font-family: 'Noto Sans', sans-serif;
-  background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
-  background-size: 400% 400%;
-  animation: Gradient 15s ease infinite;
+@font-face {
+  font-family: 'product_sansregular';
+  src: url('fonts/product_sans_regular-webfont.woff2') format('woff2'),
+    url('fonts/product_sans_regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'product_sansregular';
+  background-color: #193c6d;
+  background-image: linear-gradient(135deg, #003073, #029797);
   margin: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
+  overflow: hidden;
+  z-index: -99;
 }
 
 @keyframes Gradient {
@@ -31,31 +41,30 @@ html {
 }
 
 .sidenav {
-  height: 100%;
+  height: 97.5vh;
   width: 22vw;
   position: fixed;
   z-index: 2;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.1);
+  top: 1.2%;
+  left: 0.5vw;
   overflow-x: hidden;
   transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  padding-top: 4%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: var(--mainBlur);
+  border-radius: var(--mainRadius);
+  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
 }
 
 .mouseout {
-  height: 100%;
-  width: 5vw;
+  height: 97.5vh;
+  width: 4.75vw;
   position: fixed;
   z-index: 3;
-  top: 0;
-  left: 22vw;
-  background-color: rgba(255, 255, 255, 0.3);
+  top: 1.2%;
+  left: 0.5vw;
   overflow-x: hidden;
-  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  box-shadow: 4px 1px 15px -5px rgba(0, 0, 0, 0.5), 50vw 0px 0px 50vw rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(15px);
+  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  backdrop-filter: var(--mainBlur);
+  border-radius: var(--mainRadius);
 }
 
 .sidenav a {
@@ -70,7 +79,7 @@ html {
 }
 
 .sidenav a.active, .sidenav a:hover {
-  color: rgb(0, 0, 0);
+  color: rgb(0, 148, 255);
 }
 
 .title {
@@ -88,12 +97,14 @@ html {
   width: 75%;
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
+  backdrop-filter: var(--mainBlur);
 }
 
 .TextImg {
   width: 43%;
   margin: 0% 5% 2% 0%;
   float: right;
+  backdrop-filter: var(--mainBlur);
 }
 
 .bodyImg {
@@ -103,6 +114,7 @@ html {
   width: 20%;
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
+  backdrop-filter: var(--mainBlur);
 }
 
 p {
@@ -112,10 +124,12 @@ p {
 
 .hamburger {
   /*hamburger menu*/
-  padding: 14% 0 0 19%;
+  top: 1.5vh;
+  left: 0.95vw;
   display: inline-block;
   margin: 0;
   overflow: visible;
+  position: fixed;
 }
 
 .hamburger-box {
@@ -140,7 +154,7 @@ p {
   border-radius: 4px;
   position: absolute;
   transition: transform 0.15s ease;
-  box-shadow: 3px 3px 15px -1px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 .hamburger-inner::before {
@@ -182,8 +196,8 @@ p {
 }
 
 .hamburger.is-active {
-  padding-left: 25%;
-  transition: padding-left 0.15s ease;
+  padding-left: 0.4vw;
+  transition: padding-left 0.25s ease;
 }
 
 .lower {
@@ -341,6 +355,7 @@ label.input-toggle>input {
   width: 75%;
   margin: 0% 0% 2% 10%;
   box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
+  backdrop-filter: var(--mainBlur);
 }
 
 .dropdown-content {
@@ -358,7 +373,15 @@ label.input-toggle>input {
 
 @media (orientation:portrait) {
   :root {
-    --mainRadius: 12px;
+    --mainRadius: 6px;
+  }
+
+  .sidenav {
+    left: 2.2vw;
+  }
+
+  .mouseout {
+    left: 2.2vw;
   }
 
   .TextImg {
