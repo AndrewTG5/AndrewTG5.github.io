@@ -3,6 +3,8 @@ function openNav() {
   var soundPref = localStorage.getItem("soundPref");
   document.querySelector(".hamburger").classList.add("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "22vw"; //size of the menu when open
+  document.getElementById("mySidenav").style.boxShadow = "3px 3px 15px -4px rgba(0, 0, 0, 0.5), 48vw 0px 0px 50vw rgba(0,0,0,0.3)";
+  document.getElementById("content").style.opacity = "1";
   if (navOpen == "0") {
     sessionStorage.setItem("navOpen", "1");
     if (soundPref == "on") {
@@ -16,6 +18,8 @@ function closeNav() {
   var soundPref = localStorage.getItem("soundPref");
   document.querySelector(".hamburger").classList.remove("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "4.75vw"; //size of the menu when closed
+  document.getElementById("mySidenav").style.boxShadow = "3px 3px 15px -4px rgba(0, 0, 0, 0.5), 50vw 0px 0px 50vw rgba(0,0,0,0)";
+  document.getElementById("content").style.opacity = "0";
   if (navOpen == "1") {
     sessionStorage.setItem("navOpen", "0");
     if (soundPref == "on") {

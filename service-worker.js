@@ -3,7 +3,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 workbox.precaching.precacheAndRoute([
   {
     "url": "404.html",
-    "revision": "a9c26a616fe1ed3c77bba4d53a040719"
+    "revision": "d7b202a76ce53b6e67bf257c25a5a774"
   },
   {
     "url": "browserconfig.xml",
@@ -11,11 +11,11 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "css.css",
-    "revision": "c506d704fe830b403a580a06565fe072"
+    "revision": "eeb3b90501929690580f22db9581bf5c"
   },
   {
     "url": "evolocity.html",
-    "revision": "3d7d67e716221e3d1204c6aa606e18c7"
+    "revision": "82dd2f7302272d7dc38d16a5a26ddeac"
   },
   {
     "url": "fonts/product_sans_bold_italic-webfont.woff",
@@ -99,7 +99,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "index.html",
-    "revision": "3f783b72a6d3857e1afee5cffcc1730e"
+    "revision": "4e02ad763c96d7e7e7d5298e2c3144ed"
   },
   {
     "url": "js/bg.js",
@@ -107,7 +107,7 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "js/script.js",
-    "revision": "69aa50d323b2ea54bdd22e44304b0401"
+    "revision": "a48952ae82d4f5e41dca81fdd7b85394"
   },
   {
     "url": "README.md",
@@ -115,15 +115,15 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "robotics.html",
-    "revision": "42695dd6990de522fe25f927207d35bc"
+    "revision": "e9617891033b21fbb3bde65622b3de47"
   },
   {
     "url": "settings.html",
-    "revision": "0c95153caa0c0eb4ce5c2f255a513acf"
+    "revision": "e31ec4e06f3cc8155e6ff5707cf592d4"
   },
   {
     "url": "signup.html",
-    "revision": "23b7ccd7ad80203bc152f88f9be0e9bf"
+    "revision": "988f08a05e2d04e5cecb4d120b9a3d4e"
   },
   {
     "url": "site.webmanifest",

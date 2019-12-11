@@ -17,7 +17,6 @@
 
 body {
   font-family: 'product_sansregular';
-  background-color: #193c6d;
   background-image: linear-gradient(135deg, #003073, #029797);
   margin: 0;
   width: 100vw;
@@ -47,11 +46,10 @@ body {
   z-index: 2;
   top: 1.2%;
   left: 0.5vw;
-  overflow-x: hidden;
-  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   backdrop-filter: var(--mainBlur);
   border-radius: var(--mainRadius);
-  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
+  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5), 48vw 0px 0px 50vw rgba(0, 0, 0, 0.3);
 }
 
 .mouseout {
@@ -61,9 +59,7 @@ body {
   z-index: 3;
   top: 1.2%;
   left: 0.5vw;
-  overflow-x: hidden;
   transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  backdrop-filter: var(--mainBlur);
   border-radius: var(--mainRadius);
 }
 
@@ -79,7 +75,12 @@ body {
 }
 
 .sidenav a.active, .sidenav a:hover {
-  color: rgb(0, 148, 255);
+  color: rgb(0, 199, 157);
+}
+
+.menuContent {
+  opacity: 1;
+  transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
 }
 
 .title {
@@ -129,7 +130,7 @@ p {
   display: inline-block;
   margin: 0;
   overflow: visible;
-  position: fixed;
+  position: relative;
 }
 
 .hamburger-box {

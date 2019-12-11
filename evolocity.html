@@ -26,7 +26,7 @@
 	<script type="module">
 		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/4.1.0/workbox-window.prod.mjs';
 		if ('serviceWorker' in navigator) {
-			const wb = new Workbox('/service-worker.js');
+			const wb = new Workbox('js/service-worker.js');
 			wb.addEventListener('waiting', (event) => {
 				wb.addEventListener('controlling', (event) => {
 					window.location.reload();
@@ -40,11 +40,13 @@
 
 <body>
 	<div id="mySidenav" class="sidenav">
-		<a onmouseover="playHover()" href="index.html" style="padding-top: 22%;">Home</a>
-		<a onmouseover="playHover()" href="robotics.html">Page 2</a>
-		<a class="active" href="#">Page 3</a>
-		<a onmouseover="playHover()" href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank" rel="noopener">GitHub</a>
-		<a onmouseover="playHover()" href="settings.html" class="lower">Settings</a>
+		<div class="menuContent" id="content">
+			<a onmouseover="playHover()" href="index.html" style="padding-top: 22%;">Home</a>
+			<a onmouseover="playHover()" href="robotics.html">Page 2</a>
+			<a class="active" href="#">Page 3</a>
+			<a onmouseover="playHover()" href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank" rel="noopener">GitHub</a>
+			<a onmouseover="playHover()" href="settings.html" class="lower">Settings</a>
+		</div>
 	</div>
 	<div id="mouse" class="mouseout" onmouseover="openNav()">
 		<div class="hamburger hamburger--arrowalt">
