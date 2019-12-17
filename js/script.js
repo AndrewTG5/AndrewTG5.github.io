@@ -3,7 +3,7 @@ function openNav() {
   var soundPref = localStorage.getItem("soundPref");
   document.querySelector(".hamburger").classList.add("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "22vw"; //size of the menu when open
-  document.getElementById("mySidenav").style.boxShadow = "3px 3px 15px -4px rgba(0, 0, 0, 0.5), 48vw 0px 0px 50vw rgba(0,0,0,0.3)";
+  document.getElementById("mySidenav").style.boxShadow = "3px 3px 15px -4px rgba(0, 0, 0, 0.5), 40vw 0px 0px 50vw rgba(0,0,0,0.3)";
   document.getElementById("content").style.opacity = "1";
   if (navOpen == "0") {
     sessionStorage.setItem("navOpen", "1");

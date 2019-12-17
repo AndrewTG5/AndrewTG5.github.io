@@ -49,7 +49,7 @@ body {
   transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   backdrop-filter: var(--mainBlur);
   border-radius: var(--mainRadius);
-  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5), 48vw 0px 0px 50vw rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5), 40vw 0px 0px 50vw rgba(0, 0, 0, 0.3);
 }
 
 .mouseout {
