@@ -1,28 +1,23 @@
 :root {
   --mainText: rgb(0, 0, 0);
-  --mainIMG: rgba(255, 255, 255, 0.4);
-  --mainRadius: 12px;
+  --mainIMG: rgba(255, 255, 255, 0.2);
   --textInvert: rgb(255, 255, 255);
   --accentBlue: rgb(0, 148, 255);
   --mainBlur: blur(15px);
+  --shadow4: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);  /*Cards, Grid item thumbnails*/
+  --shadow8: 0 3.2px 7.2px 0 rgba(0,0,0,.132), 0 0.6px 1.8px 0 rgba(0,0,0,.108);  /*Command bars, Command dropdowns, Context menus*/
+  --shadow16: 0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108);/*Main dropdown, Hover cards, Tooltips*/
+  --shadow64: 0 25.6px 57.6px 0 rgba(0,0,0,.22), 0 4.8px 14.4px 0 rgba(0,0,0,.18);/* Panels, Pop up dialogs*/
 }
 
-@font-face {
-  font-family: 'product_sansregular';
-  src: url('fonts/product_sans_regular-webfont.woff2') format('woff2'),
-    url('fonts/product_sans_regular-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-body {
-  font-family: 'product_sansregular';
-  background-image: linear-gradient(135deg, #003073, #029797);
+html {
+  font-family: 'Noto Sans', sans-serif;
+  background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
+  background-size: 400% 400%;
+  animation: Gradient 15s ease infinite;
   margin: 0;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  overflow: hidden;
-  z-index: -99;
 }
 
 @keyframes Gradient {
@@ -40,27 +35,31 @@ body {
 }
 
 .sidenav {
-  height: 97.5vh;
+  height: 100%;
   width: 22vw;
   position: fixed;
   z-index: 2;
-  top: 1.2%;
-  left: 0.5vw;
-  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  overflow-x: hidden;
+  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  padding-top: 4%;
   backdrop-filter: var(--mainBlur);
-  border-radius: var(--mainRadius);
-  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5), 40vw 0px 0px 50vw rgba(0, 0, 0, 0.3);
 }
 
 .mouseout {
-  height: 97.5vh;
-  width: 4.75vw;
+  height: 100%;
+  width: 5vw;
   position: fixed;
   z-index: 3;
-  top: 1.2%;
-  left: 0.5vw;
-  transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  border-radius: var(--mainRadius);
+  top: 0;
+  left: 22vw;
+  background-color: rgba(255, 255, 255, 0.3);
+  overflow-x: hidden;
+  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  box-shadow: 4px 1px 15px -5px rgba(0, 0, 0, 0.5), 50vw 0px 0px 50vw rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
 }
 
 .sidenav a {
@@ -75,12 +74,7 @@ body {
 }
 
 .sidenav a.active, .sidenav a:hover {
-  color: rgb(0, 199, 157);
-}
-
-.menuContent {
-  opacity: 1;
-  transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
+  color: rgb(0, 0, 0);
 }
 
 .title {
@@ -92,12 +86,11 @@ body {
 }
 
 .bodyText {
-  border-radius: var(--mainRadius);
   background: var(--mainIMG);
   padding: 2% 5% 2% 5%;
   width: 75%;
   margin: 0% 0% 2% 10%;
-  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow16);
   backdrop-filter: var(--mainBlur);
 }
 
@@ -105,16 +98,15 @@ body {
   width: 43%;
   margin: 0% 5% 2% 0%;
   float: right;
-  backdrop-filter: var(--mainBlur);
+  backdrop-filter: var(--mainBlur); /*maybe remove?*/
 }
 
 .bodyImg {
-  border-radius: var(--mainRadius);
   background: var(--mainIMG);
   padding: 3.5% 5% 3.5% 5%;
   width: 20%;
   margin: 0% 0% 2% 10%;
-  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow16);
   backdrop-filter: var(--mainBlur);
 }
 
@@ -125,12 +117,10 @@ p {
 
 .hamburger {
   /*hamburger menu*/
-  top: 1.5vh;
-  left: 0.95vw;
+  padding: 14% 0 0 19%;
   display: inline-block;
   margin: 0;
   overflow: visible;
-  position: relative;
 }
 
 .hamburger-box {
@@ -151,11 +141,10 @@ p {
   /*bar style*/
   width: 3vw;
   height: 0.3vw;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 1);
   border-radius: 4px;
   position: absolute;
   transition: transform 0.15s ease;
-  box-shadow: 3px 3px 6px -1px rgba(0, 0, 0, 0.5);
 }
 
 .hamburger-inner::before {
@@ -197,8 +186,8 @@ p {
 }
 
 .hamburger.is-active {
-  padding-left: 0.4vw;
-  transition: padding-left 0.25s ease;
+  padding-left: 25%;
+  transition: padding-left 0.15s ease;
 }
 
 .lower {
@@ -350,12 +339,11 @@ label.input-toggle>input {
 
 .dropbtn {
   /*dropdown hover*/
-  border-radius: var(--mainRadius);
   background: var(--mainIMG);
   padding: 2% 5% 2% 5%;
   width: 75%;
   margin: 0% 0% 2% 10%;
-  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow64);
   backdrop-filter: var(--mainBlur);
 }
 
@@ -373,18 +361,6 @@ label.input-toggle>input {
 }
 
 @media (orientation:portrait) {
-  :root {
-    --mainRadius: 6px;
-  }
-
-  .sidenav {
-    left: 2.2vw;
-  }
-
-  .mouseout {
-    left: 2.2vw;
-  }
-
   .TextImg {
     width: 75%;
     float: none;

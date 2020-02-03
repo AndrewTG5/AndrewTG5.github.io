@@ -3,63 +3,19 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox
 workbox.precaching.precacheAndRoute([
   {
     "url": "404.html",
-    "revision": "d7b202a76ce53b6e67bf257c25a5a774"
+    "revision": "fc14961ce7e93f3936878d9ee68a733d"
   },
   {
     "url": "browserconfig.xml",
-    "revision": "f6cb7eceb4b088672ff80964d878ccad"
+    "revision": "50a9ff381a1e81db6661287e7c50e78d"
   },
   {
     "url": "css.css",
-    "revision": "eeb3b90501929690580f22db9581bf5c"
+    "revision": "27fcb3e54d1b712a3ee46ccee3857264"
   },
   {
     "url": "evolocity.html",
-    "revision": "82dd2f7302272d7dc38d16a5a26ddeac"
-  },
-  {
-    "url": "fonts/product_sans_bold_italic-webfont.woff",
-    "revision": "ae615f18b277c846601f557a0efc76b9"
-  },
-  {
-    "url": "fonts/product_sans_bold_italic-webfont.woff2",
-    "revision": "c54cc5e20e1ce396a647d0e99d3bf8a8"
-  },
-  {
-    "url": "fonts/product_sans_bold-webfont.woff",
-    "revision": "37e081a04caf65abb3545f4b0de07635"
-  },
-  {
-    "url": "fonts/product_sans_bold-webfont.woff2",
-    "revision": "3e5d7d353a832ab60db7e8cefe10f632"
-  },
-  {
-    "url": "fonts/product_sans_italic-webfont.woff",
-    "revision": "f5a8d03fb93c98c8c7dc47eff9b2ae2c"
-  },
-  {
-    "url": "fonts/product_sans_italic-webfont.woff2",
-    "revision": "e8b79620bc06967abb8d147bdd6a3eb2"
-  },
-  {
-    "url": "fonts/product_sans_regular-webfont.woff",
-    "revision": "ddb25bfd31a09d42a84ae8ef90ec45aa"
-  },
-  {
-    "url": "fonts/product_sans_regular-webfont.woff2",
-    "revision": "ee19512fffcb2f098a06be5d47ecf41d"
-  },
-  {
-    "url": "fonts/specimen_files/grid_12-825-55-15.css",
-    "revision": "45e9422c89bf16e8067b6ca13c6a7405"
-  },
-  {
-    "url": "fonts/specimen_files/specimen_stylesheet.css",
-    "revision": "e2cb9ea14b546a77ddd7e9dfc8c0d32f"
-  },
-  {
-    "url": "fonts/stylesheet.css",
-    "revision": "adfd32d71bcf0c8f9ceddf3650119bee"
+    "revision": "4d26cab416dbc6b92319009724449370"
   },
   {
     "url": "img/android-chrome-192x192.png",
@@ -94,40 +50,36 @@ workbox.precaching.precacheAndRoute([
     "revision": "85562b286fb13d2b618160925032bdbe"
   },
   {
-    "url": "img/ph.png",
-    "revision": "1d9a793c6dc1692e45ec527f92fdb646"
+    "url": "img/vid.png",
+    "revision": "7fd1810d471caa55b5e27810f6837866"
   },
   {
     "url": "index.html",
-    "revision": "4e02ad763c96d7e7e7d5298e2c3144ed"
-  },
-  {
-    "url": "js/bg.js",
-    "revision": "398022754408ef17afd004559c9a9aa7"
+    "revision": "e9cd3b1ad3a2b6ab26f91d2800f6671c"
   },
   {
     "url": "js/script.js",
-    "revision": "a48952ae82d4f5e41dca81fdd7b85394"
+    "revision": "138c0b46c69abc781c6cc99af76c97cd"
   },
   {
     "url": "README.md",
-    "revision": "755c973a45c4542764e6910851265f8b"
+    "revision": "a8d438f48cc4ed769c785978690f5056"
   },
   {
     "url": "robotics.html",
-    "revision": "e9617891033b21fbb3bde65622b3de47"
+    "revision": "fc6d5f5326397ec5c41e582853009982"
   },
   {
     "url": "settings.html",
-    "revision": "e31ec4e06f3cc8155e6ff5707cf592d4"
+    "revision": "973a623e1e7cdea401394c899fede3fc"
   },
   {
     "url": "signup.html",
-    "revision": "988f08a05e2d04e5cecb4d120b9a3d4e"
+    "revision": "f32c12c9272f0e11ba56d6e06e9ca61d"
   },
   {
     "url": "site.webmanifest",
-    "revision": "c0a9a26f804a9e442d8f28b3858565d0"
+    "revision": "49ded6e6d329dd25eea73db6a9204ba2"
   },
   {
     "url": "sounds/close.mp3",

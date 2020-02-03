@@ -3,8 +3,8 @@ function openNav() {
   var soundPref = localStorage.getItem("soundPref");
   document.querySelector(".hamburger").classList.add("is-active"); //triggers hamburger menu animation
   document.getElementById("mySidenav").style.width = "22vw"; //size of the menu when open
-  document.getElementById("mySidenav").style.boxShadow = "3px 3px 15px -4px rgba(0, 0, 0, 0.5), 40vw 0px 0px 50vw rgba(0,0,0,0.3)";
-  document.getElementById("content").style.opacity = "1";
+  document.getElementById("mouse").style.left = "22vw"; //moves the menu bar over with the menu
+  document.getElementById("mouse").style.boxShadow = "0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108), 50vw 0px 0px 50vw rgba(0,0,0,0.3)";
   if (navOpen == "0") {
     sessionStorage.setItem("navOpen", "1");
     if (soundPref == "on") {
@@ -17,9 +17,9 @@ function closeNav() {
   var navOpen = sessionStorage.getItem("navOpen");
   var soundPref = localStorage.getItem("soundPref");
   document.querySelector(".hamburger").classList.remove("is-active"); //triggers hamburger menu animation
-  document.getElementById("mySidenav").style.width = "4.75vw"; //size of the menu when closed
-  document.getElementById("mySidenav").style.boxShadow = "3px 3px 15px -4px rgba(0, 0, 0, 0.5), 50vw 0px 0px 50vw rgba(0,0,0,0)";
-  document.getElementById("content").style.opacity = "0";
+  document.getElementById("mySidenav").style.width = "0"; //size of the menu when closed
+  document.getElementById("mouse").style.left = "0"; //moves the menu bar over with the menu
+  document.getElementById("mouse").style.boxShadow = "0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108), 50vw 0px 0px 50vw rgba(0,0,0,0)";
   if (navOpen == "1") {
     sessionStorage.setItem("navOpen", "0");
     if (soundPref == "on") {
@@ -41,9 +41,10 @@ function dark() {
   //function to set dark theme
   var root = document.documentElement;
 
-  document.getElementById("mySidenav").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
-  //document.querySelector("html").style.background = "linear-gradient(-45deg, rgb(213, 94, 57), rgb(207, 35, 101), rgb(10, 141, 187), rgb(10, 187, 146))";
-  //document.querySelector("html").style.backgroundSize = "400% 400%";
+  document.getElementById("mouse").style.backgroundColor = "rgba(0, 0, 0, 0.4)";
+  document.getElementById("mySidenav").style.backgroundColor = "rgba(0, 0, 0, 0.1)";
+  document.querySelector("html").style.background = "linear-gradient(-45deg, rgb(213, 94, 57), rgb(207, 35, 101), rgb(10, 141, 187), rgb(10, 187, 146))";
+  document.querySelector("html").style.backgroundSize = "400% 400%";
 
   root.style.setProperty('--mainText', "rgb(255, 255, 255)");
   root.style.setProperty('--mainIMG', "rgba(0, 0, 0, 0.6)");
@@ -54,9 +55,10 @@ function light() {
   //function to set light theme
   var root = document.documentElement;
 
-  document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
-  //document.querySelector("html").style.background = "linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171))";
-  //document.querySelector("html").style.backgroundSize = "400% 400%";
+  document.getElementById("mouse").style.backgroundColor = "rgba(255, 255, 255, 0.3)";
+  document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+  document.querySelector("html").style.background = "linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171))";
+  document.querySelector("html").style.backgroundSize = "400% 400%";
 
   root.style.setProperty('--mainText', "rgb(0, 0, 0)");
   root.style.setProperty('--mainIMG', "rgba(255, 255, 255, 0.4)");
