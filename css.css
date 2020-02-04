@@ -4,10 +4,14 @@
   --textInvert: rgb(255, 255, 255);
   --accentBlue: rgb(0, 148, 255);
   --mainBlur: blur(15px);
-  --shadow4: 0 1.6px 3.6px 0 rgba(0,0,0,.132), 0 0.3px 0.9px 0 rgba(0,0,0,.108);  /*Cards, Grid item thumbnails*/
-  --shadow8: 0 3.2px 7.2px 0 rgba(0,0,0,.132), 0 0.6px 1.8px 0 rgba(0,0,0,.108);  /*Command bars, Command dropdowns, Context menus*/
-  --shadow16: 0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108);/*Main dropdown, Hover cards, Tooltips*/
-  --shadow64: 0 25.6px 57.6px 0 rgba(0,0,0,.22), 0 4.8px 14.4px 0 rgba(0,0,0,.18);/* Panels, Pop up dialogs*/
+  --shadow4: 0 1.6px 3.6px 0 rgba(0, 0, 0, .132), 0 0.3px 0.9px 0 rgba(0, 0, 0, .108);
+  /*Cards, Grid item thumbnails*/
+  --shadow8: 0 3.2px 7.2px 0 rgba(0, 0, 0, .132), 0 0.6px 1.8px 0 rgba(0, 0, 0, .108);
+  /*Command bars, Command dropdowns, Context menus*/
+  --shadow16: 0 6.4px 14.4px 0 rgba(0, 0, 0, .132), 0 1.2px 3.6px 0 rgba(0, 0, 0, .108);
+  /*Main dropdown, Hover cards, Tooltips*/
+  --shadow64: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18);
+  /* Panels, Pop up dialogs*/
 }
 
 html {
@@ -18,6 +22,11 @@ html {
   margin: 0;
   width: 100%;
   height: 100vh;
+}
+
+::selection {
+  background: var(--accentBlue);
+  /*maybe remove?*/
 }
 
 @keyframes Gradient {
@@ -58,7 +67,7 @@ html {
   background-color: var(--mainIMG);
   overflow-x: hidden;
   transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  box-shadow: 0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108), 50vw 0px 0px 50vw rgba(0,0,0,0);
+  box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, .132), 0 1.2px 3.6px 0 rgba(0, 0, 0, .108), 50vw 0px 0px 50vw rgba(0, 0, 0, 0);
   backdrop-filter: blur(20px);
 }
 
@@ -98,7 +107,8 @@ html {
   width: 43%;
   margin: 0% 5% 2% 0%;
   float: right;
-  backdrop-filter: var(--mainBlur); /*maybe remove?*/
+  backdrop-filter: var(--mainBlur);
+  /*maybe remove?*/
 }
 
 .bodyImg {
@@ -281,57 +291,112 @@ label.input-toggle {
   transform: translateY(48%);
 }
 
-label.input-toggle>span {
-  /*toggle button*/
-  display: inline-block;
+/*toggle start here*/
+.tgl {
+  display: none;
+}
+
+.tgl, .tgl:after, .tgl:before,
+.tgl *,
+.tgl *:after,
+.tgl *:before,
+.tgl+.tgl-btn {
+  box-sizing: border-box;
+}
+
+.tgl::selection, .tgl:after::selection, .tgl:before::selection,
+.tgl *::selection,
+.tgl *:after::selection,
+.tgl *:before::selection,
+.tgl+.tgl-btn::selection {
+  background: none;
+}
+
+.tgl+.tgl-btn {
+  outline: 0;
+  display: block;
+  width: 5em;
+  height: 2.5em;
   position: relative;
-  background-image: linear-gradient(to right, rgb(51, 51, 51) 0%, rgb(51, 51, 51) 50%, rgb(255, 255, 255) 50%, rgb(255, 255, 255) 100%);
-  background-size: 64px 14px;
-  background-position: 0%;
-  border-radius: 32px;
-  width: 32px;
-  height: 14px;
   cursor: pointer;
-  transition: background-position 0.2s ease;
+  user-select: none;
+  float: right;
 }
 
-label.input-toggle>input:checked+span {
-  background-position: -100%;
-}
-
-label.input-toggle>span:after {
+.tgl+.tgl-btn:after, .tgl+.tgl-btn:before {
+  position: relative;
+  display: block;
   content: "";
-  display: block;
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  background: var(--accentBlue);
-  align-self: center;
-  top: 50%;
+  width: 50%;
+  height: 100%;
+}
+
+.tgl+.tgl-btn:after {
   left: 0;
-  transform: translateY(-50%);
-  border-radius: 100%;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-  transition: left 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
 }
 
-label.input-toggle>input:checked+span:after {
-  left: calc(100% - 18px);
-  background-color: var(--accentBlue);
+.tgl+.tgl-btn:before {
+  display: none;
 }
 
-label.input-toggle>span:active:after {
-  transform: translateY(-50%);
+.tgl:checked+.tgl-btn:after {
+  left: 50%;
 }
 
-label.input-toggle>input {
-  display: block;
+.tgl-skewed+.tgl-btn {
+  overflow: hidden;
+  backface-visibility: hidden;
+  transition: all .25s ease;
+  background: rgb(255, 255, 255);
+}
+
+.tgl-skewed+.tgl-btn:after, .tgl-skewed+.tgl-btn:before {
+  display: inline-block;
+  transition: all .25s ease;
+  width: 100%;
+  text-align: center;
   position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
+  line-height: 2.5em;
+  font-weight: bold;
+  color: var(--accentBlue);
 }
 
+.tgl-skewed+.tgl-btn:after {
+  left: 100%;
+  content: attr(data-tg-on);
+  color: rgb(255, 255, 255);
+}
+
+.tgl-skewed+.tgl-btn:before {
+  left: 0;
+  content: attr(data-tg-off);
+}
+
+.tgl-skewed+.tgl-btn:active {
+  background: rgb(255, 255, 255);
+}
+
+.tgl-skewed+.tgl-btn:active:before {
+  left: -10%;
+}
+
+.tgl-skewed:checked+.tgl-btn {
+  background: var(--accentBlue);
+}
+
+.tgl-skewed:checked+.tgl-btn:before {
+  left: -100%;
+}
+
+.tgl-skewed:checked+.tgl-btn:after {
+  left: 0;
+}
+
+.tgl-skewed:checked+.tgl-btn:active:after {
+  left: 10%;
+}
+
+/*toggle end here*/
 .foot {
   font-size: 75%;
   padding-left: 15%;

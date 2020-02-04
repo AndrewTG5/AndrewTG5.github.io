@@ -21,9 +21,9 @@ if (!self.define) {
       const n = {
           uri: location.origin + i.slice(1)
         },
-        a = await Promise.all(c.map(i => "exports" === i ? o : "module" === i ? n : e(i))),
-        d = s(...a);
-      o.default || (o.default = d), r(o)
+        d = await Promise.all(c.map(i => "exports" === i ? o : "module" === i ? n : e(i))),
+        a = s(...d);
+      o.default || (o.default = a), r(o)
     }))
   }
 }
@@ -39,7 +39,7 @@ define("./service-worker.js", ["./workbox-2aa9f459"], (function(e) {
     revision: "50a9ff381a1e81db6661287e7c50e78d"
   }, {
     url: "css.css",
-    revision: "450bd3f4ed2ce8aec34f90596b61321f"
+    revision: "a4db844b57452deea00b29afc49fb712"
   }, {
     url: "evolocity.html",
     revision: "cdad38a5eed9b280c025592b2e0828c0"
@@ -72,7 +72,7 @@ define("./service-worker.js", ["./workbox-2aa9f459"], (function(e) {
     revision: "7fd1810d471caa55b5e27810f6837866"
   }, {
     url: "index.html",
-    revision: "82c534bf3d60040da3231924e52feb73"
+    revision: "c4a90bdb256fd9c2c348f61f4713d000"
   }, {
     url: "js/script.js",
     revision: "fb9895472833bd45931023a8375c0d48"
@@ -84,7 +84,7 @@ define("./service-worker.js", ["./workbox-2aa9f459"], (function(e) {
     revision: "d72e4e217c78777aa48937440db497fb"
   }, {
     url: "settings.html",
-    revision: "23ec43ea3a19faca47bd1435bb9a0f8e"
+    revision: "3750cb97e08d99c0b8ace7c2bad3add3"
   }, {
     url: "signup.html",
     revision: "3dbda36a2d8f02c1ea48ca68ab1de222"

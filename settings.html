@@ -125,20 +125,16 @@
 		</div>
 		<div class="bodyText">
 			<p>Dark theme</p>
-			<label class="input-toggle">
-				<input aria-label="Dark theme" type="checkbox" id="themeSwitch" onclick="toggleTheme()">
-				<span></span>
-			</label>
+			<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch" onclick="toggleTheme()" />
+			<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
 		</div>
 		<div class="dropbtn" onmouseover="openDrawer()" onmouseout="closeDrawer()">
 			<p>Experiments</p>
 			<div id="Drawer" class="dropdown-content">
 				<br>
 				<p>Allow sounds</p>
-				<label class="input-toggle">
-					<input aria-label="Allow sounds" type="checkbox" id="audioSwitch" onclick="toggleSound()">
-					<span></span>
-				</label>
+				<input class="tgl tgl-skewed" aria-label="Allow menu sounds" type="checkbox" id="audioSwitch" onclick="toggleSound()" />
+				<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="audioSwitch"></label>
 				<a style="padding-top: 2.5%; color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="signup.html">
 					Link to example signup form
 				</a>
@@ -151,7 +147,7 @@
 		<div class="foot">
 			<p>Author: Andrew Blake</p>
 			<br>
-			<p>Version 4.0.0-beta2</p>
+			<p>Version 4.0.0-beta3</p>
 		</div>
 	</div>
 </body>
