@@ -1,6 +1,6 @@
 :root {
   --mainText: rgb(0, 0, 0);
-  --mainIMG: rgba(255, 255, 255, 0.2);
+  --mainIMG: rgba(255, 255, 255, 0.4);
   --textInvert: rgb(255, 255, 255);
   --accentBlue: rgb(0, 148, 255);
   --mainBlur: blur(15px);
@@ -12,21 +12,25 @@
   /*Main dropdown, Hover cards, Tooltips*/
   --shadow64: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18);
   /* Panels, Pop up dialogs*/
+
+  --Tshadow4: 0 1.6px 3.6px rgba(0, 0, 0, .132), 0 0.3px 0.9px rgba(0, 0, 0, .108);
+  /*Cards, Grid item thumbnails*/
+  --Tshadow8: 0 3.2px 7.2px rgba(0, 0, 0, .132), 0 0.6px 1.8px rgba(0, 0, 0, .108);
+  /*Command bars, Command dropdowns, Context menus*/
+  --Tshadow16: 0 6.4px 14.4px rgba(0, 0, 0, .132), 0 1.2px 3.6px rgba(0, 0, 0, .108);
+  /*Main dropdown, Hover cards, Tooltips*/
+  --Tshadow64: 0 25.6px 57.6px rgba(0, 0, 0, .22), 0 4.8px 14.4px rgba(0, 0, 0, .18);
+  /* Panels, Pop up dialogs*/
 }
 
 html {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
   background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
   background-size: 400% 400%;
   animation: Gradient 15s ease infinite;
   margin: 0;
   width: 100%;
   height: 100vh;
-}
-
-::selection {
-  background: var(--accentBlue);
-  /*maybe remove?*/
 }
 
 @keyframes Gradient {
@@ -44,7 +48,7 @@ html {
 }
 
 .sidenav {
-  height: 100%;
+  height: 100vh;
   width: 22vw;
   position: fixed;
   z-index: 2;
@@ -58,7 +62,7 @@ html {
 }
 
 .mouseout {
-  height: 100%;
+  height: 100vh;
   width: 5vw;
   position: fixed;
   z-index: 3;
@@ -77,9 +81,9 @@ html {
   padding: 0.8vw 0vw 1.2vw 25%;
   text-decoration: none;
   font-size: 2.8vw;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgb(255, 255, 255);
   display: block;
-  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+  text-shadow: var(--Tshadow4);
 }
 
 .sidenav a.active, .sidenav a:hover {
@@ -88,10 +92,9 @@ html {
 
 .title {
   font-size: 300%;
-  color: rgba(255, 255, 255, 0.9);
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  text-shadow: var(--Tshadow4);
   margin: 1% 0% 1.5% 11%;
-  font-weight: 400;
 }
 
 .bodyText {
@@ -108,7 +111,6 @@ html {
   margin: 0% 5% 2% 0%;
   float: right;
   backdrop-filter: var(--mainBlur);
-  /*maybe remove?*/
 }
 
 .bodyImg {
@@ -151,10 +153,10 @@ p {
   /*bar style*/
   width: 3vw;
   height: 0.3vw;
-  background-color: rgba(255, 255, 255, 1);
-  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
   position: absolute;
   transition: transform 0.15s ease;
+  box-shadow: var(--shadow4);
 }
 
 .hamburger-inner::before {
@@ -184,14 +186,14 @@ p {
 .hamburger--arrowalt.is-active .hamburger-inner::before {
   /*transition open*/
   top: 0;
-  transform: translate3d(-38%, -200%, 0) rotate(-45deg) scale(0.7, 1);
+  transform: translate3d(-36%, -220%, 0) rotate(-45deg) scale(0.7, 1);
   transition: top 0.15s ease, transform 0.07s 0.07s ease-in-out;
 }
 
 .hamburger--arrowalt.is-active .hamburger-inner::after {
   /*transition open*/
   bottom: 0;
-  transform: translate3d(-38%, 200%, 0) rotate(45deg) scale(0.7, 1);
+  transform: translate3d(-36%, 208%, 0) rotate(45deg) scale(0.7, 1);
   transition: bottom 0.15s ease, transform 0.07s 0.07s ease-in-out;
 }
 
@@ -214,9 +216,9 @@ p {
   padding: 0 20px 0 7.5vw;
   background-color: var(--accentBlue);
   color: rgb(255, 255, 255);
-  width: 100%;
+  width: 100vw;
   height: 0;
-  box-shadow: 3px 3px 15px -4px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow64);
   transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   overflow: hidden;
 }
@@ -242,20 +244,19 @@ label {
 
 input[type=text],
 select {
-  /*input*/
+  /*input box*/
   color: var(--mainText);
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 8px;
   box-sizing: border-box;
   outline: none;
+  border: none;
   border-bottom: 0px solid var(--accentBlue);
   border-top: 0px solid var(--accentBlue);
   transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), border-top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  box-shadow: 3px 3px 12px -4px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow4);
   background-color: var(--textInvert);
 }
 
@@ -274,21 +275,12 @@ input[type=submit] {
   padding: 14px 20px;
   margin: 3% 0 0 0;
   border: none;
-  border-radius: 8px;
   cursor: pointer;
-  box-shadow: 3px 3px 12px -4px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow8);
 }
 
 input[type=submit]:hover {
   background-color: rgb(65, 175, 255);
-}
-
-label.input-toggle {
-  /*toggle button container*/
-  display: block;
-  float: right;
-  top: 50%;
-  transform: translateY(48%);
 }
 
 /*toggle start here*/
@@ -302,6 +294,7 @@ label.input-toggle {
 .tgl *:before,
 .tgl+.tgl-btn {
   box-sizing: border-box;
+  box-shadow: var(--shadow4);
 }
 
 .tgl::selection, .tgl:after::selection, .tgl:before::selection,
@@ -329,6 +322,7 @@ label.input-toggle {
   content: "";
   width: 50%;
   height: 100%;
+  text-shadow: var(--Tshadow4);
 }
 
 .tgl+.tgl-btn:after {
@@ -395,8 +389,8 @@ label.input-toggle {
 .tgl-skewed:checked+.tgl-btn:active:after {
   left: 10%;
 }
-
 /*toggle end here*/
+
 .foot {
   font-size: 75%;
   padding-left: 15%;
@@ -408,7 +402,7 @@ label.input-toggle {
   padding: 2% 5% 2% 5%;
   width: 75%;
   margin: 0% 0% 2% 10%;
-  box-shadow: var(--shadow64);
+  box-shadow: var(--shadow16);
   backdrop-filter: var(--mainBlur);
 }
 
