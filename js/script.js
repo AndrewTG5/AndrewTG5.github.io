@@ -124,6 +124,7 @@ function start() {
   } else {
     light();
   }
+  window.scrollTo(0,1);
 }
 
 function siteArrayLoader() {
