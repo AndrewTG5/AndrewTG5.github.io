@@ -443,4 +443,7 @@ input[type=submit]:hover {
   .tgl-skewed+.tgl-btn:after, .tgl-skewed+.tgl-btn:before {
     line-height: 2.15em;
   }
+  .lower{
+    bottom: 10vw;
+  }
 }
