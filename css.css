@@ -444,7 +444,6 @@ input[type=submit]:hover {
     line-height: 2.15em;
   }
   .lower{
-    position: fixed;
-    bottom: 6vw;
+    bottom: 14vw;
   }
 }
