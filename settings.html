@@ -39,10 +39,11 @@
 			transition: background 0.15s ease;
 		}
 
-		p {
+		p, .foot a {
 			font-size: 175%;
 			display: initial;
 			transition: color 0.15s ease;
+			color: var(--mainText);
 		}
 	</style>
 	<script>
@@ -105,10 +106,6 @@
 
 <body>
 	<div id="mySidenav" class="sidenav">
-		<a onmouseover="playHover()" href="index.html">Home</a>
-		<a onmouseover="playHover()" href="robotics.html">Page 2</a>
-		<a onmouseover="playHover()" href="evolocity.html">Page 3</a>
-		<a onmouseover="playHover()" href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank" rel="noopener">GitHub</a>
 		<a href="#" class="active lower">Settings</a>
 	</div>
 	<div id="mouse" class="mouseout" onmouseover="openNav()">
@@ -145,9 +142,11 @@
 			</div>
 		</div>
 		<div class="foot">
+			<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank" rel="noopener">GitHub</a>
+			<br>
 			<p>Author: Andrew Blake</p>
 			<br>
-			<p>Version 4.0.0</p>
+			<p>Version 4.1.0</p>
 		</div>
 	</div>
 </body>

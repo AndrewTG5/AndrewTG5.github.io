@@ -64,16 +64,6 @@ function light() {
 
 }
 
-function start() {
-  //closes nav and sets theme
-  closeNav();
-  if (themePref == "dark") {
-    dark();
-  } else {
-    light();
-  }
-}
-
 function createUIPrompt() {
   var div = document.createElement("DIV");
   div.innerHTML = bannerText;
@@ -115,7 +105,7 @@ function closeDrawer() {
   drawer.style.maxHeight = "0px";
 }
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', (_event) => {
   start();
 });
 
@@ -123,6 +113,40 @@ if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
     navigator.serviceWorker.register('/service-worker.js');
   });
+}
+
+function start() {
+  //closes nav and sets theme
+  siteArrayLoader();
+  closeNav();
+  if (themePref == "dark") {
+    dark();
+  } else {
+    light();
+  }
+}
+
+function siteArrayLoader() {
+  //loads pages from an array and appends them to the menu
+  var pages = ["index.html", "page1.html", "page2.html"]; //page address
+  var pageTitle = ["Home", "page1", "page2"]; //page name in menu
+  var i;
+
+  var path = window.location.pathname;
+  var page = path.split("/").pop();
+
+  for (i = 0; i < pages.length; i++) {
+    var a = document.createElement('a');
+    var link = document.createTextNode(pageTitle[i]);
+    a.appendChild(link);
+    a.title = pageTitle[i];
+    a.href = pages[i];
+    a.setAttribute("onmouseover", "playHover()");
+    if (page == pages[i]) {
+      a.className = ("active");
+    }
+    document.getElementById("mySidenav").appendChild(a);
+  }
 }
 
 var themePref = localStorage.getItem("themePref");
