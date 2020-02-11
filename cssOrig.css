@@ -12,6 +12,7 @@
   /*Main dropdown, Hover cards, Tooltips*/
   --shadow64: 0 25.6px 57.6px 0 rgba(0, 0, 0, .22), 0 4.8px 14.4px 0 rgba(0, 0, 0, .18);
   /* Panels, Pop up dialogs*/
+
   --Tshadow4: 0 1.6px 3.6px rgba(0, 0, 0, .132), 0 0.3px 0.9px rgba(0, 0, 0, .108);
   /*Cards, Grid item thumbnails*/
   --Tshadow8: 0 3.2px 7.2px rgba(0, 0, 0, .132), 0 0.6px 1.8px rgba(0, 0, 0, .108);
@@ -24,28 +25,12 @@
 
 html {
   font-family: 'Lato', sans-serif;
-  background: -o-linear-gradient(135deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
   background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
   background-size: 400% 400%;
-  -webkit-animation: Gradient 15s ease infinite;
   animation: Gradient 15s ease infinite;
   margin: 0;
   width: 100%;
   height: 100vh;
-}
-
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%
-  }
-
-  50% {
-    background-position: 100% 50%
-  }
-
-  100% {
-    background-position: 0% 50%
-  }
 }
 
 @keyframes Gradient {
@@ -71,11 +56,8 @@ html {
   left: 0;
   background-color: rgba(255, 255, 255, 0.1);
   overflow-x: hidden;
-  -webkit-transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -o-transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   padding-top: 4%;
-  -webkit-backdrop-filter: var(--mainBlur);
   backdrop-filter: var(--mainBlur);
 }
 
@@ -88,14 +70,8 @@ html {
   left: 22vw;
   background-color: var(--mainIMG);
   overflow-x: hidden;
-  -webkit-transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), -webkit-box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), -webkit-box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -o-transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), -webkit-box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -webkit-box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, .132), 0 1.2px 3.6px 0 rgba(0, 0, 0, .108), 50vw 0px 0px 50vw rgba(0, 0, 0, 0);
   box-shadow: 0 6.4px 14.4px 0 rgba(0, 0, 0, .132), 0 1.2px 3.6px 0 rgba(0, 0, 0, .108), 50vw 0px 0px 50vw rgba(0, 0, 0, 0);
-  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
 }
 
@@ -126,9 +102,7 @@ html {
   padding: 2% 5% 2% 5%;
   width: 75%;
   margin: 0% 0% 2% 10%;
-  -webkit-box-shadow: var(--shadow16);
   box-shadow: var(--shadow16);
-  -webkit-backdrop-filter: var(--mainBlur);
   backdrop-filter: var(--mainBlur);
 }
 
@@ -142,9 +116,7 @@ html {
   background: var(--mainIMG);
   width: 28%;
   margin: 0% 0% 2% 10%;
-  -webkit-box-shadow: var(--shadow16);
   box-shadow: var(--shadow16);
-  -webkit-backdrop-filter: var(--mainBlur);
   backdrop-filter: var(--mainBlur);
 }
 
@@ -181,12 +153,7 @@ p {
   height: 0.3vw;
   background-color: rgb(255, 255, 255);
   position: absolute;
-  -webkit-transition: -webkit-transform 0.15s ease;
-  transition: -webkit-transform 0.15s ease;
-  -o-transition: transform 0.15s ease;
   transition: transform 0.15s ease;
-  transition: transform 0.15s ease, -webkit-transform 0.15s ease;
-  -webkit-box-shadow: var(--shadow4);
   box-shadow: var(--shadow4);
 }
 
@@ -206,50 +173,30 @@ p {
 
 .hamburger--arrowalt .hamburger-inner::before {
   /*transition closed*/
-  -webkit-transition: top 0.1s 0.1s ease, -webkit-transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: top 0.1s 0.1s ease, -webkit-transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -o-transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: top 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hamburger--arrowalt .hamburger-inner::after {
   /*transition closed*/
-  -webkit-transition: bottom 0.1s 0.1s ease, -webkit-transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: bottom 0.1s 0.1s ease, -webkit-transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  -o-transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
-  transition: bottom 0.1s 0.1s ease, transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.1s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hamburger--arrowalt.is-active .hamburger-inner::before {
   /*transition open*/
   top: 0;
-  -webkit-transform: translate3d(-36%, -220%, 0) rotate(-45deg) scale(0.7, 1);
   transform: translate3d(-36%, -220%, 0) rotate(-45deg) scale(0.7, 1);
-  -webkit-transition: top 0.15s ease, -webkit-transform 0.07s 0.07s ease-in-out;
-  transition: top 0.15s ease, -webkit-transform 0.07s 0.07s ease-in-out;
-  -o-transition: top 0.15s ease, transform 0.07s 0.07s ease-in-out;
   transition: top 0.15s ease, transform 0.07s 0.07s ease-in-out;
-  transition: top 0.15s ease, transform 0.07s 0.07s ease-in-out, -webkit-transform 0.07s 0.07s ease-in-out;
 }
 
 .hamburger--arrowalt.is-active .hamburger-inner::after {
   /*transition open*/
   bottom: 0;
-  -webkit-transform: translate3d(-36%, 208%, 0) rotate(45deg) scale(0.7, 1);
   transform: translate3d(-36%, 208%, 0) rotate(45deg) scale(0.7, 1);
-  -webkit-transition: bottom 0.15s ease, -webkit-transform 0.07s 0.07s ease-in-out;
-  transition: bottom 0.15s ease, -webkit-transform 0.07s 0.07s ease-in-out;
-  -o-transition: bottom 0.15s ease, transform 0.07s 0.07s ease-in-out;
   transition: bottom 0.15s ease, transform 0.07s 0.07s ease-in-out;
-  transition: bottom 0.15s ease, transform 0.07s 0.07s ease-in-out, -webkit-transform 0.07s 0.07s ease-in-out;
 }
 
 .hamburger.is-active {
   padding-left: 25%;
-  -webkit-transition: padding-left 0.15s ease;
-  -o-transition: padding-left 0.15s ease;
   transition: padding-left 0.15s ease;
 }
 
@@ -269,10 +216,7 @@ p {
   color: rgb(255, 255, 255);
   width: 100vw;
   height: 0;
-  -webkit-box-shadow: var(--shadow64);
   box-shadow: var(--shadow64);
-  -webkit-transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -o-transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   overflow: hidden;
 }
@@ -284,8 +228,6 @@ p {
   font-weight: bold;
   float: right;
   cursor: pointer;
-  -webkit-transition: color 0.15s ease;
-  -o-transition: color 0.15s ease;
   transition: color 0.15s ease;
 }
 
@@ -306,16 +248,12 @@ select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   outline: none;
   border: none;
   border-bottom: 0px solid var(--accentBlue);
   border-top: 0px solid var(--accentBlue);
-  -webkit-transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), border-top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -o-transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), border-top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), border-top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -webkit-box-shadow: var(--shadow4);
   box-shadow: var(--shadow4);
   background-color: var(--textInvert);
 }
@@ -336,7 +274,6 @@ input[type=submit] {
   margin: 3% 0 0 0;
   border: none;
   cursor: pointer;
-  -webkit-box-shadow: var(--shadow8);
   box-shadow: var(--shadow8);
 }
 
@@ -354,14 +291,8 @@ input[type=submit]:hover {
 .tgl *:after,
 .tgl *:before,
 .tgl+.tgl-btn {
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  -webkit-box-shadow: var(--shadow4);
   box-shadow: var(--shadow4);
-}
-
-.tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl+.tgl-btn::-moz-selection {
-  background: none;
 }
 
 .tgl::selection, .tgl:after::selection, .tgl:before::selection,
@@ -379,9 +310,6 @@ input[type=submit]:hover {
   height: 2.5em;
   position: relative;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   float: right;
 }
@@ -409,18 +337,13 @@ input[type=submit]:hover {
 
 .tgl-skewed+.tgl-btn {
   overflow: hidden;
-  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transition: all .25s ease;
-  -o-transition: all .25s ease;
   transition: all .25s ease;
   background: rgb(255, 255, 255);
 }
 
 .tgl-skewed+.tgl-btn:after, .tgl-skewed+.tgl-btn:before {
   display: inline-block;
-  -webkit-transition: all .25s ease;
-  -o-transition: all .25s ease;
   transition: all .25s ease;
   width: 100%;
   text-align: center;
@@ -464,8 +387,8 @@ input[type=submit]:hover {
 .tgl-skewed:checked+.tgl-btn:active:after {
   left: 10%;
 }
-
 /*toggle end here*/
+
 .foot {
   font-size: 75%;
   padding-left: 15%;
@@ -477,9 +400,7 @@ input[type=submit]:hover {
   padding: 2% 5% 2% 5%;
   width: 75%;
   margin: 0% 0% 2% 10%;
-  -webkit-box-shadow: var(--shadow16);
   box-shadow: var(--shadow16);
-  -webkit-backdrop-filter: var(--mainBlur);
   backdrop-filter: var(--mainBlur);
 }
 
@@ -489,8 +410,6 @@ input[type=submit]:hover {
   width: 100%;
   max-height: 0px;
   z-index: 1;
-  -webkit-transition: max-height 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -o-transition: max-height 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   transition: max-height 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
 }
 
@@ -517,17 +436,14 @@ input[type=submit]:hover {
   .closebtn {
     margin: 6% 10% 0 -7.5%;
   }
-
   .tgl+.tgl-btn {
     width: 4.1em;
     height: 2.15em;
   }
-
   .tgl-skewed+.tgl-btn:after, .tgl-skewed+.tgl-btn:before {
     line-height: 2.15em;
   }
-
-  .lower {
+  .lower{
     bottom: 8vw;
   }
 }
