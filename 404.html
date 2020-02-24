@@ -13,7 +13,7 @@ permalink: /404.html
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,700&display=swap" rel="stylesheet">
 	<!--icon stuff-->
 	<meta name="theme-color" content="#0094ff">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 	<link rel="manifest" href="site.webmanifest">
@@ -39,8 +39,10 @@ permalink: /404.html
 			font-weight: 300;
 			font-size: 25vw;
 			margin: 0;
+			background: -o-linear-gradient(135deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
 			background: linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171));
 			background-size: 300% auto;
+			-webkit-animation: Gradient 12s ease infinite;
 			animation: Gradient 12s ease infinite;
 			color: #000;
 			background-clip: text;
@@ -63,6 +65,21 @@ permalink: /404.html
 			font-size: 175%;
 			margin: 0.1%;
 			border-radius: 16px;
+		}
+
+		@-webkit-keyframes Gradient {
+
+			0% {
+				background-position: 0% 50%
+			}
+
+			50% {
+				background-position: 100% 50%
+			}
+
+			100% {
+				background-position: 0% 50%
+			}
 		}
 
 		@keyframes Gradient {
@@ -91,7 +108,7 @@ permalink: /404.html
 		}
 	</style>
 	<script type="module">
-		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-window.prod.mjs';
+		import {Workbox} from './js/workbox-window.prod.mjs';
 		if ('serviceWorker' in navigator) {
 			const wb = new Workbox('/service-worker.js');
 			wb.addEventListener('waiting', (event) => {

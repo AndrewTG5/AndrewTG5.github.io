@@ -1,43 +1,4 @@
-function openNav() {
-  var navOpen = sessionStorage.getItem("navOpen");
-  var soundPref = localStorage.getItem("soundPref");
-  document.querySelector(".hamburger").classList.add("is-active"); //triggers hamburger menu animation
-  document.getElementById("mySidenav").style.width = "22vw"; //size of the menu when open
-  document.getElementById("mouse").style.left = "22vw"; //moves the menu bar over with the menu
-  document.getElementById("mouse").style.boxShadow = "0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108), 50vw 0px 0px 50vw rgba(0,0,0,0.3)";
-  if (navOpen == "0") {
-    sessionStorage.setItem("navOpen", "1");
-    if (soundPref == "on") {
-      open.play();
-    }
-  }
-}
-
-function closeNav() {
-  var navOpen = sessionStorage.getItem("navOpen");
-  var soundPref = localStorage.getItem("soundPref");
-  document.querySelector(".hamburger").classList.remove("is-active"); //triggers hamburger menu animation
-  document.getElementById("mySidenav").style.width = "0"; //size of the menu when closed
-  document.getElementById("mouse").style.left = "0"; //moves the menu bar over with the menu
-  document.getElementById("mouse").style.boxShadow = "0 6.4px 14.4px 0 rgba(0,0,0,.132), 0 1.2px 3.6px 0 rgba(0,0,0,.108), 50vw 0px 0px 50vw rgba(0,0,0,0)";
-  if (navOpen == "1") {
-    sessionStorage.setItem("navOpen", "0");
-    if (soundPref == "on") {
-      close.play();
-    }
-  }
-}
-
-function playHover() {
-  var soundPref = localStorage.getItem("soundPref");
-  if (soundPref == "on") {
-    hover.pause();
-    hover.currentTime = 0;
-    hover.play();
-  }
-}
-
-function dark() { //need to improve these lots
+function dark() {
   //function to set dark theme
   var root = document.documentElement;
 
@@ -95,16 +56,6 @@ function dismissUIPrompt() {
   }, 260);
 }
 
-function openDrawer() {
-  var drawer = document.getElementById("Drawer");
-  drawer.style.maxHeight = "500px";
-}
-
-function closeDrawer() {
-  var drawer = document.getElementById("Drawer");
-  drawer.style.maxHeight = "0px";
-}
-
 document.addEventListener('DOMContentLoaded', (_event) => {
   start();
 });
@@ -118,7 +69,6 @@ if ('serviceWorker' in navigator) {
 function start() {
   //closes nav and sets theme
   siteArrayLoader();
-  closeNav();
   if (themePref == "dark") {
     dark();
   } else {
@@ -128,8 +78,8 @@ function start() {
 
 function siteArrayLoader() {
   //loads pages from an array and appends them to the menu
-  var pages = ["index.html", "page1.html", "page2.html"]; //page address
-  var pageTitle = ["Home", "page1", "page2"]; //page name in menu
+  var pages = ["index.html", "evolocity.html", "robotics.html", "signup.html", "settings.html"]; //page address
+  var pageTitle = ["Home", "Evolocity", "Robotics", "Signup", "Settings"]; //page name in menu
   var i;
 
   var path = window.location.pathname;
@@ -150,11 +100,5 @@ function siteArrayLoader() {
 }
 
 var themePref = localStorage.getItem("themePref");
-var soundPref = localStorage.getItem("soundPref");
-var navOpen = sessionStorage.setItem("navOpen", "1");
 
-var close = new Audio('sounds/close.mp3');
-var hover = new Audio('sounds/hover.mp3');
-var open = new Audio('sounds/open.mp3');
-
-var bannerText = "This can say anything";
+var bannerText = "This can say anything 🔥"; //default banner text

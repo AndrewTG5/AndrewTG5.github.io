@@ -12,7 +12,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
 	<!--icon stuff-->
 	<meta name="theme-color" content="#0094ff">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
 	<link rel="manifest" href="site.webmanifest">
@@ -23,27 +23,25 @@
 	<meta name="msapplication-config" content="browserconfig.xml">
 
 	<style>
-		.sidenav {
-			transition: width 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), background-color 0.15s ease;
-		}
-
-		.mouseout {
-			transition: left 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), box-shadow 0.25s cubic-bezier(0.25, 0.1, 0.1, 1), background-color 0.15s ease;
-		}
-
 		.bodyText {
+			-webkit-transition: background 0.15s ease;
+			-o-transition: background 0.15s ease;
 			transition: background 0.15s ease;
 		}
 
-		.dropbtn {
-			transition: background 0.15s ease;
-		}
-
-		p, .foot a {
-			font-size: 175%;
+		p,
+		.foot a {
+			font-size: 200%;
 			display: initial;
+			-webkit-transition: color 0.15s ease;
+			-o-transition: color 0.15s ease;
 			transition: color 0.15s ease;
 			color: var(--mainText);
+		}
+
+		.foot {
+			font-size: 75%;
+			padding-left: 7%;
 		}
 	</style>
 	<script>
@@ -63,16 +61,6 @@
 			}
 		}
 
-		function toggleSound() {
-			//sets site sounds
-			var soundPref = localStorage.getItem("soundPref");
-			if (soundPref == "on") {
-				localStorage.setItem("soundPref", "off");
-			} else {
-				localStorage.setItem("soundPref", "on");
-			}
-		}
-
 		function startSettings() {
 			//sets toggle button state
 			var userPref = localStorage.getItem("themePref");
@@ -82,15 +70,204 @@
 			} else {
 				document.getElementById("themeSwitch").checked = false;
 			}
-			if (soundPref == "on") {
-				document.getElementById("audioSwitch").checked = true;
-			} else {
-				document.getElementById("audioSwitch").checked = false;
-			}
 		}
 	</script>
+	<script>
+		window.FontAwesomeKitConfig = {
+			"asyncLoading": {
+				"enabled": false
+			},
+			"autoA11y": {
+				"enabled": true
+			},
+			"baseUrl": "https://kit-free.fontawesome.com",
+			"detectConflictsUntil": null,
+			"license": "free",
+			"method": "css",
+			"minify": {
+				"enabled": true
+			},
+			"v4FontFaceShim": {
+				"enabled": false
+			},
+			"v4shim": {
+				"enabled": false
+			},
+			"version": "latest"
+		};
+		! function() {
+			function r(e) {
+				var t, n = [],
+					i = document,
+					o = i.documentElement.doScroll,
+					r = "DOMContentLoaded",
+					a = (o ? /^loaded|^c/ : /^loaded|^i|^c/).test(i.readyState);
+				a || i.addEventListener(r, t = function() {
+					for (i.removeEventListener(r, t), a = 1; t = n.shift();) t()
+				}), a ? setTimeout(e, 0) : n.push(e)
+			}! function() {
+				if (!(void 0 === window.Element || "classList" in document.documentElement)) {
+					var e, t, n, i = Array.prototype,
+						o = i.push,
+						r = i.splice,
+						a = i.join;
+					d.prototype = {
+						add: function(e) {
+							this.contains(e) || (o.call(this, e), this.el.className = this.toString())
+						},
+						contains: function(e) {
+							return -1 != this.el.className.indexOf(e)
+						},
+						item: function(e) {
+							return this[e] || null
+						},
+						remove: function(e) {
+							if (this.contains(e)) {
+								for (var t = 0; t < this.length && this[t] != e; t++);
+								r.call(this, t, 1), this.el.className = this.toString()
+							}
+						},
+						toString: function() {
+							return a.call(this, " ")
+						},
+						toggle: function(e) {
+							return this.contains(e) ? this.remove(e) : this.add(e), this.contains(e)
+						}
+					}, window.DOMTokenList = d, e = Element.prototype, t = "classList", n = function() {
+						return new d(this)
+					}, Object.defineProperty ? Object.defineProperty(e, t, {
+						get: n
+					}) : e.__defineGetter__(t, n)
+				}
+
+				function d(e) {
+					for (var t = (this.el = e).className.replace(/^\s+|\s+$/g, "").split(/\s+/), n = 0; n < t.length; n++) o.call(this, t[n])
+				}
+			}();
+
+			function a(e) {
+				var t, n, i, o;
+				prefixesArray = e || ["fa"], prefixesSelectorString = "." + Array.prototype.join.call(e, ",."), t = document.querySelectorAll(prefixesSelectorString), Array.prototype.forEach.call(t, function(e) {
+					n = e.getAttribute("title"), e.setAttribute("aria-hidden", "true"), i = !e.nextElementSibling || !e.nextElementSibling.classList.contains("sr-only"), n && i && ((o = document.createElement("span")).innerHTML = n, o.classList.add(
+						"sr-only"), e.parentNode.insertBefore(o, e.nextSibling))
+				})
+			}
+			var d = function(e, t) {
+					var n = document.createElement("link");
+					n.href = e, n.media = "all", n.rel = "stylesheet", n.id = "font-awesome-5-kit-css", t && t.detectingConflicts && t.detectionIgnoreAttr && n.setAttributeNode(document.createAttribute(t.detectionIgnoreAttr)), document.getElementsByTagName(
+						"head")[0].appendChild(n)
+				},
+				c = function(e, t) {
+					! function(e, t) {
+						var n, i = t && t.before || void 0,
+							o = t && t.media || void 0,
+							r = window.document,
+							a = r.createElement("link");
+						if (t && t.detectingConflicts && t.detectionIgnoreAttr && a.setAttributeNode(document.createAttribute(t.detectionIgnoreAttr)), i) n = i;
+						else {
+							var d = (r.body || r.getElementsByTagName("head")[0]).childNodes;
+							n = d[d.length - 1]
+						}
+						var c = r.styleSheets;
+						a.rel = "stylesheet", a.href = e, a.media = "only x",
+							function e(t) {
+								if (r.body) return t();
+								setTimeout(function() {
+									e(t)
+								})
+							}(function() {
+								n.parentNode.insertBefore(a, i ? n : n.nextSibling)
+							});
+						var s = function(e) {
+							for (var t = a.href, n = c.length; n--;)
+								if (c[n].href === t) return e();
+							setTimeout(function() {
+								s(e)
+							})
+						};
+
+						function l() {
+							a.addEventListener && a.removeEventListener("load", l), a.media = o || "all"
+						}
+						a.addEventListener && a.addEventListener("load", l), (a.onloadcssdefined = s)(l)
+					}(e, t)
+				},
+				e = function(e, t, n) {
+					var i = t && void 0 !== t.autoFetchSvg ? t.autoFetchSvg : void 0,
+						o = t && void 0 !== t.async ? t.async : void 0,
+						r = t && void 0 !== t.autoA11y ? t.autoA11y : void 0,
+						a = document.createElement("script"),
+						d = document.scripts[0];
+					a.src = e, void 0 !== r && a.setAttribute("data-auto-a11y", r ? "true" : "false"), i && (a.setAttributeNode(document.createAttribute("data-auto-fetch-svg")), a.setAttribute("data-fetch-svg-from", t.fetchSvgFrom)), o && a.setAttributeNode(
+						document.createAttribute("defer")), n && n.detectingConflicts && n.detectionIgnoreAttr && a.setAttributeNode(document.createAttribute(n.detectionIgnoreAttr)), d.parentNode.appendChild(a)
+				};
+
+			function s(e, t) {
+				var n = t && t.addOn || "",
+					i = t && t.baseFilename || e.license + n,
+					o = t && t.minify ? ".min" : "",
+					r = t && t.fileSuffix || e.method,
+					a = t && t.subdir || e.method;
+				return e.baseUrl + "/releases/" + ("latest" === e.version ? "latest" : "v".concat(e.version)) + "/" + a + "/" + i + o + "." + r
+			}
+			var t, n, i, o, l;
+			try {
+				if (window.FontAwesomeKitConfig) {
+					var u, f = window.FontAwesomeKitConfig,
+						m = {
+							detectingConflicts: f.detectConflictsUntil && new Date <= new Date(f.detectConflictsUntil),
+							detectionIgnoreAttr: "data-fa-detection-ignore",
+							detectionTimeoutAttr: "data-fa-detection-timeout",
+							detectionTimeout: null
+						};
+					"js" === f.method && (o = m, l = {
+						async: (i = f).asyncLoading.enabled,
+						autoA11y: i.autoA11y.enabled
+					}, "pro" === i.license && (l.autoFetchSvg = !0, l.fetchSvgFrom = i.baseUrl + "/releases/" + ("latest" === i.version ? "latest" : "v".concat(i.version)) + "/svgs"), i.v4shim.enabled && e(s(i, {
+						addOn: "-v4-shims",
+						minify: i.minify.enabled
+					})), e(s(i, {
+						minify: i.minify.enabled
+					}), l, o)), "css" === f.method && function(e, t) {
+						var n, i = a.bind(a, ["fa", "fab", "fas", "far", "fal", "fad"]);
+						e.autoA11y.enabled && (r(i), n = i, "undefined" != typeof MutationObserver && new MutationObserver(n).observe(document, {
+							childList: !0,
+							subtree: !0
+						})), e.v4shim.enabled && (e.license, e.asyncLoading.enabled ? c(s(e, {
+							addOn: "-v4-shims",
+							minify: e.minify.enabled
+						}), t) : d(s(e, {
+							addOn: "-v4-shims",
+							minify: e.minify.enabled
+						}), t));
+						e.v4FontFaceShim.enabled && (e.asyncLoading.enabled ? c(s(e, {
+							addOn: "-v4-font-face",
+							minify: e.minify.enabled
+						}), t) : d(s(e, {
+							addOn: "-v4-font-face",
+							minify: e.minify.enabled
+						}), t));
+						var o = s(e, {
+							minify: e.minify.enabled
+						});
+						e.asyncLoading.enabled ? c(o, t) : d(o, t)
+					}(f, m), m.detectingConflicts && ((u = document.currentScript.getAttribute(m.detectionTimeoutAttr)) && (m.detectionTimeout = u), document.currentScript.setAttributeNode(document.createAttribute(m.detectionIgnoreAttr)), t = f, n = m, r(
+						function() {
+							var e = document.createElement("script");
+							n && n.detectionIgnoreAttr && e.setAttributeNode(document.createAttribute(n.detectionIgnoreAttr)), n && n.detectionTimeoutAttr && n.detectionTimeout && e.setAttribute(n.detectionTimeoutAttr, n.detectionTimeout), e.src = s(t, {
+								baseFilename: "conflict-detection",
+								fileSuffix: "js",
+								subdir: "js",
+								minify: t.minify.enabled
+							}), e.async = !0, document.body.appendChild(e)
+						}))
+				}
+			} catch (e) {}
+		}();
+	</script>
+	<!--for the github icon-->
 	<script type="module">
-		import {Workbox} from 'https://storage.googleapis.com/workbox-cdn/releases/5.0.0/workbox-window.prod.mjs';
+		import {Workbox} from './js/workbox-window.prod.mjs';
 		if ('serviceWorker' in navigator) {
 			const wb = new Workbox('/service-worker.js');
 			wb.addEventListener('waiting', (event) => {
@@ -105,50 +282,37 @@
 </head>
 
 <body>
-	<div id="mySidenav" class="sidenav">
-		<a href="#" class="active lower">Settings</a>
+	<div>
+		<h1 class="title">Settings</h1>
 	</div>
-	<div id="mouse" class="mouseout" onmouseover="openNav()">
-		<div class="hamburger hamburger--arrowalt">
-			<div class="hamburger-box">
-				<div class="hamburger-inner"></div>
-			</div>
-		</div>
-	</div>
-	<div onmouseover="closeNav()">
-		<div style="z-index: -99; width: 100%; height: 100vh; overflow: hidden; position: fixed;"></div>
-		<div>
-			<h1 class="title">Settings</h1>
-		</div>
+	<div id="mySidenav" class="sidenav"></div>
+	<div class="bodyContainer">
 		<div class="bodyText">
 			<p>Dark theme</p>
 			<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch" onclick="toggleTheme()" />
 			<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
 		</div>
-		<div class="dropbtn" onmouseover="openDrawer()" onmouseout="closeDrawer()">
-			<p>Experiments</p>
-			<div id="Drawer" class="dropdown-content">
-				<br>
-				<p>Allow sounds</p>
-				<input class="tgl tgl-skewed" aria-label="Allow menu sounds" type="checkbox" id="audioSwitch" onclick="toggleSound()" />
-				<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="audioSwitch"></label>
-				<a style="padding-top: 2.5%; color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="signup.html">
-					Link to example signup form
-				</a>
-				<a style="padding-top: 2.5%; color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="createUIPrompt()">
-					Example notification banner
-				</a>
-				<br>
-			</div>
-		</div>
-		<div class="foot">
-			<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank" rel="noopener" style="line-height: 19px;">GitHub</a>
-			<img src="img/external-link.png">
+		<div class="bodyText">
+			<p style="border-bottom: 2px solid var(--accentBlue);">Experiments</p>
 			<br>
-			<p>Author: Andrew Blake</p>
 			<br>
-			<p>Version 4.2.1</p>
+			<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="createUIPrompt()">
+				Example notification banner
+			</a>
+			<br>
+			<br>
+			<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="">
+				TODO: Notification.requestPermission()
+			</a>
 		</div>
+	</div>
+	</div>
+	<div class="foot">
+		<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank" rel="noopener" style="line-height: 19px;"><i class="fab fa-github"></i>GitHub</a>
+		<br>
+		<p>Author: Andrew Blake</p>
+		<br>
+		<p>Version 5.0.0-rc1</p>
 	</div>
 </body>
 
