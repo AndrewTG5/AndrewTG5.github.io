@@ -175,7 +175,7 @@ body {
 
 p {
   color: var(--mainText);
-  font-size: 125%;
+  font-size: 1.25em;
 }
 
 .banner {
@@ -396,18 +396,21 @@ input[type=submit]:hover {
     align-items: center;
   }
 
-  .TextImg {
-    width: 85%;
-  }
-
   .bodyImg {
     max-width: none;
     max-height: none;
-    width: 95%;
+    width: 100vw;
+    height: auto;
+    margin-right: 0;
+    margin-left: 0;
+    display: block;
   }
 
   .bodyText {
-    width: 85%;
+    width: auto;
+    margin-right: 0;
+    margin-left: 0;
+    display: block;
   }
 
   .closebtn {
@@ -421,5 +424,9 @@ input[type=submit]:hover {
 
   .tgl-skewed+.tgl-btn:after, .tgl-skewed+.tgl-btn:before {
     line-height: 2.15em;
+  }
+
+  p {
+    font-size: 1.15em;
   }
 }

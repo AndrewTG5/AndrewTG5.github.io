@@ -91,7 +91,6 @@ function siteArrayLoader() {
     a.appendChild(link);
     a.title = pageTitle[i];
     a.href = pages[i];
-    a.setAttribute("onmouseover", "playHover()");
     if (page == pages[i]) {
       a.className = ("active");
     }
