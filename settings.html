@@ -6,7 +6,7 @@
 	<meta charset="utf-8">
 	<meta name="author" content="Andrew Blake">
 	<meta name="Description" content="Site settings">
-	<title>Settings</title>
+	<title>Settings | KKC clubs</title>
 	<script src="js/script.js"></script>
 	<link href="css.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
@@ -29,7 +29,7 @@
 			transition: background 0.15s ease;
 		}
 
-		.sidenav{
+		.sidenav {
 			-webkit-transition: background 0.15s ease;
 			-o-transition: background 0.15s ease;
 			transition: background 0.15s ease;
@@ -47,7 +47,7 @@
 
 		.foot {
 			font-size: 75%;
-			padding-left: 7%;
+			padding-left: 12.5%;
 		}
 	</style>
 	<script>
@@ -79,16 +79,19 @@
 		}
 	</script>
 	<script type="module">
-		import {Workbox} from './js/workbox-window.prod.mjs';
+		import { Workbox } from './js/workbox-window.prod.mjs';
 		if ('serviceWorker' in navigator) {
 			const wb = new Workbox('/service-worker.js');
 			wb.addEventListener('waiting', (event) => {
-				wb.addEventListener('controlling', (event) => {
-					window.location.reload();
+				createUIPrompt('Updated information avialable', 'Load');
+				document.getElementsByClassName("closebtn")[0].addEventListener('click', (event) => {
+					wb.addEventListener('controlling', (event) => {
+						window.location.reload()
+					});
+					wb.messageSW({ type: 'SKIP_WAITING' });
 				});
-				wb.messageSW({type: 'SKIP_WAITING'});
 			});
-		wb.register();
+			wb.register();
 		}
 	</script>
 </head>
@@ -101,14 +104,16 @@
 	<div class="bodyContainer">
 		<div class="bodyText">
 			<p>Dark theme</p>
-			<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch" onclick="toggleTheme()" />
+			<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch"
+				onclick="toggleTheme()" />
 			<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
 		</div>
 		<div class="bodyText">
 			<p style="border-bottom: 2px solid var(--accentBlue);">Experiments</p>
 			<br>
 			<br>
-			<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="createUIPrompt()">
+			<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#"
+				onclick="createUIPrompt('This can say anything🔥','Dismiss',dismissUIPrompt)">
 				Example notification banner
 			</a>
 			<br>
@@ -118,13 +123,13 @@
 			</a>
 		</div>
 	</div>
-	</div>
 	<div class="foot">
-		<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank" rel="noopener">GitHub</a>
+		<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank"
+			rel="noopener">GitHub</a>
 		<br>
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 5.0.0-rc2</p>
+		<p>Version 5.0.0-rc3</p>
 	</div>
 </body>
 

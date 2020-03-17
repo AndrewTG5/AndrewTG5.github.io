@@ -25,7 +25,7 @@ function light() {
 
 }
 
-function createUIPrompt() {
+function createUIPrompt(bannerText, buttonText) {
   var div = document.createElement("DIV");
   div.innerHTML = bannerText;
   div.setAttribute("id", "banner");
@@ -33,14 +33,14 @@ function createUIPrompt() {
   document.body.appendChild(div);
 
   var btn = document.createElement("SPAN");
-  btn.innerHTML = "Dismiss";
+  btn.innerHTML = buttonText;
   btn.className = ("closebtn");
   document.getElementById("banner").appendChild(btn);
   btn.onclick = dismissUIPrompt;
 
   var banner = document.getElementById("banner");
 
-  setTimeout(function() {
+  setTimeout(function () {
     banner.style.padding = "20px 20px 20px 7.5vw";
     banner.style.height = "auto";
   }, 260);
@@ -50,9 +50,8 @@ function dismissUIPrompt() {
   var banner = document.getElementById("banner");
   banner.style.padding = "0 20px 0 7.5vw";
   banner.style.height = "0"
-  setTimeout(function() {
+  setTimeout(function () {
     banner.remove();
-    bannerText = "This can say anything";
   }, 260);
 }
 
@@ -99,5 +98,3 @@ function siteArrayLoader() {
 }
 
 var themePref = localStorage.getItem("themePref");
-
-var bannerText = "This can say anything 🔥"; //default banner text

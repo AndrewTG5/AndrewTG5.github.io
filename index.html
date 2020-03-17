@@ -22,18 +22,20 @@
 	<meta name="msapplication-TileColor" content="#0094ff">
 	<meta name="msapplication-config" content="browserconfig.xml">
 
-	<!--TODO: make sure this works when hosted-->
 	<script type="module">
-		import {Workbox} from './js/workbox-window.prod.mjs';
+		import { Workbox } from './js/workbox-window.prod.mjs';
 		if ('serviceWorker' in navigator) {
 			const wb = new Workbox('/service-worker.js');
 			wb.addEventListener('waiting', (event) => {
-				wb.addEventListener('controlling', (event) => {
-					window.location.reload();
+				createUIPrompt('Updated information avialable', 'Load');
+				document.getElementsByClassName("closebtn")[0].addEventListener('click', (event) => {
+					wb.addEventListener('controlling', (event) => {
+						window.location.reload()
+					});
+					wb.messageSW({ type: 'SKIP_WAITING' });
 				});
-				wb.messageSW({type: 'SKIP_WAITING'});
 			});
-		wb.register();
+			wb.register();
 		}
 	</script>
 </head>
@@ -50,8 +52,11 @@
 		</div>
 		<div class="bodyText">
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-				irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+				dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+				ex ea commodo consequat. Duis aute
+				irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur
+				sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
 	</div>
 </body>
