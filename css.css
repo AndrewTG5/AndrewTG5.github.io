@@ -3,7 +3,7 @@
   --mainIMG: rgba(255, 255, 255, 0.4);
   --textInvert: rgb(255, 255, 255);
   --accentBlue: rgb(0, 148, 255);
-  --mainBlur: blur(15px), saturate(125%); /*TODO: test this*/
+  --mainBlur: blur(15px) saturate(150%);
   --shadow4: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132),
     0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
   --shadow8: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132),
@@ -79,6 +79,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute; /*TODO: fix*/
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -87,17 +88,15 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   width: 100vw;
+  max-width:100%;
   z-index: 2;
-  top: 10vh;
+  top: 8vh;
   left: 0;
   background-color: rgba(255, 255, 255, 0.1);
   overflow-y: hidden;
-  /*-webkit-backdrop-filter: var(--mainBlur);
-  backdrop-filter: var(--mainBlur);*/
 }
 
 .sidenav a {
-  /*menu pane links, can have gaps in text with alt 0160*/
   z-index: 2;
   padding: 0.5vw 2.5vw 0.5vw 2.5vw;
   text-decoration: none;
@@ -119,7 +118,15 @@ body {
   box-shadow: var(--shadow4);
 }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  -webkit-backdrop-filter: var(--mainBlur);
+  backdrop-filter: var(--mainBlur);
+}
+
 .title {
+  font-family: "Lato", sans-serif;
   font-size: 300%;
   color: rgb(255, 255, 255);
   text-shadow: var(--Tshadow4);
@@ -140,13 +147,23 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-top: 4vh; /*TODO: fix*/
+}
+
+.wrapper{
+  margin-right: auto;
+  margin-left:  auto;
+  width: 75vw;
+  max-width: 960px; /*TODO: fix*/
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .bodyText {
   -webkit-box-flex: 1;
   -ms-flex: 1;
+  width: 86%;
   flex: 1;
-  width: 75%;
   background: var(--mainIMG);
   padding: 2% 5% 2% 5%;
   margin: 2%;
@@ -433,7 +450,7 @@ input[type="submit"]:hover {
   }
 
   .bodyImg {
-    max-width: none;
+    max-width: 100%;
     max-height: none;
     width: 100vw;
     height: auto;

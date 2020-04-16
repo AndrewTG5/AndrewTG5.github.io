@@ -101,35 +101,37 @@
 		<h1 class="title">Settings</h1>
 	</div>
 	<div id="mySidenav" class="sidenav"></div>
-	<div class="bodyContainer">
-		<div class="bodyText">
-			<p>Dark theme</p>
-			<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch"
-				onclick="toggleTheme()" />
-			<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
+	<div class="wrapper">
+		<div class="bodyContainer">
+			<div class="bodyText">
+				<p>Dark theme</p>
+				<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch"
+					onclick="toggleTheme()" />
+				<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
+			</div>
+			<div class="bodyText">
+				<p style="border-bottom: 2px solid var(--accentBlue);">Experiments</p>
+				<br>
+				<br>
+				<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#"
+					onclick="createUIPrompt('This can say anything🔥','Dismiss',dismissUIPrompt)">
+					Example notification banner
+				</a>
+				<br>
+				<br>
+				<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="">
+					TODO: Notification.requestPermission()
+				</a>
+			</div>
 		</div>
-		<div class="bodyText">
-			<p style="border-bottom: 2px solid var(--accentBlue);">Experiments</p>
+		<div class="foot">
+			<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank"
+				rel="noopener">GitHub</a>
 			<br>
+			<p>Author: Andrew Blake</p>
 			<br>
-			<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#"
-				onclick="createUIPrompt('This can say anything🔥','Dismiss',dismissUIPrompt)">
-				Example notification banner
-			</a>
-			<br>
-			<br>
-			<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="">
-				TODO: Notification.requestPermission()
-			</a>
+			<p>Version 5.0.0-rc4</p>
 		</div>
-	</div>
-	<div class="foot">
-		<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank"
-			rel="noopener">GitHub</a>
-		<br>
-		<p>Author: Andrew Blake</p>
-		<br>
-		<p>Version 5.0.0-rc3</p>
 	</div>
 </body>
 

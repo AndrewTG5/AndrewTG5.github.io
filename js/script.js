@@ -1,3 +1,5 @@
+var themePref = localStorage.getItem("themePref");
+
 function dark() {
   //function to set dark theme
   var root = document.documentElement;
@@ -97,4 +99,16 @@ function siteArrayLoader() {
   }
 }
 
-var themePref = localStorage.getItem("themePref");
+setTimeout(function () {
+  window.onscroll = function () { stickNav() };
+  var navbar = document.getElementById("mySidenav");
+  var sticky = navbar.offsetTop;
+
+  function stickNav() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+}, 50);
