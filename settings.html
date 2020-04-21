@@ -38,6 +38,12 @@
 		p,
 		.foot a {
 			display: initial;
+		}
+
+		p,
+		h1,
+		h2,
+		h3 {
 			-webkit-transition: color 0.15s ease;
 			-o-transition: color 0.15s ease;
 			transition: color 0.15s ease;
@@ -116,11 +122,17 @@
 			</div>
 			<div class="bodyText">
 				<h2>Sign in to access more settings</h2>
-				<label for="fname">Username</label>
-				<input type="text" id="fname" name="firstname" placeholder="Your name..">
+				<div class="form__group field">
+					<input type="input" class="form__field" placeholder="Username" name="uername" id="username"
+						required />
+					<label for="username" class="form__label">Username</label>
+				</div>
 				<!--TODO: find out username and password conventions-->
-				<label for="lname">Password</label>
-				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+				<div class="form__group field">
+					<input type="input" class="form__field" placeholder="Password" name="password" id="password"
+						required />
+					<label for="password" class="form__label">Password</label>
+				</div>
 
 				<input type="submit" value="Submit">
 			</div>
@@ -132,7 +144,7 @@
 		<br>
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 5.0.0</p>
+		<p>Version 5.0.1</p>
 	</div>
 </body>
 

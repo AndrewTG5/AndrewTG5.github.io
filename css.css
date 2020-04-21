@@ -45,7 +45,7 @@ html {
 
 body {
   margin: 0;
-  overflow-x:hidden /*TODO: fix*/
+  overflow-x: hidden; /*TODO: fix*/
 }
 
 a {
@@ -216,8 +216,11 @@ a {
 }
 
 p {
-  color: var(--mainText);
   font-size: 1.25em;
+}
+
+p,h1,h2,h3{
+  color: var(--mainText);
 }
 
 .banner {
@@ -236,6 +239,7 @@ p {
   -o-transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   transition: padding 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   overflow: hidden;
+  z-index: 99;
 }
 
 .closebtn {
@@ -254,14 +258,69 @@ p {
   color: var(--mainText);
 }
 
-label {
-  /*input label*/
+/*input boxes start here*/
+
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 2px solid var(--accentBlue);
+  outline: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+.form__field::placeholder {
+  color: transparent;
+}
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 1.3rem;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
   color: var(--mainText);
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, var(--accentBlue), var(--accentBlue), white);
+  border-image-slice: 1;
+}
+.form__field:focus ~ .form__label {
+  position: absolute;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+  box-shadow: none;
 }
 
 input[type="text"],
 select {
-  /*input box*/
   color: var(--mainText);
   width: 100%;
   padding: 12px 20px;
@@ -271,28 +330,12 @@ select {
   box-sizing: border-box;
   outline: none;
   border: none;
-  border-bottom: 0px solid var(--accentBlue);
-  border-top: 0px solid var(--accentBlue);
-  -webkit-transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1),
-    border-top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -o-transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1),
-    border-top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
-  transition: border-bottom 0.25s cubic-bezier(0.25, 0.1, 0.1, 1),
-    border-top 0.25s cubic-bezier(0.25, 0.1, 0.1, 1);
   -webkit-box-shadow: var(--shadow4);
   box-shadow: var(--shadow4);
   background-color: var(--textInvert);
 }
 
-input[type="text"]:focus,
-select:focus {
-  /*input border when focused*/
-  border-bottom: 2px solid var(--accentBlue);
-  border-top: 2px solid var(--accentBlue);
-}
-
 input[type="submit"] {
-  /*submit button*/
   width: 100%;
   background-color: var(--accentBlue);
   color: var(--textInvert);
@@ -304,9 +347,7 @@ input[type="submit"] {
   box-shadow: var(--shadow8);
 }
 
-input[type="submit"]:hover {
-  background-color: rgb(65, 175, 255);
-}
+/*input boxes end here*/
 
 .galleryContainer {
   margin-top: 6vh;

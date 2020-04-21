@@ -48,16 +48,19 @@
 	<div class="wrapper">
 		<div class="bodyContainer">
 			<div class="bodyText">
-				<form>
-					<label for="fname">First Name</label>
-					<input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-					<label for="lname">Last Name</label>
-					<input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-					<label for="lname">Age</label>
-					<input type="text" id="age" name="lastname" placeholder="Your age..">
-
+				<div class="form__group field"><!--TODO: naming conventions-->
+					<input type="input" class="form__field" placeholder="First name" name="first name" id="first name" required />
+					<label for="first name" class="form__label">First name</label>
+				</div>
+				<div class="form__group field">
+					<input type="input" class="form__field" placeholder="last ame" name="last name" id="last name" required />
+					<label for="last name" class="form__label">Last name</label>
+				</div>
+				<div class="form__group field">
+					<input type="input" class="form__field" placeholder="Age" name="age" id="age" required />
+					<label for="age" class="form__label">Age</label>
+				</div>
+				<form style="margin-top: 2vh;">
 					<label for="club">Club</label>
 					<select id="club" name="club">
 						<option value="evolocity">Evolocity</option>
