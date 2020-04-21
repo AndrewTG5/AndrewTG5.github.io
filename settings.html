@@ -37,17 +37,10 @@
 
 		p,
 		.foot a {
-			font-size: 200%;
 			display: initial;
 			-webkit-transition: color 0.15s ease;
 			-o-transition: color 0.15s ease;
 			transition: color 0.15s ease;
-			color: var(--mainText);
-		}
-
-		.foot {
-			font-size: 75%;
-			padding-left: 12.5%;
 		}
 	</style>
 	<script>
@@ -103,16 +96,14 @@
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
 		<div class="bodyContainer">
-			<div class="bodyText">
-				<p>Dark theme</p>
+			<div class="bodyText" style="min-width: 86%">
+				<h2 style="display:inline-block; margin: 0.6vh 0 0 0">Dark theme</h2>
 				<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch"
 					onclick="toggleTheme()" />
 				<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
 			</div>
 			<div class="bodyText">
-				<p style="border-bottom: 2px solid var(--accentBlue);">Experiments</p>
-				<br>
-				<br>
+				<h2 style="border-bottom: 2px solid var(--accentBlue);">Experiments</h2>
 				<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#"
 					onclick="createUIPrompt('This can say anything🔥','Dismiss',dismissUIPrompt)">
 					Example notification banner
@@ -123,15 +114,25 @@
 					TODO: Notification.requestPermission()
 				</a>
 			</div>
+			<div class="bodyText">
+				<h2>Sign in to access more settings</h2>
+				<label for="fname">Username</label>
+				<input type="text" id="fname" name="firstname" placeholder="Your name..">
+				<!--TODO: find out username and password conventions-->
+				<label for="lname">Password</label>
+				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+				<input type="submit" value="Submit">
+			</div>
 		</div>
-		<div class="foot">
-			<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank"
-				rel="noopener">GitHub</a>
-			<br>
-			<p>Author: Andrew Blake</p>
-			<br>
-			<p>Version 5.0.0-rc4</p>
-		</div>
+	</div>
+	<div class="foot">
+		<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank"
+			rel="noopener">GitHub</a>
+		<br>
+		<p>Author: Andrew Blake</p>
+		<br>
+		<p>Version 5.0.0</p>
 	</div>
 </body>
 

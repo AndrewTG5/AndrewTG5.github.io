@@ -79,8 +79,8 @@ function start() {
 
 function siteArrayLoader() {
   //loads pages from an array and appends them to the menu
-  var pages = ["index.html", "evolocity.html", "robotics.html", "signup.html", "settings.html"]; //page address
-  var pageTitle = ["Home", "Evolocity", "Robotics", "Signup", "Settings"]; //page name in menu
+  var pages = ["index.html", "clubs.html", "signup.html", "settings.html"]; //page address
+  var pageTitle = ["Home", "Clubs", "Signup", "Settings"]; //page name in menu
   var i;
 
   var path = window.location.pathname;

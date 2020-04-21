@@ -45,6 +45,11 @@ html {
 
 body {
   margin: 0;
+  overflow-x:hidden /*TODO: fix*/
+}
+
+a {
+  color: var(--accentBlue);
 }
 
 @-webkit-keyframes Gradient {
@@ -88,7 +93,7 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
   width: 100vw;
-  max-width:100%;
+  max-width: 100%;
   z-index: 2;
   top: 8vh;
   left: 0;
@@ -113,7 +118,7 @@ body {
 
 .sidenav a:hover {
   background: var(--mainIMG);
-  border-radius: 8px;
+  border-radius: 6px;
   -webkit-box-shadow: var(--shadow4);
   box-shadow: var(--shadow4);
 }
@@ -127,10 +132,10 @@ body {
 
 .title {
   font-family: "Lato", sans-serif;
-  font-size: 300%;
+  font-size: 5vh;
   color: rgb(255, 255, 255);
   text-shadow: var(--Tshadow4);
-  margin: 0.5% 0% 1vh 11%;
+  margin: 0.5% 0% 1vh 14vw;
 }
 
 .bodyContainer {
@@ -147,14 +152,14 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 4vh; /*TODO: fix*/
+  margin-top: 6vh; /*TODO: fix*/
 }
 
-.wrapper{
+.wrapper {
   margin-right: auto;
-  margin-left:  auto;
+  margin-left: auto;
   width: 75vw;
-  max-width: 960px; /*TODO: fix*/
+  max-width: 75vw; /*TODO: fix*/
   padding-right: 10px;
   padding-left: 10px;
 }
@@ -303,6 +308,46 @@ input[type="submit"]:hover {
   background-color: rgb(65, 175, 255);
 }
 
+.galleryContainer {
+  margin-top: 6vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+div.gallery {
+  width: 15vw;
+  background-color: var(--mainIMG);
+  box-shadow: var(--shadow16);
+  margin: 2.5vh 1vw;
+}
+
+div.gallery:hover {
+  box-shadow: var(--shadow64); /*TODO make bigger*/
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+  background-color: white;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
 /*toggle start here*/
 .tgl,
 .tgl:after,
@@ -431,9 +476,35 @@ input[type="submit"]:hover {
   display: block;
 }
 
+.foot {
+  margin-top: 2vh;
+  width: 100vw;
+  max-width: 100%;
+  left: 0;
+  background-color: var(--mainIMG);
+  box-shadow: var(--shadow16);
+  padding: 2vh 2vw 2vh 6vw;
+}
+
+.foot a {
+  font-size: 200%;
+  display: initial;
+  -webkit-transition: color 0.15s ease;
+  -o-transition: color 0.15s ease;
+  transition: color 0.15s ease;
+  color: var(--mainText);
+}
+
 @media (orientation: portrait) {
   .sidenav a {
     font-size: 3vw;
+  }
+
+  .wrapper {
+    width: 90vw;
+    max-width: 100vw;
+    padding-right: 10px;
+    padding-left: 10px;
   }
 
   .ImgContainer {
@@ -482,5 +553,14 @@ input[type="submit"]:hover {
 
   p {
     font-size: 1.15em;
+  }
+
+  .galleryContainer {
+    margin-top: 4vh;
+  }
+
+  div.gallery {
+    width: 35vw;
+    margin: 2vh 1vw;
   }
 }
