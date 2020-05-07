@@ -79,7 +79,7 @@ function start() {
 
 function siteArrayLoader() {
   //loads pages from an array and appends them to the menu
-  var pages = ["index.html", "clubs.html", "signup.html", "settings.html"]; //page address
+  var pages = ["index.php", "clubs.php", "signup.php", "settings.php"]; //page address
   var pageTitle = ["Home", "Clubs", "Signup", "Settings"]; //page name in menu
   var i;
 

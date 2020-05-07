@@ -2,25 +2,8 @@
 <html lang="en">
 
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta charset="utf-8">
-	<meta name="author" content="Andrew Blake">
-	<meta name="Description" content="Site settings">
-	<title>Settings | KKC clubs</title>
-	<script src="js/script.js"></script>
-	<link href="css.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap" rel="stylesheet">
-	<!--icon stuff-->
-	<meta name="theme-color" content="#0094ff">
-	<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-	<link rel="manifest" href="site.webmanifest">
-	<link rel="shortcut icon" href="img/favicon.ico">
-	<meta name="apple-mobile-web-app-title" content="KKC clubs">
-	<meta name="application-name" content="KKC clubs">
-	<meta name="msapplication-TileColor" content="#0094ff">
-	<meta name="msapplication-config" content="browserconfig.xml">
+	<?php include "php/head.php"; ?>
+	<?php include "php/sw_module.php"; ?>
 
 	<style>
 		.bodyText {
@@ -77,22 +60,6 @@
 			}
 		}
 	</script>
-	<script type="module">
-		import { Workbox } from './js/workbox-window.prod.mjs';
-		if ('serviceWorker' in navigator) {
-			const wb = new Workbox('/service-worker.js');
-			wb.addEventListener('waiting', (event) => {
-				createUIPrompt('Updated information avialable', 'Load');
-				document.getElementsByClassName("closebtn")[0].addEventListener('click', (event) => {
-					wb.addEventListener('controlling', (event) => {
-						window.location.reload()
-					});
-					wb.messageSW({ type: 'SKIP_WAITING' });
-				});
-			});
-			wb.register();
-		}
-	</script>
 </head>
 
 <body>
@@ -120,22 +87,22 @@
 					TODO: Notification.requestPermission()
 				</a>
 			</div>
-			<div class="bodyText">
+			<form class="bodyText" action="settings.php" method="post"> <!--TODO: change action-->
 				<h2>Sign in to access more settings</h2>
 				<div class="form__group field">
 					<input type="input" class="form__field" placeholder="Username" name="uername" id="username"
 						required />
 					<label for="username" class="form__label">Username</label>
 				</div>
-				<!--TODO: find out username and password conventions-->
+				<!--TODO: fix autofill bug and non focused but filled behaviour-->
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="Password" name="password" id="password"
+					<input type="password" class="form__field" placeholder="Password" name="password" id="password"
 						required />
 					<label for="password" class="form__label">Password</label>
 				</div>
 
 				<input type="submit" value="Submit">
-			</div>
+			</form>
 		</div>
 	</div>
 	<div class="foot">
@@ -144,7 +111,7 @@
 		<br>
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 5.0.2</p>
+		<p>Version 5.0.2 php</p>
 	</div>
 </body>
 
