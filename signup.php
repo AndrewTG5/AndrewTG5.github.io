@@ -3,7 +3,6 @@
 
 <head>
 	<?php include "php/head.php"; ?>
-	<?php include "php/sw_module.php"; ?>
 </head>
 
 <body>
@@ -13,9 +12,8 @@
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
 		<div class="bodyContainer">
-			<div class="bodyText">
+			<form class="bodyText">
 				<div class="form__group field">
-					<!--TODO: naming conventions-->
 					<input type="input" class="form__field" placeholder="First name" name="first name" id="first name"
 						required />
 					<label for="first name" class="form__label">First name</label>
@@ -29,7 +27,7 @@
 					<input type="input" class="form__field" placeholder="Age" name="age" id="age" required />
 					<label for="age" class="form__label">Age</label>
 				</div>
-				<form style="margin-top: 2vh;">
+				<div style="margin-top: 2vh;">
 					<label for="club">Club</label>
 					<select id="club" name="club">
 						<option value="evolocity">Evolocity</option>
@@ -38,8 +36,8 @@
 					</select>
 
 					<input type="submit" value="Submit">
-				</form>
-			</div>
+				</div>
+			</form>
 		</div>
 	</div>
 </body>

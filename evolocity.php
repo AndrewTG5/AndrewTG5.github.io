@@ -3,7 +3,6 @@
 
 <head>
 	<?php include "php/head.php"; ?>
-	<?php include "php/sw_module.php"; ?>
 
 	<?php include "php/setup.php"; 
 		$sql = "SELECT * FROM pages";
@@ -40,7 +39,7 @@
 			</div>
 		</div>
 		<div class="ImgContainer">
-			<img src="img/<?php print $image1?>" alt="evolocity logo" class="bodyImg">
+			<?php print $image1?>
 			<div class="bodyText TextImg">
 				<?php print $para2?>
 			</div>

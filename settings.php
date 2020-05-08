@@ -3,7 +3,6 @@
 
 <head>
 	<?php include "php/head.php"; ?>
-	<?php include "php/sw_module.php"; ?>
 
 	<style>
 		.bodyText {
@@ -87,7 +86,7 @@
 					TODO: Notification.requestPermission()
 				</a>
 			</div>
-			<form class="bodyText" action="settings.php" method="post"> <!--TODO: change action-->
+			<form class="bodyText" action="php/action_page.php" method="post">
 				<h2>Sign in to access more settings</h2>
 				<div class="form__group field">
 					<input type="input" class="form__field" placeholder="Username" name="uername" id="username"
@@ -111,7 +110,7 @@
 		<br>
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 5.0.2 php</p>
+		<p>Version 5.0.3 php</p>
 	</div>
 </body>
 

@@ -3,7 +3,6 @@
 
 <head>
 	<?php include "php/head.php"; ?>
-	<?php include "php/sw_module.php"; ?>
 </head>
 
 <body>

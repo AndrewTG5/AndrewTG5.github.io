@@ -106,22 +106,6 @@ permalink: /404.html
 			}
 		}
 	</style>
-	<script type="module">
-		import { Workbox } from './js/workbox-window.prod.mjs';
-		if ('serviceWorker' in navigator) {
-			const wb = new Workbox('/service-worker.js');
-			wb.addEventListener('waiting', (event) => {
-				createUIPrompt('Updated information avialable', 'Load');
-				document.getElementsByClassName("closebtn")[0].addEventListener('click', (event) => {
-					wb.addEventListener('controlling', (event) => {
-						window.location.reload()
-					});
-					wb.messageSW({ type: 'SKIP_WAITING' });
-				});
-			});
-			wb.register();
-		}
-	</script>
 </head>
 
 <body>
@@ -131,7 +115,7 @@ permalink: /404.html
 	</div>
 	<p>File not found</p>
 	<br>
-	<a href="index.html" class="homeBtn">Go Home</a>
+	<a href="index.php" class="homeBtn">Go Home</a>
 </body>
 
 </html>

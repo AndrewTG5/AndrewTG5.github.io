@@ -3,7 +3,6 @@
 
 <head>
     <?php include "php/head.php"; ?>
-	<?php include "php/sw_module.php"; ?>
 </head>
 
 <body>
@@ -14,14 +13,14 @@
     <div class="wrapper">
         <div class="galleryContainer">
             <div class="gallery">
-                <a href="robotics.html">
+                <a href="robotics.php">
                     <img src="img/robotsq.png" alt="">
                 </a>
                 <div class="desc">Robotics</div>
             </div>
 
             <div class="gallery">
-                <a href="evolocity.html">
+                <a href="evolocity.php">
                     <img src="img/evolocity.png" alt="">
                 </a>
                 <div class="desc">Evolocity</div>
@@ -33,9 +32,6 @@
                 </a>
                 <div class="desc">Add a club</div>
             </div>
-
-            
-
         </div>
     </div>
 </body>

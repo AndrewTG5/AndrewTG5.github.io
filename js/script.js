@@ -61,12 +61,6 @@ document.addEventListener('DOMContentLoaded', (_event) => {
   start();
 });
 
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('/service-worker.js');
-  });
-}
-
 function start() {
   //closes nav and sets theme
   siteArrayLoader();
