@@ -105,12 +105,12 @@
 		</div>
 	</div>
 	<div class="foot">
-		<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master" target="_blank"
+		<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank"
 			rel="noopener">GitHub</a>
 		<br>
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 5.0.3 php</p>
+		<p>Version 5.0.4 php</p>
 	</div>
 </body>
 

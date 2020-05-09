@@ -5,7 +5,7 @@
 	<?php include "php/head.php"; ?>
 
 	<?php include "php/setup.php"; 
-		$sql = "SELECT * FROM pages";
+		$sql = "SELECT * FROM pages WHERE page='evolocity'";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
@@ -15,9 +15,9 @@
 			//for debugging
 			//print_r($row);
 		
-			$title1=$row["title1"];
+			$title=$row["title"];
+			$main_para1=$row["main_para1"];
 			$para1=$row["para1"];
-			$para2=$row["para2"];
 			$image1=$row["image1"];
 		
 		} else {
@@ -29,19 +29,19 @@
 
 <body>
 	<div>
-		<h1 class="title"><?php print $title1?></h1>
+		<h1 class="title"><?php print $title?></h1>
 	</div>
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
 		<div class="bodyContainer">
 			<div class="bodyText">
-				<?php print $para1?>
+				<?php print $main_para1?>
 			</div>
 		</div>
 		<div class="ImgContainer">
 			<?php print $image1?>
 			<div class="bodyText TextImg">
-				<?php print $para2?>
+				<?php print $para1?>
 			</div>
 		</div>
 	</div>

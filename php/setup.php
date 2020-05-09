@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "sec_user";
 $password = "greenChair153";
-$database = "phptest";
+$database = "kkc_clubs";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
