@@ -2,7 +2,9 @@
 <html lang="en">
 
 <head>
-    <?php include "php/head.php"; ?>
+    <?php include "php/head.php"; 
+    $dest="";
+    ?>
 </head>
 
 <body>
@@ -13,14 +15,14 @@
     <div class="wrapper">
         <div class="galleryContainer">
             <div class="gallery">
-                <a href="robotics.php">
+                <a href="clubpage.php?dest=robotics">
                     <img src="img/robotsq.png" alt="">
                 </a>
                 <div class="desc">Robotics</div>
             </div>
 
             <div class="gallery">
-                <a href="evolocity.php">
+                <a href="clubpage.php?dest=evolocity">
                     <img src="img/evolocity.png" alt="">
                 </a>
                 <div class="desc">Evolocity</div>

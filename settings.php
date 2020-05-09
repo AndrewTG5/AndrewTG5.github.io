@@ -110,7 +110,7 @@
 		<br>
 		<p>Author: Andrew Blake</p>
 		<br>
-		<p>Version 5.0.4 php</p>
+		<p>Version 5.0.5 php</p>
 	</div>
 </body>
 

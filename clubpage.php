@@ -4,8 +4,10 @@
 <head>
 	<?php include "php/head.php"; ?>
 
-	<?php include "php/setup.php"; 
-		$sql = "SELECT * FROM pages WHERE page='robotics'";
+	<?php include "php/setup.php";
+		$dest = $_GET['dest'];
+	
+		$sql = "SELECT * FROM pages WHERE page='$dest'";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
@@ -44,7 +46,7 @@
 				<?php print $para1?>
 			</div>
 		</div>
-	</div>
+	</div><!--TODO: add other boxes-->
 </body>
 
 </html>
