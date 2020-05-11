@@ -133,12 +133,30 @@ a {
   backdrop-filter: var(--mainBlur);
 }
 
+.titleRow {
+  margin: 0.5% 0 1vh 0;
+  width: 100%;
+  height: 8vh;
+}
+
 .title {
   font-family: "Lato", sans-serif;
   font-size: 5vh;
   color: rgb(255, 255, 255);
   text-shadow: var(--Tshadow4);
-  margin: 0.5% 0% 1vh 14vw;
+  margin: 0 0 0 2%;
+  float: left;
+}
+
+.signin {
+  left: 0;
+  margin: 0 0 0 2%;
+  float: right;
+}
+
+.signin p{ /*TODO: fix color and margin*/
+  font-size: 1em;
+  margin: 0.5vh 0 0 0;
 }
 
 .bodyContainer {
@@ -306,7 +324,6 @@ h3 {
 .form__field:focus {
   padding-bottom: 6px;
   font-weight: 700;
-  border-width: 3px;
   border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
@@ -536,11 +553,14 @@ div.desc {
 
 .foot a {
   font-size: 200%;
-  display: initial;
   -webkit-transition: color 0.15s ease;
   -o-transition: color 0.15s ease;
   transition: color 0.15s ease;
   color: var(--mainText);
+}
+
+.foot p {
+  margin: 0.5% 0 0 0;
 }
 
 @media (orientation: portrait) {

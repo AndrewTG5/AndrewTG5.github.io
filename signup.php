@@ -6,11 +6,15 @@
 </head>
 
 <body>
-	<div>
-		<h1 class="title">Sign up</h1>
-	</div>
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
+		<div class="titleRow">
+			<h1 class="title">KKC clubs</h1>
+			<div class="signin">
+				<p>You are not signed in</p>
+				<a href="settings.php#login"><p>Sign in</p></a>
+			</div>
+		</div>
 		<div class="bodyContainer">
 			<form class="bodyText">
 				<div class="form__group field">

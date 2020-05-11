@@ -18,11 +18,6 @@
 		}
 
 		p,
-		.foot a {
-			display: initial;
-		}
-
-		p,
 		h1,
 		h2,
 		h3 {
@@ -62,11 +57,15 @@
 </head>
 
 <body>
-	<div>
-		<h1 class="title">Settings</h1>
-	</div>
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
+		<div class="titleRow">
+			<h1 class="title">KKC clubs</h1>
+			<div class="signin">
+				<p>You are not signed in</p>
+				<a href="settings.php#login"><p>Sign in</p></a>
+			</div>
+		</div>
 		<div class="bodyContainer">
 			<div class="bodyText" style="min-width: 86%">
 				<h2 style="display:inline-block; margin: 0.6vh 0 0 0">Dark theme</h2>
@@ -86,7 +85,7 @@
 					TODO: Notification.requestPermission()
 				</a>
 			</div>
-			<form class="bodyText" action="php/action_page.php" method="post">
+			<form id="login" class="bodyText" action="php/settings.php" method="post">
 				<h2>Sign in to access more settings</h2>
 				<div class="form__group field">
 					<input type="input" class="form__field" placeholder="Username" name="uername" id="username"
@@ -107,10 +106,8 @@
 	<div class="foot">
 		<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank"
 			rel="noopener">GitHub</a>
-		<br>
 		<p>Author: Andrew Blake</p>
-		<br>
-		<p>Version 5.0.5 php</p>
+		<p>Version 5.0.6 php</p>
 	</div>
 </body>
 
