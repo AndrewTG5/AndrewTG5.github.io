@@ -4,6 +4,26 @@
 <head>
 	<?php include "php/head.php"; ?>
 
+	<?php
+		if (isset($_GET["to_delete"])) {
+			$to_delete=$_GET["to_delete"];
+			
+			
+			$sql = "DELETE FROM sign_ups WHERE id=$to_delete"; //sec_user needs delete permissions
+         	if ($conn->query($sql) === TRUE) {
+			 	echo 	"<script type='text/javascript'>",
+			 			"setTimeout(function () { createUIPrompt('Record deleted', 'Dismiss');}, 50);",
+     					"</script>"
+						;
+         	} else {
+             	$error = addslashes($conn->error);
+    		    echo 	"<script type='text/javascript'>",
+    				"setTimeout(function () { createUIPrompt('Error deleting record: $error', 'Dismiss');}, 50);",
+    				"</script>"
+    		           ;
+         	}
+     	}
+	?>
 	<style>
 		.bodyText {
 			-webkit-transition: background 0.15s ease;
@@ -24,6 +44,24 @@
 			-webkit-transition: color 0.15s ease;
 			-o-transition: color 0.15s ease;
 			transition: color 0.15s ease;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+			width: 100%;
+			border: 1px solid #ddd;
+			margin-bottom: 3vh;
+		}
+
+		th,
+		td {
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #f2f2f2
 		}
 	</style>
 	<script>
@@ -63,7 +101,9 @@
 			<h1 class="title">KKC clubs</h1>
 			<div class="signin">
 				<p>You are not signed in</p>
-				<a href="settings.php#login"><p>Sign in</p></a>
+				<a href="settings.php#login">
+					<p>Sign in</p>
+				</a>
 			</div>
 		</div>
 		<div class="bodyContainer">
@@ -76,13 +116,13 @@
 			<div class="bodyText">
 				<h2 style="border-bottom: 2px solid var(--accentBlue);">Experiments</h2>
 				<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#"
-					onclick="createUIPrompt('This can say anything🔥','Dismiss',dismissUIPrompt)">
+					onclick="createUIPrompt('This can say anything🔥','Dismiss')">
 					Example notification banner
 				</a>
 				<br>
 				<br>
 				<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="">
-					TODO: Notification.requestPermission()
+					TODO: Example confirm dialog
 				</a>
 			</div>
 			<form id="login" class="bodyText" action="php/settings.php" method="post">
@@ -101,14 +141,52 @@
 
 				<input type="submit" value="Submit">
 			</form>
-		</div>
-	</div>
-	<div class="foot">
-		<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank"
-			rel="noopener">GitHub</a>
-		<p>Author: Andrew Blake</p>
-		<p>Version 5.0.6 php</p>
-	</div>
+			<div class="bodyText">
+				<h2>All sign ups</h2>
+				<table id="table">
+					<tr>
+						<th>#</th>
+						<th>First name</th>
+						<th>Last name</th>
+						<th>Age</th>
+						<th>Club</th>
+					</tr>
+					<?php
+						 $sql = "SELECT * FROM sign_ups";
+						 $result = $conn->query($sql);
+						 if ($result->num_rows > 0) {
+						     // output data of each row
+						     while ($row = $result->fetch_assoc()) {
+						         $id=$row["id"];
+						         $fname=$row["fname"];
+						         $lname=$row["lname"];
+								 $age=$row["age"];
+								 $club=$row["club"]; 
+					?>
+						<tr>
+							<td><?php print $id; ?>
+								<a
+									href="settings.php?to_delete=<?php echo $id; ?>#table">Delete
+								</a>
+							</td>
+							<td><?php print $fname; ?></td>
+							<td><?php print $lname; ?></td>
+							<td><?php print $age; ?></td>
+							<td><?php print $club; ?></td>
+						</tr>
+					<?php
+        				}
+    						} 
+						$conn->close();
+					?>
+				</table>
+			</div>
+			<div class="foot">
+				<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version"
+					target="_blank" rel="noopener">GitHub</a>
+				<p>Author: Andrew Blake</p>
+				<p>Version 5.1.0 php</p>
+			</div>
 </body>
 
 </html>

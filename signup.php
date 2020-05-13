@@ -3,6 +3,31 @@
 
 <head>
 	<?php include "php/head.php"; ?>
+	<?php
+     	if (isset($_POST["fname"])) {
+    		$fname = $_POST["fname"];
+    		$lname = $_POST["lname"];
+    		$age = $_POST["age"];
+    		$club = $_POST["club"];
+
+    		$sql = "INSERT INTO sign_ups (fname, lname, age, club)
+    		VALUES ('$fname', '$lname', '$age', '$club')";
+			
+    		if ($conn->query($sql) === true) {
+				echo 	"<script type='text/javascript'>",
+    				"setTimeout(function () {createUIPrompt('Record created', 'Dismiss');}, 50);",
+    				"</script>"
+					;
+    		} else {
+    		    $error = addslashes($conn->error);
+    		    echo 	"<script type='text/javascript'>",
+    				"setTimeout(function () { createUIPrompt('Error creating record: $error', 'Dismiss');}, 50);",
+    				"</script>"
+    		           ;
+    		}
+     	}
+    ?>
+
 </head>
 
 <body>
@@ -12,18 +37,20 @@
 			<h1 class="title">KKC clubs</h1>
 			<div class="signin">
 				<p>You are not signed in</p>
-				<a href="settings.php#login"><p>Sign in</p></a>
+				<a href="settings.php#login">
+					<p>Sign in</p>
+				</a>
 			</div>
 		</div>
 		<div class="bodyContainer">
-			<form class="bodyText">
+			<form class="bodyText" action="signup.php" method="post">
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="First name" name="first name" id="first name"
+					<input type="input" class="form__field" placeholder="First name" name="fname" id="first name"
 						required />
 					<label for="first name" class="form__label">First name</label>
 				</div>
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="last ame" name="last name" id="last name"
+					<input type="input" class="form__field" placeholder="last ame" name="lname" id="last name"
 						required />
 					<label for="last name" class="form__label">Last name</label>
 				</div>

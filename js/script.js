@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', (_event) => {
 
 function start() {
   //closes nav and sets theme
-  siteArrayLoader();
+  navLoader();
   if (themePref == "dark") {
     dark();
   } else {
@@ -71,7 +71,7 @@ function start() {
   }
 }
 
-function siteArrayLoader() {
+function navLoader() {
   //loads pages from an array and appends them to the menu
   var pages = ["index.php", "clubs.php", "signup.php", "settings.php"]; //page address
   var pageTitle = ["Home", "Clubs", "Signup", "Settings"]; //page name in menu
