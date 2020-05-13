@@ -369,6 +369,10 @@ input[type="submit"] {
   box-shadow: var(--shadow8);
 }
 
+textarea {
+  height: 10vw;
+}
+
 /*input boxes end here*/
 
 .galleryContainer {

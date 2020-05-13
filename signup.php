@@ -43,15 +43,13 @@
 			</div>
 		</div>
 		<div class="bodyContainer">
-			<form class="bodyText" action="signup.php" method="post">
+			<form class="bodyText" action="signup.php" method="post" autocomplete="off">
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="First name" name="fname" id="first name"
-						required />
+					<input type="input" class="form__field" placeholder="First name" name="fname" id="first name" required />
 					<label for="first name" class="form__label">First name</label>
 				</div>
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="last ame" name="lname" id="last name"
-						required />
+					<input type="input" class="form__field" placeholder="last ame" name="lname" id="last name" required />
 					<label for="last name" class="form__label">Last name</label>
 				</div>
 				<div class="form__group field">

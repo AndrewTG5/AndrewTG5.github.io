@@ -21,7 +21,7 @@
                     <img src="img/robotsq.png" alt="">
                 </a>
                 <div class="desc">Robotics</div>
-                <a href="clubpageedit.php?edit=robotics">Edit</a>
+                <a href="addclub.php?edit=robotics">Edit</a>
             </div>
 
             <div class="gallery">
@@ -29,7 +29,7 @@
                     <img src="img/evolocity.png" alt="">
                 </a>
                 <div class="desc">Evolocity</div>
-                <a href="clubpageedit.php?edit=evolocity">Edit</a>
+                <a href="addclub.php?edit=evolocity">Edit</a>
             </div>
 
             <div class="gallery">

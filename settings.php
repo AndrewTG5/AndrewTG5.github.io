@@ -40,7 +40,9 @@
 		p,
 		h1,
 		h2,
-		h3 {
+		h3,
+		th,
+		td {
 			-webkit-transition: color 0.15s ease;
 			-o-transition: color 0.15s ease;
 			transition: color 0.15s ease;
@@ -50,7 +52,6 @@
 			border-collapse: collapse;
 			border-spacing: 0;
 			width: 100%;
-			border: 1px solid #ddd;
 			margin-bottom: 3vh;
 		}
 
@@ -58,10 +59,14 @@
 		td {
 			text-align: left;
 			padding: 8px;
+			color: var(--mainText);
 		}
 
 		tr:nth-child(even) {
-			background-color: #f2f2f2
+			background-color: var(--textInvert);
+			-webkit-transition: background-color 0.15s ease;
+			-o-transition: background-color 0.15s ease;
+			transition: background-color 0.15s ease;
 		}
 	</style>
 	<script>
@@ -185,7 +190,7 @@
 				<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version"
 					target="_blank" rel="noopener">GitHub</a>
 				<p>Author: Andrew Blake</p>
-				<p>Version 5.1.0 php</p>
+				<p>Version 5.1.1 php</p>
 			</div>
 </body>
 
