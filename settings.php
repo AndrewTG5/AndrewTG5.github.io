@@ -24,6 +24,30 @@
          	}
      	}
 	?>
+	<?php
+     	if (isset($_POST["username"])) {
+    		$uname = $_POST["username"];
+    		$psw = $_POST["password"];
+
+            $sql = "SELECT * FROM users WHERE email='$uname' AND password='$psw'";
+            $result = $conn->query($sql);
+			
+    		if ($result->num_rows == 1) {
+                $_SESSION["username"]=$uname;
+                $_SESSION["loggedin"]=1;
+				echo 	"<script type='text/javascript'>",
+    				"setTimeout(function () {createUIPrompt('Logged in', 'Dismiss');}, 50);",
+    				"</script>"
+					;
+    		} else {
+    		    $error = addslashes($conn->error);
+    		    echo 	"<script type='text/javascript'>",
+    				"setTimeout(function () { createUIPrompt('Can't log in: $error', 'Dismiss');}, 50);",
+    				"</script>"
+    		           ;
+    		}
+     	}
+    ?>
 	<style>
 		.bodyText {
 			-webkit-transition: background 0.15s ease;
@@ -102,15 +126,10 @@
 <body>
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
-		<div class="titleRow">
-			<h1 class="title">KKC clubs</h1>
-			<div class="signin">
-				<p>You are not signed in</p>
-				<a href="settings.php#login">
-					<p>Sign in</p>
-				</a>
-			</div>
-		</div>
+		<?php 
+		$head="Settings";
+		include "php/titlerow.php";
+		?>
 		<div class="bodyContainer">
 			<div class="bodyText" style="min-width: 86%">
 				<h2 style="display:inline-block; margin: 0.6vh 0 0 0">Dark theme</h2>
@@ -130,14 +149,13 @@
 					TODO: Example confirm dialog
 				</a>
 			</div>
-			<form id="login" class="bodyText" action="php/settings.php" method="post">
+			<form id="login" class="bodyText" action="settings.php" method="post">
 				<h2>Sign in to access more settings</h2>
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="Username" name="uername" id="username"
+					<input type="input" class="form__field" placeholder="Username" name="username" id="username"
 						required />
 					<label for="username" class="form__label">Username</label>
 				</div>
-				<!--TODO: fix autofill bug and non focused but filled behaviour-->
 				<div class="form__group field">
 					<input type="password" class="form__field" placeholder="Password" name="password" id="password"
 						required />
@@ -187,10 +205,12 @@
 				</table>
 			</div>
 			<div class="foot">
-				<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version"
-					target="_blank" rel="noopener">GitHub</a>
-				<p>Author: Andrew Blake</p>
-				<p>Version 5.1.1 php</p>
+				<div style="margin-left:12vw">
+					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version"
+						target="_blank" rel="noopener">GitHub</a>
+					<p>Author: Andrew Blake</p>
+					<p>Version 5.1.2 php</p>
+				<div>
 			</div>
 </body>
 

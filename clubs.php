@@ -8,13 +8,10 @@
 <body>
     <div id="mySidenav" class="sidenav"></div>
     <div class="wrapper">
-        <div class="titleRow">
-			<h1 class="title">KKC clubs</h1>
-			<div class="signin">
-				<p>You are not signed in</p>
-				<a href="settings.php#login"><p>Sign in</p></a>
-			</div>
-		</div>
+        <?php 
+		$head="KKC clubs";
+		include "php/titlerow.php";
+		?>
         <div class="galleryContainer">
             <div class="gallery">
                 <a href="clubpage.php?dest=robotics">

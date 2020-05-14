@@ -18,6 +18,7 @@
 <meta name="msapplication-TileColor" content="#0094ff">
 <meta name="msapplication-config" content="browserconfig.xml">
 <?php
+session_start();
 $servername = "localhost";
 $username = "sec_user";
 $password = "greenChair153";
@@ -28,6 +29,10 @@ $conn = new mysqli($servername, $username, $password, $database);
 
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    $error = addslashes($conn->connect_error);
+    echo 	"<script type='text/javascript'>",
+    	"setTimeout(function () { createUIPrompt('Database connection failed: $error', 'Dismiss');}, 50);",
+    	"</script>"
+           ;
 }
 ?>

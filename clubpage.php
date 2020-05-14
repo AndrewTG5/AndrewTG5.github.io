@@ -11,11 +11,7 @@
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
-            // output data of each row
             $row = $result->fetch_assoc();
-        
-            //for debugging
-            //print_r($row);
         
             $title=$row["title"];
             $main_para1=$row["main_para1"];
@@ -31,15 +27,10 @@
 <body>
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
-		<div class="titleRow">
-			<h1 class="title"><?php print $title;?></h1>
-			<div class="signin">
-				<p>You are not signed in</p>
-				<a href="settings.php#login">
-					<p>Sign in</p>
-				</a>
-			</div>
-		</div>
+		<?php 
+		$head="$title";
+		include "php/titlerow.php";
+		?>
 		<div class="bodyContainer">
 			<div class="bodyText">
 				<?php print $main_para1?>
