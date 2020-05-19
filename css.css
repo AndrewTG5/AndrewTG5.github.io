@@ -3,7 +3,7 @@
   --mainIMG: rgba(255, 255, 255, 0.4);
   --textInvert: rgb(255, 255, 255);
   --accentBlue: rgb(0, 148, 255);
-  --mainBlur: blur(15px) saturate(150%);
+  --mainBlur: blur(15px) /*saturate(150%) get stakeholder feedback on*/;
   --shadow4: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132),
     0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
   --shadow8: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132),
@@ -134,7 +134,7 @@ a {
 }
 
 .titleRow {
-  margin: 0.5% 0 1vh 0;
+  margin: 0.5% 2% 1vh 2%;
   width: 100%;
   height: 8vh;
 }
@@ -144,13 +144,13 @@ a {
   font-size: 5vh;
   color: rgb(255, 255, 255);
   text-shadow: var(--Tshadow4);
-  margin: 0 0 0 2%;
+  margin: 0;
   float: left;
 }
 
 .signin {
   left: 0;
-  margin: 0 0 0 2%;
+  margin: 0 4% 0 0;
   float: right;
 }
 

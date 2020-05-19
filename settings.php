@@ -149,6 +149,7 @@
 					TODO: Example confirm dialog
 				</a>
 			</div>
+			<?php if($_SESSION["loggedin"]==0) { echo '
 			<form id="login" class="bodyText" action="settings.php" method="post">
 				<h2>Sign in to access more settings</h2>
 				<div class="form__group field">
@@ -163,16 +164,18 @@
 				</div>
 
 				<input type="submit" value="Submit">
-			</form>
-			<div class="bodyText">
+			</form> ';} ?>
+			<div class="bodyText" <?php if($_SESSION["loggedin"]==0) { echo 'style="display:none"';}//! INSECURE 
+			?>>
 				<h2>All sign ups</h2>
 				<table id="table">
 					<tr>
 						<th>#</th>
-						<th>First name</th>
-						<th>Last name</th>
+						<th>Name</th>
+						<th>Email</th>
 						<th>Age</th>
 						<th>Club</th>
+						<th></th>
 					</tr>
 					<?php
 						 $sql = "SELECT * FROM sign_ups";
@@ -181,21 +184,18 @@
 						     // output data of each row
 						     while ($row = $result->fetch_assoc()) {
 						         $id=$row["id"];
-						         $fname=$row["fname"];
-						         $lname=$row["lname"];
+						         $name=$row["full_name"];
+						         $email=$row["email"];
 								 $age=$row["age"];
 								 $club=$row["club"]; 
 					?>
 						<tr>
-							<td><?php print $id; ?>
-								<a
-									href="settings.php?to_delete=<?php echo $id; ?>#table">Delete
-								</a>
-							</td>
-							<td><?php print $fname; ?></td>
-							<td><?php print $lname; ?></td>
+							<td><?php print $id; ?></td>
+							<td><?php print $name; ?></td>
+							<td><?php print $email; ?></td>
 							<td><?php print $age; ?></td>
 							<td><?php print $club; ?></td>
+							<td><a href="settings.php?to_delete=<?php echo $id; ?>#table">Delete</a></td>
 						</tr>
 					<?php
         				}
@@ -209,7 +209,7 @@
 					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version"
 						target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.1.2 php</p>
+					<p>Version 5.1.3 php</p>
 				<div>
 			</div>
 </body>

@@ -4,14 +4,14 @@
 <head>
 	<?php include "php/head.php"; ?>
 	<?php
-     	if (isset($_POST["fname"])) {
-    		$fname = $_POST["fname"];
-    		$lname = $_POST["lname"];
+     	if (isset($_POST["name"])) {
+    		$name = $_POST["name"];
+    		$email = $_POST["email"];
     		$age = $_POST["age"];
     		$club = $_POST["club"];
 
-    		$sql = "INSERT INTO sign_ups (fname, lname, age, club)
-    		VALUES ('$fname', '$lname', '$age', '$club')";
+    		$sql = "INSERT INTO sign_ups (full_name, email, age, club)
+    		VALUES ('$name', '$email', '$age', '$club')";
 			
     		if ($conn->query($sql) === true) {
 				echo 	"<script type='text/javascript'>",
@@ -40,12 +40,12 @@
 		<div class="bodyContainer">
 			<form class="bodyText" action="signup.php" method="post" autocomplete="off">
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="First name" name="fname" id="first name" required />
-					<label for="first name" class="form__label">First name</label>
+					<input type="input" class="form__field" placeholder="Full name" name="name" id="name" required />
+					<label for="name" class="form__label">Full name</label>
 				</div>
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="last ame" name="lname" id="last name" required />
-					<label for="last name" class="form__label">Last name</label>
+					<input type="input" class="form__field" placeholder="last ame" name="email" id="email" required />
+					<label for="email" class="form__label">Email</label>
 				</div>
 				<div class="form__group field">
 					<input type="input" class="form__field" placeholder="Age" name="age" id="age" required />

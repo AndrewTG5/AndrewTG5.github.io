@@ -1,10 +1,16 @@
 <?php
-    if($_SESSION["loggedin"]==1){
-        $signin='<p>Signed in as ' . $_SESSION["username"] . '</p>';
+    if(isset($_SESSION["loggedin"])){
+        if($_SESSION["loggedin"]==1){
+            $signin='<p>Signed in as ' . $_SESSION["username"] . '</p>';
+        } else {
+            $signin='<p>You are not signed in</p>
+	    	<a href="settings.php#login"><p>Sign in</p></a>';
+        }
     } else {
-        $signin='<p>You are not signed in</p>
-		<a href="settings.php#login"><p>Sign in</p></a>';
-    }
+                $_SESSION["loggedin"]=0;
+                $signin='<p>You are not signed in</p>
+    	    	<a href="settings.php#login"><p>Sign in</p></a>';
+            }
 
 ?>
 
