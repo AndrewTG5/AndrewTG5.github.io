@@ -137,17 +137,33 @@
 					onclick="toggleTheme()" />
 				<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
 			</div>
-			<div class="bodyText">
-				<h2 style="border-bottom: 2px solid var(--accentBlue);">Experiments</h2>
-				<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#"
-					onclick="createUIPrompt('This can say anything🔥','Dismiss')">
-					Example notification banner
-				</a>
-				<br>
-				<br>
-				<a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="">
-					TODO: Example confirm dialog
-				</a>
+			<div class="selectorContainer">
+				<input onclick="bgSelector('original')"
+				  type="radio" name="bg" 
+				  id="original" class="input-hidden" />
+				<label for="original">
+				  <div class="original" style="width:12vw; height:12vw"></div>
+				</label>
+				<input onclick="bgSelector('mint')"
+				  type="radio" name="bg" 
+				  id="mint" class="input-hidden" />
+				<label for="mint">
+				  <div class="mint" style="width:12vw; height:12vw"></div>
+				</label>
+				<input onclick="bgSelector('sky')"
+				  type="radio" name="bg" 
+				  id="sky" class="input-hidden" />
+				<label for="sky">
+				  <div class="sky" style="width:12vw; height:12vw"></div>
+				</label>
+				<input onclick="bgSelector('pixel')"
+				  type="radio" name="bg" 
+				  id="pixel" class="input-hidden" />
+				<label for="pixel">
+				  <div class="pixel" style="width:12vw; height:12vw"></div>
+				</label>
+
+
 			</div>
 			<?php if($_SESSION["loggedin"]==0) { echo '
 			<form id="login" class="bodyText" action="settings.php" method="post">
@@ -209,7 +225,7 @@
 					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version"
 						target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.1.4 php</p>
+					<p>Version 5.1.5 php</p>
 				<div>
 			</div>
 </body>

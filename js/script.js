@@ -1,12 +1,11 @@
 var themePref = localStorage.getItem("themePref");
+var bgPref = localStorage.getItem("bgPref");
 
 function dark() {
   //function to set dark theme
   var root = document.documentElement;
 
   document.getElementById("mySidenav").style.backgroundColor = "rgba(0, 0, 0, 0.2)";
-  document.querySelector("html").style.background = "linear-gradient(-45deg, rgb(213, 94, 57), rgb(207, 35, 101), rgb(10, 141, 187), rgb(10, 187, 146))";
-  document.querySelector("html").style.backgroundSize = "400% 400%";
 
   root.style.setProperty('--mainText', "rgb(255, 255, 255)");
   root.style.setProperty('--mainIMG', "rgba(0, 0, 0, 0.6)");
@@ -18,13 +17,17 @@ function light() {
   var root = document.documentElement;
 
   document.getElementById("mySidenav").style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-  document.querySelector("html").style.background = "linear-gradient(-45deg, rgb(238, 119, 82), rgb(231, 60, 126), rgb(35, 166, 213), rgb(35, 213, 171))";
-  document.querySelector("html").style.backgroundSize = "400% 400%";
 
   root.style.setProperty('--mainText', "rgb(0, 0, 0)");
   root.style.setProperty('--mainIMG', "rgba(255, 255, 255, 0.4)");
   root.style.setProperty('--textInvert', "rgb(255, 255, 255)");
 
+}
+
+function bgSelector(background) {
+  document.querySelector("html").removeAttribute("class");
+  document.querySelector("html").classList.add(background);
+  localStorage.setItem("bgPref", background);
 }
 
 function createUIPrompt(bannerText, buttonText) {
@@ -64,6 +67,13 @@ document.addEventListener('DOMContentLoaded', (_event) => {
 function start() {
   //closes nav and sets theme
   navLoader();
+  if (bgPref || bgPref === "") {
+    bgSelector(bgPref);
+  }
+  else {
+    bgSelector("mint");
+  }
+  
   if (themePref == "dark") {
     dark();
   } else {
