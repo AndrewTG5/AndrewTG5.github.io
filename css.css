@@ -154,7 +154,7 @@ a {
   float: right;
 }
 
-.signin p{ /*TODO: fix color and margin*/
+.signin p{
   font-size: 1em;
   margin: 0.5vh 0 0 0;
 }
@@ -173,14 +173,14 @@ a {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 6vh; /*TODO: fix*/
+  margin-top: 6vh;
 }
 
 .wrapper {
   margin-right: auto;
   margin-left: auto;
   width: 75vw;
-  max-width: 75vw; /*TODO: fix*/
+  max-width: 75vw;
   padding: 0 10px 0 10px;
   flex: 1 0 auto;
 }
@@ -195,8 +195,6 @@ a {
   margin: 2%;
   -webkit-box-shadow: var(--shadow16);
   box-shadow: var(--shadow16);
-  /*-webkit-backdrop-filter: var(--mainBlur);
-  backdrop-filter: var(--mainBlur);*/
 }
 
 .ImgContainer {
@@ -232,8 +230,6 @@ a {
   background: var(--mainIMG);
   -webkit-box-shadow: var(--shadow16);
   box-shadow: var(--shadow16);
-  /*-webkit-backdrop-filter: var(--mainBlur);
-  backdrop-filter: var(--mainBlur);*/
 }
 
 p {
@@ -310,7 +306,7 @@ h3 {
   font-size: 1.3rem;
   cursor: text;
   top: 20px;
-}
+} 
 
 .form__label {
   position: absolute;
@@ -323,7 +319,6 @@ h3 {
 
 .form__field:focus {
   padding-bottom: 6px;
-  font-weight: 700;
   border-image-slice: 1;
 }
 .form__field:focus ~ .form__label {
@@ -335,13 +330,11 @@ h3 {
   font-weight: 700;
 }
 
-/* reset input */
-.form__field:required,
-.form__field:invalid {
-  box-shadow: none;
+.form__field:valid ~ .form__label{
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-input[type="text"],
 select {
   color: var(--mainText);
   width: 100%;
