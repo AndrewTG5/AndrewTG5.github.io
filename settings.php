@@ -5,49 +5,45 @@
 	<?php include "php/head.php"; ?>
 
 	<?php
-		if (isset($_GET["to_delete"])) {
-			$to_delete=$_GET["to_delete"];
-			
-			
-			$sql = "DELETE FROM sign_ups WHERE id=$to_delete"; //sec_user needs delete permissions
-         	if ($conn->query($sql) === TRUE) {
-			 	echo 	"<script type='text/javascript'>",
-			 			"setTimeout(function () { createUIPrompt('Record deleted', 'Dismiss');}, 50);",
-     					"</script>"
-						;
-         	} else {
-             	$error = addslashes($conn->error);
-    		    echo 	"<script type='text/javascript'>",
-    				"setTimeout(function () { createUIPrompt('Error deleting record: $error', 'Dismiss');}, 50);",
-    				"</script>"
-    		           ;
-         	}
-     	}
+	if (isset($_GET["to_delete"])) {
+		$to_delete = $_GET["to_delete"];
+
+
+		$sql = "DELETE FROM sign_ups WHERE id=$to_delete"; //sec_user needs delete permissions
+		if ($conn->query($sql) === TRUE) {
+			echo 	"<script>",
+				"setTimeout(function () { createUIPrompt('Record deleted', 'Dismiss');}, 50);",
+				"</script>";
+		} else {
+			$error = addslashes($conn->error);
+			echo 	"<script>",
+				"setTimeout(function () { createUIPrompt('Error deleting record: $error', 'Dismiss');}, 50);",
+				"</script>";
+		}
+	}
 	?>
 	<?php
-     	if (isset($_POST["username"])) {
-    		$uname = $_POST["username"];
-    		$psw = $_POST["password"];
+	if (isset($_POST["username"])) {
+		$uname = $_POST["username"];
+		$psw = $_POST["password"];
 
-            $sql = "SELECT * FROM users WHERE email='$uname' AND password='$psw'";
-            $result = $conn->query($sql);
-			
-    		if ($result->num_rows == 1) {
-                $_SESSION["username"]=$uname;
-                $_SESSION["loggedin"]=1;
-				echo 	"<script type='text/javascript'>",
-    				"setTimeout(function () {createUIPrompt('Logged in', 'Dismiss');}, 50);",
-    				"</script>"
-					;
-    		} else {
-    		    $error = addslashes($conn->error);
-    		    echo 	"<script type='text/javascript'>",
-    				"setTimeout(function () { createUIPrompt('Can't log in: $error', 'Dismiss');}, 50);",
-    				"</script>"
-    		           ;
-    		}
-     	}
-    ?>
+		$sql = "SELECT * FROM users WHERE email='$uname' AND password='$psw'";
+		$result = $conn->query($sql);
+
+		if ($result->num_rows == 1) {
+			$_SESSION["username"] = $uname;
+			$_SESSION["loggedin"] = 1;
+			echo 	"<script>",
+				"setTimeout(function () {createUIPrompt('Logged in', 'Dismiss');}, 50);",
+				"</script>";
+		} else {
+			$error = addslashes($conn->error);
+			echo 	"<script>",
+				"setTimeout(function () { createUIPrompt('Can't log in: $error', 'Dismiss');}, 50);",
+				"</script>";
+		}
+	}
+	?>
 	<style>
 		.bodyText {
 			-webkit-transition: background 0.15s ease;
@@ -95,29 +91,29 @@
 	</style>
 	<script>
 		document.addEventListener('DOMContentLoaded', (event) => {
- 			 startSettings();
+			startSettings();
 		});
 
 		function toggleTheme() {
-		  //  sets site theme
-		  const themePref = localStorage.getItem('themePref');
-		  if (themePref == 'dark') {
-		    light();
-		    localStorage.setItem('themePref', 'light');
-		  } else {
-		    dark();
-		    localStorage.setItem('themePref', 'dark');
-		  }
+			//  sets site theme
+			const themePref = localStorage.getItem('themePref');
+			if (themePref == 'dark') {
+				light();
+				localStorage.setItem('themePref', 'light');
+			} else {
+				dark();
+				localStorage.setItem('themePref', 'dark');
+			}
 		}
 
 		function startSettings() {
-		  //  sets toggle button state
-		  const themePref = localStorage.getItem('themePref');
-		  if (themePref == 'dark') {
-		    document.getElementById('themeSwitch').checked = true;
-		  } else {
-		    document.getElementById('themeSwitch').checked = false;
-		  }
+			//	sets toggle button state
+			const themePref = localStorage.getItem('themePref');
+			if (themePref == 'dark') {
+				document.getElementById('themeSwitch').checked = true;
+			} else {
+				document.getElementById('themeSwitch').checked = false;
+			}
 		}
 	</script>
 </head>
@@ -125,48 +121,40 @@
 <body>
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
-		<?php 
-		$head="Settings";
+		<?php
+		$head = "Settings";
 		include "php/titlerow.php";
 		?>
 		<div class="bodyContainer">
 			<div class="bodyText" style="min-width: 86%">
 				<h2 style="display:inline-block; margin: 0.6vh 0 0 0">Dark theme</h2>
-				<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch"
-					onclick="toggleTheme()" />
+				<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch" onclick="toggleTheme()" />
 				<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
 			</div>
 			<div class="bodyText">
 				<h2>Background</h2>
 				<div class="selectorContainer">
-					<input onclick="bgSelector('original')"
-					  type="radio" name="bg" 
-					  id="original" class="input-hidden" />
+					<input onclick="bgSelector('original')" type="radio" name="bg" id="original" class="input-hidden" />
 					<label for="original">
-					  <div class="original" style="width:13vw; height:13vw"></div>
+						<div class="original" style="width:13vw; height:13vw"></div>
 					</label>
-					<input onclick="bgSelector('mint')"
-					  type="radio" name="bg" 
-					  id="mint" class="input-hidden" />
+					<input onclick="bgSelector('mint')" type="radio" name="bg" id="mint" class="input-hidden" />
 					<label for="mint">
-					  <div class="mint" style="width:13vw; height:13vw"></div>
+						<div class="mint" style="width:13vw; height:13vw"></div>
 					</label>
-					<input onclick="bgSelector('sky')"
-					  type="radio" name="bg" 
-					  id="sky" class="input-hidden" />
+					<input onclick="bgSelector('sky')" type="radio" name="bg" id="sky" class="input-hidden" />
 					<label for="sky">
-					  <div class="sky" style="width:13vw; height:13vw"></div>
+						<div class="sky" style="width:13vw; height:13vw"></div>
 					</label>
-					<input onclick="bgSelector('pixel')"
-					  type="radio" name="bg" 
-					  id="pixel" class="input-hidden" />
+					<input onclick="bgSelector('pixel')" type="radio" name="bg" id="pixel" class="input-hidden" />
 					<label for="pixel">
-					  <div class="pixel" style="width:13vw; height:13vw"></div>
+						<div class="pixel" style="width:13vw; height:13vw"></div>
 					</label>
 				</div>
 				<br>
 			</div>
-			<?php if($_SESSION["loggedin"]==0) { echo '
+			<?php if ($_SESSION["loggedin"] == 0) {
+				echo '
 			<form id="login" class="bodyText" action="settings.php" method="post">
 				<h2>Sign in to access more settings</h2>
 				<div class="form__group field">
@@ -181,9 +169,12 @@
 				</div>
 
 				<input type="submit" value="Submit">
-			</form> ';} ?>
-			<div class="bodyText" <?php if($_SESSION["loggedin"]==0) { echo 'style="display:none"';}//! INSECURE 
-			?>>
+			</form> ';
+			} ?>
+			<div class="bodyText" <?php if ($_SESSION["loggedin"] == 0) {
+										echo 'style="display:none"';
+									} //! INSECURE 
+									?>>
 				<h2>All sign ups</h2>
 				<table id="table">
 					<tr>
@@ -195,40 +186,39 @@
 						<th></th>
 					</tr>
 					<?php
-						 $sql = "SELECT * FROM sign_ups";
-						 $result = $conn->query($sql);
-						 if ($result->num_rows > 0) {
-						     // output data of each row
-						     while ($row = $result->fetch_assoc()) {
-						         $id=$row["id"];
-						         $name=$row["full_name"];
-						         $email=$row["email"];
-								 $age=$row["age"];
-								 $club=$row["club"]; 
+					$sql = "SELECT * FROM sign_ups";
+					$result = $conn->query($sql);
+					if ($result->num_rows > 0) {
+						// output data of each row
+						while ($row = $result->fetch_assoc()) {
+							$id = $row["id"];
+							$name = $row["full_name"];
+							$email = $row["email"];
+							$age = $row["age"];
+							$club = $row["club"];
 					?>
-						<tr>
-							<td><?php print $id; ?></td>
-							<td><?php print $name; ?></td>
-							<td><?php print $email; ?></td>
-							<td><?php print $age; ?></td>
-							<td><?php print $club; ?></td>
-							<td><a href="settings.php?to_delete=<?php echo $id; ?>#table">Delete</a></td>
-						</tr>
+							<tr>
+								<td><?php print $id; ?></td>
+								<td><?php print $name; ?></td>
+								<td><?php print $email; ?></td>
+								<td><?php print $age; ?></td>
+								<td><?php print $club; ?></td>
+								<td><a href="settings.php?to_delete=<?php echo $id; ?>#table">Delete</a></td>
+							</tr>
 					<?php
-        				}
-    						} 
-						$conn->close();
+						}
+					}
+					$conn->close();
 					?>
 				</table>
 			</div>
-			<div class="foot">
+			<footer>
 				<div style="margin-left:12vw">
-					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version"
-						target="_blank" rel="noopener">GitHub</a>
+					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.1.6 php</p>
-				<div>
-			</div>
+					<p>Version 5.1.7 php</p>
+				</div>
+			</footer>
 </body>
 
 </html>

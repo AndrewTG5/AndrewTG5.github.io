@@ -5,41 +5,41 @@
 	<?php include "php/head.php"; ?>
 
 	<?php
-        $dest = $_GET['dest'];
-    
-        $sql = "SELECT * FROM pages WHERE page='$dest'";
-        $result = $conn->query($sql);
+	$dest = $_GET['dest'];
 
-        if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-        
-            $title=$row["title"];
-            $main_para1=$row["main_para1"];
-            $para1=$row["para1"];
-            $image1=$row["image1"];
-        } else {
-            echo "0 results";
-        }
-		$conn->close();
-    ?>
+	$sql = "SELECT * FROM pages WHERE page='$dest'";
+	$result = $conn->query($sql);
+
+	if ($result->num_rows > 0) {
+		$row = $result->fetch_assoc();
+
+		$title = $row["title"];
+		$main_para1 = $row["main_para1"];
+		$para1 = $row["para1"];
+		$image1 = $row["image1"];
+	} else {
+		echo "0 results";
+	}
+	$conn->close();
+	?>
 </head>
 
 <body>
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
-		<?php 
-		$head="$title";
+		<?php
+		$head = "$title";
 		include "php/titlerow.php";
 		?>
 		<div class="bodyContainer">
 			<div class="bodyText">
-				<?php print $main_para1?>
+				<?php print $main_para1 ?>
 			</div>
 		</div>
 		<div class="ImgContainer">
-			<img src="img/<?php print $image1?>" alt="" class="bodyImg">
+			<img src="img/<?php print $image1 ?>" alt="" class="bodyImg">
 			<div class="bodyText TextImg">
-				<?php print $para1?>
+				<?php print $para1 ?>
 			</div>
 		</div>
 	</div>

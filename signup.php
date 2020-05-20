@@ -4,37 +4,35 @@
 <head>
 	<?php include "php/head.php"; ?>
 	<?php
-     	if (isset($_POST["name"])) {
-    		$name = $_POST["name"];
-    		$email = $_POST["email"];
-    		$age = $_POST["age"];
-    		$club = $_POST["club"];
+	if (isset($_POST["name"])) {
+		$name = $_POST["name"];
+		$email = $_POST["email"];
+		$age = $_POST["age"];
+		$club = $_POST["club"];
 
-    		$sql = "INSERT INTO sign_ups (full_name, email, age, club)
+		$sql = "INSERT INTO sign_ups (full_name, email, age, club)
     		VALUES ('$name', '$email', '$age', '$club')";
-			
-    		if ($conn->query($sql) === true) {
-				echo 	"<script type='text/javascript'>",
-    				"setTimeout(function () {createUIPrompt('Record created', 'Dismiss');}, 50);",
-    				"</script>"
-					;
-    		} else {
-    		    $error = addslashes($conn->error);
-    		    echo 	"<script type='text/javascript'>",
-    				"setTimeout(function () { createUIPrompt('Error creating record: $error', 'Dismiss');}, 50);",
-    				"</script>"
-    		           ;
-    		}
-     	}
-    ?>
+
+		if ($conn->query($sql) === true) {
+			echo 	"<script>",
+				"setTimeout(function () {createUIPrompt('Record created', 'Dismiss');}, 50);",
+				"</script>";
+		} else {
+			$error = addslashes($conn->error);
+			echo 	"<script>",
+				"setTimeout(function () { createUIPrompt('Error creating record: $error', 'Dismiss');}, 50);",
+				"</script>";
+		}
+	}
+	?>
 
 </head>
 
 <body>
 	<div id="mySidenav" class="sidenav"></div>
 	<div class="wrapper">
-		<?php 
-		$head="Sign up";
+		<?php
+		$head = "Sign up";
 		include "php/titlerow.php";
 		?>
 		<div class="bodyContainer">

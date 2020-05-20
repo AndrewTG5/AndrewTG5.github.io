@@ -30,9 +30,8 @@ $conn = new mysqli($servername, $username, $password, $database);
 // Check connection
 if ($conn->connect_error) {
     $error = addslashes($conn->connect_error);
-    echo 	"<script type='text/javascript'>",
-    	"setTimeout(function () { createUIPrompt('Database connection failed: $error', 'Dismiss');}, 50);",
-    	"</script>"
-           ;
+    echo     "<script>",
+        "setTimeout(function () { createUIPrompt('Database connection failed: $error', 'Dismiss');}, 50);",
+        "</script>";
 }
 ?>

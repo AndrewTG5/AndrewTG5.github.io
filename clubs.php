@@ -8,33 +8,45 @@
 <body>
     <div id="mySidenav" class="sidenav"></div>
     <div class="wrapper">
-        <?php 
-		$head="KKC clubs";
-		include "php/titlerow.php";
-		?>
+        <?php
+        $head = "KKC clubs";
+        include "php/titlerow.php";
+        ?>
         <div class="galleryContainer">
-            <div class="gallery">
-                <a href="clubpage.php?dest=robotics">
-                    <img src="img/robotsq.png" alt="">
-                </a>
-                <div class="desc">Robotics<?php if($_SESSION["loggedin"]==1) { echo '   <a href="addclub.php?edit=robotics">Edit</a>'; }?></div>
-            </div>
+            <?php
+            $sql = "SELECT * FROM pages";
+            $result = $conn->query($sql);
+            if ($result->num_rows > 0) {
+                // output data of each row
+                while ($row = $result->fetch_assoc()) {
+                    $page = $row["page"];
+                    $title = $row["title"];
+                    $image = $row["image1"];
+            ?>
+                    <div class="gallery">
+                        <a href="clubpage.php?dest=<?php echo $page ?>">
+                            <img src="img/<?php echo $image ?>" alt="">
+                        </a>
+                        <div class="desc"><?php echo $title?><?php if ($_SESSION["loggedin"] == 1) {
+                                                        echo '  <a href="addclub.php?edit=' . $page . '">Edit</a>';
+                                                    } ?></div>
+                    </div>
+            <?php
+                }
+            }
+            $conn->close();
+            ?>
 
-            <div class="gallery">
-                <a href="clubpage.php?dest=evolocity">
-                    <img src="img/evolocity.png" alt="">
-                </a>
-                <div class="desc">Evolocity<?php if($_SESSION["loggedin"]==1) { echo '  <a href="addclub.php?edit=evolocity">Edit</a>'; }?></div>
-            </div>
-
-            <?php if($_SESSION["loggedin"]==1) { echo '
+            <?php if ($_SESSION["loggedin"] == 1) {
+                echo '
             <div class="gallery">
                 <a href="addclub.php">
                     <img src="img/new.png" alt="">
                 </a>
                 <div class="desc">Add a club</div>
             </div>
-            ';}?>
+            ';
+            } ?>
         </div>
     </div>
 </body>
