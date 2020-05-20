@@ -3,7 +3,7 @@
   --mainIMG: rgba(255, 255, 255, 0.4);
   --textInvert: rgb(255, 255, 255);
   --accentBlue: rgb(0, 148, 255);
-  --mainBlur: blur(15px) /*saturate(150%) get stakeholder feedback on*/;
+  --mainBlur: blur(15px);
   --shadow4: 0 1.6px 3.6px 0 rgba(0, 0, 0, 0.132),
     0 0.3px 0.9px 0 rgba(0, 0, 0, 0.108);
   --shadow8: 0 3.2px 7.2px 0 rgba(0, 0, 0, 0.132),
@@ -24,54 +24,12 @@
 
 html {
   font-family: "Lato", sans-serif;
+  min-height: 100%;
 }
 
 .original {
-  background: -o-linear-gradient(
-    135deg,
-    rgb(238, 119, 82),
-    rgb(231, 60, 126),
-    rgb(35, 166, 213),
-    rgb(35, 213, 171)
-  );
-  background: linear-gradient(
-    -45deg,
-    rgb(238, 119, 82),
-    rgb(231, 60, 126),
-    rgb(35, 166, 213),
-    rgb(35, 213, 171)
-  );
-  background-size: 400% 400%;
-  -webkit-animation: Gradient 15s ease infinite;
-  animation: Gradient 15s ease infinite;
-}
+  background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 
-@-webkit-keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes Gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .sky {
@@ -79,14 +37,7 @@ html {
 }
 
 .mint {
-  background: linear-gradient(
-    -45deg,
-    rgb(238, 119, 82),
-    rgb(231, 60, 126),
-    rgb(35, 166, 213),
-    rgb(35, 213, 171)
-  );
-  background-size: 400% 400%;
+  background: linear-gradient(-45deg, rgb(35, 166, 213),rgb(35, 213, 171));
 }
 
 .pixel {
@@ -101,27 +52,25 @@ html {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  justify-content: space-evenly;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
   flex-wrap: wrap;
-  width: 86%;
-  background: var(--mainIMG);
-  padding: 2% 5% 2% 5%;
-  margin: 2%;
-  -webkit-box-shadow: var(--shadow16);
-  box-shadow: var(--shadow16);
 }
 
 .input-hidden {
   display: none
 }
 
-input[type=radio]:checked + label>div {
+input[type=radio] + label>div {
   box-shadow: var(--shadow16);
+}
+
+input[type=radio]:checked + label>div {
+  box-shadow: var(--shadow64);
 }
 
 

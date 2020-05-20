@@ -95,30 +95,29 @@
 	</style>
 	<script>
 		document.addEventListener('DOMContentLoaded', (event) => {
-			startSettings();
+ 			 startSettings();
 		});
 
 		function toggleTheme() {
-			//sets site theme
-			var themePref = localStorage.getItem("themePref");
-			if (themePref == "dark") {
-				light();
-				localStorage.setItem("themePref", "light");
-			} else {
-				dark();
-				localStorage.setItem("themePref", "dark");
-			}
+		  //  sets site theme
+		  const themePref = localStorage.getItem('themePref');
+		  if (themePref == 'dark') {
+		    light();
+		    localStorage.setItem('themePref', 'light');
+		  } else {
+		    dark();
+		    localStorage.setItem('themePref', 'dark');
+		  }
 		}
 
 		function startSettings() {
-			//sets toggle button state
-			var userPref = localStorage.getItem("themePref");
-			var soundPref = localStorage.getItem("soundPref");
-			if (themePref == "dark") {
-				document.getElementById("themeSwitch").checked = true;
-			} else {
-				document.getElementById("themeSwitch").checked = false;
-			}
+		  //  sets toggle button state
+		  const themePref = localStorage.getItem('themePref');
+		  if (themePref == 'dark') {
+		    document.getElementById('themeSwitch').checked = true;
+		  } else {
+		    document.getElementById('themeSwitch').checked = false;
+		  }
 		}
 	</script>
 </head>
@@ -137,33 +136,35 @@
 					onclick="toggleTheme()" />
 				<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
 			</div>
-			<div class="selectorContainer">
-				<input onclick="bgSelector('original')"
-				  type="radio" name="bg" 
-				  id="original" class="input-hidden" />
-				<label for="original">
-				  <div class="original" style="width:12vw; height:12vw"></div>
-				</label>
-				<input onclick="bgSelector('mint')"
-				  type="radio" name="bg" 
-				  id="mint" class="input-hidden" />
-				<label for="mint">
-				  <div class="mint" style="width:12vw; height:12vw"></div>
-				</label>
-				<input onclick="bgSelector('sky')"
-				  type="radio" name="bg" 
-				  id="sky" class="input-hidden" />
-				<label for="sky">
-				  <div class="sky" style="width:12vw; height:12vw"></div>
-				</label>
-				<input onclick="bgSelector('pixel')"
-				  type="radio" name="bg" 
-				  id="pixel" class="input-hidden" />
-				<label for="pixel">
-				  <div class="pixel" style="width:12vw; height:12vw"></div>
-				</label>
-
-
+			<div class="bodyText">
+				<h2>Background</h2>
+				<div class="selectorContainer">
+					<input onclick="bgSelector('original')"
+					  type="radio" name="bg" 
+					  id="original" class="input-hidden" />
+					<label for="original">
+					  <div class="original" style="width:13vw; height:13vw"></div>
+					</label>
+					<input onclick="bgSelector('mint')"
+					  type="radio" name="bg" 
+					  id="mint" class="input-hidden" />
+					<label for="mint">
+					  <div class="mint" style="width:13vw; height:13vw"></div>
+					</label>
+					<input onclick="bgSelector('sky')"
+					  type="radio" name="bg" 
+					  id="sky" class="input-hidden" />
+					<label for="sky">
+					  <div class="sky" style="width:13vw; height:13vw"></div>
+					</label>
+					<input onclick="bgSelector('pixel')"
+					  type="radio" name="bg" 
+					  id="pixel" class="input-hidden" />
+					<label for="pixel">
+					  <div class="pixel" style="width:13vw; height:13vw"></div>
+					</label>
+				</div>
+				<br>
 			</div>
 			<?php if($_SESSION["loggedin"]==0) { echo '
 			<form id="login" class="bodyText" action="settings.php" method="post">
@@ -225,7 +226,7 @@
 					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version"
 						target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.1.5 php</p>
+					<p>Version 5.1.6 php</p>
 				<div>
 			</div>
 </body>
