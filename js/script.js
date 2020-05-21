@@ -30,15 +30,14 @@ function bgSelector(background) {
 }
 
 // eslint-disable-next-line no-unused-vars
-function createUIPrompt(bannerText, buttonText) {
+function createUIPrompt(message) {
   const div = document.createElement('DIV');
-  div.innerHTML = bannerText;
+  div.innerHTML = message;
   div.setAttribute('id', 'banner');
   div.className = ('banner');
   document.body.appendChild(div);
 
   const btn = document.createElement('SPAN');
-  btn.innerHTML = buttonText;
   btn.className = ('closebtn');
   document.getElementById('banner').appendChild(btn);
   btn.onclick = dismissUIPrompt;
@@ -46,26 +45,37 @@ function createUIPrompt(bannerText, buttonText) {
   const banner = document.getElementById('banner');
 
   setTimeout(function() {
-    banner.style.padding = '20px 20px 20px 7.5vw';
-    banner.style.height = 'auto';
-  }, 260);
+    banner.style.right = '2vw';
+  }, 400);
 }
 
 function dismissUIPrompt() {
   const banner = document.getElementById('banner');
-  banner.style.padding = '0 20px 0 7.5vw';
-  banner.style.height = '0';
+  banner.style.right = '-40vw';
   setTimeout(function() {
     banner.remove();
-  }, 260);
+  }, 400);
 }
 
 document.addEventListener('DOMContentLoaded', (_event) => {
   start();
+  window.onscroll = function() {
+    stickNav();
+  };
+  //  sticky navbar stuff
+  const navbar = document.getElementById('mySidenav');
+  const sticky = navbar.offsetTop;
+
+  function stickNav() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add('sticky');
+    } else {
+      navbar.classList.remove('sticky');
+    }
+  }
 });
 
 function start() {
-  //  closes nav and sets theme
   navLoader();
   if (bgPref || bgPref === '') {
     bgSelector(bgPref);
@@ -101,19 +111,3 @@ function navLoader() {
     document.getElementById('mySidenav').appendChild(a);
   }
 }
-
-setTimeout(function() {
-  window.onscroll = function() {
-    stickNav();
-  };
-  const navbar = document.getElementById('mySidenav');
-  const sticky = navbar.offsetTop;
-
-  function stickNav() {
-    if (window.pageYOffset >= sticky) {
-      navbar.classList.add('sticky');
-    } else {
-      navbar.classList.remove('sticky');
-    }
-  }
-}, 50);

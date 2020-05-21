@@ -7,7 +7,7 @@
 	<?php
 	$dest = $_GET['dest'];
 
-	$sql = "SELECT * FROM pages WHERE page='$dest'";
+	$sql = "SELECT * FROM pages WHERE title='$dest'";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {

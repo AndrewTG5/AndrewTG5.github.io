@@ -12,12 +12,12 @@
 		$sql = "DELETE FROM sign_ups WHERE id=$to_delete"; //sec_user needs delete permissions
 		if ($conn->query($sql) === TRUE) {
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Record deleted', 'Dismiss');}, 50);",
+				"setTimeout(function () { createUIPrompt('Record deleted');}, 50);",
 				"</script>";
 		} else {
 			$error = addslashes($conn->error);
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Error deleting record: $error', 'Dismiss');}, 50);",
+				"setTimeout(function () { createUIPrompt('Error deleting record: $error');}, 50);",
 				"</script>";
 		}
 	}
@@ -34,12 +34,12 @@
 			$_SESSION["username"] = $uname;
 			$_SESSION["loggedin"] = 1;
 			echo 	"<script>",
-				"setTimeout(function () {createUIPrompt('Logged in', 'Dismiss');}, 50);",
+				"setTimeout(function () {createUIPrompt('Logged in');}, 50);",
 				"</script>";
 		} else {
 			$error = addslashes($conn->error);
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Can't log in: $error', 'Dismiss');}, 50);",
+				"setTimeout(function () { createUIPrompt('Can\'t log in: $error');}, 50);",
 				"</script>";
 		}
 	}
@@ -216,7 +216,7 @@
 				<div style="margin-left:12vw">
 					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.1.7 php</p>
+					<p>Version 5.1.8 php</p>
 				</div>
 			</footer>
 </body>

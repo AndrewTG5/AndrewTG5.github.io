@@ -1,7 +1,8 @@
 <?php
 if (isset($_SESSION["loggedin"])) {
     if ($_SESSION["loggedin"] == 1) {
-        $signin = '<p>Signed in as ' . $_SESSION["username"] . '</p>';
+        $signin = '<p>Signed in as ' . $_SESSION["username"] . '</p>
+            <a href="php/signout.php"><p>Sign out</p></a>';
     } else {
         $signin = '<p>You are not signed in</p>
 	    	<a href="settings.php#login"><p>Sign in</p></a>';

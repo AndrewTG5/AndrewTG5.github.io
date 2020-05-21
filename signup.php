@@ -15,12 +15,12 @@
 
 		if ($conn->query($sql) === true) {
 			echo 	"<script>",
-				"setTimeout(function () {createUIPrompt('Record created', 'Dismiss');}, 50);",
+				"setTimeout(function () {createUIPrompt('Record created');}, 50);",
 				"</script>";
 		} else {
 			$error = addslashes($conn->error);
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Error creating record: $error', 'Dismiss');}, 50);",
+				"setTimeout(function () { createUIPrompt('Error creating record: $error');}, 50);",
 				"</script>";
 		}
 	}
@@ -50,7 +50,7 @@
 					<label for="age" class="form__label">Age</label>
 				</div>
 				<div style="margin-top: 2vh;">
-					<label for="club">Club</label>
+					<label for="club" style="color: var(--mainText)">Club</label>
 					<select id="club" name="club">
 						<option value="evolocity">Evolocity</option>
 						<option value="robotics">Robotics</option>

@@ -19,16 +19,15 @@
             if ($result->num_rows > 0) {
                 // output data of each row
                 while ($row = $result->fetch_assoc()) {
-                    $page = $row["page"];
                     $title = $row["title"];
                     $image = $row["image1"];
             ?>
                     <div class="gallery">
-                        <a href="clubpage.php?dest=<?php echo $page ?>">
+                        <a href="clubpage.php?dest=<?php echo $title ?>">
                             <img src="img/<?php echo $image ?>" alt="">
                         </a>
                         <div class="desc"><?php echo $title?><?php if ($_SESSION["loggedin"] == 1) {
-                                                        echo '  <a href="addclub.php?edit=' . $page . '">Edit</a>';
+                                                        echo '  <a href="addclub.php?edit=' . $title . '">Edit</a>';
                                                     } ?></div>
                     </div>
             <?php
