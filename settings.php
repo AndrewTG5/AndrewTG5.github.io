@@ -134,21 +134,21 @@
 			<div class="bodyText">
 				<h2>Background</h2>
 				<div class="selectorContainer">
-					<input onclick="bgSelector('original')" type="radio" name="bg" id="original" class="input-hidden" />
-					<label for="original">
-						<div class="original" style="width:13vw; height:13vw"></div>
+					<input onclick="bgSelector('default')" type="radio" name="bg" id="default" class="input-hidden" />
+					<label for="default">
+						<div class="default" style="width:13vw; height:13vw"></div>
 					</label>
 					<input onclick="bgSelector('mint')" type="radio" name="bg" id="mint" class="input-hidden" />
 					<label for="mint">
 						<div class="mint" style="width:13vw; height:13vw"></div>
 					</label>
-					<input onclick="bgSelector('sky')" type="radio" name="bg" id="sky" class="input-hidden" />
-					<label for="sky">
-						<div class="sky" style="width:13vw; height:13vw"></div>
+					<input onclick="bgSelector('peach')" type="radio" name="bg" id="peach" class="input-hidden" />
+					<label for="peach">
+						<div class="peach" style="width:13vw; height:13vw"></div>
 					</label>
-					<input onclick="bgSelector('pixel')" type="radio" name="bg" id="pixel" class="input-hidden" />
-					<label for="pixel">
-						<div class="pixel" style="width:13vw; height:13vw"></div>
+					<input onclick="bgSelector('charcoal')" type="radio" name="bg" id="charcoal" class="input-hidden" />
+					<label for="charcoal">
+						<div class="charcoal" style="width:13vw; height:13vw"></div>
 					</label>
 				</div>
 				<br>
@@ -173,12 +173,14 @@
 			} ?>
 			<?php if ($_SESSION["loggedin"] == 1) {
 				echo '
-				
-			';} ?>
-			<div class="bodyText">
+				<div class="bodyText">
+				<h2>Admin tools</h2>
 				<a href="addImg.php">Add image</a>
+				<br>
 				<a href="editImg.php">View/Delete image</a>
+				<br>
 			</div>
+			';} ?>
 			<div class="bodyText" <?php if ($_SESSION["loggedin"] == 0) {
 										echo 'style="display:none"';
 									} //! INSECURE 		^
@@ -224,7 +226,7 @@
 				<div style="margin-left:12vw">
 					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.1.9 php</p>
+					<p>Version 5.1.10 php</p>
 				</div>
 			</footer>
 </body>

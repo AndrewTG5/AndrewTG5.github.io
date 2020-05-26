@@ -114,8 +114,8 @@
 								$name = $row["name"];
 						?>
 								<option value="<?php echo $image ?>" <?php if ($image == $image1) {
-									echo 'selected="selected"';
-								}?>><?php echo $name ?></option>
+																			echo 'selected="selected"';
+																		} ?>><?php echo $name ?></option>
 						<?php
 							}
 						}
@@ -127,6 +127,7 @@
 					<label for="last name" class="form__label">para 1</label>
 				</div>
 				<input type="submit" value="Submit">
+				<input type="button" style="margin-top: 0" onclick="window.location.href = 'clubs.php'" value=" Cancel">
 			</form>
 		</div>
 	</div>

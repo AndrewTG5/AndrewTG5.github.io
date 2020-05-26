@@ -27,21 +27,21 @@ html {
   min-height: 100%;
 }
 
-.original {
+.default {
   background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
 
 }
 
-.sky {
-  background: linear-gradient(18deg, rgba(255,254,252,1) 0%, rgba(169,173,185,1) 30%, rgba(149,159,186,1) 72%, rgba(139,165,192,1) 100%);
+.peach {
+  background: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
 }
 
 .mint {
   background: linear-gradient(-45deg, rgb(35, 166, 213),rgb(35, 213, 171));
 }
 
-.pixel {
-  background: linear-gradient(343deg, rgba(226,0,255,1) 0%, rgba(0,0,0,1) 70%, rgba(0,0,0,1) 100%);
+.charcoal {
+  background: linear-gradient(to right, #485563, #29323c);
 }
 
 .selectorContainer {
@@ -377,7 +377,7 @@ select {
   background-color: var(--textInvert);
 }
 
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
   width: 100%;
   background-color: var(--accentBlue);
   color: var(--textInvert);
