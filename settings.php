@@ -171,9 +171,17 @@
 				<input type="submit" value="Submit">
 			</form> ';
 			} ?>
+			<?php if ($_SESSION["loggedin"] == 1) {
+				echo '
+				
+			';} ?>
+			<div class="bodyText">
+				<a href="addImg.php">Add image</a>
+				<a href="editImg.php">View/Delete image</a>
+			</div>
 			<div class="bodyText" <?php if ($_SESSION["loggedin"] == 0) {
 										echo 'style="display:none"';
-									} //! INSECURE 
+									} //! INSECURE 		^
 									?>>
 				<h2>All sign ups</h2>
 				<table id="table">
@@ -216,7 +224,7 @@
 				<div style="margin-left:12vw">
 					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.1.8 php</p>
+					<p>Version 5.1.9 php</p>
 				</div>
 			</footer>
 </body>

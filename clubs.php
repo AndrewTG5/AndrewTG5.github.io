@@ -24,7 +24,7 @@
             ?>
                     <div class="gallery">
                         <a href="clubpage.php?dest=<?php echo $title ?>">
-                            <img src="img/<?php echo $image ?>" alt="">
+                            <img src="<?php echo $image ?>" alt="">
                         </a>
                         <div class="desc"><?php echo $title?><?php if ($_SESSION["loggedin"] == 1) {
                                                         echo '  <a href="addclub.php?edit=' . $title . '">Edit</a>';

@@ -39,7 +39,6 @@
 			$para1 = $row["para1"];
 			$image1 = $row["image1"];
 		}
-		$conn->close();
 	} elseif (isset($_GET["title"])) {
 		$target = $_GET["title"];
 		$title = $target;
@@ -74,7 +73,6 @@
 			$para1 = $row["para1"];
 			$image1 = $row["image1"];
 		}
-		$conn->close();
 	} else {
 		$title = "";
 		$main_para1 = "";
@@ -103,17 +101,32 @@
 					<textarea type="input" class="form__field" placeholder="main_para1" name="main_para1" id="last name" required><?php echo $main_para1 ?></textarea>
 					<label for="last name" class="form__label">main para 1</label>
 				</div>
-				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="image1" value="<?php echo $image1 ?>" name="image1" id="age" required />
-					<label for="age" class="form__label">image 1</label>
+				<div style="margin-top: 2vh;">
+					<label for="club" style="color: var(--mainText)">Image 1</label>
+					<select id="club" name="club">
+						<?php
+						$sql = "SELECT * FROM images";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							// output data of each row
+							while ($row = $result->fetch_assoc()) {
+								$image = $row["image"];
+								$name = $row["name"];
+						?>
+								<option value="<?php echo $image ?>" <?php if ($image == $image1) {
+									echo 'selected="selected"';
+								}?>><?php echo $name ?></option>
+						<?php
+							}
+						}
+						?>
+					</select>
 				</div>
 				<div class="form__group field">
 					<textarea type="input" class="form__field" placeholder="para1" name="para1" id="last name" required><?php echo $para1 ?></textarea>
 					<label for="last name" class="form__label">para 1</label>
 				</div>
-				<div style="margin-top: 2vh;">
-					<input type="submit" value="Submit">
-				</div>
+				<input type="submit" value="Submit">
 			</form>
 		</div>
 	</div>

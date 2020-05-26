@@ -37,7 +37,7 @@
 			</div>
 		</div>
 		<div class="ImgContainer">
-			<img src="img/<?php print $image1 ?>" alt="" class="bodyImg">
+			<img src="<?php print $image1 ?>" alt="" class="bodyImg">
 			<div class="bodyText TextImg">
 				<?php print $para1 ?>
 			</div>
