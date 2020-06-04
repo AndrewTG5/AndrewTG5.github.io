@@ -33,7 +33,7 @@ html {
 }
 
 .peach {
-  background: linear-gradient(90deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+  background: linear-gradient(-45deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
 }
 
 .mint {
@@ -41,7 +41,7 @@ html {
 }
 
 .charcoal {
-  background: linear-gradient(to right, #485563, #29323c);
+  background: linear-gradient(120deg, #485563, #29323c);
 }
 
 .selectorContainer {
@@ -250,15 +250,19 @@ h3 {
   color: var(--mainText);
 }
 
+h2 {
+  font-size: 1.5em;
+}
+
 .banner {
   /*banner prompt*/
   bottom: 4vw;
   right: -40vw;
   position: fixed;
-  padding: 40px 30px;
+  padding: 14px 65px;
   background-color: var(--mainIMG);
   color: var(--mainText);
-  width: 320px;
+  width: 280px;
   height: 140px;
   font-size: 1.25em;
   backdrop-filter: var(--mainBlur);
@@ -269,6 +273,15 @@ h3 {
   transition: right 0.3s cubic-bezier(0.25, 0.1, 0.1, 1);
   overflow: hidden;
   z-index: 99;
+  
+}
+
+.bannerLine {
+  border-left: 2px solid var(--accentBlue);
+  height: 146px;
+  position: absolute;
+  top: 12px;
+  left: 54px;
 }
 
 .closebtn {
@@ -305,6 +318,14 @@ h3 {
 	background: var(--textInvert  );
 }
 
+.bannerImg {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 32px;
+}
+
+/*banner ends here*/
 /*input boxes start here*/
 
 .form__group {
@@ -567,8 +588,7 @@ div.desc {
 footer {
   margin-top: 2vh;
   flex-shrink: 0;
-  width: 100vw;
-  max-width: 100vw; 
+  width: 92vw;
   left: 0;
   bottom: 0;
   background-color: var(--mainIMG);
@@ -629,6 +649,15 @@ footer p {
     display: block;
   }
 
+  .banner {
+    width: 140px;
+    height: 90px;
+  }
+
+  .bannerLine {
+    height: 95px;
+  }
+
   .tgl + .tgl-btn {
     width: 4.1em;
     height: 2.15em;
@@ -640,7 +669,15 @@ footer p {
   }
 
   p {
-    font-size: 1.15em;
+    font-size: 1.10em;
+  }
+
+  h2 {
+  font-size: 1.25em;
+  }
+
+  .signin {
+    font-size: 1em;
   }
 
   .galleryContainer {

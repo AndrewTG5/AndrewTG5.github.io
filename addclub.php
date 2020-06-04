@@ -5,6 +5,7 @@
 	<?php include "php/head.php"; ?>
 	<?php
 	if (isset($_POST["page"]) && !isset($_GET["title"])) {
+		//	submitting a new club
 		$title = $conn->real_escape_string($_POST["page"]);
 		$main_para1 = $conn->real_escape_string($_POST["main_para1"]);
 		$image1 = $_POST["image1"];
@@ -25,6 +26,7 @@
 				"</script>";
 		}
 	} elseif (isset($_GET["edit"])) {
+		//	when editing a club
 		$dest = $_GET['edit'];
 		$intent = '?title=' . $dest . '';
 
@@ -40,6 +42,7 @@
 			$image1 = $row["image1"];
 		}
 	} elseif (isset($_GET["title"])) {
+		// submitting an edited club
 		$target = $_GET["title"];
 		$title = $target;
 		$main_para1 = $_POST["main_para1"];
@@ -74,6 +77,7 @@
 			$image1 = $row["image1"];
 		}
 	} else {
+		//	when adding a blank club
 		$title = "";
 		$main_para1 = "";
 		$image1 = "";
@@ -108,7 +112,6 @@
 						$sql = "SELECT * FROM images";
 						$result = $conn->query($sql);
 						if ($result->num_rows > 0) {
-							// output data of each row
 							while ($row = $result->fetch_assoc()) {
 								$image = $row["image"];
 								$name = $row["name"];

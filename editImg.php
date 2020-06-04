@@ -4,11 +4,10 @@
 <head>
     <?php include "php/head.php"; ?>
     <?php
-        if (isset($_GET["delete"])) {
+    if (isset($_GET["delete"])) {
         $to_delete = $_GET["delete"];
 
-
-        $sql = "DELETE FROM images WHERE id=$to_delete"; //sec_user needs delete permissions
+        $sql = "DELETE FROM images WHERE name='$to_delete'"; //sec_user needs delete permissions
         if ($conn->query($sql) === TRUE) {
             echo     "<script>",
                 "setTimeout(function () { createUIPrompt('Image deleted');}, 50);",
@@ -21,6 +20,34 @@
         }
     }
     ?>
+    <?php
+    if (isset($_POST['submit'])) {
+        $name = $_FILES['file']['name'];
+        $target_dir = "img/";
+        $target_file = $target_dir . basename($_FILES["file"]["name"]);
+
+        // Select file type
+        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+
+        // Convert to base64 
+        $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
+        $image = 'data:image/' . $imageFileType . ';base64,' . $image_base64;
+        // Insert record
+        $sql = "INSERT INTO images (image, name) VALUES('$image', '$name')";
+        if ($conn->query($sql) === true) {
+            echo     "<script>",
+                "setTimeout(function () {createUIPrompt('Image uploaded');}, 50);",
+                "</script>";
+        } else {
+            $error = addslashes($conn->error);
+            echo     "<script>",
+                "setTimeout(function () { createUIPrompt('Error uploading image: $error');}, 50);",
+                "</script>";
+        }
+        // Upload file
+        move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $name);
+    }
+    ?>
 </head>
 
 <body>
@@ -30,6 +57,15 @@
         $head = "View images";
         include "php/titlerow.php";
         ?>
+        <div class="bodyContainer">
+            <form class="bodyText" action="editImg.php" method="post" enctype="multipart/form-data">
+                <h2>Select image to upload:</h2>
+                <input type="file" name="file" required>
+                <div style="margin-top: 2vh;">
+                    <input type="submit" value="Submit" name="submit">
+                </div>
+            </form>
+        </div>
         <div class="galleryContainer">
             <?php
             $sql = "SELECT * FROM images";
@@ -42,12 +78,11 @@
             ?>
                     <div class="gallery">
                         <img src="<?php echo $image ?>" alt="">
-                        <div class="desc"><?php echo $title ?>  <a href="editImg.php?delete=<?php echo $title ?>">Delete</a></div>
+                        <div class="desc"><?php echo $title ?> <a href="editImg.php?delete=<?php echo $title ?>">Delete</a></div>
                     </div>
             <?php
                 }
             }
-            $conn->close();
             ?>
         </div>
     </div>

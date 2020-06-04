@@ -52,9 +52,18 @@
 				<div style="margin-top: 2vh;">
 					<label for="club" style="color: var(--mainText)">Club</label>
 					<select id="club" name="club">
-						<option value="evolocity">Evolocity</option>
-						<option value="robotics">Robotics</option>
-						<option value="club3">Club 3</option>
+						<?php
+						$sql = "SELECT * FROM pages";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							while ($row = $result->fetch_assoc()) {
+								$title = $row["title"];
+						?>
+								<option value="<?php echo $title ?>"><?php echo $title ?></option>
+						<?php
+							}
+						}
+						?>
 					</select>
 
 					<input type="submit" value="Submit">

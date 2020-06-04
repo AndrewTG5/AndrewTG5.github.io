@@ -42,6 +42,15 @@ function createUIPrompt(message) {
   document.getElementById('banner').appendChild(btn);
   btn.onclick = dismissUIPrompt;
 
+  const img = document.createElement('img');
+  img.className = ('bannerImg');
+  img.src = 'img/android-chrome-512x512.png'; //  !remember to change with new logo
+  document.getElementById('banner').appendChild(img);
+
+  const line = document.createElement('img');
+  line.className = ('bannerLine');
+  document.getElementById('banner').appendChild(line);
+
   const banner = document.getElementById('banner');
 
   setTimeout(function() {

@@ -72,6 +72,7 @@
 			border-collapse: collapse;
 			border-spacing: 0;
 			width: 100%;
+			max-width: 100%;
 			margin-bottom: 3vh;
 		}
 
@@ -114,6 +115,7 @@
 			} else {
 				document.getElementById('themeSwitch').checked = false;
 			}
+			document.getElementById(bgPref).checked=true;
 		}
 	</script>
 </head>
@@ -175,12 +177,10 @@
 				echo '
 				<div class="bodyText">
 				<h2>Admin tools</h2>
-				<a href="addImg.php">Add image</a>
+				<a href="editImg.php">View/Delete/Add image</a>
 				<br>
-				<a href="editImg.php">View/Delete image</a>
-				<br>
-			</div>
-			';} ?>
+			</div>';
+			} ?>
 			<div class="bodyText" <?php if ($_SESSION["loggedin"] == 0) {
 										echo 'style="display:none"';
 									} //! INSECURE 		^
@@ -218,7 +218,6 @@
 					<?php
 						}
 					}
-					$conn->close();
 					?>
 				</table>
 			</div>
@@ -226,7 +225,7 @@
 				<div style="margin-left:12vw">
 					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.1.10 php</p>
+					<p>Version 5.2.0 php</p>
 				</div>
 			</footer>
 </body>
