@@ -24,6 +24,7 @@ function light() {
 }
 
 function bgSelector(background) {
+  //  function to set backgroudn theme
   document.querySelector('html').removeAttribute('class');
   document.querySelector('html').classList.add(background);
   localStorage.setItem('bgPref', background);

@@ -68,23 +68,7 @@
 			transition: color 0.15s ease;
 		}
 
-		table {
-			border-collapse: collapse;
-			border-spacing: 0;
-			width: 100%;
-			max-width: 100%;
-			margin-bottom: 3vh;
-		}
-
-		th,
-		td {
-			text-align: left;
-			padding: 8px;
-			color: var(--mainText);
-		}
-
 		tr:nth-child(even) {
-			background-color: var(--textInvert);
 			-webkit-transition: background-color 0.15s ease;
 			-o-transition: background-color 0.15s ease;
 			transition: background-color 0.15s ease;
@@ -115,7 +99,7 @@
 			} else {
 				document.getElementById('themeSwitch').checked = false;
 			}
-			document.getElementById(bgPref).checked=true;
+			document.getElementById(bgPref).checked = true;
 		}
 	</script>
 </head>
@@ -222,10 +206,10 @@
 				</table>
 			</div>
 			<footer>
-				<div style="margin-left:12vw">
+				<div>
 					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.2.0 php</p>
+					<p>Version 5.2.1 php</p>
 				</div>
 			</footer>
 </body>

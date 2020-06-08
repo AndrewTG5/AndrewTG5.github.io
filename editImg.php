@@ -48,6 +48,18 @@
         move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $name);
     }
     ?>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            let uploadField = document.getElementById("file");
+
+            uploadField.onchange = function() {
+                if (this.files[0].size > 5242880) {
+                    createUIPrompt("Image is too large!");
+                    this.value = "";
+                };
+            };
+        });
+    </script>
 </head>
 
 <body>
@@ -60,7 +72,8 @@
         <div class="bodyContainer">
             <form class="bodyText" action="editImg.php" method="post" enctype="multipart/form-data">
                 <h2>Select image to upload:</h2>
-                <input type="file" name="file" required>
+                <p>Max 5MB</p>
+                <input type="file" name="file" id="file" accept="image/*" required>
                 <div style="margin-top: 2vh;">
                     <input type="submit" value="Submit" name="submit">
                 </div>

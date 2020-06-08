@@ -268,9 +268,9 @@ h2 {
   backdrop-filter: var(--mainBlur);
   -webkit-box-shadow: var(--shadow64);
   box-shadow: var(--shadow64);
-  -webkit-transition: right 0.3s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -o-transition: right 0.3s cubic-bezier(0.25, 0.1, 0.1, 1);
-  transition: right 0.3s cubic-bezier(0.25, 0.1, 0.1, 1);
+  -webkit-transition: right 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);
+  -o-transition: right 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);
+  transition: right 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);
   overflow: hidden;
   z-index: 99;
   
@@ -412,6 +412,7 @@ input[type="submit"], input[type="button"] {
 
 textarea {
   height: 10vw;
+  width: 100%;
 }
 
 /*input boxes end here*/
@@ -593,7 +594,7 @@ footer {
   bottom: 0;
   background-color: var(--mainIMG);
   box-shadow: var(--shadow16);
-  padding: 2vh 2vw 2vh 6vw;
+  padding: 2vh 2vw 2vh 22vw;
 }
 
 footer a {
@@ -608,6 +609,25 @@ footer p {
   margin: 0.5% 0 0 0;
 }
 
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 3vh;
+}
+
+th,
+td {
+	text-align: left;
+	padding: 8px;
+	color: var(--mainText);
+}
+
+tr:nth-child(even) {
+	background-color: var(--textInvert);
+}
+
 @media (orientation: portrait) {
   .sidenav a {
     font-size: 3vw;
@@ -618,6 +638,22 @@ footer p {
     max-width: 100vw;
     padding-right: 10px;
     padding-left: 10px;
+  }
+
+  .sidenav {
+    top: 6vh;
+  }
+
+  .sticky {
+    top: 0;
+  }
+
+  .bodyContainer {
+    margin-top: 2vh;
+  }
+
+  .title {
+    font-size: 4vh;
   }
 
   .ImgContainer {
@@ -677,7 +713,7 @@ footer p {
   }
 
   .signin {
-    font-size: 1em;
+    font-size: 0.8em;
   }
 
   .galleryContainer {
@@ -687,5 +723,14 @@ footer p {
   div.gallery {
     width: 35vw;
     margin: 2vh 1vw;
+  }
+
+  table {
+    font-size: 0.8em;
+  }
+
+  footer {
+    width: 89vw;
+    padding: 2vh 2vw 2vh 9vw;
   }
 }

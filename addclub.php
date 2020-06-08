@@ -98,12 +98,11 @@
 		<div class="bodyContainer">
 			<form class="bodyText" action="addclub.php<?php echo $intent; ?>" method="post" autocomplete="off">
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="Title" value="<?php echo $title ?>" name="page" id="first name" required />
-					<label for="first name" class="form__label">Title (max 40)</label>
+					<input type="input" class="form__field" placeholder="Title" value="<?php echo $title ?>" name="page" id="title" required />
+					<label for="title" class="form__label">Title (max 40)</label>
 				</div>
 				<div class="form__group field">
-					<textarea type="input" class="form__field" placeholder="main_para1" name="main_para1" id="last name" required><?php echo $main_para1 ?></textarea>
-					<label for="last name" class="form__label">main para 1</label>
+					<textarea type="input" placeholder="paragraph 1" name="main_para1" id="mpara1" required><?php echo $main_para1 ?></textarea>
 				</div>
 				<div style="margin-top: 2vh;">
 					<label for="club" style="color: var(--mainText)">Image 1</label>
@@ -126,8 +125,7 @@
 					</select>
 				</div>
 				<div class="form__group field">
-					<textarea type="input" class="form__field" placeholder="para1" name="para1" id="last name" required><?php echo $para1 ?></textarea>
-					<label for="last name" class="form__label">para 1</label>
+					<textarea type="input" placeholder="paragraph 2" name="para1" id="para1" required><?php echo $para1 ?></textarea>
 				</div>
 				<input type="submit" value="Submit">
 				<input type="button" style="margin-top: 0" onclick="window.location.href = 'clubs.php'" value=" Cancel">
