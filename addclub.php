@@ -6,14 +6,14 @@
 	<?php
 	if (isset($_POST["page"]) && !isset($_GET["title"])) {
 		//	submitting a new club
-		$title = $conn->real_escape_string($_POST["page"]);
+		$title = $conn->real_escape_string($_POST["title"]);
 		$main_para1 = $conn->real_escape_string($_POST["main_para1"]);
 		$image1 = $_POST["image1"];
 		$para1 = $conn->real_escape_string($_POST["para1"]);
 		$intent = '';
 
 		$sql = "INSERT INTO pages (title, main_para1, image1, para1)
-    		VALUES ($title', '$main_para1', '$image1', '$para1')";
+    		VALUES ('$title', '$main_para1', '$image1', '$para1')";
 
 		if ($conn->query($sql) === true) {
 			echo 	"<script>",
@@ -50,10 +50,11 @@
 		$para1 = $_POST["para1"];
 		$intent = '?title=' . $target . '';
 
+		$newtitle = $conn->real_escape_string($_POST["title"]);
 		$dmain_para1 = $conn->real_escape_string($_POST["main_para1"]);
 		$dpara1 = $conn->real_escape_string($_POST["para1"]);
 
-		$sql = "UPDATE pages SET main_para1='$dmain_para1', image1='$image1', para1='$dpara1' WHERE title='$target'";
+		$sql = "UPDATE pages SET title='$newtitle', main_para1='$dmain_para1', image1='$image1', para1='$dpara1' WHERE title='$target'";
 
 		if ($conn->query($sql) === true) {
 			echo 	"<script>",
@@ -65,7 +66,7 @@
 				"setTimeout(function () { createUIPrompt('Error updating club: $error');}, 50);",
 				"</script>";
 		}
-		$sql = "SELECT * FROM pages WHERE title='$target'";
+		$sql = "SELECT * FROM pages WHERE title='$newtitle'";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
@@ -85,7 +86,12 @@
 		$intent = "";
 	}
 	?>
-
+	<script src="https://cdn.tiny.cloud/1/u1vfk8m72ii6gn3b521dfnuyvi517yjvhpc11gijfk2r1m0k/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+	<script>
+		tinymce.init({
+			selector: 'textarea'
+		});
+	</script>
 </head>
 
 <body>
@@ -98,15 +104,15 @@
 		<div class="bodyContainer">
 			<form class="bodyText" action="addclub.php<?php echo $intent; ?>" method="post" autocomplete="off">
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="Title" value="<?php echo $title ?>" name="page" id="title" required />
+					<input type="input" class="form__field" placeholder="Title" value="<?php echo $title ?>" name="title" id="title" required />
 					<label for="title" class="form__label">Title (max 40)</label>
 				</div>
 				<div class="form__group field">
-					<textarea type="input" placeholder="paragraph 1" name="main_para1" id="mpara1" required><?php echo $main_para1 ?></textarea>
+					<textarea type="input" placeholder="paragraph 1" name="main_para1" id="mpara1"><?php echo $main_para1 ?></textarea>
 				</div>
 				<div style="margin-top: 2vh;">
 					<label for="club" style="color: var(--mainText)">Image 1</label>
-					<select id="club" name="club">
+					<select id="image1" name="image1">
 						<?php
 						$sql = "SELECT * FROM images";
 						$result = $conn->query($sql);
@@ -125,7 +131,7 @@
 					</select>
 				</div>
 				<div class="form__group field">
-					<textarea type="input" placeholder="paragraph 2" name="para1" id="para1" required><?php echo $para1 ?></textarea>
+					<textarea type="input" placeholder="paragraph 2" name="para1" id="para1"><?php echo $para1 ?></textarea>
 				</div>
 				<input type="submit" value="Submit">
 				<input type="button" style="margin-top: 0" onclick="window.location.href = 'clubs.php'" value=" Cancel">
