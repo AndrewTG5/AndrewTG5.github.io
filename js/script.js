@@ -45,7 +45,7 @@ function createUIPrompt(message) {
 
   const img = document.createElement('img');
   img.className = ('bannerImg');
-  img.src = 'img/android-chrome-512x512.png'; //  !remember to change with new logo
+  img.src = 'img/favicon.png';
   document.getElementById('banner').appendChild(img);
 
   const line = document.createElement('img');

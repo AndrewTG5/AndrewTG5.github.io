@@ -209,7 +209,7 @@
 				<div>
 					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank" rel="noopener">GitHub</a>
 					<p>Author: Andrew Blake</p>
-					<p>Version 5.2.2 php</p>
+					<p>Version 5.2.3 php</p>
 				</div>
 			</footer>
 </body>

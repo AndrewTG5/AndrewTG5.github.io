@@ -53,7 +53,7 @@
             let uploadField = document.getElementById("file");
 
             uploadField.onchange = function() {
-                if (this.files[0].size > 5242880) {
+                if (this.files[0].size > 1048576) {
                     createUIPrompt("Image is too large!");
                     this.value = "";
                 };
@@ -72,7 +72,7 @@
         <div class="bodyContainer">
             <form class="bodyText" action="editImg.php" method="post" enctype="multipart/form-data">
                 <h2>Select image to upload:</h2>
-                <p>Max 5MB</p>
+                <p>Max 1MB</p>
                 <input type="file" name="file" id="file" accept="image/*" required>
                 <div style="margin-top: 2vh;">
                     <input type="submit" value="Submit" name="submit">

@@ -3,6 +3,23 @@
 
 <head>
 	<?php include "php/head.php"; ?>
+	<?php
+	if (isset($_GET["date"])) {
+		$date = $_GET["date"];
+
+		$sql = "DELETE FROM news WHERE date='$date'"; //sec_user needs delete permissions
+		if ($conn->query($sql) === TRUE) {
+			echo     "<script>",
+				"setTimeout(function () { createUIPrompt('News deleted');}, 50);",
+				"</script>";
+		} else {
+			$error = addslashes($conn->error);
+			echo     "<script>",
+				"setTimeout(function () { createUIPrompt('Error deleting news: $error');}, 50);",
+				"</script>";
+		}
+	}
+	?>
 </head>
 
 <body>
@@ -20,12 +37,27 @@
 			</div>
 			<div class="bodyText">
 				<h1>News</h1>
-				<h3>20/05/20</h3>
-				<p>Rotorua Roaring Knights Chess Club is now open. Sign up at the signup page.</p>
-				<h3>20/04/20</h3>
-				<p>Robotics and Evolocity are now taking new members! Sign up at the signup page.</p>
-				<h3>18/04/20</h3>
-				<p>Some older news</p>
+				<?php if ($_SESSION["loggedin"] == 1) {
+					echo '<a href="addnews.php" style="font-size: 1.25em;">Create new</a>';
+				} ?>
+				<?php
+				$sql = "SELECT * FROM news";
+				$result = $conn->query($sql);
+				if ($result->num_rows > 0) {
+					// output data of each row
+					while ($row = $result->fetch_assoc()) {
+						$date = $row["date"];
+						$content = $row["content"];
+				?>
+						<h3><?php echo $date ?></h3>
+						<?php if ($_SESSION["loggedin"] == 1) {
+							echo '<a href="index.php?date=' . $date . '" style="float: right">Delete</a>';
+						}?>
+						<p><?php echo $content ?></p>
+				<?php
+					}
+				}
+				?>
 			</div>
 		</div>
 	</div>
