@@ -151,8 +151,7 @@ a {
   font-size: 5vh;
   color: rgb(255, 255, 255);
   text-shadow: var(--Tshadow4);
-  margin: 0;
-  float: left;
+  display: inline;
 }
 
 .signin {
@@ -655,7 +654,7 @@ tr:nth-child(even) {
   }
 
   .title {
-    font-size: 4vh;
+    display: none;
   }
 
   .ImgContainer {

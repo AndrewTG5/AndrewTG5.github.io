@@ -27,20 +27,27 @@
 		$uname = $_POST["username"];
 		$psw = $_POST["password"];
 
-		$sql = "SELECT * FROM users WHERE email='$uname' AND password='$psw'";
+		$sql = "SELECT * FROM users WHERE email='$uname'";
 		$result = $conn->query($sql);
+		$row = $result->fetch_assoc();
 
 		if ($result->num_rows == 1) {
-			$_SESSION["username"] = $uname;
-			$_SESSION["loggedin"] = 1;
-			echo 	"<script>",
+			if (password_verify($psw, $row["password"])) {
+				$_SESSION["username"] = $uname;
+				$_SESSION["loggedin"] = 1;
+				echo     "<script>",
 				"setTimeout(function () {createUIPrompt('Logged in');}, 50);",
 				"</script>";
+			} else {
+				echo     "<script>",
+				"setTimeout(function () { createUIPrompt('Incorrect password');}, 50);",
+				"</script>";
+			}
 		} else {
 			$error = addslashes($conn->error);
-			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Can\'t log in: $error');}, 50);",
-				"</script>";
+			echo     "<script>",
+			"setTimeout(function () { createUIPrompt('Can\'t log in: $error');}, 50);",
+			"</script>";
 		}
 	}
 	?>
@@ -162,6 +169,7 @@
 				<div class="bodyText">
 				<h2>Admin tools</h2>
 				<a href="editImg.php">View/Delete/Add image</a>
+				<a href="addAdmin.php">Create new admin account</a>
 				<br>
 			</div>';
 			} ?>
@@ -205,13 +213,6 @@
 					?>
 				</table>
 			</div>
-			<footer>
-				<div>
-					<a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank" rel="noopener">GitHub</a>
-					<p>Author: Andrew Blake</p>
-					<p>Version 5.2.3 php</p>
-				</div>
-			</footer>
 </body>
 
 </html>
