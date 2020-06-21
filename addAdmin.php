@@ -39,14 +39,14 @@
     }
     if (isset($_POST["newUsername"])) {
         $uname = $_POST["newUsername"];
+        $fname = $_POST["fname"];
+        $lname = $_POST["lname"];
         $psw = password_hash($_POST["newPassword"], PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO users (email, password)
-    		VALUES ('$uname', '$psw')";
+        $sql = "INSERT INTO users (email, password, first_name, last_name)
+    		VALUES ('$uname', '$psw', '$fname', '$lname')";
 
         if ($conn->query($sql) === true) {
-            $_SESSION["username"] = $uname;
-            $_SESSION["loggedin"] = 1;
             echo     "<script>",
                 "setTimeout(function () {createUIPrompt('Account created');}, 50);",
                 "</script>";
@@ -90,6 +90,14 @@
                 echo '
                      <form id="login" class="bodyText" action="addAdmin.php" method="post">
                     <h2>Create new admin account</h2>
+                    <div class="form__group field">
+                        <input type="input" class="form__field" placeholder="First name" name="fname" id="fname" required />
+                        <label for="username" class="form__label">First name</label>
+                    </div>
+                    <div class="form__group field">
+                        <input type="input" class="form__field" placeholder="Last namel" name="lname" id="lname" required />
+                        <label for="username" class="form__label">Last name</label>
+                    </div>
                     <div class="form__group field">
                         <input type="input" class="form__field" placeholder="Username" name="newUsername" id="username" required />
                         <label for="username" class="form__label">Username</label>
