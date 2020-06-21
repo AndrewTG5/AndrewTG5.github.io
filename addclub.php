@@ -113,6 +113,7 @@
 				<div style="margin-top: 2vh;">
 					<label for="club" style="color: var(--mainText)">Image 1</label>
 					<select id="image1" name="image1">
+						<option value="" selected disabled hidden>Choose here</option>
 						<?php
 						$sql = "SELECT * FROM images";
 						$result = $conn->query($sql);

@@ -66,7 +66,8 @@
 				margin-top: 2vh;
 			}
 
-			.newsBody, .newsBox {
+			.newsBody,
+			.newsBox {
 				float: none;
 				flex: 1;
 				width: 86%;
@@ -76,6 +77,26 @@
 			}
 		}
 	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded', (_event) => {
+			const imgSrc = ['img/e1.jpg', 'img/e2.jpg', 'img/r1.jpg', 'img/r2.jpg', 'img/r3.jpg', 'img/r4.jpg', 'img/r5.jpg', 'img/r6.jpg', 'img/r7.jpg'];
+			const imgTitle = ['Evolocity', 'Evolocity', 'Robotics', 'Robotics', 'Robotics', 'Robotics', 'Robotics', 'Robotics', 'Robotics'];
+			let i;
+			for (i = 0; i < imgSrc.length; i++) {
+				const div = document.createElement('div');
+				const inDiv = document.createElement('div');
+				const img = document.createElement('img');
+				div.className = "gallery";
+				inDiv.className = "desc";
+				img.alt = "";
+				div.appendChild(img);
+				div.appendChild(inDiv);
+				inDiv.innerHTML = imgTitle[i];
+				img.src = imgSrc[i];
+				document.getElementById('gallery').appendChild(div);
+			}
+		})
+	</script>
 </head>
 
 <body>
@@ -117,24 +138,7 @@
 				?>
 			</div>
 		</div>
-		<div class="galleryContainer">
-			<?php
-			$sql = "SELECT * FROM images";
-			$result = $conn->query($sql);
-			if ($result->num_rows > 0) {
-				// output data of each row
-				while ($row = $result->fetch_assoc()) {
-					$title = $row["name"];
-					$image = $row["image"];
-			?>
-					<div class="gallery">
-						<img src="<?php echo $image ?>" alt="">
-						<div class="desc"><?php echo $title ?></div>
-					</div>
-			<?php
-				}
-			}
-			?>
+		<div class="galleryContainer" id="gallery">
 		</div>
 	</div>
 </body>
