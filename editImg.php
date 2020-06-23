@@ -90,7 +90,7 @@
                     $image = $row["image"];
             ?>
                     <div class="gallery">
-                        <img src="<?php echo $image ?>" alt="">
+                        <img class="gImg" src="<?php echo $image ?>" alt="">
                         <div class="desc"><?php echo $title ?> <a href="editImg.php?delete=<?php echo $title ?>">Delete</a></div>
                     </div>
             <?php

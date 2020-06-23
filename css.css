@@ -436,44 +436,27 @@ textarea {
   flex-wrap: wrap;
 }
 
-div.gallery {
-  position: relative;
-  overflow: hidden;
+.gallery {
   width: 15vw;
-  height: 15vw;
   background-color: var(--mainIMG);
   box-shadow: var(--shadow16);
   margin: 2.5vh 1vw;
 }
 
-div.gallery:hover {
+.gallery:hover {
   box-shadow: var(--shadow64); /*TODO make bigger*/
 }
 
-div.gallery img {
-  position: absolute;
-  top: 50%;
+.gImg {
   width: 100%;
   height: auto;
-  transform: translateY(-50%);
   background-color: white;
 }
 
-div.desc {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  transform: translateY(-100%);
+.desc {
+  padding: 15px;
   text-align: center;
-  color: var(--textInvert);
-  transition: transform 0.25s ease;
-  backdrop-filter: var(--mainBlur);
-  text-shadow: var(--Tshadow8);
-  padding-top: 40%;
-}
-
-div.gallery:hover div.desc {
-  transform: translateY(0);
+  color: var(--mainText);
 }
 
 /*toggle start here*/

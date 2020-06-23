@@ -88,6 +88,7 @@
 				const img = document.createElement('img');
 				div.className = "gallery";
 				inDiv.className = "desc";
+				img.className = "gImg";
 				img.alt = "";
 				div.appendChild(img);
 				div.appendChild(inDiv);
@@ -97,6 +98,41 @@
 			}
 		})
 	</script>
+	<style>
+		.gallery {
+			position: relative;
+			overflow: hidden;
+			height: 15vw;
+		}
+
+		.gImg {
+			position: absolute;
+			top: 50%;
+			transition: transform 0.25s ease;
+			transform: translateY(-50%) scale(1);
+		}
+
+		.desc {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			padding: 0;
+			transform: translateY(-100%);
+			color: var(--textInvert);
+			transition: transform 0.25s ease;
+			backdrop-filter: var(--mainBlur);
+			text-shadow: var(--Tshadow8);
+			padding-top: 40%;
+		}
+
+		.gallery:hover .desc {
+			transform: translateY(0);
+		}
+
+		.gallery:hover .gImg {
+			transform: translateY(-50%) scale(2);
+		}
+	</style>
 </head>
 
 <body>
@@ -141,7 +177,7 @@
 		<div class="galleryContainer" id="gallery">
 		</div>
 	</div>
-	<?php include "php/footer.php"?>
+	<?php include "php/footer.php" ?>
 </body>
 
 </html>
