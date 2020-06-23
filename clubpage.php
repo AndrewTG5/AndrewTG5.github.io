@@ -43,6 +43,7 @@
 		</div>
 	</div>
 	<!--TODO: add other boxes-->
+	<?php include "php/footer.php" ?>
 </body>
 
 </html>

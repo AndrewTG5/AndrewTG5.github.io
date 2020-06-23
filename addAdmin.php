@@ -4,9 +4,9 @@
 <head>
     <?php include "php/head.php"; ?>
     <?php
-        if (!isset($authed)) {
-            $authed = 0;
-        }
+    if (!isset($authed)) {
+        $authed = 0;
+    }
     ?>
     <?php
     if (isset($_POST["username"])) {
@@ -115,6 +115,7 @@
             ?>
         </div>
     </div>
+    <?php include "php/footer.php" ?>
 </body>
 
 </html>

@@ -32,8 +32,8 @@ html {
 
 }
 
-.peach {
-  background: linear-gradient(-45deg, #FF9A8B 0%, #FF6A88 55%, #FF99AC 100%);
+.rain {
+  background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
 .mint {
@@ -437,7 +437,10 @@ textarea {
 }
 
 div.gallery {
+  position: relative;
+  overflow: hidden;
   width: 15vw;
+  height: 15vw;
   background-color: var(--mainIMG);
   box-shadow: var(--shadow16);
   margin: 2.5vh 1vw;
@@ -448,15 +451,29 @@ div.gallery:hover {
 }
 
 div.gallery img {
+  position: absolute;
+  top: 50%;
   width: 100%;
   height: auto;
+  transform: translateY(-50%);
   background-color: white;
 }
 
 div.desc {
-  padding: 15px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateY(-100%);
   text-align: center;
-  color: var(--mainText);
+  color: var(--textInvert);
+  transition: transform 0.25s ease;
+  backdrop-filter: var(--mainBlur);
+  text-shadow: var(--Tshadow8);
+  padding-top: 40%;
+}
+
+div.gallery:hover div.desc {
+  transform: translateY(0);
 }
 
 /*toggle start here*/

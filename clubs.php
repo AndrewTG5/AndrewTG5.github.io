@@ -27,9 +27,9 @@
                             <a href="clubpage.php?dest=<?php echo $title ?>">
                                 <img src="<?php echo $image ?>" alt="">
                             </a>
-                            <div class="desc"><?php echo $title?><?php if ($_SESSION["loggedin"] == 1) {
-                                                            echo '  <a href="addclub.php?edit=' . $title . '">Edit</a>';
-                                                        } ?></div>
+                            <div class="desc"><?php echo $title ?><?php if ($_SESSION["loggedin"] == 1) {
+                                                                        echo '  <a href="addclub.php?edit=' . $title . '">Edit</a>';
+                                                                    } ?></div>
                         </div>
                 <?php
                     }
@@ -49,6 +49,7 @@
             </div>
         </div>
     </div>
+    <?php include "php/footer.php" ?>
 </body>
 
 </html>

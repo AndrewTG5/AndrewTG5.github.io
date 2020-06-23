@@ -36,18 +36,18 @@
 				$_SESSION["username"] = $uname;
 				$_SESSION["loggedin"] = 1;
 				echo     "<script>",
-				"setTimeout(function () {createUIPrompt('Logged in');}, 50);",
-				"</script>";
+					"setTimeout(function () {createUIPrompt('Logged in');}, 50);",
+					"</script>";
 			} else {
 				echo     "<script>",
-				"setTimeout(function () { createUIPrompt('Incorrect password');}, 50);",
-				"</script>";
+					"setTimeout(function () { createUIPrompt('Incorrect password');}, 50);",
+					"</script>";
 			}
 		} else {
 			$error = addslashes($conn->error);
 			echo     "<script>",
-			"setTimeout(function () { createUIPrompt('Can\'t log in: $error');}, 50);",
-			"</script>";
+				"setTimeout(function () { createUIPrompt('Can\'t log in: $error');}, 50);",
+				"</script>";
 		}
 	}
 	?>
@@ -135,7 +135,7 @@
 					<label for="mint">
 						<div class="mint" style="width:13vw; height:13vw"></div>
 					</label>
-					<input onclick="bgSelector('peach')" type="radio" name="bg" id="peach" class="input-hidden" />
+					<input onclick="bgSelector('rain')" type="radio" name="bg" id="peach" class="input-hidden" />
 					<label for="peach">
 						<div class="peach" style="width:13vw; height:13vw"></div>
 					</label>
@@ -213,6 +213,7 @@
 					?>
 				</table>
 			</div>
+			<?php include "php/footer.php" ?>
 </body>
 
 </html>

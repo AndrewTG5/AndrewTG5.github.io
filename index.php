@@ -141,6 +141,7 @@
 		<div class="galleryContainer" id="gallery">
 		</div>
 	</div>
+	<?php include "php/footer.php"?>
 </body>
 
 </html>
