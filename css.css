@@ -24,12 +24,20 @@
 
 html {
   font-family: "Lato", sans-serif;
-  min-height: 100%;
+  height: 100%;/*TODO backgrounds repeat with this, but is needed for footer*/
+}
+
+body {
+  height: 100%; /* TODO same here*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  margin: 0;
 }
 
 .default {
   background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
-
 }
 
 .rain {
@@ -71,15 +79,6 @@ input[type=radio] + label>div {
 
 input[type=radio]:checked + label>div {
   box-shadow: var(--shadow64);
-}
-
-
-body {
-  margin: 0;
-  overflow-x: hidden; /*TODO: fix*/
-  height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
 a {
@@ -183,18 +182,17 @@ a {
 }
 
 .wrapper {
-  margin-right: auto;
-  margin-left: auto;
+  flex: 1 0 auto;
   width: 75vw;
   max-width: 75vw;
   padding: 0 10px 0 10px;
-  flex: 1 0 auto;
 }
 
 .bodyText {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   width: 86%;
+  min-height: 100%;
   flex: 1;
   background: var(--mainIMG);
   padding: 2% 5% 2% 5%;
@@ -588,11 +586,9 @@ textarea {
 }
 
 footer {
-  margin-top: 2vh;
   flex-shrink: 0;
+  height: 10vh;
   width: 92vw;
-  left: 0;
-  bottom: 0;
   background-color: var(--mainIMG);
   box-shadow: var(--shadow16);
   padding: 2vh 2vw 2vh 22vw;
