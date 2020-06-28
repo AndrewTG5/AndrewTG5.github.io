@@ -135,9 +135,9 @@
 					<label for="mint">
 						<div class="mint" style="width:13vw; height:13vw"></div>
 					</label>
-					<input onclick="bgSelector('rain')" type="radio" name="bg" id="peach" class="input-hidden" />
-					<label for="peach">
-						<div class="peach" style="width:13vw; height:13vw"></div>
+					<input onclick="bgSelector('rain')" type="radio" name="bg" id="rain" class="input-hidden" />
+					<label for="rain">
+						<div class="rain" style="width:13vw; height:13vw"></div>
 					</label>
 					<input onclick="bgSelector('charcoal')" type="radio" name="bg" id="charcoal" class="input-hidden" />
 					<label for="charcoal">
