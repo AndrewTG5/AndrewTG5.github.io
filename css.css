@@ -38,18 +38,22 @@ body {
 
 .default {
   background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+  background-attachment: fixed;
 }
 
 .rain {
   background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-attachment: fixed;
 }
 
 .mint {
   background: linear-gradient(-45deg, rgb(35, 166, 213),rgb(35, 213, 171));
+  background-attachment: fixed;
 }
 
 .charcoal {
   background: linear-gradient(120deg, #485563, #29323c);
+  background-attachment: fixed;
 }
 
 .selectorContainer {
