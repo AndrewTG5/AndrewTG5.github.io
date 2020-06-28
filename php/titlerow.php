@@ -1,7 +1,7 @@
 <?php
 if (isset($_SESSION["loggedin"])) {
-    if ($_SESSION["loggedin"] == 1) {
-        $signin = '<p>Signed in as ' . $_SESSION["username"] . '</p>
+    if ($_SESSION["loggedin"] == 1 || $_SESSION["loggedin"] == 0 ) {
+        $signin = '<p>Signed in as ' . $_SESSION["email"] . '</p>
             <a href="php/signout.php"><p>Sign out</p></a>';
     } else {
         $signin = '<p>You are not signed in</p>
@@ -17,7 +17,7 @@ if (isset($_SESSION["loggedin"])) {
 
 <div class="titleRow">
     <a href="index.php" style="text-decoration: none; float: left;">
-    <img src="img/favicon.png" style="display: inline; height:6vh; float: left;">
+    <img src="img/favicon.png" style="height:6vh; float: left;">
     <h1 class="title"><?php print $head; ?></h1>
     </a>
     <div class="signin">

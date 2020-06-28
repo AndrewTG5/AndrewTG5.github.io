@@ -19,7 +19,7 @@
 
         if ($result->num_rows == 1) {
             if (password_verify($psw, $row["password"])) {
-                $_SESSION["username"] = $uname;
+                $_SESSION["email"] = $uname;
                 $_SESSION["loggedin"] = 1;
                 $authed = 1;
                 echo     "<script>",
@@ -43,8 +43,8 @@
         $lname = $_POST["lname"];
         $psw = password_hash($_POST["newPassword"], PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO users (email, password, first_name, last_name)
-    		VALUES ('$uname', '$psw', '$fname', '$lname')";
+        $sql = "INSERT INTO users (email, password, first_name, last_name, status)
+    		VALUES ('$uname', '$psw', '$fname', '$lname', 0)";
 
         if ($conn->query($sql) === true) {
             echo     "<script>",
@@ -99,8 +99,8 @@
                         <label for="username" class="form__label">Last name</label>
                     </div>
                     <div class="form__group field">
-                        <input type="input" class="form__field" placeholder="Username" name="newUsername" id="username" required />
-                        <label for="username" class="form__label">Username</label>
+                        <input type="input" class="form__field" placeholder="Email" name="newUsername" id="email" required />
+                        <label for="email" class="form__label">Email</label>
                     </div>
                     <div class="form__group field">
                         <input type="password" class="form__field" placeholder="Password" name="newPassword" id="password" required />

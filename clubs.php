@@ -22,12 +22,13 @@
                     while ($row = $result->fetch_assoc()) {
                         $title = $row["title"];
                         $image = $row["image1"];
+                        $owner = $row["owner"];
                 ?>
                         <div class="gallery">
                             <a href="clubpage.php?dest=<?php echo $title ?>">
                                 <img class="gImg" src="<?php echo $image ?>" alt="">
                             </a>
-                            <div class="desc"><?php echo $title ?><?php if ($_SESSION["loggedin"] == 1) {
+                            <div class="desc"><?php echo $title ?><?php if ($_SESSION["email"] == $owner || $_SESSION["loggedin"] == 1) {
                                                                         echo '  <a href="addclub.php?edit=' . $title . '">Edit</a>';
                                                                     } ?></div>
                         </div>

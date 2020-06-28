@@ -111,7 +111,7 @@
 					<textarea type="input" placeholder="paragraph 1" name="main_para1" id="mpara1"><?php echo $main_para1 ?></textarea>
 				</div>
 				<div style="margin-top: 2vh;">
-					<label for="club" style="color: var(--mainText)">Image 1</label>
+					<label for="image1" style="color: var(--mainText)">Image 1</label>
 					<select id="image1" name="image1">
 						<option value="" selected disabled hidden>Choose here</option>
 						<?php
@@ -134,6 +134,25 @@
 				<div class="form__group field">
 					<textarea type="input" placeholder="paragraph 2" name="para1" id="para1"><?php echo $para1 ?></textarea>
 				</div>
+				<div style="margin-top: 2vh<?php if($_SESSION["loggedin"] != 1){ echo 'display:none';}?>;" >
+					<label for="image1" style="color: var(--mainText)">Club owner</label>
+					<select id="image1" name="image1">
+						<option value="" selected disabled hidden>Choose here</option>
+						<?php
+						$sql = "SELECT * FROM users";
+						$result = $conn->query($sql);
+						if ($result->num_rows > 0) {
+							while ($row = $result->fetch_assoc()) {
+								$email = $row["email"];
+						?>
+								<option value="<?php echo $email ?>" ><?php echo $email ?></option>
+						<?php
+							}
+						}
+						?>
+					</select>
+				</div>
+
 				<input type="submit" value="Submit">
 				<input type="button" style="margin-top: 0" onclick="window.location.href = 'clubs.php'" value=" Cancel">
 			</form>

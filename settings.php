@@ -30,11 +30,16 @@
 		$sql = "SELECT * FROM users WHERE email='$uname'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
+		$status = $row["status"];
 
 		if ($result->num_rows == 1) {
 			if (password_verify($psw, $row["password"])) {
-				$_SESSION["username"] = $uname;
+				$_SESSION["email"] = $uname;
+				if($status == 1){
 				$_SESSION["loggedin"] = 1;
+				} elseif ($status == 0) {
+					$_SESSION["loggedin"] = 0;
+				}
 				echo     "<script>",
 					"setTimeout(function () {createUIPrompt('Logged in');}, 50);",
 					"</script>";
@@ -146,14 +151,14 @@
 				</div>
 				<br>
 			</div>
-			<?php if ($_SESSION["loggedin"] == 0) {
+			<?php if ($_SESSION["loggedin"] == 2) {
 				echo '
 			<form id="login" class="bodyText" action="settings.php" method="post">
 				<h2>Sign in to access more settings</h2>
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="Username" name="username" id="username"
+					<input type="input" class="form__field" placeholder="Email" name="username" id="username"
 						required />
-					<label for="username" class="form__label">Username</label>
+					<label for="username" class="form__label">Email</label>
 				</div>
 				<div class="form__group field">
 					<input type="password" class="form__field" placeholder="Password" name="password" id="password"
@@ -173,7 +178,7 @@
 				<br>
 			</div>';
 			} ?>
-			<div class="bodyText" <?php if ($_SESSION["loggedin"] == 0) {
+			<div class="bodyText" <?php if ($_SESSION["loggedin"] == 2) {
 										echo 'style="display:none"';
 									} //! INSECURE 		^
 									?>>
