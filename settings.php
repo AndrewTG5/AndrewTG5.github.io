@@ -35,8 +35,8 @@
 		if ($result->num_rows == 1) {
 			if (password_verify($psw, $row["password"])) {
 				$_SESSION["email"] = $uname;
-				if($status == 1){
-				$_SESSION["loggedin"] = 1;
+				if ($status == 1) {
+					$_SESSION["loggedin"] = 1;
 				} elseif ($status == 0) {
 					$_SESSION["loggedin"] = 0;
 				}
@@ -178,6 +178,35 @@
 				<br>
 			</div>';
 			} ?>
+			<div class="bodyText" <?php if ($_SESSION["loggedin"] == 1) {
+										echo 'style="display:none"';
+									} //! INSECURE 		^
+									?>>
+				<h2>Club owners</h2>
+				<table id="table">
+					<tr>
+						<th>Club name</th>
+						<th>Owner</th>
+					</tr>
+					<?php
+					$sql = "SELECT * FROM pages";
+					$result = $conn->query($sql);
+					if ($result->num_rows > 0) {
+						// output data of each row
+						while ($row = $result->fetch_assoc()) {
+							$title = $row["title"];
+							$owner = $row["owner"];
+					?>
+							<tr>
+								<td><?php print $title; ?></td>
+								<td><?php print $owner; ?></td>
+							</tr>
+					<?php
+						}
+					}
+					?>
+				</table>
+			</div>
 			<div class="bodyText" <?php if ($_SESSION["loggedin"] == 2) {
 										echo 'style="display:none"';
 									} //! INSECURE 		^
