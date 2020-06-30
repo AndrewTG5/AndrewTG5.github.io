@@ -8,7 +8,7 @@ if (isset($_SESSION["loggedin"])) {
 	    	<a href="settings.php#login"><p>Sign in</p></a>';
     }
 } else {
-    $_SESSION["loggedin"] = 0;
+    $_SESSION["loggedin"] = 2;
     $signin = '<p>You are not signed in</p>
     	    	<a href="settings.php#login"><p>Sign in</p></a>';
 }

@@ -178,7 +178,7 @@
 				<br>
 			</div>';
 			} ?>
-			<div class="bodyText" <?php if ($_SESSION["loggedin"] == 1) {
+			<div class="bodyText" <?php if ($_SESSION["loggedin"] != 1) {
 										echo 'style="display:none"';
 									} //! INSECURE 		^
 									?>>
@@ -189,13 +189,14 @@
 						<th>Owner</th>
 					</tr>
 					<?php
-					$sql = "SELECT * FROM pages";
+					$sql = "SELECT * FROM pages INNER JOIN users ON pages.owner=users.id;";
+					
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 						// output data of each row
 						while ($row = $result->fetch_assoc()) {
 							$title = $row["title"];
-							$owner = $row["owner"];
+							$owner = $row["email"];
 					?>
 							<tr>
 								<td><?php print $title; ?></td>
@@ -222,7 +223,7 @@
 						<th></th>
 					</tr>
 					<?php
-					$sql = "SELECT * FROM sign_ups";
+					$sql = "SELECT * FROM sign_ups INNER JOIN pages ON sign_ups.club=pages.id;";
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 						// output data of each row
@@ -231,7 +232,7 @@
 							$name = $row["full_name"];
 							$email = $row["email"];
 							$age = $row["age"];
-							$club = $row["club"];
+							$club = $row["title"];
 					?>
 							<tr>
 								<td><?php print $id; ?></td>

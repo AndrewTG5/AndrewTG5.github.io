@@ -7,7 +7,7 @@
 	<?php
 	$dest = $_GET['dest'];
 
-	$sql = "SELECT * FROM pages WHERE title='$dest'";
+	$sql = "SELECT * FROM pages INNER JOIN images ON pages.image1=images.id WHERE title='$dest';";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
@@ -16,7 +16,7 @@
 		$title = $row["title"];
 		$main_para1 = $row["main_para1"];
 		$para1 = $row["para1"];
-		$image1 = $row["image1"];
+		$image1 = $row["image"];
 	} else {
 		echo "0 results";
 	}
@@ -42,7 +42,6 @@
 			</div>
 		</div>
 	</div>
-	<!--TODO: add other boxes-->
 	<?php include "php/footer.php" ?>
 </body>
 

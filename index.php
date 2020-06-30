@@ -117,10 +117,11 @@
 			width: 100%;
 			height: 100%;
 			padding: 0;
+			font-size: 1.25em;
 			transform: translateY(-100%);
 			color: var(--textInvert);
+			background-color: var(--mainIMG);
 			transition: transform 0.25s ease;
-			backdrop-filter: var(--mainBlur);
 			text-shadow: var(--Tshadow8);
 			padding-top: 40%;
 		}

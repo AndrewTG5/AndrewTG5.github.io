@@ -15,14 +15,14 @@
         <div class="bodyContainer">
             <div class="galleryContainer">
                 <?php
-                $sql = "SELECT * FROM pages";
+                $sql = "SELECT * FROM pages INNER JOIN images ON pages.image1=images.id INNER JOIN users ON pages.owner=users.id;";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while ($row = $result->fetch_assoc()) {
                         $title = $row["title"];
-                        $image = $row["image1"];
-                        $owner = $row["owner"];
+                        $image = $row["image"];
+                        $owner = $row["email"];
                 ?>
                         <div class="gallery">
                             <a href="clubpage.php?dest=<?php echo $title ?>">
