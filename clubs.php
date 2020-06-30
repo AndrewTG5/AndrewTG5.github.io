@@ -15,7 +15,7 @@
         <div class="bodyContainer">
             <div class="galleryContainer">
                 <?php
-                $sql = "SELECT * FROM pages INNER JOIN images ON pages.image1=images.id INNER JOIN users ON pages.owner=users.id;";
+                $sql = "SELECT * FROM clubs INNER JOIN images ON clubs.image1=images.id INNER JOIN users ON clubs.owner=users.id;";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
                     // output data of each row

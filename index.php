@@ -79,8 +79,9 @@
 	</style>
 	<script>
 		document.addEventListener('DOMContentLoaded', (_event) => {
+			//	Creates index image gallery
 			const imgSrc = ['img/e1.jpg', 'img/e2.jpg', 'img/r1.jpg', 'img/r2.jpg', 'img/r3.jpg', 'img/r4.jpg', 'img/r5.jpg', 'img/r6.jpg', 'img/r7.jpg'];
-			const imgTitle = ['Evolocity', 'Evolocity', 'Robotics', 'Robotics', 'Robotics', 'Robotics', 'Robotics', 'Robotics', 'Robotics'];
+			const imgTitle = ['Evolocity solar powered trike', 'Evolocity race day', 'Robotics robot scoring', 'Robotics robot collecting rings', 'Robotics tweaking the robot', 'Robotics climbing course', 'Robotics team designing and building in the holidays', 'Robotics Katikati competes in Palmerston North', 'Robotics robot climbing the ladder'];
 			let i;
 			for (i = 0; i < imgSrc.length; i++) {
 				const div = document.createElement('div');

@@ -189,7 +189,7 @@
 						<th>Owner</th>
 					</tr>
 					<?php
-					$sql = "SELECT * FROM pages INNER JOIN users ON pages.owner=users.id;";
+					$sql = "SELECT * FROM clubs INNER JOIN users ON clubs.owner=users.id;";
 					
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
@@ -223,12 +223,12 @@
 						<th></th>
 					</tr>
 					<?php
-					$sql = "SELECT * FROM sign_ups INNER JOIN pages ON sign_ups.club=pages.id;";
+					$sql = "SELECT * FROM sign_ups INNER JOIN clubs ON sign_ups.club=clubs.id;";
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 						// output data of each row
 						while ($row = $result->fetch_assoc()) {
-							$id = $row["id"];
+							$id = $row["id"]; //TODO fix wrong row returned
 							$name = $row["full_name"];
 							$email = $row["email"];
 							$age = $row["age"];

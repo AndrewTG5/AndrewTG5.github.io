@@ -12,7 +12,7 @@
 		$para1 = $conn->real_escape_string($_POST["para1"]);
 		$intent = '';
 
-		$sql = "INSERT INTO pages (title, main_para1, image1, para1)
+		$sql = "INSERT INTO clubs (title, main_para1, image1, para1)
     		VALUES ('$title', '$main_para1', '$image1', '$para1')";
 
 		if ($conn->query($sql) === true) {
@@ -30,7 +30,7 @@
 		$dest = $_GET['edit'];
 		$intent = '?title=' . $dest . '';
 
-		$sql = "SELECT * FROM pages WHERE title='$dest'";
+		$sql = "SELECT * FROM clubs WHERE title='$dest'";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
@@ -54,7 +54,7 @@
 		$dmain_para1 = $conn->real_escape_string($_POST["main_para1"]);
 		$dpara1 = $conn->real_escape_string($_POST["para1"]);
 
-		$sql = "UPDATE pages SET title='$newtitle', main_para1='$dmain_para1', image1='$image1', para1='$dpara1' WHERE title='$target'";
+		$sql = "UPDATE clubs SET title='$newtitle', main_para1='$dmain_para1', image1='$image1', para1='$dpara1' WHERE title='$target'";
 
 		if ($conn->query($sql) === true) {
 			echo 	"<script>",
@@ -66,7 +66,7 @@
 				"setTimeout(function () { createUIPrompt('Error updating club: $error');}, 50);",
 				"</script>";
 		}
-		$sql = "SELECT * FROM pages WHERE title='$newtitle'";
+		$sql = "SELECT * FROM clubs WHERE title='$newtitle'";
 		$result = $conn->query($sql);
 
 		if ($result->num_rows > 0) {
@@ -121,8 +121,9 @@
 							while ($row = $result->fetch_assoc()) {
 								$image = $row["image"];
 								$name = $row["name"];
+								$id = $row["id"];
 						?>
-								<option value="<?php echo $image ?>" <?php if ($image == $image1) {
+								<option value="<?php echo $id ?>" <?php if ($image == $image1) {
 																			echo 'selected="selected"';
 																		} ?>><?php echo $name ?></option>
 						<?php
@@ -144,8 +145,9 @@
 						if ($result->num_rows > 0) {
 							while ($row = $result->fetch_assoc()) {
 								$email = $row["email"];
+								$id = $row["id"];
 						?>
-								<option value="<?php echo $email ?>" ><?php echo $email ?></option>
+								<option value="<?php echo $id ?>" ><?php echo $email ?></option>
 						<?php
 							}
 						}

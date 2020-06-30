@@ -53,13 +53,14 @@
 					<label for="club" style="color: var(--mainText)">Club</label>
 					<select id="club" name="club">
 						<?php
-						$sql = "SELECT * FROM pages";
+						$sql = "SELECT * FROM clubs";
 						$result = $conn->query($sql);
 						if ($result->num_rows > 0) {
 							while ($row = $result->fetch_assoc()) {
 								$title = $row["title"];
+								$id = $row["id"];
 						?>
-								<option value="<?php echo $title ?>"><?php echo $title ?></option>
+								<option value="<?php echo $id ?>"><?php echo $title ?></option>
 						<?php
 							}
 						}

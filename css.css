@@ -78,10 +78,14 @@ body {
 }
 
 input[type=radio] + label>div {
-  box-shadow: var(--shadow16);
+  box-shadow: var(--shadow8);
 }
 
 input[type=radio]:checked + label>div {
+  box-shadow: var(--shadow64);
+}
+
+input[type=radio] + label>div:hover {
   box-shadow: var(--shadow64);
 }
 

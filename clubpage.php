@@ -7,7 +7,7 @@
 	<?php
 	$dest = $_GET['dest'];
 
-	$sql = "SELECT * FROM pages INNER JOIN images ON pages.image1=images.id WHERE title='$dest';";
+	$sql = "SELECT * FROM clubs INNER JOIN images ON clubs.image1=images.id WHERE title='$dest';";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
