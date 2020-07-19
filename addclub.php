@@ -10,10 +10,11 @@
 		$main_para1 = $conn->real_escape_string($_POST["main_para1"]);
 		$image1 = $_POST["image1"];
 		$para1 = $conn->real_escape_string($_POST["para1"]);
+		$owner = $_POST['owner'];
 		$intent = '';
 
-		$sql = "INSERT INTO clubs (title, main_para1, image1, para1)
-    		VALUES ('$title', '$main_para1', '$image1', '$para1')";
+		$sql = "INSERT INTO clubs (title, main_para1, image1, para1, owner)
+    		VALUES ('$title', '$main_para1', '$image1', '$para1', '$owner')";
 
 		if ($conn->query($sql) === true) {
 			echo 	"<script>",
@@ -40,6 +41,7 @@
 			$main_para1 = $row["main_para1"];
 			$para1 = $row["para1"];
 			$image1 = $row["image1"];
+			$owner = $row["owner"];
 		}
 	} elseif (isset($_GET["title"])) {
 		// submitting an edited club
@@ -48,13 +50,14 @@
 		$main_para1 = $_POST["main_para1"];
 		$image1 = $_POST["image1"];
 		$para1 = $_POST["para1"];
+		$owner = $_POST['owner'];
 		$intent = '?title=' . $target . '';
 
 		$newtitle = $conn->real_escape_string($_POST["title"]);
 		$dmain_para1 = $conn->real_escape_string($_POST["main_para1"]);
 		$dpara1 = $conn->real_escape_string($_POST["para1"]);
 
-		$sql = "UPDATE clubs SET title='$newtitle', main_para1='$dmain_para1', image1='$image1', para1='$dpara1' WHERE title='$target'";
+		$sql = "UPDATE clubs SET title='$newtitle', main_para1='$dmain_para1', image1='$image1', para1='$dpara1', owner='$owner' WHERE title='$target'";
 
 		if ($conn->query($sql) === true) {
 			echo 	"<script>",
@@ -83,6 +86,7 @@
 		$main_para1 = "";
 		$image1 = "";
 		$para1 = "";
+		$owner = "";
 		$intent = "";
 	}
 	?>
@@ -113,20 +117,24 @@
 				<div style="margin-top: 2vh;">
 					<label for="image1" style="color: var(--mainText)">Image 1</label>
 					<select id="image1" name="image1">
-						<option value="" selected disabled hidden>Choose here</option>
 						<?php
 						$sql = "SELECT * FROM images";
 						$result = $conn->query($sql);
+						
 						if ($result->num_rows > 0) {
 							while ($row = $result->fetch_assoc()) {
 								$image = $row["image"];
 								$name = $row["name"];
 								$id = $row["id"];
 						?>
-								<option value="<?php echo $id ?>" <?php if ($image == $image1) {
-																			echo 'selected="selected"';
-																		} ?>><?php echo $name ?></option>
+								<option value="<?php echo $id ?>" <?php if ($id == $image1) {
+																		$iselected = 1;
+																		echo 'selected="selected"';
+																	} ?>><?php echo $name ?></option>
 						<?php
+							}
+							if (!isset($iselected)) {
+								echo '<option value="" selected disabled hidden>Choose here</option>';
 							}
 						}
 						?>
@@ -135,10 +143,11 @@
 				<div class="form__group field">
 					<textarea type="input" placeholder="paragraph 2" name="para1" id="para1"><?php echo $para1 ?></textarea>
 				</div>
-				<div style="margin-top: 2vh<?php if($_SESSION["loggedin"] != 1){ echo 'display:none';}?>;" >
-					<label for="image1" style="color: var(--mainText)">Club owner</label>
-					<select id="image1" name="image1">
-						<option value="" selected disabled hidden>Choose here</option>
+				<div style="margin-top: 2vh;<?php if ($_SESSION["loggedin"] != 1) {
+												echo 'display:none';
+											} ?>;">
+					<label for="owner" style="color: var(--mainText)">Club owner</label>
+					<select id="owner" name="owner">
 						<?php
 						$sql = "SELECT * FROM users";
 						$result = $conn->query($sql);
@@ -147,8 +156,14 @@
 								$email = $row["email"];
 								$id = $row["id"];
 						?>
-								<option value="<?php echo $id ?>" ><?php echo $email ?></option>
+								<option value="<?php echo $id ?>" <?php if ($id == $owner) {
+																		$aselected = 1;
+																		echo 'selected="selected"';
+																	}  ?>><?php echo $email ?></option>
 						<?php
+							}
+							if (!isset($aselected)) {
+								echo '<option value="" selected disabled hidden>Choose here</option>';
 							}
 						}
 						?>
