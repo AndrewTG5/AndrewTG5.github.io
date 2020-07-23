@@ -100,6 +100,7 @@
 
 <body>
 	<div id="mySidenav" class="sidenav"></div>
+	<?php include "php/notif.php"; ?>
 	<div class="wrapper">
 		<?php
 		$head = "Add/edit club";
@@ -120,7 +121,7 @@
 						<?php
 						$sql = "SELECT * FROM images";
 						$result = $conn->query($sql);
-						
+
 						if ($result->num_rows > 0) {
 							while ($row = $result->fetch_assoc()) {
 								$image = $row["image"];

@@ -118,6 +118,7 @@
 
 <body>
 	<div id="mySidenav" class="sidenav"></div>
+	<?php include "php/notif.php"; ?>
 	<div class="wrapper">
 		<?php
 		$head = "Settings";
@@ -190,7 +191,7 @@
 					</tr>
 					<?php
 					$sql = "SELECT * FROM clubs INNER JOIN users ON clubs.owner=users.id;";
-					
+
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 						// output data of each row

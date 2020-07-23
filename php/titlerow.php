@@ -1,4 +1,7 @@
 <?php
+if(!isset($_SESSION["email"])) {
+    $_SESSION["email"] = "";
+}
 if (isset($_SESSION["loggedin"])) {
     if ($_SESSION["loggedin"] == 1 || $_SESSION["loggedin"] == 0 ) {
         $signin = '<p>Signed in as ' . $_SESSION["email"] . '</p>

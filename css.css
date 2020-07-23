@@ -264,11 +264,11 @@ h2 {
   bottom: 4vw;
   right: -40vw;
   position: fixed;
-  padding: 14px 65px;
+  padding: 48px 16px;
   background-color: var(--mainIMG);
   color: var(--mainText);
-  width: 280px;
-  height: 140px;
+  width: 360px;
+  height: 60px;
   font-size: 1em;
   backdrop-filter: var(--mainBlur);
   -webkit-box-shadow: var(--shadow64);
@@ -281,52 +281,28 @@ h2 {
   
 }
 
-.bannerLine {
-  border-left: 2px solid var(--accentBlue);
-  height: 146px;
+.icon-tabler-alert-circle {
   position: absolute;
-  top: 12px;
-  left: 54px;
+  color: var(--mainText);
+  top: 18px;
+  left: 14px;
 }
 
-.closebtn {
-  /*banner prompt close button*/
+.icon-tabler-x {
   position: absolute;
-  width: 30px;
-  height: 30px;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
+  color: var(--mainText);
+  top: 14px;
+  right: 14px;
 }
 
-.closebtn::before,
-.closebtn::after {
-	content: '';
-	position: absolute;
-	width: 100%;
-	top: 50%;
-	height: 1px;
-	background:var(--mainText);
-	-webkit-transform: rotate(45deg);
-	-moz-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-
-.closebtn::after {
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-
-.closebtn:hover::before,
-.closebtn:hover::after {
-	background: var(--textInvert  );
+.icon-tabler-x:hover {
+  color: var(--textInvert);
 }
 
 .bannerImg {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 48px;
+  right: 14px;
   width: 32px;
 }
 

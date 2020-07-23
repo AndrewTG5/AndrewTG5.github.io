@@ -24,7 +24,7 @@ function light() {
 }
 
 function bgSelector(background) {
-  //  function to set backgroudn theme
+  //  function to set background theme
   document.querySelector('html').removeAttribute('class');
   document.querySelector('html').classList.add(background);
   localStorage.setItem('bgPref', background);
@@ -32,38 +32,21 @@ function bgSelector(background) {
 
 // eslint-disable-next-line no-unused-vars
 function createUIPrompt(message) {
-  const div = document.createElement('DIV');
-  div.innerHTML = message;
-  div.setAttribute('id', 'banner');
-  div.className = ('banner');
-  document.body.appendChild(div);
-
-  const btn = document.createElement('SPAN');
-  btn.className = ('closebtn');
-  document.getElementById('banner').appendChild(btn);
-  btn.onclick = dismissUIPrompt;
-
-  const img = document.createElement('img');
-  img.className = ('bannerImg');
-  img.src = 'img/favicon.png';
-  document.getElementById('banner').appendChild(img);
-
-  const line = document.createElement('img');
-  line.className = ('bannerLine');
-  document.getElementById('banner').appendChild(line);
-
   const banner = document.getElementById('banner');
+  banner.innerHTML += message;
 
   setTimeout(function() {
+    banner.style.display = 'initial';
     banner.style.right = '2vw';
   }, 400);
 }
 
+// eslint-disable-next-line no-unused-vars
 function dismissUIPrompt() {
   const banner = document.getElementById('banner');
   banner.style.right = '-40vw';
   setTimeout(function() {
-    banner.remove();
+    banner.style.display = 'none';
   }, 400);
 }
 

@@ -30,6 +30,7 @@
 
 <body>
 	<div id="mySidenav" class="sidenav"></div>
+	<?php include "php/notif.php"; ?>
 	<div class="wrapper">
 		<?php
 		$head = "Sign up";
