@@ -5,7 +5,7 @@ function dark() {
   //  function to set dark theme
   const root = document.documentElement;
 
-  document.getElementById('mySidenav').style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
+  document.getElementById('myNavbar').style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
 
   root.style.setProperty('--mainText', 'rgb(255, 255, 255)');
   root.style.setProperty('--mainIMG', 'rgba(0, 0, 0, 0.6)');
@@ -16,7 +16,7 @@ function light() {
   //  function to set light theme
   const root = document.documentElement;
 
-  document.getElementById('mySidenav').style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+  document.getElementById('myNavbar').style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
 
   root.style.setProperty('--mainText', 'rgb(0, 0, 0)');
   root.style.setProperty('--mainIMG', 'rgba(255, 255, 255, 0.4)');
@@ -34,20 +34,21 @@ function bgSelector(background) {
 function createUIPrompt(message) {
   const banner = document.getElementById('banner');
   banner.innerHTML += message;
-
+  banner.style.display = 'initial';
   setTimeout(function() {
-    banner.style.display = 'initial';
-    banner.style.right = '2vw';
-  }, 400);
+    banner.style.bottom = '4vw';
+    banner.style.opacity = '1';
+  }, 100);
 }
 
 // eslint-disable-next-line no-unused-vars
 function dismissUIPrompt() {
   const banner = document.getElementById('banner');
-  banner.style.right = '-40vw';
+  banner.style.bottom = '-8vw';
+  banner.style.opacity = '0';
   setTimeout(function() {
     banner.style.display = 'none';
-  }, 400);
+  }, 500);
 }
 
 document.addEventListener('DOMContentLoaded', (_event) => {
@@ -56,7 +57,7 @@ document.addEventListener('DOMContentLoaded', (_event) => {
     stickNav();
   };
   //  sticky navbar stuff
-  const navbar = document.getElementById('mySidenav');
+  const navbar = document.getElementById('myNavbar');
   const sticky = navbar.offsetTop;
 
   function stickNav() {
@@ -101,6 +102,6 @@ function navLoader() {
     if (page == pages[i]) {
       a.className = ('active');
     }
-    document.getElementById('mySidenav').appendChild(a);
+    document.getElementById('myNavbar').appendChild(a);
   }
 }

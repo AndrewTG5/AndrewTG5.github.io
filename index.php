@@ -15,7 +15,7 @@
 		} else {
 			$error = addslashes($conn->error);
 			echo     "<script>",
-				"setTimeout(function () { createUIPrompt('Error deleting news: $error');}, 50);",
+				"setTimeout(function () { createUIPrompt('Failed to delete news: $error');}, 50);",
 				"</script>";
 		}
 	}
@@ -79,7 +79,7 @@
 	</style>
 	<script>
 		document.addEventListener('DOMContentLoaded', (_event) => {
-			//	Creates index image gallery
+			//	creates index image gallery
 			const imgSrc = ['img/e1.jpg', 'img/e2.jpg', 'img/r1.jpg', 'img/r2.jpg', 'img/r3.jpg', 'img/r4.jpg', 'img/r5.jpg', 'img/r6.jpg', 'img/r7.jpg'];
 			const imgTitle = ['Evolocity solar powered trike', 'Evolocity race day', 'Robotics robot scoring', 'Robotics robot collecting rings', 'Robotics tweaking the robot', 'Robotics climbing course', 'Robotics team designing and building in the holidays', 'Robotics Katikati competes in Palmerston North', 'Robotics robot climbing the ladder'];
 			let i;
@@ -138,7 +138,7 @@
 </head>
 
 <body>
-	<div id="mySidenav" class="sidenav"></div>
+	<div id="myNavbar" class="navbar"></div>
 	<?php include "php/notif.php"; ?>
 	<div class="wrapper">
 		<?php

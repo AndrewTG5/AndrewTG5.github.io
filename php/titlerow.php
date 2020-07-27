@@ -1,9 +1,13 @@
 <?php
+/**
+ *  shows the current logged in user in the titlerow
+ */
 if(!isset($_SESSION["email"])) {
+    // sets email to blank is if email is undefined
     $_SESSION["email"] = "";
 }
 if (isset($_SESSION["loggedin"])) {
-    if ($_SESSION["loggedin"] == 1 || $_SESSION["loggedin"] == 0 ) {
+    if ($_SESSION["loggedin"] != 2) {
         $signin = '<p>Signed in as ' . $_SESSION["email"] . '</p>
             <a href="php/signout.php"><p>Sign out</p></a>';
     } else {
@@ -15,7 +19,6 @@ if (isset($_SESSION["loggedin"])) {
     $signin = '<p>You are not signed in</p>
     	    	<a href="settings.php#login"><p>Sign in</p></a>';
 }
-
 ?>
 
 <div class="titleRow">

@@ -15,7 +15,7 @@
         } else {
             $error = addslashes($conn->error);
             echo     "<script>",
-                "setTimeout(function () { createUIPrompt('Error deleting image: $error');}, 50);",
+                "setTimeout(function () { createUIPrompt('Failed to delete image: $error');}, 50);",
                 "</script>";
         }
     }
@@ -23,16 +23,14 @@
     <?php
     if (isset($_POST['submit'])) {
         $name = $_FILES['file']['name'];
-        $target_dir = "img/";
-        $target_file = $target_dir . basename($_FILES["file"]["name"]);
 
-        // Select file type
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+        // get file type from uploaded file
+        $imageFileType = explode('/', $_FILES['file']['type'])[1];
 
-        // Convert to base64 
+        // convert to base64 
         $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
         $image = 'data:image/' . $imageFileType . ';base64,' . $image_base64;
-        // Insert record
+        // insert record
         $sql = "INSERT INTO images (image, name) VALUES('$image', '$name')";
         if ($conn->query($sql) === true) {
             echo     "<script>",
@@ -41,11 +39,9 @@
         } else {
             $error = addslashes($conn->error);
             echo     "<script>",
-                "setTimeout(function () { createUIPrompt('Error uploading image: $error');}, 50);",
+                "setTimeout(function () { createUIPrompt('Failed to upload image: $error');}, 50);",
                 "</script>";
         }
-        // Upload file
-        move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $name);
     }
     ?>
     <script>
@@ -53,8 +49,9 @@
             let uploadField = document.getElementById("file");
 
             uploadField.onchange = function() {
+                // stops users from uploading files that are too large
                 if (this.files[0].size > 1048576) {
-                    createUIPrompt("Image is too large!");
+                    createUIPrompt("Image is too large! Needs to be <1MB");
                     this.value = "";
                 };
             };
@@ -63,7 +60,7 @@
 </head>
 
 <body>
-    <div id="mySidenav" class="sidenav"></div>
+    <div id="myNavbar" class="navbar"></div>
     <?php include "php/notif.php"; ?>
     <div class="wrapper">
         <?php

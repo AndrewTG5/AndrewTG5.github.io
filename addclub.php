@@ -23,11 +23,11 @@
 		} else {
 			$error = addslashes($conn->error);
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Error Creating club: $error');}, 50);",
+				"setTimeout(function () { createUIPrompt('Failed to create club: $error');}, 50);",
 				"</script>";
 		}
 	} elseif (isset($_GET["edit"])) {
-		//	when editing a club
+		// when editing a club
 		$dest = $_GET['edit'];
 		$intent = '?title=' . $dest . '';
 
@@ -66,7 +66,7 @@
 		} else {
 			$error = addslashes($conn->error);
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Error updating club: $error');}, 50);",
+				"setTimeout(function () { createUIPrompt('Failed to update club: $error');}, 50);",
 				"</script>";
 		}
 		$sql = "SELECT * FROM clubs WHERE title='$newtitle'";
@@ -99,7 +99,7 @@
 </head>
 
 <body>
-	<div id="mySidenav" class="sidenav"></div>
+	<div id="myNavbar" class="navbar"></div>
 	<?php include "php/notif.php"; ?>
 	<div class="wrapper">
 		<?php

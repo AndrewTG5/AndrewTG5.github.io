@@ -17,7 +17,7 @@
 		} else {
 			$error = addslashes($conn->error);
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Error creating news: $error');}, 50);",
+				"setTimeout(function () { createUIPrompt('Failed to create news: $error');}, 50);",
 				"</script>";
 		}
 	}
@@ -31,7 +31,7 @@
 </head>
 
 <body>
-	<div id="mySidenav" class="sidenav"></div>
+	<div id="myNavbar" class="navbar"></div>
 	<?php include "php/notif.php"; ?>
 	<div class="wrapper">
 		<?php

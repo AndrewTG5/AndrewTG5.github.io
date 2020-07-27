@@ -24,11 +24,11 @@
 
 html {
   font-family: "Lato", sans-serif;
-  height: 100%;/*TODO backgrounds repeat with this, but is needed for footer*/
+  height: 100%;
 }
 
 body {
-  height: 100%; /* TODO same here*/
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,6 +36,7 @@ body {
   margin: 0;
 }
 
+/* backgrounds start here */
 .default {
   background: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
   background-attachment: fixed;
@@ -89,15 +90,17 @@ input[type=radio] + label>div:hover {
   box-shadow: var(--shadow64);
 }
 
+/* backgrounds end here */
+
 a {
   color: var(--accentBlue);
 }
 
-.sidenav {
+.navbar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  position: absolute; /*TODO: fix*/
+  position: absolute;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
@@ -114,7 +117,7 @@ a {
   overflow-y: hidden;
 }
 
-.sidenav a {
+.navbar a {
   z-index: 2;
   padding: 0.5vw 2.5vw 0.5vw 2.5vw;
   text-decoration: none;
@@ -124,12 +127,12 @@ a {
   text-shadow: var(--Tshadow4);
 }
 
-.sidenav a.active {
+.navbar a.active {
   color: rgb(0, 0, 0);
   border-bottom: 2px solid var(--accentBlue);
 }
 
-.sidenav a:hover {
+.navbar a:hover {
   background: var(--mainIMG);
   border-radius: 6px;
   -webkit-box-shadow: var(--shadow4);
@@ -137,6 +140,7 @@ a {
 }
 
 .sticky {
+  /* makes navbar sticky */
   position: fixed;
   top: 0;
   -webkit-backdrop-filter: var(--mainBlur);
@@ -144,6 +148,7 @@ a {
 }
 
 .titleRow {
+  /* title and signin div */
   margin: 0.5% 2% 1vh 2%;
   width: 100%;
   height: 8vh;
@@ -173,6 +178,7 @@ a {
 }
 
 .bodyContainer {
+  /* flexbox container for body */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -197,6 +203,7 @@ a {
 }
 
 .bodyText {
+  /* text paragraph box */
   -webkit-box-flex: 1;
   -ms-flex: 1;
   width: 86%;
@@ -210,6 +217,7 @@ a {
 }
 
 .ImgContainer {
+  /* contains an image box and a text box */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,6 +234,7 @@ a {
 }
 
 .TextImg {
+  /* textbox next to image */
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -233,6 +242,7 @@ a {
 }
 
 .bodyImg {
+  /* image box */
   max-width: 25%;
   max-height: 25%;
   margin: 2%;
@@ -259,10 +269,13 @@ h2 {
   font-size: 1.5em;
 }
 
+/* notification starts here */
+
 .banner {
-  /*banner prompt*/
-  bottom: 4vw;
-  right: -40vw;
+  /* notification box */
+  bottom: -8vw;
+  opacity: 0;
+  right: 2vw;
   position: fixed;
   padding: 48px 16px;
   background-color: var(--mainIMG);
@@ -273,15 +286,16 @@ h2 {
   backdrop-filter: var(--mainBlur);
   -webkit-box-shadow: var(--shadow64);
   box-shadow: var(--shadow64);
-  -webkit-transition: right 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);
-  -o-transition: right 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);
-  transition: right 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);
+  -webkit-transition: bottom 0.3s cubic-bezier(0.25, 0.1, 0.1, 1), opacity 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);
+  -o-transition: bottom 0.3s cubic-bezier(0.25, 0.1, 0.1, 1), opacity 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);
+  transition: bottom 0.3s cubic-bezier(0.25, 0.1, 0.1, 1), opacity 0.2s cubic-bezier(0.25, 0.1, 0.1, 1);
   overflow: hidden;
   z-index: 99;
   
 }
 
 .icon-tabler-alert-circle {
+  /* svg icon */
   position: absolute;
   color: var(--mainText);
   top: 18px;
@@ -289,6 +303,7 @@ h2 {
 }
 
 .icon-tabler-x {
+  /* svg icon */
   position: absolute;
   color: var(--mainText);
   top: 14px;
@@ -299,17 +314,11 @@ h2 {
   color: var(--textInvert);
 }
 
-.bannerImg {
-  position: absolute;
-  top: 48px;
-  right: 14px;
-  width: 32px;
-}
-
-/*banner ends here*/
-/*input boxes start here*/
+/* banner ends here */
+/* input boxes start here */
 
 .form__group {
+  /* contains text input and label */
   position: relative;
   padding: 15px 0 0;
   margin-top: 10px;
@@ -317,6 +326,7 @@ h2 {
 }
 
 .form__field {
+  /* text input */
   font-family: inherit;
   width: 100%;
   border: 0;
@@ -338,6 +348,7 @@ h2 {
 } 
 
 .form__label {
+  /* text input label */
   position: absolute;
   top: 0;
   display: block;
@@ -365,6 +376,7 @@ h2 {
 }
 
 select {
+  /* select box */
   color: var(--mainText);
   width: 100%;
   padding: 12px 20px;
@@ -380,6 +392,7 @@ select {
 }
 
 input[type="submit"], input[type="button"] {
+  /* submit button */
   width: 100%;
   background-color: var(--accentBlue);
   color: var(--textInvert);
@@ -391,14 +404,7 @@ input[type="submit"], input[type="button"] {
   box-shadow: var(--shadow8);
 }
 
-/* dont need with tinymce
-textarea {
-  height: 10vw;
-  width: 100%;
-}
-*/
-
-/*input boxes end here*/
+/* input boxes end here */
 
 .galleryContainer {
   margin-top: 6vh;
@@ -426,22 +432,25 @@ textarea {
 }
 
 .gallery:hover {
-  box-shadow: var(--shadow64); /*TODO make bigger*/
+  box-shadow: var(--shadow64);
 }
 
 .gImg {
+  /* gallery image */
   width: 100%;
   height: auto;
   background-color: white;
 }
 
 .desc {
+  /* gallery image description */
   padding: 15px;
   text-align: center;
   color: var(--mainText);
 }
 
-/*toggle start here*/
+/* toggle button starts here */
+
 .tgl,
 .tgl:after,
 .tgl:before,
@@ -564,10 +573,7 @@ textarea {
   left: 10%;
 }
 
-/*toggle end here*/
-.dropdown-content a {
-  display: block;
-}
+/* toggle button ends here */
 
 footer {
   flex-shrink: 0;
@@ -610,7 +616,8 @@ tr:nth-child(even) {
 }
 
 @media (orientation: portrait) {
-  .sidenav a {
+  /* portrait view */
+  .navbar a {
     font-size: 3vw;
   }
 
@@ -621,7 +628,7 @@ tr:nth-child(even) {
     padding-left: 10px;
   }
 
-  .sidenav {
+  .navbar {
     top: 6vh;
   }
 
@@ -671,10 +678,6 @@ tr:nth-child(even) {
     height: 90px;
   }
 
-  .bannerLine {
-    height: 95px;
-  }
-
   .tgl + .tgl-btn {
     width: 4.1em;
     height: 2.15em;
@@ -701,7 +704,7 @@ tr:nth-child(even) {
     margin-top: 4vh;
   }
 
-  div.gallery {
+  .gallery {
     width: 35vw;
     margin: 2vh 1vw;
   }

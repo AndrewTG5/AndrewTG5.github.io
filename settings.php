@@ -5,9 +5,11 @@
 	<?php include "php/head.php"; ?>
 
 	<?php
+	/**
+	 *  delete records from sign_ups
+	 */
 	if (isset($_GET["to_delete"])) {
 		$to_delete = $_GET["to_delete"];
-
 
 		$sql = "DELETE FROM sign_ups WHERE id=$to_delete"; //sec_user needs delete permissions
 		if ($conn->query($sql) === TRUE) {
@@ -17,12 +19,15 @@
 		} else {
 			$error = addslashes($conn->error);
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Error deleting record: $error');}, 50);",
+				"setTimeout(function () { createUIPrompt('Failed to delete record: $error');}, 50);",
 				"</script>";
 		}
 	}
 	?>
 	<?php
+	/**
+	 * signs users in
+	 */
 	if (isset($_POST["username"])) {
 		$uname = $_POST["username"];
 		$psw = $_POST["password"];
@@ -30,9 +35,9 @@
 		$sql = "SELECT * FROM users WHERE email='$uname'";
 		$result = $conn->query($sql);
 		$row = $result->fetch_assoc();
-		$status = $row["status"];
 
 		if ($result->num_rows == 1) {
+			$status = $row["status"];
 			if (password_verify($psw, $row["password"])) {
 				$_SESSION["email"] = $uname;
 				if ($status == 1) {
@@ -49,21 +54,21 @@
 					"</script>";
 			}
 		} else {
-			$error = addslashes($conn->error);
 			echo     "<script>",
-				"setTimeout(function () { createUIPrompt('Can\'t log in: $error');}, 50);",
+			"setTimeout(function () { createUIPrompt('Incorrect email');}, 50);",
 				"</script>";
 		}
 	}
 	?>
 	<style>
+		/* transition css for dark thehe toggle */
 		.bodyText {
 			-webkit-transition: background 0.15s ease;
 			-o-transition: background 0.15s ease;
 			transition: background 0.15s ease;
 		}
 
-		.sidenav {
+		.navbar {
 			-webkit-transition: background 0.15s ease;
 			-o-transition: background 0.15s ease;
 			transition: background 0.15s ease;
@@ -117,7 +122,7 @@
 </head>
 
 <body>
-	<div id="mySidenav" class="sidenav"></div>
+	<div id="myNavbar" class="navbar"></div>
 	<?php include "php/notif.php"; ?>
 	<div class="wrapper">
 		<?php
@@ -153,6 +158,7 @@
 				<br>
 			</div>
 			<?php if ($_SESSION["loggedin"] == 2) {
+				// if no one is logged in prompt user to log in
 				echo '
 			<form id="login" class="bodyText" action="settings.php" method="post">
 				<h2>Sign in to access more settings</h2>
@@ -171,6 +177,7 @@
 			</form> ';
 			} ?>
 			<?php if ($_SESSION["loggedin"] == 1) {
+				// if logged in user is admin present admin tools
 				echo '
 				<div class="bodyText">
 				<h2>Admin tools</h2>
@@ -229,7 +236,7 @@
 					if ($result->num_rows > 0) {
 						// output data of each row
 						while ($row = $result->fetch_assoc()) {
-							$id = $row["id"]; //TODO fix wrong row returned
+							$id = $row["id"]; //TODO fix club id returned instead of sign_ups
 							$name = $row["full_name"];
 							$email = $row["email"];
 							$age = $row["age"];

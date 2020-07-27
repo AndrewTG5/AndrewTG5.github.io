@@ -4,11 +4,15 @@
 <head>
     <?php include "php/head.php"; ?>
     <?php
+    /**
+     * page to make new club admin accounts. admin needs to sign in again for security.
+     */
     if (!isset($authed)) {
         $authed = 0;
     }
     ?>
     <?php
+    // checks login details
     if (isset($_POST["username"])) {
         $uname = $_POST["username"];
         $psw = $_POST["password"];
@@ -18,26 +22,28 @@
         $row = $result->fetch_assoc();
 
         if ($result->num_rows == 1) {
+            $status = $row["status"];
             if (password_verify($psw, $row["password"])) {
                 $_SESSION["email"] = $uname;
-                $_SESSION["loggedin"] = 1;
+                if ($status == 1) {
+                    $_SESSION["loggedin"] = 1;
+                } elseif ($status == 0) {
+                    $_SESSION["loggedin"] = 0;
+                }
                 $authed = 1;
-                echo     "<script>",
-                    "setTimeout(function () {createUIPrompt('Logged in');}, 50);",
-                    "</script>";
             } else {
                 echo     "<script>",
                     "setTimeout(function () { createUIPrompt('Incorrect password');}, 50);",
                     "</script>";
             }
         } else {
-            $error = addslashes($conn->error);
             echo     "<script>",
-                "setTimeout(function () { createUIPrompt('Can\'t log in: $error');}, 50);",
+                "setTimeout(function () { createUIPrompt('Incorrect email');}, 50);",
                 "</script>";
         }
     }
     if (isset($_POST["newUsername"])) {
+        // send the new account to the database
         $uname = $_POST["newUsername"];
         $fname = $_POST["fname"];
         $lname = $_POST["lname"];
@@ -53,7 +59,7 @@
         } else {
             $error = addslashes($conn->error);
             echo     "<script>",
-                "setTimeout(function () { createUIPrompt('Can\'t create account: $error');}, 50);",
+                "setTimeout(function () { createUIPrompt('Failed to create account: $error');}, 50);",
                 "</script>";
         }
     }
@@ -61,7 +67,7 @@
 </head>
 
 <body>
-    <div id="mySidenav" class="sidenav"></div>
+    <div id="myNavbar" class="navbar"></div>
     <?php include "php/notif.php"; ?>
     <div class="wrapper">
         <?php
@@ -112,7 +118,6 @@
                 </form>
                 ';
             }
-
             ?>
         </div>
     </div>

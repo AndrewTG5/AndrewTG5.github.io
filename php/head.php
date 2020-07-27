@@ -9,6 +9,9 @@
 <meta name="theme-color" content="#0094ff">
 <link rel="icon" type="image/png" href="img/favicon.png">
 <?php
+/**
+ *  creates database connection
+ */
 session_start();
 $servername = "localhost";
 $username = "sec_user";

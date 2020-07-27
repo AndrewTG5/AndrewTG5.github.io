@@ -6,7 +6,7 @@
 </head>
 
 <body>
-    <div id="mySidenav" class="sidenav"></div>
+    <div id="myNavbar" class="navbar"></div>
     <?php include "php/notif.php"; ?>
     <div class="wrapper">
         <?php
@@ -19,11 +19,13 @@
                 $sql = "SELECT * FROM clubs INNER JOIN images ON clubs.image1=images.id INNER JOIN users ON clubs.owner=users.id;";
                 $result = $conn->query($sql);
                 if ($result->num_rows > 0) {
-                    // output data of each row
                     while ($row = $result->fetch_assoc()) {
                         $title = $row["title"];
                         $image = $row["image"];
                         $owner = $row["email"];
+                        /**
+                         *  loops thorugh each record in the table and makes a gallery entry for it
+                         */
                 ?>
                         <div class="gallery">
                             <a href="clubpage.php?dest=<?php echo $title ?>">
@@ -39,6 +41,7 @@
                 ?>
 
                 <?php if ($_SESSION["loggedin"] == 1) {
+                    // if logged in user is admin let them make a new club
                     echo '
                 <div class="gallery">
                     <a href="addclub.php">
