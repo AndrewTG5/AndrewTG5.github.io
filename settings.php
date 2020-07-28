@@ -55,7 +55,7 @@
 			}
 		} else {
 			echo     "<script>",
-			"setTimeout(function () { createUIPrompt('Incorrect email');}, 50);",
+				"setTimeout(function () { createUIPrompt('Incorrect email');}, 50);",
 				"</script>";
 		}
 	}
@@ -131,12 +131,12 @@
 		?>
 		<div class="bodyContainer">
 			<div class="bodyText" style="min-width: 86%">
-				<h2 style="display:inline-block; margin: 0.6vh 0 0 0">Dark theme</h2>
+				<h2 style="display:inline-block; margin: 0.6vh 0 0 0">Dark mode</h2>
 				<input class="tgl tgl-skewed" aria-label="Dark theme" type="checkbox" id="themeSwitch" onclick="toggleTheme()" />
 				<label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="themeSwitch"></label>
 			</div>
 			<div class="bodyText">
-				<h2>Background</h2>
+				<h2>Theme</h2>
 				<div class="selectorContainer">
 					<input onclick="bgSelector('default')" type="radio" name="bg" id="default" class="input-hidden" />
 					<label for="default">
@@ -182,6 +182,7 @@
 				<div class="bodyText">
 				<h2>Admin tools</h2>
 				<a href="editImg.php">View/Delete/Add image</a>
+				<br>
 				<a href="addAdmin.php">Create new admin account</a>
 				<br>
 			</div>';
@@ -208,7 +209,7 @@
 					?>
 							<tr>
 								<td><?php print $title; ?></td>
-								<td><?php print $owner; ?></td>
+								<td style="word-break: break-all;"><?php print $owner; ?></td>
 							</tr>
 					<?php
 						}
@@ -231,12 +232,12 @@
 						<th></th>
 					</tr>
 					<?php
-					$sql = "SELECT * FROM sign_ups INNER JOIN clubs ON sign_ups.club=clubs.id;";
+					$sql = "SELECT clubs.id, sign_ups.full_name, sign_ups.email, sign_ups.age, sign_ups.club, clubs.title, sign_ups.id FROM sign_ups INNER JOIN clubs ON sign_ups.club=clubs.id;";
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 						// output data of each row
 						while ($row = $result->fetch_assoc()) {
-							$id = $row["id"]; //TODO fix club id returned instead of sign_ups
+							$id = $row["id"];
 							$name = $row["full_name"];
 							$email = $row["email"];
 							$age = $row["age"];
@@ -245,7 +246,7 @@
 							<tr>
 								<td><?php print $id; ?></td>
 								<td><?php print $name; ?></td>
-								<td><?php print $email; ?></td>
+								<td style="word-break: break-all;"><?php print $email; ?></td>
 								<td><?php print $age; ?></td>
 								<td><?php print $club; ?></td>
 								<td><a href="settings.php?to_delete=<?php echo $id; ?>#table">Delete</a></td>

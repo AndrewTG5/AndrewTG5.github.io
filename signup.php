@@ -47,7 +47,7 @@
 					<label for="email" class="form__label">Email</label>
 				</div>
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="Age" name="age" id="age" required />
+					<input type="number" class="form__field" placeholder="Age" name="age" id="age" required />
 					<label for="age" class="form__label">Age</label>
 				</div>
 				<div style="margin-top: 2vh;">

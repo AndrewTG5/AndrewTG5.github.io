@@ -254,19 +254,11 @@ a {
   box-shadow: var(--shadow16);
 }
 
-p {
-  font-size: 1.25em;
-}
-
 p,
 h1,
 h2,
 h3 {
   color: var(--mainText);
-}
-
-h2 {
-  font-size: 1.5em;
 }
 
 /* notification starts here */
@@ -577,7 +569,7 @@ input[type="submit"], input[type="button"] {
 
 footer {
   flex-shrink: 0;
-  height: 10vh;
+  height: 8vh;
   width: 92vw;
   background-color: var(--mainIMG);
   box-shadow: var(--shadow16);
@@ -608,7 +600,7 @@ th,
 td {
 	text-align: left;
 	padding: 8px;
-	color: var(--mainText);
+  color: var(--mainText);
 }
 
 tr:nth-child(even) {
@@ -617,6 +609,7 @@ tr:nth-child(even) {
 
 @media (orientation: portrait) {
   /* portrait view */
+
   .navbar a {
     font-size: 3vw;
   }
@@ -686,14 +679,6 @@ tr:nth-child(even) {
   .tgl-skewed + .tgl-btn:after,
   .tgl-skewed + .tgl-btn:before {
     line-height: 2.15em;
-  }
-
-  p {
-    font-size: 1.10em;
-  }
-
-  h2 {
-  font-size: 1.25em;
   }
 
   .signin {

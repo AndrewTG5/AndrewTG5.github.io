@@ -117,14 +117,13 @@
 			position: absolute;
 			width: 100%;
 			height: 100%;
-			padding: 0;
+			padding: 10% 0;
 			font-size: 1.25em;
 			transform: translateY(-100%);
-			color: var(--textInvert);
+			color: var(--mainText);
 			background-color: var(--mainIMG);
 			transition: transform 0.25s ease;
 			text-shadow: var(--Tshadow8);
-			padding-top: 40%;
 		}
 
 		.gallery:hover .desc {
@@ -133,6 +132,14 @@
 
 		.gallery:hover .gImg {
 			transform: translateY(-50%) scale(2);
+		}
+
+		@media (orientation: portrait) {
+			/* portrait view */
+
+			.gallery {
+				height: 35vw;
+			}
 		}
 	</style>
 </head>
@@ -153,9 +160,9 @@
 					the full list of them</p>
 			</div>
 			<div class="bodyText newsBox">
-				<h1>News</h1>
+				<h2>News</h2>
 				<?php if ($_SESSION["loggedin"] == 1) {
-					echo '<a href="addnews.php" style="font-size: 1.25em;">Create new</a>';
+					echo '<a href="addnews.php">Create new</a>';
 				} ?>
 				<?php
 				$sql = "SELECT * FROM news";
