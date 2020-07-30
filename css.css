@@ -628,7 +628,7 @@ tr:nth-child(even) {
   .sticky {
     top: 0;
   }
-
+  
   .bodyContainer {
     margin-top: 2vh;
   }
@@ -667,8 +667,8 @@ tr:nth-child(even) {
   }
 
   .banner {
-    width: 140px;
-    height: 90px;
+  width: 240px;
+  height: 20px;
   }
 
   .tgl + .tgl-btn {
