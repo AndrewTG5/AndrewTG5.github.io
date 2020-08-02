@@ -232,7 +232,7 @@
 						<th></th>
 					</tr>
 					<?php
-					$sql = "SELECT clubs.id, sign_ups.full_name, sign_ups.email, sign_ups.age, sign_ups.club, clubs.title, sign_ups.id FROM sign_ups INNER JOIN clubs ON sign_ups.club=clubs.id;";
+					$sql = "SELECT clubs.id, sign_ups.full_name, sign_ups.email, sign_ups.age, sign_ups.club, clubs.title, sign_ups.id FROM sign_ups INNER JOIN clubs ON sign_ups.club=clubs.id ORDER BY sign_ups.id;";
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
 						// output data of each row
