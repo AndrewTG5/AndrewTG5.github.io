@@ -261,9 +261,9 @@ h3 {
   color: var(--mainText);
 }
 
-/* notification starts here */
+/* notif starts here */
 
-.banner {
+.notif {
   /* notification box */
   bottom: -8vw;
   opacity: 0;
@@ -306,7 +306,7 @@ h3 {
   color: var(--textInvert);
 }
 
-/* banner ends here */
+/* notif ends here */
 /* input boxes start here */
 
 .form__group {
@@ -666,7 +666,7 @@ tr:nth-child(even) {
     display: block;
   }
 
-  .banner {
+  .notif {
   width: 240px;
   height: 20px;
   }

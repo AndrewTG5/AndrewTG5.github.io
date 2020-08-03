@@ -4,11 +4,14 @@
 <head>
 	<?php include "php/head.php"; ?>
 	<?php
-	if (isset($_GET["date"])) {
-		$date = $_GET["date"];
+	// delete news prepared statement
+	$delnews = $conn->prepare("DELETE FROM news WHERE id=?");
+	$delnews->bind_param("i", $id);
 
-		$sql = "DELETE FROM news WHERE date='$date'"; //sec_user needs delete permissions
-		if ($conn->query($sql) === TRUE) {
+	if (isset($_GET["id"])) {
+		$id = $_GET["id"];
+
+		if ($delnews->execute()) {
 			echo     "<script>",
 				"setTimeout(function () { createUIPrompt('News deleted');}, 50);",
 				"</script>";
@@ -18,6 +21,7 @@
 				"setTimeout(function () { createUIPrompt('Failed to delete news: $error');}, 50);",
 				"</script>";
 		}
+		$delnews->close();
 	}
 	?>
 	<style>
@@ -165,17 +169,18 @@
 					echo '<a href="addnews.php">Create new</a>';
 				} ?>
 				<?php
-				$sql = "SELECT * FROM news";
+				$sql = "SELECT * FROM news ORDER BY id DESC";
 				$result = $conn->query($sql);
 				if ($result->num_rows > 0) {
 					// output data of each row
 					while ($row = $result->fetch_assoc()) {
 						$date = date("F j, Y g:i a", strtotime($row["date"]));
 						$content = $row["content"];
+						$id = $row["id"];
 				?>
 						<h3><?php echo $date ?></h3>
 						<?php if ($_SESSION["loggedin"] == 1) {
-							echo '<a href="index.php?date=' . $date . '" style="float: right">Delete</a>';
+							echo '<a href="index.php?id=' . $id . '" style="float: right">Delete</a>';
 						} ?>
 						<p><?php echo $content ?></p>
 				<?php

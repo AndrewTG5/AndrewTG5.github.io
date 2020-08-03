@@ -32,22 +32,22 @@ function bgSelector(background) {
 
 // eslint-disable-next-line no-unused-vars
 function createUIPrompt(message) {
-  const banner = document.getElementById('banner');
-  banner.innerHTML += message;
-  banner.style.display = 'initial';
+  const notif = document.getElementById('notif');
+  notif.innerHTML += message;
+  notif.style.display = 'initial';
   setTimeout(function() {
-    banner.style.bottom = '4vw';
-    banner.style.opacity = '1';
+    notif.style.bottom = '4vw';
+    notif.style.opacity = '1';
   }, 100);
 }
 
 // eslint-disable-next-line no-unused-vars
 function dismissUIPrompt() {
-  const banner = document.getElementById('banner');
-  banner.style.bottom = '-8vw';
-  banner.style.opacity = '0';
+  const notif = document.getElementById('notif');
+  notif.style.bottom = '-8vw';
+  notif.style.opacity = '0';
   setTimeout(function() {
-    banner.style.display = 'none';
+    notif.style.display = 'none';
   }, 500);
 }
 

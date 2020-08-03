@@ -4,13 +4,14 @@
 <head>
 	<?php include "php/head.php"; ?>
 	<?php
+	// add news prepared statement
+	$addnews = $conn->prepare("INSERT INTO news (content) VALUES (?)");
+	$addnews->bind_param("s", $content);
+
 	if (isset($_POST["content"])) {
 		$content = $_POST["content"];
 
-		$sql = "INSERT INTO news (content)
-    		VALUES ('$content')";
-
-		if ($conn->query($sql) === true) {
+		if ($addnews->execute()) {
 			echo 	"<script>",
 				"setTimeout(function () {createUIPrompt('News created');}, 50);",
 				"</script>";
@@ -20,6 +21,7 @@
 				"setTimeout(function () { createUIPrompt('Failed to create news: $error');}, 50);",
 				"</script>";
 		}
+		$addnews->close();
 	}
 	?>
 	<script src="https://cdn.tiny.cloud/1/u1vfk8m72ii6gn3b521dfnuyvi517yjvhpc11gijfk2r1m0k/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>

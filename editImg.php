@@ -4,11 +4,17 @@
 <head>
     <?php include "php/head.php"; ?>
     <?php
+    // delete image prepared statement
+    $delimage = $conn->prepare("DELETE FROM images WHERE name=?");
+    $delimage->bind_param("s", $to_delete);
+    // add image prepared statment
+    $addimage = $conn->prepare("INSERT INTO images (image, name) VALUES(?, ?)");
+    $addimage->bind_param("ss", $image, $name);
+
     if (isset($_GET["delete"])) {
         $to_delete = $_GET["delete"];
 
-        $sql = "DELETE FROM images WHERE name='$to_delete'"; //sec_user needs delete permissions
-        if ($conn->query($sql) === TRUE) {
+        if ($delimage->execute()) {
             echo     "<script>",
                 "setTimeout(function () { createUIPrompt('Image deleted');}, 50);",
                 "</script>";
@@ -18,6 +24,7 @@
                 "setTimeout(function () { createUIPrompt('Failed to delete image: $error');}, 50);",
                 "</script>";
         }
+        $delimage->close();
     }
     ?>
     <?php
@@ -30,9 +37,9 @@
         // convert to base64 
         $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
         $image = 'data:image/' . $imageFileType . ';base64,' . $image_base64;
+        
         // insert record
-        $sql = "INSERT INTO images (image, name) VALUES('$image', '$name')";
-        if ($conn->query($sql) === true) {
+        if ($addimage->execute()) {
             echo     "<script>",
                 "setTimeout(function () {createUIPrompt('Image uploaded');}, 50);",
                 "</script>";
@@ -42,6 +49,7 @@
                 "setTimeout(function () { createUIPrompt('Failed to upload image: $error');}, 50);",
                 "</script>";
         }
+        $addimage->close();
     }
     ?>
     <script>

@@ -4,7 +4,15 @@
 <head>
 	<?php include "php/head.php"; ?>
 	<?php
-	if (isset($_POST["page"]) && !isset($_GET["title"])) {
+	// submit new club prepared statement
+	$addclub = $conn->prepare("INSERT INTO clubs (title, main_para1, image1, para1, owner) VALUES (?, ?, ?, ?, ?)");
+	$addclub->bind_param("ssisi", $title, $main_para1, $image1, $para1, $owner);
+	// update club prepared statement
+	$updateclub = $conn->prepare("UPDATE clubs SET title=?, main_para1=?, image1=?, para1=?, owner=? WHERE title=?");
+	$updateclub->bind_param("ssisis", $newtitle, $dmain_para1, $image1, $dpara1, $owner, $target );
+			
+
+	if (isset($_POST["title"]) && !isset($_GET["title"])) {
 		//	submitting a new club
 		$title = $conn->real_escape_string($_POST["title"]);
 		$main_para1 = $conn->real_escape_string($_POST["main_para1"]);
@@ -13,10 +21,7 @@
 		$owner = $_POST['owner'];
 		$intent = '';
 
-		$sql = "INSERT INTO clubs (title, main_para1, image1, para1, owner)
-    		VALUES ('$title', '$main_para1', '$image1', '$para1', '$owner')";
-
-		if ($conn->query($sql) === true) {
+		if ($addclub->execute()) {
 			echo 	"<script>",
 				"setTimeout(function () { createUIPrompt('Club created');}, 50);",
 				"</script>";
@@ -26,6 +31,7 @@
 				"setTimeout(function () { createUIPrompt('Failed to create club: $error');}, 50);",
 				"</script>";
 		}
+		$addclub->close();
 	} elseif (isset($_GET["edit"])) {
 		// when editing a club
 		$dest = $_GET['edit'];
@@ -57,9 +63,7 @@
 		$dmain_para1 = $conn->real_escape_string($_POST["main_para1"]);
 		$dpara1 = $conn->real_escape_string($_POST["para1"]);
 
-		$sql = "UPDATE clubs SET title='$newtitle', main_para1='$dmain_para1', image1='$image1', para1='$dpara1', owner='$owner' WHERE title='$target'";
-
-		if ($conn->query($sql) === true) {
+		if ($updateclub->execute()) {
 			echo 	"<script>",
 				"setTimeout(function () { createUIPrompt('Club updated');}, 50);",
 				"</script>";
@@ -69,6 +73,7 @@
 				"setTimeout(function () { createUIPrompt('Failed to update club: $error');}, 50);",
 				"</script>";
 		}
+		$updateclub->close();
 		$sql = "SELECT * FROM clubs WHERE title='$newtitle'";
 		$result = $conn->query($sql);
 

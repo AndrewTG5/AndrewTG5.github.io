@@ -6,13 +6,15 @@
 
 	<?php
 	/**
-	 *  delete records from sign_ups
+	 *  delete records from sign_ups and prepared statement
 	 */
+	$delsignup = $conn->prepare("DELETE FROM sign_ups WHERE id=?");
+	$delsignup->bind_param("i", $to_delete);
+
 	if (isset($_GET["to_delete"])) {
 		$to_delete = $_GET["to_delete"];
-
-		$sql = "DELETE FROM sign_ups WHERE id=$to_delete"; //sec_user needs delete permissions
-		if ($conn->query($sql) === TRUE) {
+		
+		if ($delsignup->execute()) {
 			echo 	"<script>",
 				"setTimeout(function () { createUIPrompt('Record deleted');}, 50);",
 				"</script>";
@@ -22,6 +24,7 @@
 				"setTimeout(function () { createUIPrompt('Failed to delete record: $error');}, 50);",
 				"</script>";
 		}
+		$delsignup->close();
 	}
 	?>
 	<?php

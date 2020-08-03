@@ -12,6 +12,11 @@
     }
     ?>
     <?php
+    // prepared statement
+    $addacc = $conn->prepare("INSERT INTO users (email, password, first_name, last_name, status) VALUES (?, ?, ?, ?, ?)");
+    $addacc->bind_param("sssss", $uname, $psw, $fname, $lname, $zero);
+    $zero = 0;
+
     // checks login details
     if (isset($_POST["username"])) {
         $uname = $_POST["username"];
@@ -49,10 +54,7 @@
         $lname = $_POST["lname"];
         $psw = password_hash($_POST["newPassword"], PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO users (email, password, first_name, last_name, status)
-    		VALUES ('$uname', '$psw', '$fname', '$lname', 0)";
-
-        if ($conn->query($sql) === true) {
+        if ($addacc->execute()) {
             echo     "<script>",
                 "setTimeout(function () {createUIPrompt('Account created');}, 50);",
                 "</script>";
@@ -62,6 +64,7 @@
                 "setTimeout(function () { createUIPrompt('Failed to create account: $error');}, 50);",
                 "</script>";
         }
+        $addacc->close();
     }
     ?>
 </head>
@@ -98,15 +101,15 @@
                      <form id="login" class="bodyText" action="addAdmin.php" method="post">
                     <h2>Create new admin account</h2>
                     <div class="form__group field">
-                        <input type="input" class="form__field" placeholder="First name" name="fname" id="fname" required />
+                        <input type="input" class="form__field" placeholder="First name" name="fname" id="fname" autocomplete="off" required />
                         <label for="username" class="form__label">First name</label>
                     </div>
                     <div class="form__group field">
-                        <input type="input" class="form__field" placeholder="Last namel" name="lname" id="lname" required />
+                        <input type="input" class="form__field" placeholder="Last namel" name="lname" id="lname" autocomplete="off" required />
                         <label for="username" class="form__label">Last name</label>
                     </div>
                     <div class="form__group field">
-                        <input type="input" class="form__field" placeholder="Email" name="newUsername" id="email" required />
+                        <input type="input" class="form__field" placeholder="Email" name="newUsername" id="email" autocomplete="off" required />
                         <label for="email" class="form__label">Email</label>
                     </div>
                     <div class="form__group field">

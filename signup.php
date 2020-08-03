@@ -4,16 +4,17 @@
 <head>
 	<?php include "php/head.php"; ?>
 	<?php
+	// add signup prepared statement
+	$addsignup = $conn->prepare("INSERT INTO sign_ups (full_name, email, age, club) VALUES (?, ?, ?, ?)");
+	$addsignup->bind_param("ssii", $name, $email, $age, $club);
+	
 	if (isset($_POST["name"])) {
 		$name = $_POST["name"];
 		$email = $_POST["email"];
 		$age = $_POST["age"];
 		$club = $_POST["club"];
 
-		$sql = "INSERT INTO sign_ups (full_name, email, age, club)
-    		VALUES ('$name', '$email', '$age', '$club')";
-
-		if ($conn->query($sql) === true) {
+		if ($addsignup->execute()) {
 			echo 	"<script>",
 				"setTimeout(function () {createUIPrompt('Record created');}, 50);",
 				"</script>";
@@ -23,6 +24,7 @@
 				"setTimeout(function () { createUIPrompt('Error creating record: $error');}, 50);",
 				"</script>";
 		}
+		$addsignup->close();
 	}
 	?>
 
