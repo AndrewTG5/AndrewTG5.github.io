@@ -143,19 +143,19 @@
 				<div class="selectorContainer">
 					<input onclick="bgSelector('default')" type="radio" name="bg" id="default" class="input-hidden" />
 					<label for="default">
-						<div class="default" style="width:13vw; height:13vw"></div>
+						<div class="default selector"></div>
 					</label>
 					<input onclick="bgSelector('mint')" type="radio" name="bg" id="mint" class="input-hidden" />
 					<label for="mint">
-						<div class="mint" style="width:13vw; height:13vw"></div>
+						<div class="mint selector"></div>
 					</label>
 					<input onclick="bgSelector('rain')" type="radio" name="bg" id="rain" class="input-hidden" />
 					<label for="rain">
-						<div class="rain" style="width:13vw; height:13vw"></div>
+						<div class="rain selector"></div>
 					</label>
 					<input onclick="bgSelector('charcoal')" type="radio" name="bg" id="charcoal" class="input-hidden" />
 					<label for="charcoal">
-						<div class="charcoal" style="width:13vw; height:13vw"></div>
+						<div class="charcoal selector"></div>
 					</label>
 				</div>
 				<br>

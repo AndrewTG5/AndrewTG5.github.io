@@ -57,6 +57,12 @@ body {
   background-attachment: fixed;
 }
 
+.selector {
+  width:13vw; 
+  height:13vw;
+
+}
+
 .selectorContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -149,13 +155,18 @@ a {
 
 .titleRow {
   /* title and signin div */
-  margin: 0.5% 2% 1vh 2%;
-  width: 100%;
+  margin: 0.5% 2% 1vh 1%;
+  width: 101%;
   height: 8vh;
 }
 
 .titleRow a {
   float: right;
+}
+
+.titleRow img {
+  height:6vh; 
+  float: left;
 }
 
 .title {
@@ -435,10 +446,11 @@ input[type="submit"], input[type="button"] {
 }
 
 .desc {
-  /* gallery image description */
+  /* gallery image description overlay */
   padding: 15px;
   text-align: center;
   color: var(--mainText);
+  backdrop-filter: blur(2px);
 }
 
 /* toggle button starts here */
@@ -610,6 +622,11 @@ tr:nth-child(even) {
 @media (orientation: portrait) {
   /* portrait view */
 
+  .selector {
+    width:18vw; 
+    height:18vw;
+  }
+
   .navbar a {
     font-size: 3vw;
   }
@@ -635,6 +652,16 @@ tr:nth-child(even) {
 
   .title {
     display: none;
+  }
+
+  .titleRow img {
+    height: 5vh; 
+    padding-top: 0.2vh;
+  }
+
+  .titleRow {
+    margin: 0.5% 2% 1vh 0;
+    width: 102%;
   }
 
   .ImgContainer {
@@ -667,8 +694,8 @@ tr:nth-child(even) {
   }
 
   .notif {
-  width: 240px;
-  height: 20px;
+    width: 240px;
+    height: 20px;
   }
 
   .tgl + .tgl-btn {

@@ -45,7 +45,7 @@
 					<label for="name" class="form__label">Full name</label>
 				</div>
 				<div class="form__group field">
-					<input type="input" class="form__field" placeholder="last name" name="email" id="email" required />
+					<input type="email" class="form__field" placeholder="last name" name="email" id="email" required />
 					<label for="email" class="form__label">Email</label>
 				</div>
 				<div class="form__group field">

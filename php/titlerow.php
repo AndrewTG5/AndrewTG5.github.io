@@ -23,7 +23,7 @@ if (isset($_SESSION["loggedin"])) {
 
 <div class="titleRow">
     <a href="index.php" style="text-decoration: none; float: left;">
-    <img src="img/favicon.png" style="height:6vh; float: left;">
+    <img src="img/favicon.png">
     <h1 class="title"><?php print $head; ?></h1>
     </a>
     <div class="signin">
