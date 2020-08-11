@@ -9,8 +9,8 @@
 	$addclub->bind_param("ssisi", $title, $main_para1, $image1, $para1, $owner);
 	// update club prepared statement
 	$updateclub = $conn->prepare("UPDATE clubs SET title=?, main_para1=?, image1=?, para1=?, owner=? WHERE title=?");
-	$updateclub->bind_param("ssisis", $newtitle, $dmain_para1, $image1, $dpara1, $owner, $target );
-			
+	$updateclub->bind_param("ssisis", $newtitle, $dmain_para1, $image1, $dpara1, $owner, $target);
+
 
 	if (isset($_POST["title"]) && !isset($_GET["title"])) {
 		//	submitting a new club
@@ -21,15 +21,24 @@
 		$owner = $_POST['owner'];
 		$intent = '';
 
-		if ($addclub->execute()) {
+		// check for duplication, if none, insert record
+		$sql = "SELECT * FROM clubs WHERE title='$title'";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Club created');}, 50);",
+				"setTimeout(function () {createUIPrompt('A club with that name already exists');}, 50);",
 				"</script>";
 		} else {
-			$error = addslashes($conn->error);
-			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Failed to create club: $error');}, 50);",
-				"</script>";
+			if ($addclub->execute()) {
+				echo 	"<script>",
+					"setTimeout(function () { createUIPrompt('Club created');}, 50);",
+					"</script>";
+			} else {
+				$error = addslashes($conn->error);
+				echo 	"<script>",
+					"setTimeout(function () { createUIPrompt('Failed to create club: $error');}, 50);",
+					"</script>";
+			}
 		}
 		$addclub->close();
 	} elseif (isset($_GET["edit"])) {
@@ -122,7 +131,7 @@
 				</div>
 				<div style="margin-top: 2vh;">
 					<label for="image1" style="color: var(--mainText)">Image 1</label>
-					<select id="image1" name="image1">
+					<select id="image1" name="image1" required> //TODO required not working
 						<?php
 						$sql = "SELECT * FROM images";
 						$result = $conn->query($sql);
@@ -153,7 +162,7 @@
 												echo 'display:none';
 											} ?>;">
 					<label for="owner" style="color: var(--mainText)">Club owner</label>
-					<select id="owner" name="owner">
+					<select id="owner" name="owner" required> //TODO required not working
 						<?php
 						$sql = "SELECT * FROM users";
 						$result = $conn->query($sql);

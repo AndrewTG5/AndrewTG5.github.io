@@ -54,15 +54,25 @@
         $lname = $_POST["lname"];
         $psw = password_hash($_POST["newPassword"], PASSWORD_DEFAULT);
 
-        if ($addacc->execute()) {
+        // check for duplication, if none, insert record
+        $sql = "SELECT * FROM users WHERE email='$uname'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0
+        ) {
             echo     "<script>",
-                "setTimeout(function () {createUIPrompt('Account created');}, 50);",
+                "setTimeout(function () {createUIPrompt('This user already exits');}, 50);",
                 "</script>";
         } else {
-            $error = addslashes($conn->error);
-            echo     "<script>",
-                "setTimeout(function () { createUIPrompt('Failed to create account: $error');}, 50);",
-                "</script>";
+            if ($addacc->execute()) {
+                echo     "<script>",
+                    "setTimeout(function () {createUIPrompt('Account created');}, 50);",
+                    "</script>";
+            } else {
+                $error = addslashes($conn->error);
+                echo     "<script>",
+                    "setTimeout(function () { createUIPrompt('Failed to create account: $error');}, 50);",
+                    "</script>";
+            }
         }
         $addacc->close();
     }

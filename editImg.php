@@ -37,17 +37,25 @@
         // convert to base64 
         $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']));
         $image = 'data:image/' . $imageFileType . ';base64,' . $image_base64;
-        
-        // insert record
-        if ($addimage->execute()) {
+
+        // check for duplication, if none, insert record
+        $sql = "SELECT * FROM images WHERE image='$image'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
             echo     "<script>",
-                "setTimeout(function () {createUIPrompt('Image uploaded');}, 50);",
+                "setTimeout(function () {createUIPrompt('Image already exists in database');}, 50);",
                 "</script>";
         } else {
-            $error = addslashes($conn->error);
-            echo     "<script>",
-                "setTimeout(function () { createUIPrompt('Failed to upload image: $error');}, 50);",
-                "</script>";
+            if ($addimage->execute()) {
+                echo     "<script>",
+                    "setTimeout(function () {createUIPrompt('Image uploaded');}, 50);",
+                    "</script>";
+            } else {
+                $error = addslashes($conn->error);
+                echo     "<script>",
+                    "setTimeout(function () { createUIPrompt('Failed to upload image: $error');}, 50);",
+                    "</script>";
+            }
         }
         $addimage->close();
     }
@@ -79,7 +87,7 @@
             <form class="bodyText" action="editImg.php" method="post" enctype="multipart/form-data">
                 <h2>Select image to upload:</h2>
                 <p>Max 1MB</p>
-                <input type="file" name="file" id="file" accept="image/*" required>
+                <input type="file" name="file" id="file" accept="image/*" style="color: var(--mainText)" required>
                 <div style="margin-top: 2vh;">
                     <input type="submit" value="Submit" name="submit">
                 </div>

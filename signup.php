@@ -14,15 +14,25 @@
 		$age = $_POST["age"];
 		$club = $_POST["club"];
 
-		if ($addsignup->execute()) {
+		// check for duplication, if none, insert record
+		$sql = "SELECT * FROM sign_ups WHERE email='$email' AND club='$club'";
+		$result = $conn->query($sql);
+		if ($result->num_rows > 0) {
 			echo 	"<script>",
-				"setTimeout(function () {createUIPrompt('Record created');}, 50);",
+				"setTimeout(function () {createUIPrompt('You have already signed up for this club');}, 50);",
 				"</script>";
+
 		} else {
-			$error = addslashes($conn->error);
-			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Error creating record: $error');}, 50);",
-				"</script>";
+			if ($addsignup->execute()) {
+				echo 	"<script>",
+					"setTimeout(function () {createUIPrompt('Record created');}, 50);",
+					"</script>";
+			} else {
+				$error = addslashes($conn->error);
+				echo 	"<script>",
+					"setTimeout(function () { createUIPrompt('Error creating record: $error');}, 50);",
+					"</script>";
+			}
 		}
 		$addsignup->close();
 	}
