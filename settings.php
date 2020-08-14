@@ -184,7 +184,7 @@
 				echo '
 				<div class="bodyText">
 				<h2>Admin tools</h2>
-				<a href="editImg.php">View/Delete/Add image</a>
+				<a href="editImg.php">Manage images</a>
 				<br>
 				<a href="addAdmin.php">Create new admin account</a>
 				<br>

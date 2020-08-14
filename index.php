@@ -81,28 +81,6 @@
 			}
 		}
 	</style>
-	<script>
-		document.addEventListener('DOMContentLoaded', (_event) => {
-			//	creates index image gallery
-			const imgSrc = ['img/e1.jpg', 'img/e2.jpg', 'img/r1.jpg', 'img/r2.jpg', 'img/r3.jpg', 'img/r4.jpg', 'img/r5.jpg', 'img/r6.jpg', 'img/r7.jpg'];
-			const imgTitle = ['Evolocity solar powered trike', 'Evolocity race day', 'Robotics robot scoring', 'Robotics robot collecting rings', 'Robotics tweaking the robot', 'Robotics climbing course', 'Robotics team designing and building in the holidays', 'Robotics Katikati competes in Palmerston North', 'Robotics robot climbing the ladder'];
-			let i;
-			for (i = 0; i < imgSrc.length; i++) {
-				const div = document.createElement('div');
-				const inDiv = document.createElement('div');
-				const img = document.createElement('img');
-				div.className = "gallery";
-				inDiv.className = "desc";
-				img.className = "gImg";
-				img.alt = "";
-				div.appendChild(img);
-				div.appendChild(inDiv);
-				inDiv.innerHTML = imgTitle[i];
-				img.src = imgSrc[i];
-				document.getElementById('gallery').appendChild(div);
-			}
-		})
-	</script>
 	<style>
 		.gallery {
 			position: relative;
@@ -190,6 +168,23 @@
 			</div>
 		</div>
 		<div class="galleryContainer" id="gallery">
+			<?php
+			$sql = "SELECT * FROM IMAGES";
+			$result = $conn->query($sql);
+			if ($result->num_rows > 0) {
+				// output data of each row
+				while ($row = $result->fetch_assoc()) {
+					$image = $row['image'];
+					$desc = $row['description'];
+			?>
+					<div class="gallery">
+						<img src="<?php echo $image ?>" alt="" class="gImg">
+						<div class="desc"><?php echo $desc ?></div>
+					</div>
+			<?php
+				}
+			}
+			?>
 		</div>
 	</div>
 	<?php include "php/footer.php" ?>

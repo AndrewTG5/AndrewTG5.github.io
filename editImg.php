@@ -8,8 +8,8 @@
     $delimage = $conn->prepare("DELETE FROM images WHERE name=?");
     $delimage->bind_param("s", $to_delete);
     // add image prepared statment
-    $addimage = $conn->prepare("INSERT INTO images (image, name) VALUES(?, ?)");
-    $addimage->bind_param("ss", $image, $name);
+    $addimage = $conn->prepare("INSERT INTO images (name, image, club_id, description) VALUES(?, ?, ?, ?)");
+    $addimage->bind_param("ssis", $name, $image, $clubid, $desc);
 
     if (isset($_GET["delete"])) {
         $to_delete = $_GET["delete"];
@@ -30,6 +30,8 @@
     <?php
     if (isset($_POST['submit'])) {
         $name = $_FILES['file']['name'];
+        $clubid = $_POST['club'];
+        $desc = $_POST['desc'];
 
         // get file type from uploaded file
         $imageFileType = explode('/', $_FILES['file']['type'])[1];
@@ -88,7 +90,27 @@
                 <h2>Select image to upload:</h2>
                 <p>Max 1MB</p>
                 <input type="file" name="file" id="file" accept="image/*" style="color: var(--mainText)" required>
+                <div class="form__group field">
+                    <input type="input" class="form__field" placeholder="Description" name="desc" id="desc" required/>
+                    <label for="desc" class="form__label">Description</label>
+                </div>
                 <div style="margin-top: 2vh;">
+                    <label for="club" style="color: var(--mainText)">Club</label>
+                    <select id="club" name="club">
+                        <?php
+                        $sql = "SELECT * FROM clubs";
+                        $result = $conn->query($sql);
+                        if ($result->num_rows > 0) {
+                            while ($row = $result->fetch_assoc()) {
+                                $title = $row["title"];
+                                $id = $row["id"];
+                        ?>
+                                <option value="<?php echo $id ?>"><?php echo $title ?></option>
+                        <?php
+                            }
+                        }
+                        ?>
+                    </select>
                     <input type="submit" value="Submit" name="submit">
                 </div>
             </form>
