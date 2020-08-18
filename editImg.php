@@ -97,6 +97,7 @@
                 <div style="margin-top: 2vh;">
                     <label for="club" style="color: var(--mainText)">Club</label>
                     <select id="club" name="club">
+                        <option value="0">None</option>
                         <?php
                         $sql = "SELECT * FROM clubs";
                         $result = $conn->query($sql);

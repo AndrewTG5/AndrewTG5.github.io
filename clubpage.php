@@ -66,9 +66,21 @@
 						<img src="<?php echo $image ?>" alt="<?php echo $desc ?>" id="slide-<?php echo ++$i ?>">
 				<?php
 					}
+				}
+				$sql = "SELECT * FROM clubs INNER JOIN images ON clubs.image1=images.id WHERE title='$dest';";
+				$result = $conn->query($sql);
+				if ($result->num_rows > 0) {
+					// output data of each row
+					while ($row = $result->fetch_assoc()) {
+						$image = $row['image'];
+						$desc = $row['description'];
+				?>
+						<img src="<?php echo $image ?>" alt="<?php echo $desc ?>">
+				<?php
+					}
 					echo "<script>",
-						"setMax($i);",
-						"</script>";
+					"setMax($i);",
+					"</script>";
 				}
 				?>
 			</div>
