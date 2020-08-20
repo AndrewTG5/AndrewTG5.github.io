@@ -21,18 +21,18 @@
 	}
 	?>
 	<script>
-		let max;
-		let i = 2	;
+		let i = 2;
 
 		function setMax(val) {
-			max = val;
 			window.setInterval(function() {
-				if (i > max) {
+				if (i > val) {
 					i = 1;
 				}
 				let view = "slide-" + i;
-				window.location.hash = view; //	TODO fix on mobile
-				i++;
+				if (window.matchMedia('(orientation: landscape)').matches) {
+					document.getElementById(view).scrollIntoView({block: 'nearest', inline: 'nearest'});
+					i++;
+				}
 			}, 4000);
 		}
 	</script>
@@ -64,7 +64,7 @@
 						$desc = $row['description'];
 				?>
 						<img src="<?php echo $image ?>" alt="<?php echo $desc ?>" id="slide-<?php echo ++$i ?>">
-				<?php
+					<?php
 					}
 				}
 				$sql = "SELECT * FROM clubs INNER JOIN images ON clubs.image1=images.id WHERE title='$dest';";
@@ -74,13 +74,13 @@
 					while ($row = $result->fetch_assoc()) {
 						$image = $row['image'];
 						$desc = $row['description'];
-				?>
+					?>
 						<img src="<?php echo $image ?>" alt="<?php echo $desc ?>">
 				<?php
 					}
 					echo "<script>",
-					"setMax($i);",
-					"</script>";
+						"setMax($i);",
+						"</script>";
 				}
 				?>
 			</div>

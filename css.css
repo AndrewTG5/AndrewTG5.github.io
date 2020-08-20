@@ -278,7 +278,7 @@ a {
   align-self: center;
 }
 
-.bodyImg::-webkit-scrollbar { /* TODO cross broswer test */
+.bodyImg::-webkit-scrollbar {
     display: none;
 }
 
