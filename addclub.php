@@ -131,12 +131,15 @@
 				</div>
 				<div style="margin-top: 2vh;">
 					<label for="image1" style="color: var(--mainText)">Image 1</label>
-					<select id="image1" name="image1" required> //TODO required not working
+					<select id="image1" name="image1" required>
 						<?php
 						$sql = "SELECT * FROM images";
 						$result = $conn->query($sql);
 
 						if ($result->num_rows > 0) {
+							if (!isset($iselected)) {
+								echo '<option value="" selected disabled hidden>Choose here</option>';
+							}
 							while ($row = $result->fetch_assoc()) {
 								$image = $row["image"];
 								$name = $row["name"];
@@ -147,9 +150,6 @@
 																		echo 'selected="selected"';
 																	} ?>><?php echo $name ?></option>
 						<?php
-							}
-							if (!isset($iselected)) {
-								echo '<option value="" selected disabled hidden>Choose here</option>';
 							}
 						}
 						?>
@@ -162,11 +162,14 @@
 												echo 'display:none';
 											} ?>;">
 					<label for="owner" style="color: var(--mainText)">Club owner</label>
-					<select id="owner" name="owner" required> //TODO required not working
+					<select id="owner" name="owner" required>
 						<?php
 						$sql = "SELECT * FROM users";
 						$result = $conn->query($sql);
 						if ($result->num_rows > 0) {
+							if (!isset($aselected)) {
+								echo '<option value="" selected disabled hidden>Choose here</option>';
+							}
 							while ($row = $result->fetch_assoc()) {
 								$email = $row["email"];
 								$id = $row["id"];
@@ -176,9 +179,6 @@
 																		echo 'selected="selected"';
 																	}  ?>><?php echo $email ?></option>
 						<?php
-							}
-							if (!isset($aselected)) {
-								echo '<option value="" selected disabled hidden>Choose here</option>';
 							}
 						}
 						?>
