@@ -138,8 +138,8 @@
 			<div class="bodyText newsBody">
 				<h2>Welcome to KKC clubs</h2>
 				<p>This website showcases clubs available to join in Katikati College.</p>
-				<p>There are more than 2 clubs available, click the Clubs button or <a href="clubs.php">here</a> to see
-					the full list of them</p>
+				<p>There are several clubs available, click the Clubs button or <a href="clubs.php">here</a> to see
+					the full list of them. You can sign up to them from the Signup button.</p>
 			</div>
 			<div class="bodyText newsBox">
 				<h2>News</h2>

@@ -39,6 +39,9 @@ function createUIPrompt(message) {
     notif.style.bottom = '4vw';
     notif.style.opacity = '1';
   }, 100);
+  setTimeout(function() {
+    dismissUIPrompt();
+  }, 5000);
 }
 
 // eslint-disable-next-line no-unused-vars
