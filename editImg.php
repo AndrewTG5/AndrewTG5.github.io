@@ -16,7 +16,7 @@
 
         if ($delimage->execute()) {
             echo     "<script>",
-                "setTimeout(function () { createUIPrompt('Image deleted');}, 50);",
+                "setTimeout(function () { createUIPrompt('Image \'<b>$to_delete</b>\' deleted');}, 50);",
                 "</script>";
         } else {
             $error = addslashes($conn->error);

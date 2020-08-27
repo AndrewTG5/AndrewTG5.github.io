@@ -26,7 +26,7 @@
 		$result = $conn->query($sql);
 		if ($result->num_rows > 0) {
 			echo 	"<script>",
-				"setTimeout(function () {createUIPrompt('A club with that name already exists');}, 50);",
+				"setTimeout(function () {createUIPrompt('A club named \'<b>$title</b>\' already exists');}, 50);",
 				"</script>";
 		} else {
 			if ($addclub->execute()) {

@@ -16,7 +16,7 @@
 		
 		if ($delsignup->execute()) {
 			echo 	"<script>",
-				"setTimeout(function () { createUIPrompt('Record deleted');}, 50);",
+				"setTimeout(function () { createUIPrompt('Sign up record deleted');}, 50);",
 				"</script>";
 		} else {
 			$error = addslashes($conn->error);
@@ -64,7 +64,7 @@
 	}
 	?>
 	<style>
-		/* transition css for dark thehe toggle */
+		/* transition css for dark theme toggle */
 		.bodyText {
 			-webkit-transition: background 0.15s ease;
 			-o-transition: background 0.15s ease;

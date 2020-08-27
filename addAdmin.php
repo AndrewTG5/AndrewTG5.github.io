@@ -60,7 +60,7 @@
         if ($result->num_rows > 0
         ) {
             echo     "<script>",
-                "setTimeout(function () {createUIPrompt('This user already exits');}, 50);",
+                "setTimeout(function () {createUIPrompt('The user \'<b>$uname</b>\' already exits');}, 50);",
                 "</script>";
         } else {
             if ($addacc->execute()) {

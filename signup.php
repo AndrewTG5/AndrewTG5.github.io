@@ -25,12 +25,12 @@
 		} else {
 			if ($addsignup->execute()) {
 				echo 	"<script>",
-					"setTimeout(function () {createUIPrompt('Record created');}, 50);",
+					"setTimeout(function () {createUIPrompt('Sign up successful');}, 50);",
 					"</script>";
 			} else {
 				$error = addslashes($conn->error);
 				echo 	"<script>",
-					"setTimeout(function () { createUIPrompt('Error creating record: $error');}, 50);",
+					"setTimeout(function () { createUIPrompt('Error signing up: $error');}, 50);",
 					"</script>";
 			}
 		}
