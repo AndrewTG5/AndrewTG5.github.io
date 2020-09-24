@@ -272,6 +272,7 @@ a {
 
 .bodyImg {
   /* image box */
+  position: relative;
   max-width: 25%;
   max-height: 25%;
   margin: 2%;
@@ -311,6 +312,28 @@ h1,
 h2,
 h3 {
   color: var(--mainText);
+}
+
+.icon-tabler-chevron-left {
+  position: absolute;
+  color: var(--textInvert);
+  -webkit-filter: drop-shadow(1px 3.2px 2px rgba(0, 0, 0, 0.132));
+  filter: drop-shadow(1px 3.2px 2px rgba(0, 0, 0, 0.132));
+  top: 40%;
+  left: 0;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+
+.icon-tabler-chevron-right {
+  position: absolute;
+  color: var(--textInvert);
+  -webkit-filter: drop-shadow(1px 3.2px 2px rgba(0, 0, 0, 0.132));
+  filter: drop-shadow(1px 3.2px 2px rgba(0, 0, 0, 0.132));
+  top: 40%;
+  right: 0;
+  transition: opacity 0.2s ease;
+  opacity: 0;
 }
 
 /* notif starts here */
