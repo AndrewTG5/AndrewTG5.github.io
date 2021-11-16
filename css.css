@@ -309,7 +309,7 @@ h3 {
 
 /* notif starts here */
 
-.notif {
+#notif {
   /* notification box */
   bottom: -8vw;
   opacity: 0;
@@ -757,7 +757,7 @@ tr:nth-child(even) {
     display: block;
   }
 
-  .notif {
+  #notif {
     width: 240px;
     height: 20px;
   }
