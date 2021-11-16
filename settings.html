@@ -9,7 +9,7 @@
       content="Information about clubs in Katikati college."
     />
     <title>KKC clubs</title>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
     <link href="css.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
@@ -19,30 +19,34 @@
     <link rel="icon" type="image/png" sizes="32x32" href="img/favicon.png" />
 
     <style>
+      /* transition css for dark theme toggle */
       .bodyText {
         -webkit-transition: background 0.15s ease;
         -o-transition: background 0.15s ease;
         transition: background 0.15s ease;
       }
 
-      .sidenav {
+      .navbar {
         -webkit-transition: background 0.15s ease;
         -o-transition: background 0.15s ease;
         transition: background 0.15s ease;
       }
 
       p,
-      .foot a {
-        display: initial;
-      }
-
-      p,
       h1,
       h2,
-      h3 {
+      h3,
+      th,
+      td {
         -webkit-transition: color 0.15s ease;
         -o-transition: color 0.15s ease;
         transition: color 0.15s ease;
+      }
+
+      tr:nth-child(even) {
+        -webkit-transition: background-color 0.15s ease;
+        -o-transition: background-color 0.15s ease;
+        transition: background-color 0.15s ease;
       }
     </style>
     <script>
@@ -51,8 +55,8 @@
       });
 
       function toggleTheme() {
-        //sets site theme
-        var themePref = localStorage.getItem("themePref");
+        //  sets site theme
+        const themePref = localStorage.getItem("themePref");
         if (themePref == "dark") {
           light();
           localStorage.setItem("themePref", "light");
@@ -63,24 +67,63 @@
       }
 
       function startSettings() {
-        //sets toggle button state
-        var userPref = localStorage.getItem("themePref");
-        var soundPref = localStorage.getItem("soundPref");
+        //	sets toggle button state
+        const themePref = localStorage.getItem("themePref");
         if (themePref == "dark") {
           document.getElementById("themeSwitch").checked = true;
         } else {
           document.getElementById("themeSwitch").checked = false;
         }
+        document.getElementById(bgPref).checked = true;
       }
     </script>
   </head>
 
   <body>
-    <div>
-      <h1 class="title">Settings</h1>
+    <div id="myNavbar" class="navbar"></div>
+    <div id="notif" class="notif" style="display: none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-x"
+        width="40"
+        height="40"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        onclick="dismissUIPrompt()"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-alert-circle"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="1.5"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" />
+        <circle cx="12" cy="12" r="9" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+      </svg>
     </div>
-    <div id="mySidenav" class="sidenav"></div>
     <div class="wrapper">
+      <div class="titleRow">
+        <a href="index.html" style="text-decoration: none; float: left">
+          <img src="img/favicon.png" />
+          <h1 class="title">KKC clubs</h1>
+        </a>
+      </div>
       <div class="bodyContainer">
         <div class="bodyText" style="min-width: 86%">
           <h2 style="display: inline-block; margin: 0.6vh 0 0 0">Dark theme</h2>
@@ -99,8 +142,54 @@
           ></label>
         </div>
         <div class="bodyText">
+          <h2>Theme</h2>
+          <div class="selectorContainer">
+            <input
+              onclick="bgSelector('default')"
+              type="radio"
+              name="bg"
+              id="default"
+              class="input-hidden"
+            />
+            <label for="default">
+              <div class="default selector"></div>
+            </label>
+            <input
+              onclick="bgSelector('mint')"
+              type="radio"
+              name="bg"
+              id="mint"
+              class="input-hidden"
+            />
+            <label for="mint">
+              <div class="mint selector"></div>
+            </label>
+            <input
+              onclick="bgSelector('rain')"
+              type="radio"
+              name="bg"
+              id="rain"
+              class="input-hidden"
+            />
+            <label for="rain">
+              <div class="rain selector"></div>
+            </label>
+            <input
+              onclick="bgSelector('charcoal')"
+              type="radio"
+              name="bg"
+              id="charcoal"
+              class="input-hidden"
+            />
+            <label for="charcoal">
+              <div class="charcoal selector"></div>
+            </label>
+          </div>
+          <br />
+        </div>
+        <div class="bodyText">
           <h2 style="border-bottom: 2px solid var(--accentBlue)">
-            Experiments
+            Playground
           </h2>
           <a
             style="
@@ -109,23 +198,16 @@
               transition: color 0.15s ease;
             "
             href="#"
-            onclick="createUIPrompt('This can say anything🔥','Dismiss',dismissUIPrompt)"
+            onclick="createUIPrompt('This can say anything 🔥','Dismiss')"
           >
             Example notification banner
           </a>
           <br />
           <br />
-          <a
-            style="
-              color: var(--mainText);
-              font-size: 125%;
-              transition: color 0.15s ease;
-            "
-            href="#"
-            onclick=""
-          >
-            TODO: Notification.requestPermission()
-          </a>
+		  <p>todo: add orange sky theme</p>
+		  <p>todo: add prefers dark theme check</p>
+		  <p>todo: add every css thing here</p>
+		  <p>todo: generate notif with js</p>
         </div>
         <div class="bodyText">
           <h2>Sign in to access more settings</h2>
@@ -157,17 +239,36 @@
         </div>
       </div>
     </div>
-    <div class="foot">
-      <a
-        href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/master"
-        target="_blank"
-        rel="noopener"
-        >GitHub</a
-      >
-      <br />
-      <p>Author: Andrew Blake</p>
-      <br />
-      <p>Version 6.0.0</p>
-    </div>
+    <footer>
+      <div>
+        <a
+          href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="icon icon-tabler icon-tabler-brand-github"
+            width="42"
+            height="42"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            style="float: left"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" />
+            <path
+              d="M9 19c-4.286 1.35-4.286-2.55-6-3m12 5v-3.5c0-1 .099-1.405-.5-2 2.791-.3 5.5-1.366 5.5-6.04a4.567 4.567 0 0 0 -1.333 -3.21 4.192 4.192 0 00-.08-3.227s-1.05-.3-3.476 1.267a12.334 12.334 0 0 0 -6.222 0C6.462 2.723 5.413 3.023 5.413 3.023a4.192 4.192 0 0 0 -.08 3.227A4.566 4.566 0 004 9.486c0 4.64 2.709 5.68 5.5 6.014-.591.589-.56 1.183-.5 2V21"
+            />
+          </svg>
+          GitHub
+        </a>
+        <p>Version 6.0.0</p>
+        <p>Author: Andrew Blake</p>
+      </div>
+    </footer>
   </body>
 </html>

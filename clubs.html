@@ -9,7 +9,7 @@
       content="Information about clubs in Katikati college."
     />
     <title>KKC clubs</title>
-    <script src="js/script.js"></script>
+    <script src="script.js"></script>
     <link href="css.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css?family=Lato:400,700&display=swap"
@@ -20,29 +20,32 @@
   </head>
 
   <body>
-    <div>
-      <h1 class="title">KKC clubs</h1>
-    </div>
-    <div id="mySidenav" class="sidenav"></div>
+    <div id="myNavbar" class="navbar"></div>
     <div class="wrapper">
+      <div class="titleRow">
+        <a href="index.html" style="text-decoration: none; float: left">
+          <img src="img/favicon.png" />
+          <h1 class="title">KKC clubs</h1>
+        </a>
+      </div>
       <div class="galleryContainer">
         <div class="gallery">
           <a href="robotics.html">
-            <img src="img/robotsq.png" alt="" />
+            <img class="gImg" src="img/robotsq.png" alt="" />
           </a>
           <div class="desc">Robotics</div>
         </div>
 
         <div class="gallery">
           <a href="evolocity.html">
-            <img src="img/evolocity.png" alt="" />
+            <img class="gImg" src="img/evolocity.png" alt="" />
           </a>
           <div class="desc">Evolocity</div>
         </div>
 
         <div class="gallery">
           <a href="#">
-            <img src="img/new.png" alt="" />
+            <img class="gImg" src="img/new.png" alt="" />
           </a>
           <div class="desc">Add a club</div>
         </div>
