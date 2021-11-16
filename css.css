@@ -532,7 +532,7 @@ div.desc {
   margin-top: 2vh;
   flex-shrink: 0;
   width: 100vw;
-  max-width: 100vw; 
+  max-width: 100vw;
   left: 0;
   bottom: 0;
   background-color: var(--mainIMG);
