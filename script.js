@@ -40,7 +40,7 @@ function createUIPrompt(message) {
   svgx.setAttribute('class','icon icon-tabler icon-tabler-x');
   svgx.setAttribute('width','40');
   svgx.setAttribute('height','40');
-  svgx.setAttribute('viewBox','0 0 24 24');
+  svgx.setAttribute('viewbox','0 0 24 24');
   svgx.setAttribute('stroke-width','1');
   svgx.setAttribute('stroke','currentColor');
   svgx.setAttribute('fill','none');
@@ -54,7 +54,7 @@ function createUIPrompt(message) {
   svgc.setAttribute('class','icon icon-tabler icon-tabler-alert-circle');
   svgc.setAttribute('width','24');
   svgc.setAttribute('height','24');
-  svgc.setAttribute('viewBox','0 0 24 24');
+  svgc.setAttribute('viewbox','0 0 24 24');
   svgc.setAttribute('stroke-width','1.5');
   svgc.setAttribute('stroke','currentColor');
   svgc.setAttribute('fill','none');
@@ -111,13 +111,11 @@ function start() {
   if (bgPref || bgPref === '') {
     bgSelector(bgPref);
   } else {
-    bgSelector('mint');// default background
+    bgSelector('default');// default background
   }
 
-  if (themePref == 'dark') {
+  if (themePref == null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || themePref == 'dark') {
     dark();
-  } else {
-    light();
   }
 }
 
