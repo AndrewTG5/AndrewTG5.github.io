@@ -99,6 +99,10 @@
           <label for="mint">
             <div class="mint selector"></div>
           </label>
+          <input onclick="bgSelector('evening')" type="radio" name="bg" id="evening" class="input-hidden" />
+          <label for="evening">
+            <div class="evening selector"></div>
+          </label>
           <input onclick="bgSelector('rain')" type="radio" name="bg" id="rain" class="input-hidden" />
           <label for="rain">
             <div class="rain selector"></div>
@@ -112,50 +116,40 @@
       </div>
       <div class="bodyText">
         <h2 style="border-bottom: 2px solid var(--accentBlue)">Playground</h2>
-        <a style="
-              color: var(--mainText);
-              font-size: 125%;
-              transition: color 0.15s ease;
-            " href="#" onclick="createUIPrompt('This can say anything 🔥')">
-          Example notification banner
-        </a>
+        <a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="createUIPrompt('This can say anything 🔥')">Example notification banner</a>
         <br />
-        <br />
-        <p>todo: add orange sky theme</p>
         <p>todo: add every css thing here</p>
-        <p>todo: manual code format</p>
+        <p>todo: check all div alternatives</p>
         <p>todo: fix mobile css/check different resolutions/ how to responsive ui</p>
+        <p>todo: code validator and lighthouse</p>
+        <p>todo: manual code format</p>
+        <p>todo: List of references with links to the sources from where you took help</p>
+        <p>todo: comments</p>
       </div>
       <div class="bodyText">
         <h2>Sign in to access more settings</h2>
         <div class="form__group field">
-          <input type="input" class="form__field" placeholder="Username" name="uername" id="username" required />
+          <input type="text" class="form__field" placeholder="Username" name="uername" id="username" required />
           <label for="username" class="form__label">Username</label>
         </div>
-        <!--TODO: find out username and password conventions-->
         <div class="form__group field">
-          <input type="input" class="form__field" placeholder="Password" name="password" id="password" required />
+          <input type="password" class="form__field" placeholder="Password" name="password" id="password" required />
           <label for="password" class="form__label">Password</label>
         </div>
-
         <input type="submit" value="Submit" />
       </div>
     </div>
   </div>
   <footer>
     <div>
-      <a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io/tree/php-sql-version" target="_blank"
-        rel="noopener">
-        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="42" height="42"
-          viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round"
-          stroke-linejoin="round" style="float: left">
+      <a href="https://github.com/andrewthegreat5/andrewthegreat5.github.io" target="_blank" rel="noopener">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="42" height="42" viewbox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round" style="float: left">
           <path stroke="none" d="M0 0h24v24H0z" />
-          <path
-            d="M9 19c-4.286 1.35-4.286-2.55-6-3m12 5v-3.5c0-1 .099-1.405-.5-2 2.791-.3 5.5-1.366 5.5-6.04a4.567 4.567 0 0 0 -1.333 -3.21 4.192 4.192 0 00-.08-3.227s-1.05-.3-3.476 1.267a12.334 12.334 0 0 0 -6.222 0C6.462 2.723 5.413 3.023 5.413 3.023a4.192 4.192 0 0 0 -.08 3.227A4.566 4.566 0 004 9.486c0 4.64 2.709 5.68 5.5 6.014-.591.589-.56 1.183-.5 2V21" />
+          <path d="M9 19c-4.286 1.35-4.286-2.55-6-3m12 5v-3.5c0-1 .099-1.405-.5-2 2.791-.3 5.5-1.366 5.5-6.04a4.567 4.567 0 0 0 -1.333 -3.21 4.192 4.192 0 00-.08-3.227s-1.05-.3-3.476 1.267a12.334 12.334 0 0 0 -6.222 0C6.462 2.723 5.413 3.023 5.413 3.023a4.192 4.192 0 0 0 -.08 3.227A4.566 4.566 0 004 9.486c0 4.64 2.709 5.68 5.5 6.014-.591.589-.56 1.183-.5 2V21" />
         </svg>
         GitHub
       </a>
-      <p>Version 6.2.1</p>
+      <p>Version 6.2.2</p>
       <p>Author: Andrew Blake</p>
     </div>
   </footer>
