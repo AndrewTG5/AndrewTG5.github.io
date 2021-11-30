@@ -116,7 +116,7 @@
       </div>
       <div class="bodyText">
         <h2 style="border-bottom: 2px solid var(--accentBlue)">Playground</h2>
-        <a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="createUIPrompt('This can say anything 🔥')">Example notification banner</a>
+        <a style="color: var(--mainText); font-size: 125%; transition: color 0.15s ease;" href="#" onclick="createUIPrompt('This can say anything 🔥')">Example notification</a>
         <br />
         <p>todo: add every css thing here</p>
         <p>todo: check all div alternatives</p>
@@ -127,16 +127,36 @@
         <p>todo: comments</p>
       </div>
       <div class="bodyText">
+        <h2>Example table</h2>
+        <table>
+          <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+          </tr>
+          <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+          </tr>
+          <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+          </tr>
+        </table>
+      </div>
+      <div class="bodyText">
         <h2>Sign in to access more settings</h2>
-        <div class="form__group field">
+        <div class="form__group">
           <input type="text" class="form__field" placeholder="Username" name="uername" id="username" required />
           <label for="username" class="form__label">Username</label>
         </div>
-        <div class="form__group field">
+        <div class="form__group">
           <input type="password" class="form__field" placeholder="Password" name="password" id="password" required />
           <label for="password" class="form__label">Password</label>
         </div>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" onclick="createUIPrompt('Signed in (not really)')"/>
       </div>
     </div>
   </div>
@@ -149,7 +169,7 @@
         </svg>
         GitHub
       </a>
-      <p>Version 6.2.2</p>
+      <p>Version 6.2.3</p>
       <p>Author: Andrew Blake</p>
     </div>
   </footer>

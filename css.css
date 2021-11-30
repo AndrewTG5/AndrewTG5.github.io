@@ -431,6 +431,7 @@ h3 {
 
 select {
   /* select box */
+  border-radius: var(--mainRadius);
   color: var(--mainText);
   width: 100%;
   padding: 12px 20px;
@@ -672,7 +673,7 @@ table {
 th,
 td {
   text-align: left;
-  padding: 8px;
+  padding: 8px 16px 8px 0;
   color: var(--mainText);
 }
 
