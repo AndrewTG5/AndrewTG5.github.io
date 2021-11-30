@@ -64,7 +64,7 @@
     function startSettings() {
       //	sets toggle button state
       const themePref = localStorage.getItem("themePref");
-      if (themePref == "dark" || (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      if (themePref == "dark") {
         document.getElementById("themeSwitch").checked = true;
       } else {
         document.getElementById("themeSwitch").checked = false;
@@ -167,7 +167,7 @@
         </svg>
         GitHub
       </a>
-      <p>Version 6.3.0</p>
+      <p>Version 6.3.1</p>
       <p>Author: Andrew Blake</p>
     </div>
   </footer>
