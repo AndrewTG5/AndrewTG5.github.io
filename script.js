@@ -116,6 +116,7 @@ function start() {
 
   if (themePref == null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || themePref == 'dark') {
     dark();
+    localStorage.setItem("themePref", "dark");
   }
 }
 

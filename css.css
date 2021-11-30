@@ -700,28 +700,6 @@ tr:nth-child(even) {
     padding-left: 10px;
   }
 
-  .navbar {
-    top: 6vh;
-  }
-
-  .sticky {
-    top: 0;
-  }
-
-  .bodyContainer {
-    margin-top: 2vh;
-  }
-
-  .titleRow img {
-    height: 8vh;
-    padding-top: 0.2vh;
-  }
-
-  .titleRow {
-    margin: 0.5% 2% 1vh 0;
-    width: 102%;
-  }
-
   .ImgContainer {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
