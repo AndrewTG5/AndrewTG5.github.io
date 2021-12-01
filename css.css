@@ -23,8 +23,6 @@ html {
 
 body {
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,8 +62,6 @@ body {
 }
 
 .selectorContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -98,8 +94,6 @@ a {
 }
 
 .navbar {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   position: absolute;
   flex-direction: row;
@@ -162,8 +156,6 @@ a {
 
 .bodyContainer {
   /* flexbox container for body */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -192,8 +184,6 @@ a {
 
 .ImgContainer {
   /* contains an image box and a text box */
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -215,8 +205,6 @@ a {
   flex: 1;
   background: var(--mainIMG);
   box-shadow: var(--shadow16);
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
