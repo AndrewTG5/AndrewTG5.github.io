@@ -684,13 +684,8 @@ tr:nth-child(even) {
 @media (orientation: portrait) {
   /* portrait view */
 
-  .selector {
-    width: 18vw;
-    height: 18vw;
-  }
-
   .navbar a {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 
   .wrapper {
@@ -714,7 +709,7 @@ tr:nth-child(even) {
   }
 
   .bodyImg {
-    max-width: 100%;
+    max-width: 96%;
     max-height: 100%;
   }
 
