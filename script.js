@@ -1,8 +1,10 @@
 const themePref = localStorage.getItem('themePref');
 const bgPref = localStorage.getItem('bgPref');
 
+/**
+ * Sets dark theme css
+ */
 function dark() {
-  //  function to set dark theme
   const root = document.documentElement;
 
   document.getElementById('myNavbar').style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
@@ -12,8 +14,10 @@ function dark() {
   root.style.setProperty('--textInvert', 'rgb(0, 0, 0)');
 }
 
+/**
+ * Sets light theme css
+ */
 function light() {
-  //  function to set light theme
   const root = document.documentElement;
 
   document.getElementById('myNavbar').style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
@@ -23,13 +27,20 @@ function light() {
   root.style.setProperty('--textInvert', 'rgb(255, 255, 255)');
 }
 
+/**
+ * Sets background class and saves preference to localstorage bgPref
+ * @param {string} background Name of background class to set
+ */
 function bgSelector(background) {
-  //  function to set background theme
   document.querySelector('html').removeAttribute('class');
   document.querySelector('html').classList.add(background);
   localStorage.setItem('bgPref', background);
 }
 
+/**
+ * Generates html for a notification
+ * @param {string} message Message to include in the notification
+ */
 function createUIPrompt(message) {
   const notif = document.createElement('div');
   notif.setAttribute("id", "notif");
@@ -78,6 +89,9 @@ function createUIPrompt(message) {
   }, 5000);
 }
 
+/**
+ * Called 5 seconds after createUIPromt(), deletes the notification
+ */
 function dismissUIPrompt() {
   const notif = document.getElementById('notif');
   notif.style.bottom = '-8vw';
@@ -90,10 +104,11 @@ function dismissUIPrompt() {
 
 document.addEventListener('DOMContentLoaded', (_event) => {
   start();
+
+  //  sticky navbar stuff
   window.onscroll = function() {
     stickNav();
   };
-  //  sticky navbar stuff
   const navbar = document.getElementById('myNavbar');
   const sticky = navbar.offsetTop;
 
@@ -106,12 +121,15 @@ document.addEventListener('DOMContentLoaded', (_event) => {
   }
 });
 
+/**
+ * Called on DOMContentLoaded, sets background and color scheme based on user preference, or uses defualt
+ */
 function start() {
   navLoader();
   if (bgPref || bgPref === '') {
     bgSelector(bgPref);
   } else {
-    bgSelector('default');// default background
+    bgSelector('default');
   }
 
   if (themePref == null && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches || themePref == 'dark') {
@@ -120,8 +138,10 @@ function start() {
   }
 }
 
+/**
+ * Loads pages from an array and appends them to the navbar
+ */
 function navLoader() {
-  //  loads pages from an array and appends them to the menu
   const pages = ['index.html', 'clubs.html', 'signup.html', 'settings.html']; //  page address
   const pageTitle = ['Home', 'Clubs', 'Signup', 'Settings']; // page name in menu
   let i;
