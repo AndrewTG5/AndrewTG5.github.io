@@ -1,4 +1,5 @@
 :root {
+  /* variables */
   --mainRadius: 4px;
   --mainText: rgb(0, 0, 0);
   --mainIMG: rgba(255, 255, 255, 0.4);
@@ -57,6 +58,7 @@ body {
 }
 
 .selector {
+  /* the div the user clicks on */
   width: 10vw;
   height: 10vw;
 }
@@ -74,16 +76,14 @@ body {
 }
 
 input[type="radio"] + label > div {
+  /* styles the div */
   box-shadow: var(--shadow8);
   border: 3px solid rgba(255, 255, 255, 0);
   border-radius: var(--mainRadius);
 }
 
-input[type="radio"]:checked + label > div {
-  border: 3px solid var(--accentBlue);
-}
-
-input[type="radio"] + label > div:hover {
+input[type="radio"]:checked + label > div,  input[type="radio"] + label > div:hover{
+  /* adds border on checked or hover */
   border: 3px solid var(--accentBlue);
 }
 
@@ -141,6 +141,7 @@ a {
 }
 
 .titleRow img {
+  /* the image in the titlerow*/
   height:6vh; 
   float: left;
   margin: 1vh 0 0 2%;
@@ -213,6 +214,7 @@ a {
 }
 
 .bodyImg img {
+  /* the image in the image box*/
   width: 100%;
   height: 100%;
   flex-shrink: 0;
@@ -367,6 +369,7 @@ input[type="button"] {
 /* input boxes end here */
 
 .galleryContainer {
+  /* gallery used in 'clubs' */
   margin-top: 6vh;
   display: -webkit-box;
   display: -ms-flexbox;
